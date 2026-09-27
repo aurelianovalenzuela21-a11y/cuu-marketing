@@ -99,7 +99,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
 
 .brand { display: inline-flex; align-items: center; gap: 12px; }
-.brand__mark { width: 36px; height: 36px; color: var(--red); filter: drop-shadow(0 0 10px var(--red-glow)); }
+.brand__mark { width: auto; height: 52px; filter: drop-shadow(0 0 12px var(--red-glow)); }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name { font-family: var(--font-display); font-size: 28px; letter-spacing: .06em; }
 .brand__sub { font-family: var(--font-cond); font-weight: 600; font-size: 11px; letter-spacing: .42em; color: var(--text-2); margin-top: 2px; }
