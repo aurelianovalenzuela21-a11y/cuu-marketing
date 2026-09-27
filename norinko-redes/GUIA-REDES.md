@@ -18,20 +18,21 @@ Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
 | Archivo | Uso |
 |---|---|
 | `marca/Norinko-Manual-de-Marca.pdf` | Manual de identidad (10 páginas): logotipos, colores, tipografía y aplicaciones. Compártelo con quien diseñe o imprima algo de la marca. |
-| `logo/norinko-logo-transparente.png` | Emblema principal con fondo transparente (redes, lonas, playeras, video). |
-| `logo/norinko-logo-negro-2048.png` | Emblema en alta resolución sobre fondo negro. |
-| `marca/logotipo/*.svg` | Logotipo horizontal vectorial en 5 versiones (fondo oscuro, claro, rojo, blanco y negro) e isotipo "N". Son los archivos para imprenta, rotulación y bordado. |
+| `logo/norinko-emblema-transparente.png` | **Emblema principal** (insignia con motor) con fondo transparente, para redes, lonas, espalda de playeras, stickers y video. |
+| `logo/norinko-emblema-negro-2048.png` | Emblema principal en alta resolución sobre negro. |
+| `marca/logo-secundario/` | **Logo secundario** con la "N", en versión vertical, horizontal e isotipo, cada una en 5 colores (oscuro, claro, rojo, blanco y negro), además del ícono de app. Para web, facturas, rotulación, uniformes y tamaños chicos. |
+| `fuentes/conceptos/` | Las 4 propuestas de logo que se exploraron (A–D). |
 | `perfil/norinko-perfil-1080.png` | Foto de perfil para Instagram, Facebook, TikTok, WhatsApp Business y YouTube. |
 | `portadas/norinko-portada-facebook-1640x924.jpg` | Portada de Facebook. |
 | `portadas/norinko-portada-youtube-2560x1440.jpg` | Banner de YouTube. |
 | `historias-destacadas/*.png` | 10 portadas de Historias Destacadas (una por servicio, más Clientes y Contacto). |
 
-### Qué cambió en el branding
-- **Paleta roja, blanca y amarilla:** en el emblema, "NKO" ahora es blanco, "PERFORMANCE" amarillo y la placa "CHIHUAHUA · MX" roja, y el aro va de rojo a amarillo, sin tonos café ni naranja.
-- **Logotipo horizontal nuevo:** es vectorial y funciona en web, facturas, rotulación y bordado, donde el emblema detallado no se lee bien en tamaño chico.
-- **Isotipo "N":** para ícono del sitio, avatares pequeños y sellos.
-- **Tipografía oficial:** Saira Black Italic para títulos y Barlow para textos; ambas son gratuitas en Google Fonts.
-- El motor del emblema dice **NORINKO**, sin logotipos de Chevrolet.
+### Logo
+- El logo **solo dice NORINKO PERFORMANCE**, sin "Chihuahua · MX", números ni otros textos.
+- **Emblema principal:** insignia circular roja y amarilla con motor V8 cromado y la banda "NORINKO / PERFORMANCE". Es la foto de perfil.
+- **Logo secundario:** una "N" dividida en rojo y blanco con una línea amarilla de velocidad, "NORINKO" en tipografía extendida y "PERFORMANCE" espaciado. Es limpio y moderno, y se usa en el sitio, la papelería y los uniformes.
+- **Tipografía de apoyo:** Saira Black Italic para títulos y Barlow para textos, ambas gratuitas en Google Fonts.
+- Los archivos son PNG en alta resolución. Para rótulos muy grandes o bordado, pide al impresor que los vectorice a partir de estos PNG.
 
 > Las escenas con vehículos (portadas, sitio y la foto del quemacocos) se generaron con IA. Úsalas como imagen de marca, no como trabajos de clientes. En cuanto tengas fotos reales de tus proyectos, úsalas.
 
@@ -56,7 +57,7 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 📍 Chihuahua, MX
 👇 Cotiza por WhatsApp
 ```
-**Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526145148056`
+**Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526561278916`
 
 **Botones de contacto:** WhatsApp, Llamar y Cómo llegar.
 

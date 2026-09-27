@@ -3,7 +3,7 @@
    ================================================ */
 
 // Número de WhatsApp (formato internacional, sin + ni espacios)
-const WHATSAPP_NUMBER = '526145148056';
+const WHATSAPP_NUMBER = '526561278916';
 
 (function () {
   const $ = (s, c = document) => c.querySelector(s);
