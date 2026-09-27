@@ -1722,6 +1722,28 @@ li.excluded::before {
 }
 
 /* ========================================================
+   LOCAL SEO SECTION
+   ======================================================== */
+.local { padding: var(--section-gap) 0; }
+.local__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 64px;
+  align-items: start;
+}
+.local .section-title { text-align: left; }
+.local__text p {
+  color: var(--gray-2);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.local__text strong { color: var(--gray-1); font-weight: 600; }
+.local__text .btn { margin-top: 8px; }
+@media (max-width: 1024px) { .local__inner { grid-template-columns: minmax(0, 1fr); gap: 16px; } }
+
+
+/* ========================================================
    FAQ
    ======================================================== */
 .faq {
