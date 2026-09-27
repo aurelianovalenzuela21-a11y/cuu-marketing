@@ -21,7 +21,7 @@ Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
 | `marca/logo/norinko-logo.png` | **Logotipo principal** con fondo transparente: la tipografía original de la marca en rojo, blanco y amarillo. Es el que va en el perfil, las portadas, el sitio, las lonas y los videos. |
 | `marca/logo/norinko-logo-plano.png` | Versión plana (sin brillos), para vinil, rotulación, bordado y serigrafía. |
 | `marca/logo/norinko-logo-mono-*.png` | Versiones de un solo color: blanco, negro y rojo. |
-| `marca/logo/norinko-icono-N.png` / `norinko-icono-app.png` | Ícono "N" para espacios chicos: ícono del sitio, avatar y sellos. |
+| `marca/logo/norinko-logo-app-1024.png` | Logotipo completo en cuadro oscuro, para avatares cuadrados e ícono de app. |
 | `marca/logo/norinko-logo-fondo-negro.jpg` / `-fondo-blanco.jpg` | Logo listo sobre fondo negro o blanco. |
 | `fuentes/conceptos*/` | Propuestas exploradas anteriormente. |
 | `perfil/norinko-perfil-1080.png` | Foto de perfil para Instagram, Facebook, TikTok, WhatsApp Business y YouTube. |
@@ -33,6 +33,7 @@ Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
 - Es el **logotipo original de la marca**, con la misma tipografía y estilo, recoloreado a **rojo, blanco y amarillo**: "NORI" rojo, "NKO" blanco y "PERFORMANCE" amarillo.
 - **Solo dice NORINKO PERFORMANCE**, sin troca, sin motor y sin otros textos.
 - Tiene un acabado más profesional: bordes limpios, brillo uniforme y sin rayones.
+- **Siempre se usa el logotipo completo**; nunca letras sueltas ni la "N" sola.
 - **Tipografía de apoyo:** Saira Black Italic para títulos y Barlow para textos, ambas gratuitas en Google Fonts.
 - Los archivos son PNG de alta resolución con transparencia. Para lonas muy grandes o bordado, pide al impresor que vectorice la **versión plana**.
 
