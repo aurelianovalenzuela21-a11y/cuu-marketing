@@ -99,7 +99,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .nav.is-scrolled { background: rgba(20, 20, 20, .94); backdrop-filter: blur(12px); box-shadow: 0 2px 0 var(--red); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 78px; }
-.brand__logo { height: 46px; width: auto; }
+.brand__logo { height: 66px; width: auto; }
 
 .nav__links { display: flex; align-items: center; gap: 30px; }
 .nav__links a:not(.btn) {
@@ -194,7 +194,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .split--reverse { grid-template-columns: 1.1fr 1fr; }
 .split > * { min-width: 0; }
 .split__media { position: relative; display: grid; place-items: center; }
-.emblem { position: relative; width: min(100%, 460px); height: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,.45)); }
+.emblem { position: relative; width: min(100%, 540px); height: auto; filter: drop-shadow(0 30px 50px rgba(0,0,0,.45)); }
 .section--red .split__media::before {
   content: ""; position: absolute; width: 88%; aspect-ratio: 1; border-radius: 50%;
   background: radial-gradient(circle, rgba(255,194,14,.35), transparent 65%);
@@ -303,7 +303,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- Footer ---------- */
 .footer { background: var(--ink); color: var(--white); padding: 60px 0 30px; border-top: 6px solid var(--yellow); }
 .footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid var(--line-dark); }
-.footer__brand img { height: 50px; width: auto; }
+.footer__brand img { height: 64px; width: auto; }
 .footer__brand p { color: rgba(255,255,255,.6); margin-top: 16px; max-width: 380px; font-size: 15px; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; }
 .footer__nav a { font-family: var(--font-display); font-style: italic; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.8); }
@@ -362,7 +362,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .hero__stats { gap: 18px 28px; }
   .hero__stats strong { font-size: 40px; }
   .hero__ctas .btn { flex: 1 1 100%; }
-  .brand__logo { height: 38px; }
+  .brand__logo { height: 52px; }
   .footer__bottom { flex-direction: column; }
 }
 

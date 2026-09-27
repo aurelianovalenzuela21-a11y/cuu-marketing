@@ -18,21 +18,23 @@ Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
 | Archivo | Uso |
 |---|---|
 | `marca/Norinko-Manual-de-Marca.pdf` | Manual de identidad (10 páginas): logotipos, colores, tipografía y aplicaciones. Compártelo con quien diseñe o imprima algo de la marca. |
-| `logo/norinko-emblema-transparente.png` | **Emblema principal** (insignia con motor) con fondo transparente, para redes, lonas, espalda de playeras, stickers y video. |
-| `logo/norinko-emblema-negro-2048.png` | Emblema principal en alta resolución sobre negro. |
-| `marca/logo-secundario/` | **Logo secundario** con la "N", en versión vertical, horizontal e isotipo, cada una en 5 colores (oscuro, claro, rojo, blanco y negro), además del ícono de app. Para web, facturas, rotulación, uniformes y tamaños chicos. |
-| `fuentes/conceptos/` | Las 4 propuestas de logo que se exploraron (A–D). |
+| `marca/logo/norinko-logo.png` | **Logotipo principal** con fondo transparente: la tipografía original de la marca en rojo, blanco y amarillo. Es el que va en el perfil, las portadas, el sitio, las lonas y los videos. |
+| `marca/logo/norinko-logo-plano.png` | Versión plana (sin brillos), para vinil, rotulación, bordado y serigrafía. |
+| `marca/logo/norinko-logo-mono-*.png` | Versiones de un solo color: blanco, negro y rojo. |
+| `marca/logo/norinko-icono-N.png` / `norinko-icono-app.png` | Ícono "N" para espacios chicos: ícono del sitio, avatar y sellos. |
+| `marca/logo/norinko-logo-fondo-negro.jpg` / `-fondo-blanco.jpg` | Logo listo sobre fondo negro o blanco. |
+| `fuentes/conceptos*/` | Propuestas exploradas anteriormente. |
 | `perfil/norinko-perfil-1080.png` | Foto de perfil para Instagram, Facebook, TikTok, WhatsApp Business y YouTube. |
 | `portadas/norinko-portada-facebook-1640x924.jpg` | Portada de Facebook. |
 | `portadas/norinko-portada-youtube-2560x1440.jpg` | Banner de YouTube. |
 | `historias-destacadas/*.png` | 10 portadas de Historias Destacadas (una por servicio, más Clientes y Contacto). |
 
 ### Logo
-- El logo **solo dice NORINKO PERFORMANCE**, sin "Chihuahua · MX", números ni otros textos.
-- **Emblema principal:** insignia circular roja y amarilla con motor V8 cromado y la banda "NORINKO / PERFORMANCE". Es la foto de perfil.
-- **Logo secundario:** una "N" dividida en rojo y blanco con una línea amarilla de velocidad, "NORINKO" en tipografía extendida y "PERFORMANCE" espaciado. Es limpio y moderno, y se usa en el sitio, la papelería y los uniformes.
+- Es el **logotipo original de la marca**, con la misma tipografía y estilo, recoloreado a **rojo, blanco y amarillo**: "NORI" rojo, "NKO" blanco y "PERFORMANCE" amarillo.
+- **Solo dice NORINKO PERFORMANCE**, sin troca, sin motor y sin otros textos.
+- Tiene un acabado más profesional: bordes limpios, brillo uniforme y sin rayones.
 - **Tipografía de apoyo:** Saira Black Italic para títulos y Barlow para textos, ambas gratuitas en Google Fonts.
-- Los archivos son PNG en alta resolución. Para rótulos muy grandes o bordado, pide al impresor que los vectorice a partir de estos PNG.
+- Los archivos son PNG de alta resolución con transparencia. Para lonas muy grandes o bordado, pide al impresor que vectorice la **versión plana**.
 
 > Las escenas con vehículos (portadas, sitio y la foto del quemacocos) se generaron con IA. Úsalas como imagen de marca, no como trabajos de clientes. En cuanto tengas fotos reales de tus proyectos, úsalas.
 

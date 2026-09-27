@@ -9,7 +9,7 @@ body{width:%(w)dpx;height:%(h)dpx;overflow:hidden;position:relative;font-family:
 .photo{position:absolute;inset:0;background-size:cover;background-position:center}
 .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.95) 0%%,rgba(10,10,10,.7) 34%%,rgba(10,10,10,0) 56%%,rgba(10,10,10,.1) 70%%,rgba(10,10,10,.85) 100%%)}
 .top{position:absolute;left:72px;right:72px;top:64px;display:flex;justify-content:space-between;align-items:center}
-.top img{height:62px}
+.top img{height:92px}
 .handle{font-family:'Saira';font-style:italic;font-weight:800;font-size:22px;letter-spacing:.06em;color:rgba(255,255,255,.85)}
 .kicker{display:inline-flex;align-items:center;gap:14px;font-family:'Saira';font-style:italic;font-weight:800;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:#FFC20E}
 .kicker i{width:46px;height:10px;background:linear-gradient(90deg,#D7141A 0 50%%,#FFC20E 50%%);transform:skewX(-24deg)}
@@ -46,7 +46,7 @@ posts['01-lanzamiento'] = page(1080, 1350, f"""
 <div class="photo" style="background-image:url(../fotos/garage-centro.jpg)"></div>
 <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 44%,rgba(10,10,10,.25),rgba(10,10,10,.85) 70%)"></div>
 <div style="position:absolute;left:0;right:0;top:120px;text-align:center"><div class="kicker" style="justify-content:center"><i></i>Ya abrimos en Cd. Juárez<i style="transform:skewX(-24deg) scaleX(-1)"></i></div></div>
-<img src="emblema.png" style="position:absolute;left:50%;top:190px;transform:translateX(-50%);height:560px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">
+<img src="emblema.png" style="position:absolute;left:50%;top:250px;transform:translateX(-50%);width:900px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">
 <div style="position:absolute;left:0;right:0;top:790px;text-align:center"><div class="disp" style="font-size:112px">Tu carro,<br><span style="color:#FFC20E">a otro nivel.</span></div></div>
 <div style="position:absolute;left:0;right:0;bottom:70px;display:flex;justify-content:center"><span class="pill">{WA_SVG}WhatsApp {WA}</span></div>
 <div class="stripe"></div>""")
@@ -96,7 +96,7 @@ stories['h1-lanzamiento'] = page(1080, 1920, f"""
 <div class="photo" style="background-image:url(../fotos/garage-centro.jpg)"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.85),rgba(10,10,10,.35) 40%,rgba(10,10,10,.9) 80%)"></div>
 <div style="position:absolute;left:0;right:0;top:230px;text-align:center"><div class="kicker" style="justify-content:center;font-size:30px"><i></i>Ya abrimos</div><div class="disp" style="font-size:120px;margin-top:20px">Ciudad<br><span style="color:#FFC20E">Juárez</span></div></div>
-<img src="emblema.png" style="position:absolute;left:50%;top:640px;transform:translateX(-50%);height:620px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">
+<img src="emblema.png" style="position:absolute;left:50%;top:760px;transform:translateX(-50%);width:920px;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))">
 <div style="position:absolute;left:0;right:0;top:1330px;text-align:center;font-family:'Saira';font-style:italic;font-weight:800;font-size:34px;text-transform:uppercase;letter-spacing:.06em;line-height:1.5">Restauración · Pintura · Tapicería<br>Quemacocos · Luces · Suspensiones</div>
 <div style="position:absolute;left:0;right:0;bottom:250px;display:flex;justify-content:center"><span class="pill" style="font-size:40px;padding:24px 44px">{WA_SVG}{WA}</span></div>
 <div class="stripe"></div>""")
