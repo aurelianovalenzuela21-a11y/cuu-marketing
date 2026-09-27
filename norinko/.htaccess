@@ -1,5 +1,7 @@
 # Norinko Performance — norinko.cuumarketing.com
 # RewriteEngine propio: evita heredar las reglas del sitio principal (que redirigen a cuumarketing.com)
+DirectoryIndex index.html
+
 RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^norinko\.cuumarketing\.com$ [NC]
