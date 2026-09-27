@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norinko Performance — Modificaciones, Audio e Iluminación Automotriz en Chihuahua</title>
+  <meta name="description" content="Norinko Performance: taller de modificaciones automotrices en Chihuahua. Restauración y restomod de clásicos, car audio, iluminación LED, suspensión, swaps y adaptaciones a la medida.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0B0B0C">
+  <link rel="canonical" href="https://norinko.cuumarketing.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://norinko.cuumarketing.com/">
+  <meta property="og:title" content="Norinko Performance — Tu carro, a otro nivel">
+  <meta property="og:description" content="Clásicos, restomods, car audio, iluminación y adaptaciones a la medida en Chihuahua.">
+  <meta property="og:locale" content="es_MX">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Norinko Performance",
+    "url": "https://norinko.cuumarketing.com/",
+    "description": "Modificaciones automotrices, restauración de clásicos, car audio, iluminación y adaptaciones en Chihuahua.",
+    "telephone": "+52 614 514 8056",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chihuahua",
+      "addressRegion": "Chihuahua",
+      "addressCountry": "MX"
+    },
+    "areaServed": "Chihuahua, México",
+    "parentOrganization": { "@type": "Organization", "name": "CUU Marketing", "url": "https://cuumarketing.com/" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="brand" aria-label="Norinko Performance — inicio">
+        <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <path d="M6 40 L18 8 H26 L20 24 L34 8 H44 L24 40 H16 L22 26 L10 40 Z" fill="currentColor"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">NORINKO</span>
+          <span class="brand__sub">PERFORMANCE</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#clasicos">Clásicos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#faq">Preguntas</a>
+        <a href="#contacto" class="btn btn--primary btn--sm">Cotizar proyecto</a>
+      </nav>
+
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="hero__lines"></div>
+        <svg class="hero__car" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="carStroke" x1="0" x2="1">
+              <stop offset="0" stop-color="#E10600" stop-opacity="0"/>
+              <stop offset=".35" stop-color="#E10600"/>
+              <stop offset=".75" stop-color="#FFB400"/>
+              <stop offset="1" stop-color="#FFB400" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- silueta de muscle car clásico -->
+          <path class="hero__car-path" d="M40 210 L90 208 C100 180 130 168 160 168 C190 168 215 185 222 208 L560 208 C567 185 592 168 622 168 C652 168 680 182 690 208 L760 205 L762 180 C740 168 700 160 660 156 L560 150 C520 118 470 98 400 94 C330 92 280 104 240 130 L150 142 C100 150 60 160 44 176 Z" fill="none" stroke="url(#carStroke)" stroke-width="2.5" stroke-linejoin="round"/>
+          <path class="hero__car-path hero__car-path--2" d="M262 132 C300 110 350 104 400 104 C455 106 500 120 530 148 L262 148 Z" fill="none" stroke="url(#carStroke)" stroke-width="1.6"/>
+          <circle class="hero__car-path" cx="160" cy="210" r="34" fill="none" stroke="url(#carStroke)" stroke-width="2.5"/>
+          <circle class="hero__car-path" cx="622" cy="210" r="34" fill="none" stroke="url(#carStroke)" stroke-width="2.5"/>
+          <circle cx="160" cy="210" r="14" fill="none" stroke="#E10600" stroke-opacity=".5"/>
+          <circle cx="622" cy="210" r="14" fill="none" stroke="#E10600" stroke-opacity=".5"/>
+          <path class="hero__beam" d="M760 190 L800 170 L800 215 Z" fill="#FFB400" opacity=".35"/>
+        </svg>
+      </div>
+
+      <div class="container hero__content">
+        <p class="eyebrow reveal"><span class="dot"></span> Taller de modificación automotriz · Chihuahua</p>
+        <h1 class="hero__title reveal">
+          Tu carro,<br><span class="text-accent">a otro nivel.</span>
+        </h1>
+        <p class="hero__lead reveal">
+          Restauración y restomod de clásicos, car audio de alta fidelidad, iluminación a la medida y adaptaciones
+          que nadie más se atreve a hacer. Ingeniería, detalle y pasión en cada proyecto.
+        </p>
+        <div class="hero__ctas reveal">
+          <a href="#contacto" class="btn btn--primary">Cotizar mi proyecto
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+        </div>
+
+        <ul class="hero__stats reveal" aria-label="Datos de Norinko Performance">
+          <li><strong data-count="6">0</strong><span>Especialidades<br>bajo un mismo techo</span></li>
+          <li><strong data-count="100" data-suffix="%">0</strong><span>Proyectos hechos<br>a la medida</span></li>
+          <li><strong data-count="12" data-suffix=" m">0</strong><span>Garantía en mano<br>de obra*</span></li>
+        </ul>
+      </div>
+
+      <a href="#servicios" class="hero__scroll" aria-label="Bajar a servicios"><span></span></a>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Restomod</span><i>◆</i><span>Car Audio</span><i>◆</i><span>Iluminación LED</span><i>◆</i><span>Suspensión</span><i>◆</i><span>Engine Swaps</span><i>◆</i><span>Estética</span><i>◆</i><span>Clásicos</span><i>◆</i><span>Performance</span><i>◆</i>
+        <span>Restomod</span><i>◆</i><span>Car Audio</span><i>◆</i><span>Iluminación LED</span><i>◆</i><span>Suspensión</span><i>◆</i><span>Engine Swaps</span><i>◆</i><span>Estética</span><i>◆</i><span>Clásicos</span><i>◆</i><span>Performance</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ========== SERVICIOS ========== -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Servicios</p>
+          <h2 class="section__title">Todo lo que tu carro necesita<br><span class="text-muted">para destacar.</span></h2>
+          <p class="section__lead">Desde un sistema de sonido hasta una restauración completa. Diseñamos, fabricamos e instalamos con componentes de calidad y acabados de fábrica — o mejores.</p>
+        </header>
+
+        <div class="services">
+          <article class="service reveal">
+            <div class="service__num">01</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 15l2-5c.6-1.5 1.6-2.5 3.2-2.5h7.6c1.6 0 2.6 1 3.2 2.5l2 5v3h-2"/><path d="M5 18H3v-3h18"/><circle cx="7.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/><path d="M6.5 11h11"/></svg>
+            </div>
+            <h3>Clásicos y Restomod</h3>
+            <p>Restauración parcial o total, rescate de carrocería, pintura y vestiduras. Conservamos el alma del clásico con confort y confiabilidad moderna.</p>
+            <ul class="service__tags"><li>Restauración</li><li>Pintura</li><li>Vestiduras</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__num">02</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="14" r="4"/><circle cx="12" cy="14" r="1.2"/><circle cx="12" cy="7" r="1.4"/></svg>
+            </div>
+            <h3>Car Audio</h3>
+            <p>Estéreos, bocinas, amplificadores, subwoofers y cajas a la medida. Aislamiento acústico y calibración con DSP para un sonido limpio y potente.</p>
+            <ul class="service__tags"><li>Subwoofers</li><li>DSP</li><li>Cajas custom</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__num">03</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>
+            </div>
+            <h3>Iluminación</h3>
+            <p>Faros LED y proyectores, halos, luces ambientales interiores, barras y neblineros. Instalación limpia, sin fallas eléctricas ni parpadeos.</p>
+            <ul class="service__tags"><li>LED / Proyector</li><li>Ambiental</li><li>Off-road</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__num">04</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <h3>Performance y Swaps</h3>
+            <p>Cambios de motor y transmisión, admisión y escape, afinación y mejoras de frenos. Más potencia, con la ingeniería correcta para que dure.</p>
+            <ul class="service__tags"><li>Engine swap</li><li>Escapes</li><li>Frenos</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__num">05</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3v4M6 17v4M18 3v4M18 17v4"/><path d="M4 7h4l-2 2 2 2-2 2 2 2H4M16 7h4l-2 2 2 2-2 2 2 2h-4"/></svg>
+            </div>
+            <h3>Suspensión y Rines</h3>
+            <p>Bajadas, coilovers, suspensión de aire y levantamientos. Rines y llantas con la medida y el offset exactos para tu estilo.</p>
+            <ul class="service__tags"><li>Air ride</li><li>Coilovers</li><li>Lift kits</li></ul>
+          </article>
+
+          <article class="service reveal">
+            <div class="service__num">06</div>
+            <div class="service__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>
+            </div>
+            <h3>Adaptaciones a la medida</h3>
+            <p>Pantallas y CarPlay en clásicos, cámaras, sensores, alarmas, polarizado, estética y todo lo que imagines. Si se puede fabricar, lo hacemos.</p>
+            <ul class="service__tags"><li>CarPlay</li><li>Seguridad</li><li>Estética</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLÁSICOS ========== -->
+    <section class="section section--dark" id="clasicos">
+      <div class="container split">
+        <div class="split__media reveal" aria-hidden="true">
+          <div class="gauge">
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+              <path d="M38 150 A78 78 0 1 1 162 150" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="10" stroke-linecap="round"/>
+              <path class="gauge__arc" d="M38 150 A78 78 0 1 1 162 150" fill="none" stroke="url(#gaugeGrad)" stroke-width="10" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="gaugeGrad" x1="0" x2="1"><stop offset="0" stop-color="#FFB400"/><stop offset="1" stop-color="#E10600"/></linearGradient>
+              </defs>
+              <g class="gauge__needle"><line x1="100" y1="100" x2="100" y2="34" stroke="#E10600" stroke-width="3" stroke-linecap="round"/></g>
+              <circle cx="100" cy="100" r="8" fill="#E10600"/>
+              <text x="100" y="140" text-anchor="middle" class="gauge__label">RPM × 1000</text>
+            </svg>
+          </div>
+          <div class="split__badge">
+            <strong>Old school</strong>
+            <span>alma original, tecnología actual</span>
+          </div>
+        </div>
+
+        <div class="split__body">
+          <p class="eyebrow reveal"><span class="dot"></span> Especialistas en clásicos</p>
+          <h2 class="section__title reveal">Respetamos la historia.<br><span class="text-accent">Mejoramos todo lo demás.</span></h2>
+          <p class="section__lead reveal">Un clásico merece manos que entiendan su mecánica, sus materiales y su valor. Trabajamos muscle cars, pickups, vochos, clásicos europeos y japoneses.</p>
+
+          <ul class="checks reveal">
+            <li><b>Restauración de carrocería</b> — corrección de óxido, lámina, pintura y cromos.</li>
+            <li><b>Restomod</b> — frenos de disco, dirección hidráulica, aire acondicionado e inyección.</li>
+            <li><b>Tecnología oculta</b> — audio, Bluetooth y CarPlay sin alterar el tablero original.</li>
+            <li><b>Instalación eléctrica nueva</b> — arneses y fusibles modernos, seguros y documentados.</li>
+          </ul>
+
+          <a href="#contacto" class="btn btn--primary reveal">Quiero restaurar mi clásico</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROYECTOS ========== -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Tipos de proyecto</p>
+          <h2 class="section__title">Paquetes pensados<br><span class="text-muted">para cada estilo.</span></h2>
+          <p class="section__lead">Cada carro es distinto, así que todo se cotiza a la medida. Estos son los proyectos que más nos piden como punto de partida.</p>
+        </header>
+
+        <div class="builds">
+          <article class="build reveal">
+            <div class="build__visual build__visual--audio" aria-hidden="true">
+              <div class="eq"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="build__body">
+              <p class="build__kicker">Sound</p>
+              <h3>Street Sound</h3>
+              <p>Estéreo con pantalla, bocinas de componentes, amplificador de 4 canales y subwoofer en caja a la medida.</p>
+              <a href="#contacto" data-interest="Paquete Street Sound (car audio)" class="build__link">Cotizar este paquete →</a>
+            </div>
+          </article>
+
+          <article class="build reveal">
+            <div class="build__visual build__visual--light" aria-hidden="true">
+              <div class="beam"></div><div class="beam beam--2"></div>
+            </div>
+            <div class="build__body">
+              <p class="build__kicker">Light</p>
+              <h3>Night Vision</h3>
+              <p>Faros con proyector LED, halos, calaveras ahumadas o LED y luz ambiental interior programable desde tu celular.</p>
+              <a href="#contacto" data-interest="Paquete Night Vision (iluminación)" class="build__link">Cotizar este paquete →</a>
+            </div>
+          </article>
+
+          <article class="build reveal">
+            <div class="build__visual build__visual--classic" aria-hidden="true">
+              <div class="stripe"></div><div class="stripe stripe--2"></div>
+            </div>
+            <div class="build__body">
+              <p class="build__kicker">Classic</p>
+              <h3>Restomod Build</h3>
+              <p>Proyecto integral para clásicos: mecánica, frenos, suspensión, eléctrico, interiores y acabados. Planeado por etapas.</p>
+              <a href="#contacto" data-interest="Proyecto Restomod (clásico)" class="build__link">Cotizar este paquete →</a>
+            </div>
+          </article>
+
+          <article class="build reveal">
+            <div class="build__visual build__visual--stance" aria-hidden="true">
+              <div class="wheel"></div><div class="ground"></div>
+            </div>
+            <div class="build__body">
+              <p class="build__kicker">Stance</p>
+              <h3>Low &amp; Clean</h3>
+              <p>Suspensión de aire o coilovers, rines con fitment exacto, alineación y detalles estéticos para una postura perfecta.</p>
+              <a href="#contacto" data-interest="Paquete Low & Clean (suspensión y rines)" class="build__link">Cotizar este paquete →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== POR QUÉ ========== -->
+    <section class="section section--dark" id="porque">
+      <div class="container">
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow"><span class="dot"></span> ¿Por qué Norinko?</p>
+          <h2 class="section__title">Trabajo que se nota.<br><span class="text-muted">Y que dura.</span></h2>
+        </header>
+
+        <div class="features">
+          <div class="feature reveal">
+            <h3>Cotización clara</h3>
+            <p>Presupuesto por escrito, desglosado por partes y mano de obra. Sin sorpresas al final.</p>
+          </div>
+          <div class="feature reveal">
+            <h3>Avances en tiempo real</h3>
+            <p>Te mandamos fotos y videos de tu proyecto por WhatsApp en cada etapa del trabajo.</p>
+          </div>
+          <div class="feature reveal">
+            <h3>Instalaciones limpias</h3>
+            <p>Cableado protegido, conexiones soldadas y aisladas, y cero cortes innecesarios a tu carro.</p>
+          </div>
+          <div class="feature reveal">
+            <h3>Garantía por escrito</h3>
+            <p>Respaldamos nuestra mano de obra y gestionamos la garantía de las piezas con el fabricante.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESO ========== -->
+    <section class="section" id="proceso">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Proceso</p>
+          <h2 class="section__title">De la idea<br><span class="text-muted">a la calle.</span></h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3>Diagnóstico</h3>
+            <p>Revisamos tu carro, escuchamos lo que buscas y definimos alcance y presupuesto.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3>Diseño y cotización</h3>
+            <p>Proponemos piezas, acabados y tiempos. Aprobaste, apartamos tu lugar en el taller.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3>Fabricación e instalación</h3>
+            <p>Manos a la obra, con reportes de avance y validación contigo en cada etapa clave.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">04</span>
+            <h3>Pruebas y entrega</h3>
+            <p>Calibramos, probamos en calle y te entregamos tu carro listo para presumir.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section--dark" id="faq">
+      <div class="container faq">
+        <header class="section__head reveal">
+          <p class="eyebrow"><span class="dot"></span> Preguntas frecuentes</p>
+          <h2 class="section__title">Resolvemos<br><span class="text-muted">tus dudas.</span></h2>
+          <p class="section__lead">¿No encuentras tu respuesta? Escríbenos por WhatsApp y te contestamos el mismo día.</p>
+        </header>
+
+        <div class="faq__list">
+          <details class="faq__item reveal">
+            <summary>¿Cuánto cuesta un proyecto?</summary>
+            <p>Depende del carro, las piezas y el alcance. Después de un diagnóstico te damos una cotización por escrito y desglosada. Podemos dividir proyectos grandes en etapas para que se ajusten a tu presupuesto.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Puedo llevar mis propias piezas?</summary>
+            <p>Sí. Revisamos que sean compatibles y de buena calidad antes de instalarlas. La garantía de piezas externas depende de su proveedor; nuestra mano de obra sí la garantizamos.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Cuánto tiempo tardan?</summary>
+            <p>Una instalación de audio o iluminación suele quedar en 1 a 3 días. Swaps, suspensión de aire y restauraciones se planean por semanas según el alcance. Siempre te damos una fecha estimada desde la cotización.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Trabajan con carros clásicos originales?</summary>
+            <p>Sí, es una de nuestras especialidades. Podemos hacer modificaciones reversibles para no afectar la originalidad ni el valor de colección de tu auto.</p>
+          </details>
+          <details class="faq__item reveal">
+            <summary>¿Qué formas de pago aceptan?</summary>
+            <p>Efectivo, transferencia y tarjeta. En proyectos grandes trabajamos con anticipo y pagos por etapa conforme avanza el trabajo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section class="section contact" id="contacto">
+      <div class="container contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow reveal"><span class="dot"></span> Cotiza tu proyecto</p>
+          <h2 class="section__title reveal">Cuéntanos qué<br><span class="text-accent">quieres construir.</span></h2>
+          <p class="section__lead reveal">Llena el formulario y te enviaremos tu solicitud directo a nuestro WhatsApp. Te respondemos con los siguientes pasos y una fecha para revisar tu carro.</p>
+
+          <ul class="contact__list reveal">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Chihuahua, Chih., México</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.18 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+526145148056" data-phone-link>614 514 8056</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Lun a Vie 9:00–19:00 · Sáb 9:00–14:00</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="quote-form" novalidate>
+          <div class="form__row">
+            <div class="field">
+              <label for="f-name">Nombre</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">WhatsApp</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="614 000 0000" required>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="f-car">Vehículo</label>
+              <input id="f-car" name="car" type="text" placeholder="Marca, modelo y año" required>
+            </div>
+            <div class="field">
+              <label for="f-service">Servicio de interés</label>
+              <select id="f-service" name="service" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Clásicos y Restomod</option>
+                <option>Car Audio</option>
+                <option>Iluminación</option>
+                <option>Performance y Swaps</option>
+                <option>Suspensión y Rines</option>
+                <option>Adaptaciones a la medida</option>
+                <option>Paquete Street Sound (car audio)</option>
+                <option>Paquete Night Vision (iluminación)</option>
+                <option>Proyecto Restomod (clásico)</option>
+                <option>Paquete Low &amp; Clean (suspensión y rines)</option>
+                <option>Otro / No estoy seguro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">Cuéntanos tu idea</label>
+            <textarea id="f-msg" name="message" rows="4" placeholder="¿Qué te gustaría hacerle a tu carro?"></textarea>
+          </div>
+
+          <div class="field">
+            <span class="field__label">Presupuesto aproximado</span>
+            <div class="chips" role="radiogroup" aria-label="Presupuesto aproximado">
+              <label class="chip"><input type="radio" name="budget" value="Menos de $10,000"><span>&lt; $10k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="$10,000 – $30,000"><span>$10k – $30k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="$30,000 – $80,000"><span>$30k – $80k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="Más de $80,000"><span>$80k +</span></label>
+            </div>
+          </div>
+
+          <p class="form__error" id="form-error" role="alert" hidden>Completa nombre, WhatsApp, vehículo y servicio para continuar.</p>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            Enviar por WhatsApp
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form__note">Al enviar se abrirá WhatsApp con tu mensaje listo. Tus datos solo se usan para darte seguimiento.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#inicio" class="brand" aria-label="Norinko Performance — inicio">
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path d="M6 40 L18 8 H26 L20 24 L34 8 H44 L24 40 H16 L22 26 L10 40 Z" fill="currentColor"/>
+          </svg>
+          <span class="brand__text">
+            <span class="brand__name">NORINKO</span>
+            <span class="brand__sub">PERFORMANCE</span>
+          </span>
+        </a>
+        <p>Modificaciones automotrices, clásicos, audio e iluminación en Chihuahua.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Enlaces del pie de página">
+        <a href="#servicios">Servicios</a>
+        <a href="#clasicos">Clásicos</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year">2026</span> Norinko Performance. Todos los derechos reservados.</p>
+      <p>Una empresa de <a href="https://cuumarketing.com/" target="_blank" rel="noopener">CUU Marketing</a> · <a href="https://cuumarketing.com/aviso-de-privacidad.html" target="_blank" rel="noopener">Aviso de privacidad</a></p>
+      <p class="footer__fine">*Garantía sujeta a términos y al tipo de servicio.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" id="wa-float" href="https://wa.me/526145148056" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.17-1.24-6.16-3.48-8.4z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
