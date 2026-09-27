@@ -1,124 +1,127 @@
-# Norinko Performance — Kit de redes sociales
+# Norinko Performance: Kit de marca y redes sociales
 
-Todo lo necesario para abrir y optimizar las redes desde cero.
+Paleta oficial: **Rojo #D7141A · Blanco #FFFFFF · Amarillo #FFC20E**, con Carbón #141414 como color de apoyo.
+Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
+
+## Servicios (usa estos nombres igual en todas las redes)
+1. Restauración de autos clásicos
+2. Pintura y carrocería
+3. Tapicería
+4. Iluminación automotriz
+5. Accesorios
+6. Refacciones
+7. Quemacocos: venta, adaptación y reparación
+8. Suspensiones
 
 ## Archivos
 
 | Archivo | Uso |
 |---|---|
-| `perfil/norinko-perfil-1080.png` | Foto de perfil en Instagram, Facebook, TikTok, WhatsApp Business y YouTube. Ya está centrada para el recorte circular. |
-| `portadas/norinko-portada-facebook-1640x924.jpg` | Portada de Facebook. En celular se ve completa y en computadora Facebook recorta arriba y abajo; el logo y los vehículos quedan dentro de la zona visible. |
-| `portadas/norinko-portada-youtube-2560x1440.jpg` | Banner de YouTube. El logo y el texto están dentro de la zona segura de 1546×423. |
-| `historias-destacadas/*.png` | 7 portadas para Historias Destacadas de Instagram (Servicios, Audio, Luces, Clásicos, Proyectos, Clientes, Contacto). |
-| `logo/norinko-logo-transparente.png` | Logo con fondo transparente para videos, lonas, playeras, stickers y marca de agua. |
-| `logo/norinko-logo-negro-2048.png` | Logo en alta resolución sobre fondo negro. |
-| `fuentes/` | Logo original y versiones intermedias. |
+| `marca/Norinko-Manual-de-Marca.pdf` | Manual de identidad (10 páginas): logotipos, colores, tipografía y aplicaciones. Compártelo con quien diseñe o imprima algo de la marca. |
+| `logo/norinko-logo-transparente.png` | Emblema principal con fondo transparente (redes, lonas, playeras, video). |
+| `logo/norinko-logo-negro-2048.png` | Emblema en alta resolución sobre fondo negro. |
+| `marca/logotipo/*.svg` | Logotipo horizontal vectorial en 5 versiones (fondo oscuro, claro, rojo, blanco y negro) e isotipo "N". Son los archivos para imprenta, rotulación y bordado. |
+| `perfil/norinko-perfil-1080.png` | Foto de perfil para Instagram, Facebook, TikTok, WhatsApp Business y YouTube. |
+| `portadas/norinko-portada-facebook-1640x924.jpg` | Portada de Facebook. |
+| `portadas/norinko-portada-youtube-2560x1440.jpg` | Banner de YouTube. |
+| `historias-destacadas/*.png` | 10 portadas de Historias Destacadas (una por servicio, más Clientes y Contacto). |
 
-### Qué cambió en el logo
-- Se quitó la troca y se cerró el aro, así el emblema queda como un escudo circular completo.
-- Se agregó la placa **CHIHUAHUA · MX**, que llena el espacio de abajo y ayuda al posicionamiento local.
-- En la tapa de punterías del motor ahora dice **NORINKO** en lugar de **CHEVROLET**, y se quitaron los moños de Chevrolet. Usar marcas de terceros dentro de tu logo puede traer problemas de marca registrada y rechazos en anuncios. Si prefieres la versión con Chevrolet, está en `fuentes/logo-sin-troca-A.jpg`.
-- Mejor nitidez, contraste y bordes más limpios.
+### Qué cambió en el branding
+- **Paleta roja, blanca y amarilla:** en el emblema, "NKO" ahora es blanco, "PERFORMANCE" amarillo y la placa "CHIHUAHUA · MX" roja, y el aro va de rojo a amarillo, sin tonos café ni naranja.
+- **Logotipo horizontal nuevo:** es vectorial y funciona en web, facturas, rotulación y bordado, donde el emblema detallado no se lee bien en tamaño chico.
+- **Isotipo "N":** para ícono del sitio, avatares pequeños y sellos.
+- **Tipografía oficial:** Saira Black Italic para títulos y Barlow para textos; ambas son gratuitas en Google Fonts.
+- El motor del emblema dice **NORINKO**, sin logotipos de Chevrolet.
 
-> La escena de la portada (454 SS, Grand Cherokee SRT8, Corvette y Camaro) se generó con IA. Úsala como imagen de marca y no la presentes como trabajo de un cliente. En cuanto tengas fotos reales de tus proyectos, úsalas en las publicaciones.
+> Las escenas con vehículos (portadas, sitio y la foto del quemacocos) se generaron con IA. Úsalas como imagen de marca, no como trabajos de clientes. En cuanto tengas fotos reales de tus proyectos, úsalas.
 
 ---
 
 ## Nombre de usuario (el mismo en todas las redes)
-
 1. **@norinkoperformance** (recomendado)
 2. @norinko.performance
 3. @norinkoperformancemx
 
-Nombre visible: **Norinko Performance | Modificaciones Automotrices**. En Instagram, el campo "Nombre" también cuenta para las búsquedas.
+Nombre visible: **Norinko Performance | Taller Automotriz**
 
 ---
 
 ## Instagram (cuenta profesional → Empresa)
-
 **Categoría:** Taller de reparación de automóviles
 
-**Bio** (menos de 150 caracteres):
+**Bio:**
 ```
-🔧 Restomod · Car Audio · Luces · Performance
-🚗 Clásicos y modernos, a otro nivel
+🚗 Restauración de clásicos · Pintura · Tapicería
+💡 Luces · Quemacocos · Suspensiones · Refacciones
 📍 Chihuahua, MX
-👇 Cotiza tu proyecto por WhatsApp
+👇 Cotiza por WhatsApp
 ```
+**Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526145148056`
 
-**Enlace:** `https://norinko.cuumarketing.com`. Agrega un segundo enlace directo a WhatsApp: `https://wa.me/526145148056`.
+**Botones de contacto:** WhatsApp, Llamar y Cómo llegar.
 
-**Botones de contacto:** WhatsApp, Llamar y Cómo llegar (con la dirección del taller).
-
-**Historias Destacadas, en este orden:** Servicios · Proyectos · Clientes · Audio · Luces · Clásicos · Contacto
+**Historias Destacadas, en este orden:** Clásicos · Pintura · Tapicería · Quemacocos · Luces · Suspensión · Accesorios · Refacciones · Clientes · Contacto
 
 ---
 
 ## Facebook (Página)
-
 - **Nombre:** Norinko Performance
-- **Categorías:** Taller de reparación de automóviles · Servicio de personalización de autos · Tienda de audio para autos
+- **Categorías:** Taller de reparación de automóviles · Taller de chapa y pintura · Tienda de repuestos de automóviles
 - **Usuario:** @norinkoperformance
-- **Botón de acción:** Enviar mensaje por WhatsApp
+- **Botón:** Enviar mensaje por WhatsApp
 - **Presentación** (máx. 101 caracteres):
-  `Modificaciones, restomod de clásicos, car audio e iluminación en Chihuahua. Cotiza por WhatsApp.`
-- **Información:** sitio web, teléfono, horario, dirección y área de servicio (Chihuahua y alrededores).
-- **Reseñas:** actívalas y pide reseña a cada cliente al entregar su carro.
+  `Restauración de clásicos, pintura, tapicería, quemacocos y más en Chihuahua. Cotiza por WhatsApp.`
+- **Información:** sitio web, teléfono, horario, dirección y área de servicio.
+- **Reseñas:** actívalas y pide una a cada cliente al entregar su carro.
 
 ---
 
 ## TikTok (cuenta de empresa)
-
-**Bio** (máx. 80 caracteres):
 ```
-Clásicos · Car Audio · Luces 🔥 Chihuahua 📍 Cotiza 👇
+Clásicos · Pintura · Quemacocos 🔥 Chihuahua 📍 Cotiza 👇
 ```
-Enlace: `https://norinko.cuumarketing.com`
 
 ---
 
 ## WhatsApp Business
-
-- **Foto:** `norinko-perfil-1080.png`
 - **Categoría:** Servicio automotriz
-- **Descripción:** Taller de modificaciones automotrices en Chihuahua: restomod de clásicos, car audio, iluminación, suspensión, swaps y adaptaciones a la medida.
+- **Descripción:** Taller automotriz en Chihuahua: restauración de clásicos, pintura y carrocería, tapicería, iluminación, accesorios, refacciones, quemacocos (venta, adaptación y reparación) y suspensiones.
 - **Mensaje de bienvenida:**
-  > ¡Qué onda! 🔧 Gracias por escribir a Norinko Performance. Mándanos: 1) marca, modelo y año de tu carro, 2) qué te gustaría hacerle, 3) fotos si tienes. Te respondemos con una cotización lo antes posible.
-- **Mensaje de ausencia:** fuera de horario, con tu horario y el enlace al sitio.
-- **Catálogo:** los 4 paquetes del sitio (Street Sound, Night Vision, Restomod Build, Low & Clean), marcados como "Cotización a la medida".
+  > ¡Qué onda! 🔧 Gracias por escribir a Norinko Performance. Mándanos: 1) marca, modelo y año de tu carro, 2) qué servicio te interesa, 3) fotos si tienes. Te respondemos hoy mismo con los siguientes pasos.
+- **Catálogo:** un artículo por servicio (8), marcado como "Cotización a la medida". Para refacciones, agrega las piezas que más vendes con precio.
 - **Etiquetas:** Nuevo cliente · Cotización enviada · Agendado · En taller · Entregado.
 
 ---
 
-## Primeras 9 publicaciones (para que el perfil no se vea vacío)
+## Primeras 9 publicaciones
+1. Reel de presentación del taller y los 8 servicios (15–20 s).
+2. Carrusel: "Todo para tu carro bajo un mismo techo" (los 8 servicios).
+3. Antes / después de una restauración o pintura.
+4. Reel: quemacocos abriéndose, de la adaptación al resultado final.
+5. Tapicería: detalle de costuras y materiales.
+6. Iluminación de noche: faros, halos o luz ambiental.
+7. Carrusel educativo: "5 señales de que tu quemacocos necesita reparación".
+8. Testimonio de un cliente.
+9. Llamado a la acción: "Agenda tu diagnóstico" con enlace a WhatsApp.
 
-1. Presentación: quiénes somos y qué hacemos (reel de 15–20 s del taller).
-2. Carrusel: los 6 servicios.
-3. Antes / después de un proyecto real.
-4. Reel: prueba de sonido de un sistema de audio (el sonido engancha).
-5. Foto: iluminación de noche (faros / halos / ambiental).
-6. Carrusel: "5 mejoras que tu clásico agradece" (contenido educativo).
-7. Reel: proceso rápido de una instalación (timelapse).
-8. Testimonio de cliente (video corto o captura de reseña).
-9. Llamado a la acción: "Agenda tu diagnóstico" con el enlace de WhatsApp.
+**Frecuencia:** 3–4 publicaciones por semana y 1 historia diaria. Mantén siempre la paleta roja, blanca y amarilla y la tipografía Saira en los textos sobre imagen.
 
-**Frecuencia:** 3–4 publicaciones y 1 historia diaria por semana. Los reels de proceso y de sonido son los que más alcance tienen en este nicho.
-
-**Hashtags base** (mezcla de 8 a 12 por publicación):
-`#NorinkoPerformance #Chihuahua #ChihuahuaMX #CarAudio #CarAudioMexico #Restomod #ClassicCars #TrocasMX #ChevyTrucks #454SS #C1500 #SRT8 #LED #CustomCars #TallerAutomotriz #Carros`
+**Hashtags base** (usa de 8 a 12):
+`#NorinkoPerformance #Chihuahua #ChihuahuaMX #TallerAutomotriz #RestauracionDeAutos #AutosClasicos #PinturaAutomotriz #Hojalateria #TapiceriaAutomotriz #Quemacocos #Sunroof #IluminacionLED #Refacciones #Suspension #ClassicCars #Restomod`
 
 ---
 
 ## Tamaños de referencia
-
 | Red | Pieza | Tamaño |
 |---|---|---|
 | Todas | Perfil | 1080×1080 (se recorta en círculo) |
 | Facebook | Portada | 1640×924 |
 | YouTube | Banner | 2560×1440 (zona segura 1546×423) |
-| Instagram | Destacadas | 1080×1920 (se ve el círculo del centro) |
+| Instagram | Destacadas | 1080×1920 |
 | Instagram / Facebook | Post | 1080×1350 (4:5) |
 | Reels / TikTok / Historias | Vertical | 1080×1920 (9:16) |
 
 ## Para regenerar las piezas
-Las fuentes HTML de las portadas y destacadas están en `_build/`. Se renderizan con Playwright (Chromium) al tamaño indicado.
+- Las fuentes HTML de las portadas y destacadas están en `_build/`. Se renderizan con Playwright al tamaño indicado.
+- El manual se genera desde `marca/manual-de-marca.html`.
+- `_build/make_wordmark.py` genera los logotipos SVG con el texto convertido a trazos.

@@ -1,28 +1,29 @@
 <!doctype html><html><head><meta charset="utf-8">
-<style>@font-face{font-family:"Bebas Neue";src:url(bebas.woff2)}@font-face{font-family:"Barlow Condensed";font-weight:700;src:url(barlowc-700.woff2)}</style>
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{width:1080px;height:1920px;background:#0B0B0C;display:grid;place-items:center;overflow:hidden;font-family:'Bebas Neue',sans-serif}
-.bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(225,6,0,.28),transparent 38%),repeating-linear-gradient(115deg,transparent 0 60px,rgba(255,255,255,.025) 60px 61px)}
-.badge{position:relative;width:940px;height:940px;border-radius:50%;display:grid;place-items:center;
- background:radial-gradient(circle at 50% 38%,#1f1f23,#0c0c0e 70%)}
-.badge::before{content:"";position:absolute;inset:0;border-radius:50%;padding:22px;
- background:conic-gradient(from 200deg,#E10600,#ff3b1f,#FFB400,#E6A100,#E10600);
- -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
-.badge::after{content:"";position:absolute;inset:38px;border-radius:50%;border:3px solid rgba(255,255,255,.14)}
-svg{width:400px;height:400px;color:#fff;filter:drop-shadow(0 0 30px rgba(225,6,0,.55));margin-top:-40px}
-.lbl{position:absolute;bottom:165px;left:0;right:0;text-align:center;color:#FFB400;font-size:92px;letter-spacing:.08em}
+body{width:1080px;height:1920px;background:#D7141A;display:grid;place-items:center;overflow:hidden;font-family:'Saira',sans-serif}
+.bg{position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 70px,rgba(0,0,0,.06) 70px 72px),radial-gradient(circle at 50% 50%,rgba(255,255,255,.18),transparent 45%)}
+.badge{position:relative;width:900px;height:900px;border-radius:50%;background:#fff;display:grid;place-items:center;
+ box-shadow:0 0 0 22px #FFC20E,0 0 0 30px #141414,0 40px 80px rgba(0,0,0,.35)}
+.icon svg{width:420px;height:420px;color:#D7141A;margin-top:-90px}
+.lbl{position:absolute;bottom:150px;left:50%;transform:translateX(-50%) skewX(-12deg);background:#FFC20E;padding:10px 46px;white-space:nowrap}
+.lbl span{display:block;transform:skewX(12deg);font-style:italic;font-weight:900;font-size:84px;line-height:1;color:#141414;text-transform:uppercase;letter-spacing:.01em}
 </style></head><body><div class="bg"></div>
-<div class="badge"><div id="icon"></div><div class="lbl" id="lbl"></div></div>
+<div class="badge"><div class="icon" id="icon"></div><div class="lbl"><span id="lbl"></span></div></div>
 <script>
+const P='fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"';
 const I={
-servicios:['SERVICIOS','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>'],
-audio:['AUDIO','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="2.5" width="14" height="19" rx="2"/><circle cx="12" cy="14" r="4.2"/><circle cx="12" cy="14" r="1.3"/><circle cx="12" cy="6.6" r="1.5"/></svg>'],
-luces:['LUCES','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6c-3.5 0-6 2.6-6 6s2.5 6 6 6h1V6z"/><path d="M14 8h7M14 12h7M14 16h7"/></svg>'],
-clasicos:['CLÁSICOS','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 15.5v-2.2c0-.8.5-1.5 1.3-1.7l3.2-.9 2.3-2.6c.4-.4.9-.6 1.5-.6h4.1c.6 0 1.2.3 1.5.8l1.8 2.5 2.4.6c.8.2 1.4 1 1.4 1.8v2.3"/><path d="M2.5 15.5h2M9 15.5h6M19.5 15.5h2"/><circle cx="6.8" cy="15.8" r="2"/><circle cx="17.2" cy="15.8" r="2"/><path d="M9.3 11h8"/></svg>'],
-proyectos:['PROYECTOS','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6h2l1.5-2h6l1.5 2h2A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="4"/></svg>'],
-clientes:['CLIENTES','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>'],
-contacto:['CONTACTO','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>']};
+restauracion:['Clásicos',`<svg viewBox="0 0 24 24" ${P}><path d="M2.5 15.5v-2.2c0-.8.5-1.5 1.3-1.7l3.2-.9 2.3-2.6c.4-.4.9-.6 1.5-.6h4.1c.6 0 1.2.3 1.5.8l1.8 2.5 2.4.6c.8.2 1.4 1 1.4 1.8v2.3"/><path d="M2.5 15.5h2M9 15.5h6M19.5 15.5h2"/><circle cx="6.8" cy="15.8" r="2"/><circle cx="17.2" cy="15.8" r="2"/></svg>`],
+pintura:['Pintura',`<svg viewBox="0 0 24 24" ${P}><path d="M4 4h11v5H4z"/><path d="M15 6.5h3a2 2 0 0 1 2 2V11a2 2 0 0 1-2 2h-6v2"/><rect x="10" y="15" width="4" height="6" rx="1"/></svg>`],
+tapiceria:['Tapicería',`<svg viewBox="0 0 24 24" ${P}><path d="M7 3h7a2 2 0 0 1 2 2v7H7z"/><path d="M5 12h14a1 1 0 0 1 1 1v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a1 1 0 0 1 1-1z"/><path d="M7 18v3M17 18v3M10.5 6.5v3"/></svg>`],
+iluminacion:['Luces',`<svg viewBox="0 0 24 24" ${P}><path d="M10 6c-3.5 0-6 2.6-6 6s2.5 6 6 6h1V6z"/><path d="M14 8h7M14 12h7M14 16h7"/></svg>`],
+accesorios:['Accesorios',`<svg viewBox="0 0 24 24" ${P}><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg>`],
+refacciones:['Refacciones',`<svg viewBox="0 0 24 24" ${P}><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>`],
+quemacocos:['Quemacocos',`<svg viewBox="0 0 24 24" ${P}><rect x="6" y="2.5" width="12" height="19" rx="5"/><path d="M7.5 7.5h9M7.5 17h9"/><rect x="9" y="9.5" width="6" height="5" rx="1"/></svg>`],
+suspensiones:['Suspensión',`<svg viewBox="0 0 24 24" ${P}><path d="M6 3v4M6 17v4M18 3v4M18 17v4"/><path d="M4 7h4l-2 2 2 2-2 2 2 2H4M16 7h4l-2 2 2 2-2 2 2 2h-4"/></svg>`],
+clientes:['Clientes',`<svg viewBox="0 0 24 24" ${P}><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>`],
+contacto:['Contacto',`<svg viewBox="0 0 24 24" ${P}><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg>`]};
 const k=new URLSearchParams(location.search).get('k');
 document.getElementById('icon').innerHTML=I[k][1];document.getElementById('lbl').textContent=I[k][0];
 </script></body></html>

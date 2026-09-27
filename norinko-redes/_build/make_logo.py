@@ -1,10 +1,11 @@
-# Genera los archivos finales del logo a partir de fuentes/logo-chihuahua-completo.jpg
+# Genera los archivos finales del logo (emblema) a partir de fuentes/logo-rby-completo.jpg
 import cv2, numpy as np
-src = cv2.imread('fuentes/logo-chihuahua-completo.jpg')
+import sys
+src = cv2.imread(sys.argv[1] if len(sys.argv)>1 else 'fuentes/logo-rby-completo.jpg')
 S = src.shape[0]; c = S/2
 yy,xx = np.mgrid[0:S,0:S]; rr = np.hypot(xx-c, yy-c)
 # alfa: disco del emblema + elementos que sobresalen (por luminancia)
-disk = np.clip((1040-rr)/8, 0, 1)
+disk = np.clip((1010-rr)/8, 0, 1)
 V = src.max(2).astype(np.float32)
 lum = np.clip((V-12)/40, 0, 1) * (rr < 1120)
 alpha = cv2.GaussianBlur(np.maximum(disk, lum).astype(np.float32), (0,0), 0.8)

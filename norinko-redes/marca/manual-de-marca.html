@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<title>Norinko Performance — Manual de marca</title>
+<link rel="stylesheet" href="../_build/fonts/fonts.css">
+<style>
+  @page { size: 297mm 210mm; margin: 0; }
+  :root { --red:#D7141A; --red2:#A50E13; --yel:#FFC20E; --wht:#FFFFFF; --ink:#141414; --lt:#F5F5F3; --tx2:#55555C; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#888; }
+  body { font-family:'Barlow',sans-serif; color:var(--ink); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .page { width:297mm; height:210mm; position:relative; overflow:hidden; background:var(--wht); page-break-after:always; padding:16mm 18mm; }
+  .page:last-child { page-break-after:auto; }
+  h1,h2,h3,.disp { font-family:'Saira',sans-serif; font-style:italic; font-weight:900; text-transform:uppercase; letter-spacing:-.01em; line-height:1; }
+  h2 { font-size:34pt; margin-bottom:6mm; }
+  h3 { font-size:13pt; font-weight:800; margin-bottom:2mm; }
+  p, li { font-size:10.5pt; line-height:1.5; color:var(--tx2); }
+  .kicker { display:flex; align-items:center; gap:3mm; font-family:'Saira'; font-style:italic; font-weight:800; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:4mm; }
+  .kicker i { width:12mm; height:2.6mm; background:linear-gradient(90deg,var(--red) 0 50%,var(--yel) 50%); transform:skewX(-24deg); }
+  .num { position:absolute; right:18mm; bottom:10mm; font-family:'Saira'; font-style:italic; font-weight:900; font-size:10pt; color:var(--tx2); }
+  .num b { color:var(--red); }
+  .stripe { position:absolute; left:0; right:0; bottom:0; height:3mm; background:linear-gradient(90deg,var(--red) 0 70%,var(--yel) 70%); }
+  .grid { display:grid; gap:7mm; }
+  .card { border-radius:3mm; padding:7mm; }
+  .dark { background:var(--ink); color:var(--wht); }
+  .dark p, .dark li { color:rgba(255,255,255,.75); }
+  .redbg { background:var(--red); color:var(--wht); }
+  .redbg p { color:rgba(255,255,255,.9); }
+  .hl { color:var(--yel); } .hr { color:var(--red); }
+
+  /* portada */
+  .cover { background:var(--ink); color:var(--wht); display:grid; grid-template-columns:1.1fr 1fr; align-items:center; padding:0 18mm; }
+  .cover::before { content:""; position:absolute; right:-30mm; top:-20mm; width:167mm; height:250mm; background:var(--red); transform:skewX(-14deg); }
+  .cover::after { content:""; position:absolute; right:140mm; top:-20mm; width:9mm; height:250mm; background:var(--yel); transform:skewX(-14deg); }
+  .cover .txt { position:relative; z-index:1; }
+  .cover h1 { font-size:48pt; margin:6mm 0 5mm; }
+  .cover .logo { position:relative; z-index:1; width:112mm; justify-self:end; filter:drop-shadow(0 8mm 10mm rgba(0,0,0,.45)); }
+  .cover p { color:rgba(255,255,255,.75); font-size:12pt; max-width:105mm; }
+
+  /* paleta */
+  .sw { border-radius:3mm; overflow:hidden; border:1px solid rgba(0,0,0,.08); display:flex; flex-direction:column; }
+  .sw .c { height:48mm; display:flex; align-items:flex-end; padding:4mm 5mm; font-family:'Saira'; font-style:italic; font-weight:900; font-size:16pt; text-transform:uppercase; }
+  .sw .d { padding:4mm 5mm; font-size:9pt; line-height:1.6; color:var(--tx2); background:var(--wht); }
+  .sw .d b { color:var(--ink); }
+  .ratio { display:flex; height:10mm; border-radius:2mm; overflow:hidden; margin-top:6mm; }
+  .ratio div { display:grid; place-items:center; font-family:'Saira'; font-style:italic; font-weight:800; font-size:9pt; }
+
+  .logobox { border-radius:3mm; display:grid; place-items:center; padding:8mm; }
+  .tag { display:inline-block; font-family:'Saira'; font-style:italic; font-weight:800; font-size:8pt; letter-spacing:.12em; text-transform:uppercase; background:var(--yel); color:var(--ink); padding:1mm 3mm; margin-bottom:3mm; }
+  .no { position:relative; }
+  .no::after { content:"✕"; position:absolute; right:3mm; top:2mm; width:7mm; height:7mm; border-radius:50%; background:var(--red); color:#fff; display:grid; place-items:center; font-size:10pt; font-weight:700; }
+  .cap { font-size:8.5pt; color:var(--tx2); margin-top:2mm; text-align:center; }
+
+  /* mockups */
+  .bizcard { width:85mm; height:50mm; border-radius:2mm; box-shadow:0 4mm 8mm rgba(0,0,0,.25); position:relative; overflow:hidden; }
+  .sign { height:44mm; border-radius:2mm; background:var(--ink); display:grid; place-items:center; position:relative; overflow:hidden; box-shadow:0 5mm 10mm rgba(0,0,0,.25); }
+  .shirt { width:70mm; height:78mm; margin:0 auto; background:var(--ink); clip-path:polygon(22% 0,38% 0,50% 8%,62% 0,78% 0,100% 16%,90% 34%,80% 29%,80% 100%,20% 100%,20% 29%,10% 34%,0 16%); display:grid; place-items:center; }
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="page cover">
+  <div class="txt">
+    <div class="kicker"><i></i>Manual de identidad · 2026</div>
+    <h1>Norinko<br><span class="hl">Performance</span></h1>
+    <p>Guía de uso de marca: logotipos, colores, tipografía, elementos gráficos y aplicaciones. Síguela para que todo lo que publique Norinko se vea como una sola marca.</p>
+  </div>
+  <img class="logo" src="_img/emblema-900.png" alt="">
+  <div class="stripe"></div>
+</section>
+
+<!-- 2 · LA MARCA -->
+<section class="page">
+  <div class="kicker"><i></i>01 · La marca</div>
+  <h2>Tu carro, <span class="hr">a otro nivel.</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr; margin-top:4mm">
+    <div class="card dark">
+      <h3 class="hl">Quiénes somos</h3>
+      <p>Taller automotriz en Chihuahua especializado en restaurar, reparar y personalizar autos clásicos y modernos. Todo bajo un mismo techo, con acabados de primera y garantía por escrito.</p>
+    </div>
+    <div class="card redbg">
+      <h3>Promesa</h3>
+      <p>Trabajo que se nota y que dura: cotización clara, avances en tiempo real y un solo taller responsable de todo el proyecto.</p>
+    </div>
+    <div class="card" style="background:var(--yel)">
+      <h3>Personalidad</h3>
+      <p style="color:var(--ink)">Apasionada, experta, directa y cercana. Habla como un amigo que sabe de carros: sin rodeos, con orgullo por el trabajo bien hecho.</p>
+    </div>
+  </div>
+  <h3 style="margin-top:9mm">Servicios</h3>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr); gap:4mm; margin-top:3mm">
+    <p><b style="color:var(--red)">01</b> Restauración de autos clásicos</p>
+    <p><b style="color:var(--red)">02</b> Pintura y carrocería</p>
+    <p><b style="color:var(--red)">03</b> Tapicería</p>
+    <p><b style="color:var(--red)">04</b> Iluminación automotriz</p>
+    <p><b style="color:var(--red)">05</b> Accesorios</p>
+    <p><b style="color:var(--red)">06</b> Refacciones</p>
+    <p><b style="color:var(--red)">07</b> Quemacocos: venta, adaptación y reparación</p>
+    <p><b style="color:var(--red)">08</b> Suspensiones</p>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 02</div><div class="stripe"></div>
+</section>
+
+<!-- 3 · SISTEMA DE LOGOTIPOS -->
+<section class="page">
+  <div class="kicker"><i></i>02 · Sistema de logotipos</div>
+  <h2>Tres piezas, <span class="hr">una marca.</span></h2>
+  <div class="grid" style="grid-template-columns:1.05fr 1.2fr .75fr; align-items:stretch">
+    <div>
+      <div class="logobox dark" style="height:92mm"><img src="_img/emblema-900.png" style="height:78mm"></div>
+      <h3 style="margin-top:4mm">Emblema <span class="hr">(principal)</span></h3>
+      <p>Foto de perfil, portadas, lonas, playeras, stickers y video. Úsalo a partir de 25 mm / 150 px.</p>
+    </div>
+    <div>
+      <div class="logobox" style="height:92mm; background:var(--lt)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:100%"></div>
+      <h3 style="margin-top:4mm">Logotipo horizontal</h3>
+      <p>Sitio web, facturas, cotizaciones, rotulación de vehículos, fachada y firmas de correo. Vectorial: se imprime a cualquier tamaño.</p>
+    </div>
+    <div>
+      <div class="logobox" style="height:92mm; background:var(--lt)"><img src="logotipo/norinko-isotipo.svg" style="width:48mm"></div>
+      <h3 style="margin-top:4mm">Isotipo "N"</h3>
+      <p>Espacios muy pequeños: ícono del sitio, avatar de app, sellos, bordados chicos y marca de agua.</p>
+    </div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 03</div><div class="stripe"></div>
+</section>
+
+<!-- 4 · VERSIONES DE COLOR -->
+<section class="page">
+  <div class="kicker"><i></i>03 · Versiones de color</div>
+  <h2>El fondo <span class="hr">decide la versión.</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr; gap:6mm">
+    <div><div class="logobox dark" style="height:46mm"><img src="logotipo/norinko-logotipo-fondo-oscuro.svg" style="width:92%"></div><p class="cap">Fondo carbón u oscuro (versión preferida)</p></div>
+    <div><div class="logobox" style="height:46mm; background:var(--wht); border:1px solid #e6e6e6"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:92%"></div><p class="cap">Fondo blanco o claro</p></div>
+    <div><div class="logobox redbg" style="height:46mm"><img src="logotipo/norinko-logotipo-fondo-rojo.svg" style="width:88%"></div><p class="cap">Fondo rojo Norinko</p></div>
+    <div><div class="logobox" style="height:46mm; background:#6b6b70"><img src="logotipo/norinko-logotipo-blanco.svg" style="width:88%"></div><p class="cap">Monocromo blanco: sobre fotos o grabado</p></div>
+    <div><div class="logobox" style="height:46mm; background:var(--yel)"><img src="logotipo/norinko-logotipo-negro.svg" style="width:88%"></div><p class="cap">Monocromo carbón: sobre amarillo, sellos, fax</p></div>
+    <div><div class="logobox" style="height:46mm; background:var(--lt); gap:6mm; grid-auto-flow:column"><img src="logotipo/norinko-isotipo.svg" style="width:30mm"><img src="logotipo/norinko-isotipo-oscuro.svg" style="width:30mm"></div><p class="cap">Isotipo rojo y carbón</p></div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 04</div><div class="stripe"></div>
+</section>
+
+<!-- 5 · ÁREA DE PROTECCIÓN Y USOS INCORRECTOS -->
+<section class="page">
+  <div class="kicker"><i></i>04 · Reglas de uso</div>
+  <h2>Respeta <span class="hr">el espacio.</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1.35fr; gap:10mm">
+    <div>
+      <div class="logobox" style="height:62mm; background:var(--lt); position:relative">
+        <div style="position:relative; padding:9mm; outline:1.5px dashed var(--red); outline-offset:-1px">
+          <img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:82mm; display:block">
+          <span style="position:absolute; left:0; top:0; width:9mm; height:9mm; background:rgba(255,194,14,.45)"></span>
+          <span style="position:absolute; right:0; bottom:0; width:9mm; height:9mm; background:rgba(255,194,14,.45)"></span>
+        </div>
+      </div>
+      <h3 style="margin-top:4mm">Área de protección</h3>
+      <p>Deja libre alrededor del logotipo un espacio igual a la altura de la barra amarilla de "PERFORMANCE". Nada de texto, bordes ni fotos dentro de esa zona.</p>
+      <h3 style="margin-top:4mm">Tamaños mínimos</h3>
+      <p>Logotipo horizontal: 30 mm / 160 px de ancho · Emblema: 25 mm / 150 px · Isotipo: 8 mm / 32 px.</p>
+    </div>
+    <div>
+      <h3>Usos incorrectos</h3>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr); gap:4mm; margin-top:3mm">
+        <div><div class="logobox no" style="height:32mm; background:var(--lt)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:95%; transform:scaleX(1.35) scaleY(.7)"></div><p class="cap">No deformar</p></div>
+        <div><div class="logobox no" style="height:32mm; background:var(--lt)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:90%; filter:hue-rotate(160deg)"></div><p class="cap">No cambiar colores</p></div>
+        <div><div class="logobox no" style="height:32mm; background:var(--lt)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:80%; transform:rotate(-14deg)"></div><p class="cap">No rotar</p></div>
+        <div><div class="logobox no" style="height:32mm; background:var(--red)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:90%"></div><p class="cap">No usar la versión clara sobre rojo</p></div>
+        <div><div class="logobox no" style="height:32mm; background:#c9b28c"><img src="logotipo/norinko-logotipo-fondo-oscuro.svg" style="width:90%"></div><p class="cap">No usar fondos sin contraste</p></div>
+        <div><div class="logobox no" style="height:32mm; background:var(--lt)"><img src="logotipo/norinko-logotipo-fondo-claro.svg" style="width:90%; filter:drop-shadow(2mm 2mm 0 #00c) blur(.4px)"></div><p class="cap">No agregar efectos ni sombras</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 05</div><div class="stripe"></div>
+</section>
+
+<!-- 6 · PALETA -->
+<section class="page">
+  <div class="kicker"><i></i>05 · Paleta de color</div>
+  <h2>Rojo, blanco <span class="hr">y amarillo.</span></h2>
+  <div class="grid" style="grid-template-columns:repeat(5,1fr); gap:5mm">
+    <div class="sw"><div class="c" style="background:var(--red); color:#fff">Rojo Norinko</div><div class="d"><b>HEX</b> #D7141A<br><b>RGB</b> 215 · 20 · 26<br><b>CMYK</b> 0 · 91 · 88 · 16<br><b>Pantone</b> 485 C (aprox.)</div></div>
+    <div class="sw"><div class="c" style="background:var(--wht); color:var(--ink); border-bottom:1px solid #eee">Blanco</div><div class="d"><b>HEX</b> #FFFFFF<br><b>RGB</b> 255 · 255 · 255<br><b>CMYK</b> 0 · 0 · 0 · 0<br><b>Uso</b> fondos y texto sobre rojo</div></div>
+    <div class="sw"><div class="c" style="background:var(--yel); color:var(--ink)">Amarillo Racing</div><div class="d"><b>HEX</b> #FFC20E<br><b>RGB</b> 255 · 194 · 14<br><b>CMYK</b> 0 · 24 · 95 · 0<br><b>Pantone</b> 123 C (aprox.)</div></div>
+    <div class="sw"><div class="c" style="background:var(--ink); color:#fff">Carbón</div><div class="d"><b>HEX</b> #141414<br><b>RGB</b> 20 · 20 · 20<br><b>CMYK</b> 0 · 0 · 0 · 92<br><b>Uso</b> apoyo: texto y fondos oscuros</div></div>
+    <div class="sw"><div class="c" style="background:var(--red2); color:#fff">Rojo profundo</div><div class="d"><b>HEX</b> #A50E13<br><b>RGB</b> 165 · 14 · 19<br><b>Uso</b> degradados, sombras y botones al pasar el cursor</div></div>
+  </div>
+  <h3 style="margin-top:7mm">Proporción recomendada</h3>
+  <div class="ratio">
+    <div style="flex:40; background:var(--red); color:#fff">ROJO 40%</div>
+    <div style="flex:30; background:var(--wht); border:1px solid #e3e3e3">BLANCO 30%</div>
+    <div style="flex:15; background:var(--ink); color:#fff">CARBÓN 15%</div>
+    <div style="flex:15; background:var(--yel)">AMARILLO 15%</div>
+  </div>
+  <p style="margin-top:4mm">Combinaciones de texto correctas: <b style="color:var(--ink)">blanco sobre rojo</b> · <b style="color:var(--ink)">carbón sobre amarillo</b> · <b style="color:var(--ink)">carbón o rojo sobre blanco</b> · <b style="color:var(--ink)">blanco o amarillo sobre carbón</b>. El amarillo sobre rojo solo se usa en títulos grandes (más de 24 pt), nunca en texto pequeño.</p>
+  <div class="num"><b>Norinko</b> · Manual de marca · 06</div><div class="stripe"></div>
+</section>
+
+<!-- 7 · TIPOGRAFÍA -->
+<section class="page">
+  <div class="kicker"><i></i>06 · Tipografía</div>
+  <h2>Letras <span class="hr">con velocidad.</span></h2>
+  <div class="grid" style="grid-template-columns:1.2fr 1fr; gap:12mm">
+    <div class="card dark">
+      <div class="tag">Títulos</div>
+      <div class="disp" style="font-size:44pt">Saira<br><span class="hl">Black Italic</span></div>
+      <p style="margin-top:4mm; font-family:'Saira'; font-style:italic; font-weight:800; font-size:14pt; color:#fff; letter-spacing:.02em">ABCDEFGHIJKLMNÑOPQRSTUVWXYZ<br>0123456789 · ¡¿$%&amp;?!</p>
+      <p style="margin-top:4mm">Siempre en MAYÚSCULAS e itálica. Pesos: Black (900) para titulares, ExtraBold (800) para botones y etiquetas. Gratuita en Google Fonts.</p>
+    </div>
+    <div class="card" style="background:var(--lt)">
+      <div class="tag">Texto</div>
+      <div style="font-family:'Barlow'; font-weight:700; font-size:40pt; line-height:1">Barlow</div>
+      <p style="margin-top:4mm; font-size:12pt; color:var(--ink)">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Ññ Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+      <p style="margin-top:4mm">Para párrafos, descripciones, cotizaciones y todo texto largo. Pesos: Regular (400), Medium (500) y Bold (700). Gratuita en Google Fonts.</p>
+      <p style="margin-top:4mm; color:var(--ink)"><b>Alternativas si no están instaladas:</b> Arial Black Italic (títulos) y Arial (texto).</p>
+    </div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 07</div><div class="stripe"></div>
+</section>
+
+<!-- 8 · ELEMENTOS GRÁFICOS Y TONO -->
+<section class="page">
+  <div class="kicker"><i></i>07 · Elementos gráficos y tono de voz</div>
+  <h2>Siempre <span class="hr">en movimiento.</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr; gap:6mm">
+    <div class="card" style="background:var(--lt)">
+      <div style="height:26mm; display:flex; flex-direction:column; justify-content:center; gap:2.4mm">
+        <span style="width:44mm; height:4mm; background:var(--red); transform:skewX(-30deg)"></span>
+        <span style="width:36mm; height:4mm; background:var(--yel); transform:skewX(-30deg); margin-left:4mm"></span>
+        <span style="width:28mm; height:4mm; background:var(--ink); transform:skewX(-30deg); margin-left:8mm"></span>
+      </div>
+      <h3>Franjas de velocidad</h3>
+      <p>Rojo, amarillo y carbón (o blanco sobre oscuro), inclinadas 30°. Acompañan títulos y separan secciones.</p>
+    </div>
+    <div class="card" style="background:var(--lt)">
+      <div style="height:26mm; display:grid; place-items:center">
+        <span style="background:var(--yel); transform:skewX(-14deg); padding:2mm 7mm"><span class="disp" style="display:block; transform:skewX(14deg); font-size:16pt">Cotiza hoy</span></span>
+      </div>
+      <h3>Placas inclinadas</h3>
+      <p>Botones y etiquetas en paralelogramo, con esquinas cortadas a 14°, igual que la barra "PERFORMANCE".</p>
+    </div>
+    <div class="card" style="background:var(--lt)">
+      <div style="height:26mm; display:grid; place-items:center"><img src="_img/quemacocos-600.jpg" style="height:26mm; border-radius:2mm"></div>
+      <h3>Fotografía</h3>
+      <p>Ambientes oscuros, reflejos, luz roja y amarilla. Siempre fotos reales del taller y de proyectos terminados, con buena luz y sin filtros exagerados.</p>
+    </div>
+  </div>
+  <div class="grid" style="grid-template-columns:1fr 1fr; gap:6mm; margin-top:6mm">
+    <div class="card dark">
+      <h3 class="hl">Así hablamos</h3>
+      <p>"Tu carro, a otro nivel." · "Respetamos la historia. Mejoramos todo lo demás." · "Cielo abierto, sin filtraciones." · "Cotiza por WhatsApp: te contestamos hoy."</p>
+    </div>
+    <div class="card redbg">
+      <h3>Así no</h3>
+      <p>Promesas vacías ("el mejor del mundo"), tecnicismos sin explicar, precios sin cotizar, groserías o descalificar a otros talleres.</p>
+    </div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 08</div><div class="stripe"></div>
+</section>
+
+<!-- 9 · REDES -->
+<section class="page">
+  <div class="kicker"><i></i>08 · Aplicaciones · Redes sociales</div>
+  <h2>Un perfil <span class="hr">que se reconoce.</span></h2>
+  <div class="grid" style="grid-template-columns:52mm 1fr; gap:10mm; align-items:start">
+    <div style="text-align:center"><img src="_img/perfil-400.png" style="width:52mm; border-radius:50%; box-shadow:0 4mm 8mm rgba(0,0,0,.25)"><p class="cap">Foto de perfil (todas las redes)</p></div>
+    <div><img src="_img/portada-1100.jpg" style="width:100%; border-radius:2mm; box-shadow:0 4mm 8mm rgba(0,0,0,.25)"><p class="cap">Portada de Facebook / YouTube</p></div>
+  </div>
+  <div style="display:flex; gap:4mm; margin-top:6mm; justify-content:space-between">
+    <img src="_img/d-01-restauracion.png" style="width:22mm; border-radius:50%"><img src="_img/d-02-pintura.png" style="width:22mm; border-radius:50%"><img src="_img/d-03-tapiceria.png" style="width:22mm; border-radius:50%"><img src="_img/d-04-iluminacion.png" style="width:22mm; border-radius:50%"><img src="_img/d-05-accesorios.png" style="width:22mm; border-radius:50%"><img src="_img/d-06-refacciones.png" style="width:22mm; border-radius:50%"><img src="_img/d-07-quemacocos.png" style="width:22mm; border-radius:50%"><img src="_img/d-08-suspensiones.png" style="width:22mm; border-radius:50%"><img src="_img/d-09-clientes.png" style="width:22mm; border-radius:50%"><img src="_img/d-10-contacto.png" style="width:22mm; border-radius:50%">
+  </div>
+  <p class="cap">Portadas de Historias Destacadas de Instagram</p>
+  <div class="num"><b>Norinko</b> · Manual de marca · 09</div><div class="stripe"></div>
+</section>
+
+<!-- 10 · PAPELERÍA Y TALLER -->
+<section class="page">
+  <div class="kicker"><i></i>09 · Aplicaciones · Papelería y taller</div>
+  <h2>La marca <span class="hr">en la calle.</span></h2>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr; gap:10mm; align-items:start">
+    <div>
+      <div class="bizcard" style="background:var(--red); display:grid; place-items:center">
+        <img src="logotipo/norinko-logotipo-fondo-rojo.svg" style="width:62mm">
+      </div>
+      <div class="bizcard" style="background:var(--wht); margin-top:5mm; padding:6mm; border:1px solid #eee">
+        <div class="disp" style="font-size:13pt">Nombre Apellido</div>
+        <div style="font-family:'Saira'; font-style:italic; font-weight:800; font-size:7pt; letter-spacing:.14em; color:var(--red); margin:1mm 0 4mm">TALLER NORINKO PERFORMANCE</div>
+        <p style="font-size:7.5pt; line-height:1.55; color:var(--ink)">WhatsApp 614 514 8056<br>norinko.cuumarketing.com<br>@norinkoperformance · Chihuahua, MX</p>
+        <img src="logotipo/norinko-isotipo.svg" style="position:absolute; right:6mm; bottom:6mm; width:12mm">
+        <span style="position:absolute; left:0; right:0; bottom:0; height:2mm; background:linear-gradient(90deg,var(--red) 0 70%,var(--yel) 70%)"></span>
+      </div>
+      <p class="cap">Tarjeta de presentación 9 × 5 cm</p>
+    </div>
+    <div>
+      <div class="sign">
+        <img src="logotipo/norinko-logotipo-fondo-oscuro.svg" style="width:78%">
+        <span style="position:absolute; left:0; right:0; bottom:0; height:4mm; background:linear-gradient(90deg,var(--red) 0 70%,var(--yel) 70%)"></span>
+      </div>
+      <p class="cap">Rótulo de fachada / lona</p>
+      <div class="sign" style="margin-top:6mm; background:var(--red); height:28mm">
+        <div class="disp" style="color:#fff; font-size:17pt; text-align:center">Quemacocos<br><span class="hl" style="font-size:11pt">Venta · adaptación · reparación</span></div>
+      </div>
+      <p class="cap">Lona promocional por servicio</p>
+    </div>
+    <div>
+      <div class="shirt"><img src="logotipo/norinko-isotipo.svg" style="width:14mm; margin:-30mm 0 0 16mm"></div>
+      <p class="cap">Playera / uniforme (frente: isotipo en el pecho; espalda: emblema grande)</p>
+      <div style="display:flex; gap:5mm; justify-content:center; margin-top:6mm">
+        <img src="_img/emblema-900.png" style="width:30mm">
+        <img src="logotipo/norinko-isotipo.svg" style="width:22mm; align-self:center">
+      </div>
+      <p class="cap">Stickers para autos entregados</p>
+    </div>
+  </div>
+  <div class="num"><b>Norinko</b> · Manual de marca · 10</div><div class="stripe"></div>
+</section>
+
+</body>
+</html>
