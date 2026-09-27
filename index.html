@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CUU Marketing — Agencia de Publicidad Digital en Chihuahua</title>
-  <meta name="description" content="CUU Marketing: La agencia de publicidad 360° en Chihuahua con IA integrada. Branding, marketing digital, redes sociales, web y producción audiovisual para negocios locales.">
+  <title>CUU Marketing — Agencia de Marketing Digital en Chihuahua | Diagnóstico gratis</title>
+  <meta name="description" content="Agencia de marketing digital en Chihuahua: campañas en Meta, Google y TikTok, redes sociales, branding, páginas web y video. Precios publicados y diagnóstico gratuito.">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0A0A">
   <link rel="canonical" href="https://cuumarketing.mx/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="og-image.png">
 
-  <!-- OG Tags -->
+  <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CUU Marketing">
   <meta property="og:url" content="https://cuumarketing.mx/">
-  <meta property="og:title" content="CUU Marketing — Agencia de Publicidad Digital en Chihuahua">
-  <meta property="og:description" content="Branding, marketing digital, redes sociales, web y producción audiovisual con IA para negocios en Chihuahua.">
+  <meta property="og:title" content="CUU Marketing — Marketing que vende, hecho en Chihuahua">
+  <meta property="og:description" content="Campañas en Meta, Google y TikTok, redes sociales, branding, web y video. Precios publicados y diagnóstico gratuito.">
+  <meta property="og:image" content="https://cuumarketing.mx/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CUU Marketing — Marketing que vende, hecho en Chihuahua">
+  <meta name="twitter:description" content="Campañas en Meta, Google y TikTok, redes, branding, web y video. Diagnóstico gratuito.">
+  <meta name="twitter:image" content="https://cuumarketing.mx/og-image.png">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -22,7 +33,12 @@
     "@type": "AdvertisingAgency",
     "name": "CUU Marketing",
     "url": "https://cuumarketing.mx/",
-    "description": "Agencia de publicidad 360° en Chihuahua con IA integrada. Branding, marketing digital, redes sociales, desarrollo web y producción audiovisual.",
+    "logo": "https://cuumarketing.mx/favicon.svg",
+    "image": "https://cuumarketing.mx/og-image.png",
+    "description": "Agencia de marketing digital en Chihuahua. Campañas en Meta, Google y TikTok, redes sociales, branding, desarrollo web y producción audiovisual.",
+    "telephone": "+52 614 514 8056",
+    "email": "hola@cuumarketing.mx",
+    "priceRange": "$7,500 - $28,000 MXN/mes",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chihuahua",
@@ -34,19 +50,22 @@
   }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (solo los pesos que se usan) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script src="config.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
 
   <!-- ========== NAV ========== -->
   <header class="nav" id="nav">
     <div class="nav__container">
-      <a href="#inicio" class="nav__logo" id="logo-link">
+      <a href="#inicio" class="nav__logo" id="logo-link" aria-label="CUU Marketing — inicio">
         <div class="logo-mark">
           <span class="logo-c">C</span><span class="logo-uu">UU</span>
         </div>
@@ -58,7 +77,8 @@
         <a href="#diferencia" id="nav-diferencia">¿Por qué nosotros?</a>
         <a href="#proceso" id="nav-proceso">Proceso</a>
         <a href="#precios" id="nav-precios">Precios</a>
-        <a href="#contacto" id="nav-contacto" class="nav__cta">Cotizar gratis</a>
+        <a href="#faq" id="nav-faq">Preguntas</a>
+        <a href="#contacto" id="nav-contacto" class="nav__cta" data-track="cta_nav">Diagnóstico gratis</a>
       </nav>
 
       <button class="nav__burger" id="burger-btn" aria-label="Abrir menú" aria-expanded="false">
@@ -79,7 +99,7 @@
     <div class="hero__content">
       <div class="hero__badge" id="hero-badge">
         <span class="badge__dot"></span>
-        Agencia #1 en Chihuahua con IA integrada
+        Agencia chihuahuense · Estrategia + creatividad + IA
       </div>
 
       <h1 class="hero__title" id="hero-title">
@@ -88,17 +108,20 @@
       </h1>
 
       <p class="hero__subtitle" id="hero-subtitle">
-        Somos <strong>CUU Marketing</strong>, la única agencia en Chihuahua que combina
-        estrategia de datos, creatividad premium y tecnología de IA para hacer crecer
-        tu negocio de verdad.
+        En <strong>CUU Marketing</strong> convertimos tu inversión en publicidad en clientes:
+        campañas en Meta, Google y TikTok, contenido que detiene el scroll y reportes claros
+        de cuánto vendes por cada peso invertido.
       </p>
 
       <div class="hero__actions" id="hero-actions">
-        <a href="#contacto" class="btn btn--primary" id="hero-cta-primary">
-          <span>Quiero crecer mi negocio</span>
+        <a href="#contacto" class="btn btn--primary" id="hero-cta-primary" data-track="cta_hero">
+          <span>Quiero mi diagnóstico gratis</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="#servicios" class="btn btn--ghost" id="hero-cta-secondary">Ver servicios</a>
+        <a href="https://wa.me/526145148056?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20informes%20sobre%20CUU%20Marketing" class="btn btn--ghost js-whatsapp" id="hero-cta-secondary" target="_blank" rel="noopener" data-track="whatsapp_hero">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89A11.82 11.82 0 0 0 12.05 0zm0 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.88 9.88 0 0 1 9.88 9.89c0 5.45-4.44 9.88-9.88 9.88zm5.42-7.41c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+          <span>Escríbenos por WhatsApp</span>
+        </a>
       </div>
 
       <div class="hero__trust" id="hero-trust">
@@ -108,22 +131,22 @@
         </span>
         <span class="trust__item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Resultados en 30 días
+          Diagnóstico sin costo
         </span>
         <span class="trust__item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Reportes en tiempo real
+          Precios publicados
         </span>
       </div>
     </div>
 
-    <div class="hero__visual" id="hero-visual">
+    <div class="hero__visual" id="hero-visual" aria-hidden="true">
       <div class="dashboard-card" id="dashboard-card">
         <div class="dash__header">
           <span class="dash__dot dash__dot--green"></span>
           <span class="dash__dot dash__dot--yellow"></span>
           <span class="dash__dot dash__dot--red"></span>
-          <span class="dash__title">Dashboard — Tu negocio</span>
+          <span class="dash__title">Ejemplo de reporte mensual</span>
         </div>
         <div class="dash__stats">
           <div class="dash__stat">
@@ -155,7 +178,7 @@
           <span class="chart__label">Últimos 7 meses</span>
         </div>
         <div class="dash__ai">
-          <div class="ai__icon">🤖</div>
+          <div class="ai__icon" aria-hidden="true">🤖</div>
           <div class="ai__text">
             <span class="ai__label">IA recomienda:</span>
             <span class="ai__msg">Incrementar pauta en Instagram Stories</span>
@@ -173,151 +196,52 @@
   </section>
 
   <!-- ========== STATS ========== -->
-  <section class="stats" id="stats">
+  <section class="stats" id="stats" aria-label="Nuestros compromisos">
     <div class="container">
       <div class="stats__grid">
         <div class="stat-card" id="stat-1">
-          <span class="stat-card__num" data-target="150" data-suffix="+">0</span>
-          <span class="stat-card__label">Negocios en Chihuahua atendidos</span>
+          <span class="stat-card__num" data-target="2" data-suffix="h">2h</span>
+          <span class="stat-card__label">Tiempo máximo de respuesta en horario hábil</span>
         </div>
         <div class="stat-card" id="stat-2">
-          <span class="stat-card__num" data-target="3" data-suffix="x">0</span>
-          <span class="stat-card__label">Retorno promedio de inversión</span>
+          <span class="stat-card__num" data-target="48" data-suffix="h">48h</span>
+          <span class="stat-card__label">Para entregarte tu primera propuesta de estrategia</span>
         </div>
         <div class="stat-card" id="stat-3">
-          <span class="stat-card__num" data-target="98" data-suffix="%">0</span>
-          <span class="stat-card__label">Clientes satisfechos</span>
+          <span class="stat-card__num" data-target="7">7</span>
+          <span class="stat-card__label">Servicios bajo un mismo techo: sin coordinar 4 proveedores</span>
         </div>
         <div class="stat-card" id="stat-4">
-          <span class="stat-card__num" data-target="48" data-suffix="h">0</span>
-          <span class="stat-card__label">Tiempo de entrega de primeros entregables</span>
+          <span class="stat-card__num" data-target="0">0</span>
+          <span class="stat-card__label">Contratos forzosos. Te quedas porque funciona</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== BRANDS CAROUSEL ========== -->
-  <section class="brands" id="marcas">
+  <!-- ========== PLATAFORMAS ========== -->
+  <section class="brands" id="plataformas" aria-label="Plataformas donde anunciamos">
     <div class="brands__header">
-      <p class="brands__label">Marcas que confían en nosotros</p>
+      <p class="brands__label">Anunciamos tu negocio donde están tus clientes</p>
     </div>
     <div class="brands__track-wrapper">
       <div class="brands__track" id="brands-track">
-
-        <!-- Set 1 -->
-        <div class="brand-item" id="brand-alsuper">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="156" height="56" rx="8" fill="#E30613" opacity="0.1" stroke="#E30613" stroke-width="1.5"/>
-              <text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="22" fill="#E30613" text-anchor="middle" letter-spacing="-0.5">Alsuper</text>
-            </svg>
-          </div>
-        </div>
-
-        <div class="brand-item" id="brand-walmart">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="22" fill="#0071CE" text-anchor="middle" letter-spacing="-0.5">Walmart</text>
-              <text x="80" y="52" font-family="Space Grotesk, sans-serif" font-weight="400" font-size="10" fill="#FFC220" text-anchor="middle" letter-spacing="2">★ ★ ★ ★ ★</text>
-            </svg>
-          </div>
-        </div>
-
-
-
-        <div class="brand-item" id="brand-sony">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="24" fill="white" text-anchor="middle" letter-spacing="3">SONY</text>
-              <text x="80" y="52" font-family="Space Grotesk, sans-serif" font-weight="400" font-size="8" fill="#888" text-anchor="middle" letter-spacing="2">MUSIC ENTERTAINMENT</text>
-            </svg>
-          </div>
-        </div>
-
-        <div class="brand-item" id="brand-oxxo">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="8" width="156" height="44" rx="4" fill="#E2001A" opacity="0.1" stroke="#E2001A" stroke-width="1.5"/>
-              <text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="26" fill="#E2001A" text-anchor="middle" letter-spacing="4">OXXO</text>
-            </svg>
-          </div>
-        </div>
-
-        <div class="brand-item" id="brand-telcel">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="28" cy="30" r="18" fill="#005CB9" opacity="0.15" stroke="#005CB9" stroke-width="1.5"/>
-              <text x="25" y="35" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="14" fill="#005CB9" text-anchor="middle">T</text>
-              <text x="95" y="36" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="#005CB9" text-anchor="middle">Telcel</text>
-            </svg>
-          </div>
-        </div>
-
-
-        <div class="brand-item" id="brand-cinepolis">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="80" y="36" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="18" fill="#C8973A" text-anchor="middle" letter-spacing="0.5">Cinépolis</text>
-              <line x1="20" y1="44" x2="140" y2="44" stroke="#C8973A" stroke-width="1.5" stroke-dasharray="4 3"/>
-            </svg>
-          </div>
-        </div>
-
-
-        <div class="brand-item" id="brand-liverpool">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <text x="80" y="37" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="17" fill="#8B1A4A" text-anchor="middle" letter-spacing="1">Liverpool</text>
-              <line x1="30" y1="44" x2="130" y2="44" stroke="#8B1A4A" stroke-width="2"/>
-            </svg>
-          </div>
-        </div>
-
-
-
-
-        <!-- Set 2 (duplicate for infinite loop) -->
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><rect x="2" y="2" width="156" height="56" rx="8" fill="#E30613" opacity="0.1" stroke="#E30613" stroke-width="1.5"/><text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="22" fill="#E30613" text-anchor="middle">Alsuper</text></svg>
-          </div>
-        </div>
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="22" fill="#0071CE" text-anchor="middle">Walmart</text><text x="80" y="52" font-family="Space Grotesk, sans-serif" font-weight="400" font-size="10" fill="#FFC220" text-anchor="middle">★ ★ ★ ★ ★</text></svg>
-          </div>
-        </div>
-
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="24" fill="white" text-anchor="middle" letter-spacing="3">SONY</text><text x="80" y="52" font-family="Space Grotesk, sans-serif" font-weight="400" font-size="8" fill="#888" text-anchor="middle" letter-spacing="2">MUSIC ENTERTAINMENT</text></svg>
-          </div>
-        </div>
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><rect x="2" y="8" width="156" height="44" rx="4" fill="#E2001A" opacity="0.1" stroke="#E2001A" stroke-width="1.5"/><text x="80" y="38" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="26" fill="#E2001A" text-anchor="middle" letter-spacing="4">OXXO</text></svg>
-          </div>
-        </div>
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><circle cx="28" cy="30" r="18" fill="#005CB9" opacity="0.15" stroke="#005CB9" stroke-width="1.5"/><text x="25" y="35" font-family="Space Grotesk, sans-serif" font-weight="900" font-size="14" fill="#005CB9" text-anchor="middle">T</text><text x="95" y="36" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="#005CB9" text-anchor="middle">Telcel</text></svg>
-          </div>
-        </div>
-
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><text x="80" y="36" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="18" fill="#C8973A" text-anchor="middle">Cinépolis</text><line x1="20" y1="44" x2="140" y2="44" stroke="#C8973A" stroke-width="1.5" stroke-dasharray="4 3"/></svg>
-          </div>
-        </div>
-
-        <div class="brand-item brand-item--clone" aria-hidden="true">
-          <div class="brand-logo">
-            <svg viewBox="0 0 160 60" fill="none"><text x="80" y="37" font-family="Space Grotesk, sans-serif" font-weight="800" font-size="17" fill="#8B1A4A" text-anchor="middle">Liverpool</text><line x1="30" y1="44" x2="130" y2="44" stroke="#8B1A4A" stroke-width="2"/></svg>
-          </div>
-        </div>
-
-
-
+        <span class="platform-chip">Facebook Ads</span>
+        <span class="platform-chip">Instagram Ads</span>
+        <span class="platform-chip">Google Ads</span>
+        <span class="platform-chip">TikTok Ads</span>
+        <span class="platform-chip">YouTube</span>
+        <span class="platform-chip">WhatsApp Business</span>
+        <span class="platform-chip">Google Maps</span>
+        <span class="platform-chip">LinkedIn Ads</span>
+        <span class="platform-chip" aria-hidden="true">Facebook Ads</span>
+        <span class="platform-chip" aria-hidden="true">Instagram Ads</span>
+        <span class="platform-chip" aria-hidden="true">Google Ads</span>
+        <span class="platform-chip" aria-hidden="true">TikTok Ads</span>
+        <span class="platform-chip" aria-hidden="true">YouTube</span>
+        <span class="platform-chip" aria-hidden="true">WhatsApp Business</span>
+        <span class="platform-chip" aria-hidden="true">Google Maps</span>
+        <span class="platform-chip" aria-hidden="true">LinkedIn Ads</span>
       </div>
     </div>
   </section>
@@ -328,7 +252,7 @@
       <div class="section-header">
         <span class="section-tag">Nuestros servicios</span>
         <h2 class="section-title">Todo lo que tu negocio necesita<br><span class="gradient-text">bajo un mismo techo</span></h2>
-        <p class="section-sub">Desde la identidad de marca hasta las campañas que generan ventas. Con IA en cada paso.</p>
+        <p class="section-sub">Desde la identidad de marca hasta las campañas que generan ventas. Un solo equipo, una sola estrategia.</p>
       </div>
 
       <div class="services__grid" id="services-grid">
@@ -344,7 +268,7 @@
             <li>Manual de marca</li>
             <li>Papelería corporativa</li>
           </ul>
-          <a href="servicio-branding.html" class="service-card__link" id="svc-branding-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-branding-link" data-service="branding" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card service-card--featured" id="svc-digital">
@@ -359,7 +283,7 @@
             <li>Meta Ads + TikTok Ads</li>
             <li>Estrategia de contenido</li>
           </ul>
-          <a href="servicio-digital.html" class="service-card__link" id="svc-digital-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-digital-link" data-service="marketing" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card" id="svc-redes">
@@ -373,7 +297,7 @@
             <li>Diseño de contenido</li>
             <li>Gestión de comunidad</li>
           </ul>
-          <a href="servicio-redes.html" class="service-card__link" id="svc-redes-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-redes-link" data-service="redes" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card" id="svc-web">
@@ -387,7 +311,7 @@
             <li>E-commerce</li>
             <li>Sitios corporativos</li>
           </ul>
-          <a href="servicio-web.html" class="service-card__link" id="svc-web-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-web-link" data-service="web" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card" id="svc-video">
@@ -401,7 +325,7 @@
             <li>Anuncios para radio</li>
             <li>Edición y postproducción</li>
           </ul>
-          <a href="servicio-video.html" class="service-card__link" id="svc-video-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-video-link" data-service="video" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card" id="svc-ia">
@@ -415,7 +339,7 @@
             <li>Contenido generado con IA</li>
             <li>Análisis predictivo</li>
           </ul>
-          <a href="servicio-ia.html" class="service-card__link" id="svc-ia-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-ia-link" data-service="ia" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
         <div class="service-card" id="svc-influencers">
@@ -429,7 +353,7 @@
             <li>Gestión de campañas</li>
             <li>Métricas y ROI</li>
           </ul>
-          <a href="servicio-influencers.html" class="service-card__link" id="svc-influencers-link">Saber más →</a>
+          <a href="#contacto" class="service-card__link" id="svc-influencers-link" data-service="influencers" data-track="cta_servicio">Cotizar este servicio →</a>
         </div>
 
       </div>
@@ -578,7 +502,7 @@
       <div class="section-header">
         <span class="section-tag">Precios transparentes</span>
         <h2 class="section-title">Invierte en tu negocio<br><span class="gradient-text">sin sorpresas</span></h2>
-        <p class="section-sub">A diferencia de la competencia, nosotros publicamos nuestros precios. Sin letras chicas.</p>
+        <p class="section-sub">Publicamos nuestros precios porque no tenemos nada que esconder. Sin letras chicas y sin contratos forzosos.</p>
       </div>
 
       <div class="pricing__grid" id="pricing-grid">
@@ -601,9 +525,9 @@
             <li class="included">1 campaña publicitaria</li>
             <li class="excluded">Producción de video</li>
             <li class="excluded">Optimización SEO</li>
-            <li class="excluded">IA avanzada</li>
+            <li class="excluded">Automatizaciones con IA</li>
           </ul>
-          <a href="#contacto" class="btn btn--ghost" id="price-starter-btn">Empezar →</a>
+          <a href="#contacto" class="btn btn--ghost btn--full" id="price-starter-btn" data-service="plan-starter" data-track="cta_plan">Quiero el plan Starter →</a>
         </div>
 
         <div class="price-card price-card--popular" id="price-growth">
@@ -625,9 +549,9 @@
             <li class="included">3 campañas publicitarias</li>
             <li class="included">2 videos para redes al mes</li>
             <li class="included">Optimización SEO local</li>
-            <li class="excluded">IA avanzada</li>
+            <li class="excluded">Automatizaciones con IA</li>
           </ul>
-          <a href="#contacto" class="btn btn--primary" id="price-growth-btn">Empezar →</a>
+          <a href="#contacto" class="btn btn--primary btn--full" id="price-growth-btn" data-service="plan-growth" data-track="cta_plan">Quiero el plan Growth →</a>
         </div>
 
         <div class="price-card" id="price-dominator">
@@ -642,7 +566,7 @@
           </div>
           <ul class="price-card__features">
             <li class="included">Todo en Growth</li>
-            <li class="included">IA integrada en todos los servicios</li>
+            <li class="included">Chatbot y automatizaciones con IA</li>
             <li class="included">Producción audiovisual mensual</li>
             <li class="included">Branding y diseño avanzado</li>
             <li class="included">SEO + SEM completo</li>
@@ -650,13 +574,13 @@
             <li class="included">Estrategia transfronteriza</li>
             <li class="included">Reunión estratégica mensual</li>
           </ul>
-          <a href="#contacto" class="btn btn--ghost" id="price-dominator-btn">Contactar →</a>
+          <a href="#contacto" class="btn btn--ghost btn--full" id="price-dominator-btn" data-service="plan-dominator" data-track="cta_plan">Quiero el plan Dominator →</a>
         </div>
 
       </div>
 
       <p class="pricing__note" id="pricing-note">
-        💡 Todos los precios en MXN. Personaliza tu plan — contáctanos y diseñamos el paquete perfecto para tu negocio.
+        💡 Precios en MXN, mes a mes. La inversión en pauta (lo que se paga a Meta, Google o TikTok) va aparte y la pagas directo a la plataforma, así siempre sabes a dónde va tu dinero. ¿Necesitas algo distinto? Armamos un plan a tu medida.
       </p>
     </div>
   </section>
@@ -673,7 +597,7 @@
         <div class="testimonials__slider" id="testimonials-slider">
 
           <div class="testimonial-card" id="test-1">
-            <div class="testimonial-card__stars">★★★★★</div>
+            <div class="testimonial-card__stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
             <p>"En 3 meses duplicamos las ventas en línea de nuestra tienda. CUU Marketing entiende el mercado chihuahuense como nadie."</p>
             <div class="testimonial-card__author">
               <div class="author__avatar">MR</div>
@@ -685,7 +609,7 @@
           </div>
 
           <div class="testimonial-card" id="test-2">
-            <div class="testimonial-card__stars">★★★★★</div>
+            <div class="testimonial-card__stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
             <p>"Por fin una agencia que me explica todo con claridad y me muestra los números reales. Los reportes en tiempo real son increíbles."</p>
             <div class="testimonial-card__author">
               <div class="author__avatar">JL</div>
@@ -697,7 +621,7 @@
           </div>
 
           <div class="testimonial-card" id="test-3">
-            <div class="testimonial-card__stars">★★★★★</div>
+            <div class="testimonial-card__stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
             <p>"Pasamos de 200 a 2,000 seguidores en Instagram en 2 meses. Y lo mejor: esos seguidores se convierten en clientes reales."</p>
             <div class="testimonial-card__author">
               <div class="author__avatar">AP</div>
@@ -709,7 +633,7 @@
           </div>
 
           <div class="testimonial-card" id="test-4">
-            <div class="testimonial-card__stars">★★★★★</div>
+            <div class="testimonial-card__stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
             <p>"El chatbot de IA que nos implementaron redujo 60% el tiempo de respuesta a clientes. Nuestro equipo ahora se enfoca en lo que importa."</p>
             <div class="testimonial-card__author">
               <div class="author__avatar">RC</div>
@@ -740,6 +664,98 @@
     </div>
   </section>
 
+  <!-- ========== FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Preguntas frecuentes</span>
+        <h2 class="section-title">Resolvemos tus dudas<br><span class="gradient-text">antes de empezar</span></h2>
+      </div>
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary>¿La inversión en publicidad está incluida en el precio?</summary>
+          <p>No. El precio del plan cubre nuestro trabajo: estrategia, diseño, contenido, configuración y optimización de campañas. La inversión en pauta la pagas directamente a Meta, Google o TikTok con tu tarjeta, así tienes control total y ves cada peso. Te recomendamos cuánto invertir según tu meta en el diagnóstico.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Tengo que firmar un contrato largo?</summary>
+          <p>No. Trabajamos mes a mes. Si no ves valor, puedes cancelar con aviso de 30 días. Preferimos ganarnos tu confianza con resultados.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿En cuánto tiempo veo resultados?</summary>
+          <p>Las campañas de anuncios empiezan a generar mensajes y visitas desde la primera semana. Los primeros 30 días sirven para probar mensajes y audiencias; a partir del segundo mes optimizamos con datos reales para bajar el costo por cliente.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Qué incluye el diagnóstico gratuito?</summary>
+          <p>Una revisión de tu presencia digital actual (redes, Google, página web), de lo que está haciendo tu competencia en Chihuahua y una propuesta concreta de por dónde empezar y cuánto invertir. Sin costo y sin compromiso.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Trabajan con negocios fuera de Chihuahua?</summary>
+          <p>Sí. Nuestra base es Chihuahua y conocemos el mercado local y fronterizo, pero trabajamos de forma remota con negocios de todo México y del lado estadounidense.</p>
+        </details>
+        <details class="faq__item">
+          <summary>¿Qué necesito para empezar?</summary>
+          <p>Solo una llamada o mensaje. Si ya tienes redes sociales, cuentas publicitarias o página web, las revisamos; si no, las creamos a tu nombre para que siempre sean tuyas.</p>
+        </details>
+      </div>
+    </div>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿La inversión en publicidad está incluida en el precio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. El precio del plan cubre nuestro trabajo: estrategia, diseño, contenido, configuración y optimización de campañas. La inversión en pauta la pagas directamente a Meta, Google o TikTok con tu tarjeta, así tienes control total y ves cada peso. Te recomendamos cuánto invertir según tu meta en el diagnóstico."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tengo que firmar un contrato largo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Trabajamos mes a mes. Si no ves valor, puedes cancelar con aviso de 30 días. Preferimos ganarnos tu confianza con resultados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En cuánto tiempo veo resultados?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las campañas de anuncios empiezan a generar mensajes y visitas desde la primera semana. Los primeros 30 días sirven para probar mensajes y audiencias; a partir del segundo mes optimizamos con datos reales para bajar el costo por cliente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye el diagnóstico gratuito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una revisión de tu presencia digital actual (redes, Google, página web), de lo que está haciendo tu competencia en Chihuahua y una propuesta concreta de por dónde empezar y cuánto invertir. Sin costo y sin compromiso."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con negocios fuera de Chihuahua?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Nuestra base es Chihuahua y conocemos el mercado local y fronterizo, pero trabajamos de forma remota con negocios de todo México y del lado estadounidense."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué necesito para empezar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo una llamada o mensaje. Si ya tienes redes sociales, cuentas publicitarias o página web, las revisamos; si no, las creamos a tu nombre para que siempre sean tuyas."
+      }
+    }
+  ]
+}
+    </script>
+  </section>
+
   <!-- ========== CTA FINAL ========== -->
   <section class="cta-final" id="contacto">
     <div class="cta-final__bg">
@@ -755,64 +771,77 @@
 
           <div class="cta-final__trust">
             <div class="trust-item">
-              <span class="trust-item__icon">⚡</span>
+              <span class="trust-item__icon" aria-hidden="true">⚡</span>
               <span>Respuesta en menos de 2 horas</span>
             </div>
             <div class="trust-item">
-              <span class="trust-item__icon">🔒</span>
-              <span>Tus datos son privados y seguros</span>
+              <span class="trust-item__icon" aria-hidden="true">🤝</span>
+              <span>Te decimos con honestidad si podemos ayudarte</span>
             </div>
             <div class="trust-item">
-              <span class="trust-item__icon">📍</span>
+              <span class="trust-item__icon" aria-hidden="true">📍</span>
               <span>Agencia 100% chihuahuense</span>
             </div>
           </div>
         </div>
 
         <form class="contact-form" id="contact-form" novalidate>
+          <p class="contact-form__title">Pide tu diagnóstico gratuito</p>
           <div class="form-group" id="form-name-group">
             <label for="form-name">Tu nombre *</label>
             <input type="text" id="form-name" name="nombre" placeholder="Ej: Juan Pérez" required autocomplete="name">
           </div>
+          <div class="form-group" id="form-phone-group">
+            <label for="form-phone">WhatsApp *</label>
+            <input type="tel" id="form-phone" name="telefono" placeholder="614 123 4567" required autocomplete="tel" inputmode="tel" pattern="[0-9 +()\-]{10,}">
+          </div>
           <div class="form-group" id="form-biz-group">
             <label for="form-biz">Nombre de tu negocio *</label>
-            <input type="text" id="form-biz" name="negocio" placeholder="Ej: Restaurante El Norte" required>
+            <input type="text" id="form-biz" name="negocio" placeholder="Ej: Restaurante El Norte" required autocomplete="organization">
           </div>
           <div class="form-group" id="form-email-group">
-            <label for="form-email">Email *</label>
-            <input type="email" id="form-email" name="email" placeholder="tu@email.com" required autocomplete="email">
-          </div>
-          <div class="form-group" id="form-phone-group">
-            <label for="form-phone">WhatsApp</label>
-            <input type="tel" id="form-phone" name="telefono" placeholder="614 XXX XXXX" autocomplete="tel">
+            <label for="form-email">Email <span class="form-optional">(opcional)</span></label>
+            <input type="email" id="form-email" name="email" placeholder="tu@email.com" autocomplete="email">
           </div>
           <div class="form-group" id="form-service-group">
             <label for="form-service">¿Qué necesitas?</label>
             <select id="form-service" name="servicio">
-              <option value="">Selecciona un servicio</option>
-              <option value="branding">Branding & Identidad</option>
-              <option value="marketing">Marketing Digital 360°</option>
-              <option value="redes">Redes Sociales</option>
-              <option value="web">Desarrollo Web</option>
-              <option value="video">Producción Audiovisual</option>
-              <option value="ia">IA para mi negocio</option>
-              <option value="todo">Paquete completo</option>
+              <option value="">Aún no sé, quiero asesoría</option>
+              <optgroup label="Servicios">
+                <option value="marketing">Campañas de publicidad (Meta, Google, TikTok)</option>
+                <option value="redes">Manejo de redes sociales</option>
+                <option value="branding">Branding e identidad</option>
+                <option value="web">Página web / tienda en línea</option>
+                <option value="video">Producción de video y foto</option>
+                <option value="ia">Chatbot y automatizaciones con IA</option>
+                <option value="influencers">Campaña con influencers locales</option>
+              </optgroup>
+              <optgroup label="Planes">
+                <option value="plan-starter">Plan Starter — $7,500/mes</option>
+                <option value="plan-growth">Plan Growth — $14,900/mes</option>
+                <option value="plan-dominator">Plan Dominator — $28,000/mes</option>
+              </optgroup>
             </select>
           </div>
           <div class="form-group" id="form-msg-group">
-            <label for="form-msg">Cuéntanos sobre tu negocio</label>
-            <textarea id="form-msg" name="mensaje" placeholder="¿A qué te dedicas? ¿Cuál es tu mayor reto de marketing?" rows="3"></textarea>
+            <label for="form-msg">Cuéntanos sobre tu negocio <span class="form-optional">(opcional)</span></label>
+            <textarea id="form-msg" name="mensaje" placeholder="¿A qué te dedicas? ¿Cuál es tu mayor reto para vender más?" rows="3"></textarea>
           </div>
+          <!-- Anti-spam: los humanos no ven este campo -->
+          <div class="form-hp" aria-hidden="true">
+            <label for="form-website">No llenar</label>
+            <input type="text" id="form-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="form__error hidden" id="form-error" role="alert"></p>
           <button type="submit" class="btn btn--primary btn--full" id="form-submit">
             <span id="form-submit-text">Quiero mi diagnóstico gratuito</span>
             <span id="form-submit-loading" class="hidden">Enviando...</span>
           </button>
+          <p class="form__legal">Al enviar aceptas nuestro <a href="aviso-de-privacidad.html">Aviso de privacidad</a>. Nunca compartimos tus datos.</p>
 
           <p class="form__whatsapp" id="form-whatsapp">
-            O escríbenos directo por
-            <a href="https://wa.me/526145148056?text=Hola%2C%20quiero%20informes%20sobre%20CUU%20Marketing" target="_blank" rel="noopener" id="whatsapp-link">
-              WhatsApp →
-            </a>
+            ¿Prefieres hablar ya? Escríbenos por
+            <a href="https://wa.me/526145148056?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20informes%20sobre%20CUU%20Marketing" target="_blank" rel="noopener" id="whatsapp-link" class="js-whatsapp" data-track="whatsapp_form">WhatsApp →</a>
           </p>
         </form>
       </div>
@@ -830,18 +859,18 @@
             </div>
             <span class="logo-text">MARKETING</span>
           </div>
-          <p>La agencia de publicidad 360° de Chihuahua. Resultados reales, precios transparentes, tecnología de punta.</p>
+          <p>Agencia de marketing digital en Chihuahua. Campañas que venden, precios transparentes y tecnología de punta.</p>
           <div class="footer__social" id="footer-social">
-            <a href="#" id="social-fb" aria-label="Facebook">
+            <a href="#" id="social-fb" data-social="facebook" target="_blank" rel="noopener" aria-label="Facebook">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="#" id="social-ig" aria-label="Instagram">
+            <a href="#" id="social-ig" data-social="instagram" target="_blank" rel="noopener" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
             </a>
-            <a href="#" id="social-tk" aria-label="TikTok">
+            <a href="#" id="social-tk" data-social="tiktok" target="_blank" rel="noopener" aria-label="TikTok">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.82a8.26 8.26 0 0 0 4.83 1.54V6.9a4.85 4.85 0 0 1-1.06-.21z"/></svg>
             </a>
-            <a href="#" id="social-li" aria-label="LinkedIn">
+            <a href="#" id="social-li" data-social="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </div>
@@ -856,6 +885,7 @@
             <li><a href="#servicios">Desarrollo Web</a></li>
             <li><a href="#servicios">Producción Audiovisual</a></li>
             <li><a href="#servicios">IA para Negocios</a></li>
+            <li><a href="#servicios">Influencers Locales</a></li>
           </ul>
         </div>
 
@@ -865,7 +895,8 @@
             <li><a href="#diferencia">¿Por qué nosotros?</a></li>
             <li><a href="#proceso">Nuestro proceso</a></li>
             <li><a href="#precios">Precios</a></li>
-            <li><a href="#testimonios">Casos de éxito</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
@@ -879,33 +910,33 @@
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.44 2 2 0 0 1 3.64 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.1 6.1l1.21-1.21a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              614 514 8056
+              <a href="tel:+526145148056">614 514 8056</a>
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              hola@cuumarketing.mx
+              <a href="mailto:hola@cuumarketing.mx">hola@cuumarketing.mx</a>
             </li>
             <li>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              <a href="https://cuumarketing.mx" target="_blank" rel="noopener" style="color:var(--orange);font-weight:600;">cuumarketing.mx</a>
+              <a href="https://cuumarketing.mx" class="footer__site">cuumarketing.mx</a>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p>© 2026 CUU Marketing. Todos los derechos reservados. Hecho con ❤️ en Chihuahua.</p>
+        <p>© <span id="year">2026</span> CUU Marketing. Todos los derechos reservados. Hecho con ❤️ en Chihuahua.</p>
         <div class="footer__bottom-links">
-          <a href="#">Aviso de privacidad</a>
-          <a href="#">Términos de servicio</a>
+          <a href="aviso-de-privacidad.html">Aviso de privacidad</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/526145148056?text=Hola%2C%20quiero%20informes%20sobre%20CUU%20Marketing" 
-     class="whatsapp-float" 
+  <a href="https://wa.me/526145148056?text=Hola%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20informes%20sobre%20CUU%20Marketing"
+     class="whatsapp-float js-whatsapp"
+     data-track="whatsapp_float" 
      id="whatsapp-float" 
      target="_blank" 
      rel="noopener"
@@ -914,6 +945,5 @@
     <span class="whatsapp-float__tooltip">¡Escríbenos!</span>
   </a>
 
-  <script src="main.js"></script>
 </body>
 </html>
