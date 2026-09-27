@@ -54,7 +54,7 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 ```
 🚗 Restauración de clásicos · Pintura · Tapicería
 💡 Luces · Quemacocos · Suspensiones · Refacciones
-📍 Chihuahua, MX
+📍 Ciudad Juárez, Chih.
 👇 Cotiza por WhatsApp
 ```
 **Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526561278916`
@@ -71,7 +71,7 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 - **Usuario:** @norinkoperformance
 - **Botón:** Enviar mensaje por WhatsApp
 - **Presentación** (máx. 101 caracteres):
-  `Restauración de clásicos, pintura, tapicería, quemacocos y más en Chihuahua. Cotiza por WhatsApp.`
+  `Restauración de clásicos, pintura, tapicería, quemacocos y más en Cd. Juárez. Cotiza por WhatsApp.`
 - **Información:** sitio web, teléfono, horario, dirección y área de servicio.
 - **Reseñas:** actívalas y pide una a cada cliente al entregar su carro.
 
@@ -79,14 +79,14 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 
 ## TikTok (cuenta de empresa)
 ```
-Clásicos · Pintura · Quemacocos 🔥 Chihuahua 📍 Cotiza 👇
+Clásicos · Pintura · Quemacocos 🔥 Cd. Juárez 📍 Cotiza 👇
 ```
 
 ---
 
 ## WhatsApp Business
 - **Categoría:** Servicio automotriz
-- **Descripción:** Taller automotriz en Chihuahua: restauración de clásicos, pintura y carrocería, tapicería, iluminación, accesorios, refacciones, quemacocos (venta, adaptación y reparación) y suspensiones.
+- **Descripción:** Taller automotriz en Ciudad Juárez, Chihuahua: restauración de clásicos, pintura y carrocería, tapicería, iluminación, accesorios, refacciones, quemacocos (venta, adaptación y reparación) y suspensiones.
 - **Mensaje de bienvenida:**
   > ¡Qué onda! 🔧 Gracias por escribir a Norinko Performance. Mándanos: 1) marca, modelo y año de tu carro, 2) qué servicio te interesa, 3) fotos si tienes. Te respondemos hoy mismo con los siguientes pasos.
 - **Catálogo:** un artículo por servicio (8), marcado como "Cotización a la medida". Para refacciones, agrega las piezas que más vendes con precio.
@@ -108,7 +108,7 @@ Clásicos · Pintura · Quemacocos 🔥 Chihuahua 📍 Cotiza 👇
 **Frecuencia:** 3–4 publicaciones por semana y 1 historia diaria. Mantén siempre la paleta roja, blanca y amarilla y la tipografía Saira en los textos sobre imagen.
 
 **Hashtags base** (usa de 8 a 12):
-`#NorinkoPerformance #Chihuahua #ChihuahuaMX #TallerAutomotriz #RestauracionDeAutos #AutosClasicos #PinturaAutomotriz #Hojalateria #TapiceriaAutomotriz #Quemacocos #Sunroof #IluminacionLED #Refacciones #Suspension #ClassicCars #Restomod`
+`#NorinkoPerformance #CiudadJuarez #Juarez #JuarezChihuahua #Chihuahua #TallerAutomotriz #RestauracionDeAutos #AutosClasicos #PinturaAutomotriz #Hojalateria #TapiceriaAutomotriz #Quemacocos #Sunroof #IluminacionLED #Refacciones #Suspension #ClassicCars #Restomod`
 
 ---
 
