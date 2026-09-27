@@ -186,14 +186,23 @@ function animateCounter(el) {
 
 
 // ---- Contact form ----
+// Los prospectos se envían a WhatsApp con los datos ya escritos.
+// Opcional: pega aquí la URL de un webhook (n8n, Make, Google Sheets…) para guardar cada lead.
+const WHATSAPP_NUMBER = '526145148056';
+const LEADS_WEBHOOK   = '';
+
 (function initForm() {
   const form    = $('#contact-form');
   if (!form) return;
 
-  const btnText    = $('#form-submit-text');
-  const btnLoading = $('#form-submit-loading');
+  const service = $('#form-service');
 
-  form.addEventListener('submit', async (e) => {
+  // "Cotizar este servicio" preselecciona el servicio en el formulario
+  $$('[data-servicio]').forEach(a => {
+    a.addEventListener('click', () => { if (service) service.value = a.dataset.servicio; });
+  });
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     // Basic validation
@@ -209,21 +218,39 @@ function animateCounter(el) {
 
     if (!valid) return;
 
-    // Simulate sending
-    btnText.classList.add('hidden');
-    btnLoading.classList.remove('hidden');
-    form.querySelector('button[type="submit"]').disabled = true;
+    const data = Object.fromEntries(new FormData(form));
+    const servicio = service && service.value ? service.selectedOptions[0].textContent : 'Por definir';
+    const mensaje = [
+      'Hola, quiero mi diagnóstico gratuito 👋',
+      `Nombre: ${data.nombre}`,
+      `Negocio: ${data.negocio}`,
+      `Email: ${data.email}`,
+      data.telefono && `Teléfono: ${data.telefono}`,
+      `Servicio: ${servicio}`,
+      data.mensaje && `Mensaje: ${data.mensaje}`,
+    ].filter(Boolean).join('\n');
+    const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
 
-    await new Promise(r => setTimeout(r, 1800));
+    if (LEADS_WEBHOOK) {
+      fetch(LEADS_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, servicio, origen: location.href, fecha: new Date().toISOString() }),
+        keepalive: true,
+      }).catch(() => {});
+    }
+
+    // Se abre en el mismo gesto del clic para que el navegador no lo bloquee
+    window.open(waUrl, '_blank', 'noopener');
 
     // Success state
     form.innerHTML = `
       <div style="text-align:center; padding:40px 20px; display:flex; flex-direction:column; align-items:center; gap:20px;">
         <div style="width:72px;height:72px;background:rgba(0,200,150,0.12);border:2px solid var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;">✓</div>
-        <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);">¡Mensaje enviado!</h3>
-        <p style="color:var(--gray-2);font-size:0.9rem;max-width:300px;line-height:1.6;">Te contactaremos en menos de 2 horas hábiles. ¡Prepárate para hacer crecer tu negocio! 🚀</p>
-        <a href="https://wa.me/526141234567" target="_blank" class="btn btn--primary" style="margin-top:8px;">
-          También por WhatsApp →
+        <h3 style="font-family:var(--font-head);font-size:1.4rem;font-weight:700;color:var(--white);">¡Ya casi! Envía tu mensaje en WhatsApp</h3>
+        <p style="color:var(--gray-2);font-size:0.9rem;max-width:300px;line-height:1.6;">Abrimos WhatsApp con tus datos listos. Solo presiona enviar y te contactamos en menos de 2 horas hábiles. 🚀</p>
+        <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:8px;">
+          Abrir WhatsApp →
         </a>
       </div>
     `;
