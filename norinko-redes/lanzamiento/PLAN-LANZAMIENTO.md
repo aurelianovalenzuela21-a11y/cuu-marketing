@@ -15,7 +15,7 @@ Publica los posts **en el orden 01 → 09**. Así la cuadrícula de Instagram qu
 **Facebook**
 - [ ] Foto de perfil: `perfil/norinko-perfil-1080.png`.
 - [ ] Portada: `portadas/norinko-portada-facebook-1640x924.jpg`.
-- [ ] Nombre: Norinko Performance. Usuario: **@norinkoperformance**.
+- [ ] Nombre: Norinko Performance. Usuario: **@norinko_performance**.
 - [ ] Categorías: Taller de reparación de automóviles · Taller de chapa y pintura · Tienda de repuestos de automóviles.
 - [ ] Botón de acción: **Enviar mensaje de WhatsApp** → 656 127 8916.
 - [ ] Presentación:
@@ -30,7 +30,7 @@ Publica los posts **en el orden 01 → 09**. Así la cuadrícula de Instagram qu
 - [ ] Respuestas automáticas: mensaje de bienvenida, preguntas frecuentes ("¿Precio?", "¿Dónde están?", "¿Horario?") y mensaje de ausencia.
 
 **Instagram** (cuenta profesional, tipo Empresa)
-- [ ] Usuario **@norinkoperformance**. Nombre: `Norinko Performance | Taller Automotriz`.
+- [ ] Usuario **@norinko_performance**. Nombre: `Norinko Performance | Taller Automotriz`.
 - [ ] Categoría: Taller de reparación de automóviles.
 - [ ] Bio:
   ```

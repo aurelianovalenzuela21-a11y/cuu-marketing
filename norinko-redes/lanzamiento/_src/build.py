@@ -30,7 +30,7 @@ def page(w, h, body, extra_css=''):
     return f"""<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>{BASE_CSS % {'w': w, 'h': h}}{extra_css}</style></head><body>{body}</body></html>"""
 
 def top(logo='logo-h.png'):
-    return f'<div class="top"><img src="{logo}"><span class="handle">@norinkoperformance</span></div>'
+    return f'<div class="top"><img src="{logo}"><span class="handle">@norinko_performance</span></div>'
 
 def photo_post(img, kicker, title, sub, chips=None, cta='Cotizar', pos='center'):
     chips_html = '<div class="chips">' + ''.join(f'<span class="chip">{c}</span>' for c in chips) + '</div>' if chips else '<span></span>'
@@ -78,7 +78,7 @@ st = ''.join(f'<div class="st"><span class="n">{n}</span><div><div class="t">{t}
 posts['09-cotiza'] = page(1080, 1350, f"""
 <div style="position:absolute;inset:0;background:#FFC20E"></div>
 <div style="position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 80px,rgba(0,0,0,.04) 80px 82px)"></div>
-<div class="top"><img src="logo-h-claro.png"><span class="handle" style="color:#141414">@norinkoperformance</span></div>
+<div class="top"><img src="logo-h-claro.png"><span class="handle" style="color:#141414">@norinko_performance</span></div>
 <div class="head"><div class="kicker" style="color:#141414"><i></i>Así trabajamos</div><div class="disp title" style="color:#141414;font-size:100px">De la idea<br><span style="color:#D7141A">a la calle.</span></div></div>
 <div class="steps">{st}</div>
 <div style="position:absolute;left:72px;right:72px;bottom:70px;background:#141414;color:#fff;padding:30px 36px;display:flex;align-items:center;justify-content:space-between;clip-path:polygon(18px 0,100% 0,calc(100% - 18px) 100%,0 100%)">

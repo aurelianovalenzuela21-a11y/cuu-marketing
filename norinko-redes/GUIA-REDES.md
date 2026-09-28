@@ -42,9 +42,7 @@ Las reglas completas de uso están en **`marca/Norinko-Manual-de-Marca.pdf`**.
 ---
 
 ## Nombre de usuario (el mismo en todas las redes)
-1. **@norinkoperformance** (recomendado)
-2. @norinko.performance
-3. @norinkoperformancemx
+**@norinko_performance**: es el usuario de Instagram. Usa el mismo en Facebook y TikTok si está disponible; si no, prueba `@norinko.performance`.
 
 Nombre visible: **Norinko Performance | Taller Automotriz**
 
@@ -71,7 +69,7 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 ## Facebook (Página)
 - **Nombre:** Norinko Performance
 - **Categorías:** Taller de reparación de automóviles · Taller de chapa y pintura · Tienda de repuestos de automóviles
-- **Usuario:** @norinkoperformance
+- **Usuario:** @norinko_performance
 - **Botón:** Enviar mensaje por WhatsApp
 - **Presentación** (máx. 101 caracteres):
   `Restauración de clásicos, pintura, tapicería, quemacocos y más en Cd. Juárez. Cotiza por WhatsApp.`
