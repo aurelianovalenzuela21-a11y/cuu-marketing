@@ -5,6 +5,23 @@
 // Número de WhatsApp (formato internacional, sin + ni espacios)
 const WHATSAPP_NUMBER = '526561278916';
 
+// ID del Pixel de Meta (Administrador de eventos → Orígenes de datos). Vacío = pixel desactivado.
+const META_PIXEL_ID = '';
+
+// ---- Pixel de Meta: PageView + eventos de conversión para remarketing ----
+(function (id) {
+  if (!id) return;
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', id);
+  fbq('track', 'PageView');
+})(META_PIXEL_ID);
+
+const track = (event, params) => { if (window.fbq) window.fbq('track', event, params); };
+
 (function () {
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
@@ -68,6 +85,7 @@ const WHATSAPP_NUMBER = '526561278916';
       const value = a.dataset.interest;
       const opt = $$('option', serviceSelect).find((o) => o.value === value || o.textContent === value);
       if (opt) serviceSelect.value = opt.value;
+      track('ViewContent', { content_name: value, content_category: 'Servicio' });
     });
   });
 
@@ -99,6 +117,7 @@ const WHATSAPP_NUMBER = '526561278916';
     const msg = (data.get('message') || '').trim();
     if (msg) lines.push('', msg);
 
+    track('Lead', { content_name: data.get('service') });
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
     window.open(url, '_blank', 'noopener');
   });
@@ -106,6 +125,12 @@ const WHATSAPP_NUMBER = '526561278916';
 
   // ---- WhatsApp flotante con mensaje ----
   $('#wa-float').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Norinko Performance, quiero información sobre sus servicios.')}`;
+
+  // ---- Clics a WhatsApp (botón flotante y enlaces directos) ----
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href*="wa.me/"]');
+    if (a) track('Contact', { content_name: a.id === 'wa-float' ? 'WhatsApp flotante' : 'WhatsApp enlace' });
+  });
 
   // ---- Año del footer ----
   $('#year').textContent = new Date().getFullYear();
