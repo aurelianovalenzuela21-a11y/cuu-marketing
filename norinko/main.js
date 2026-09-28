@@ -6,7 +6,7 @@
 const WHATSAPP_NUMBER = '526561278916';
 
 // ID del Pixel de Meta (Administrador de eventos → Orígenes de datos). Vacío = pixel desactivado.
-const META_PIXEL_ID = '';
+const META_PIXEL_ID = '867535846352320';
 
 // ---- Pixel de Meta: PageView + eventos de conversión para remarketing ----
 (function (id) {
