@@ -90,6 +90,23 @@ F.update({
         'Parrillas, faros, cromos, rines y accesorios para clásicos y trocas modernas. Instalación incluida.',
         ['Parrillas', 'Cromos', 'Rines']),
 })
+F.update({
+    '16-pulido': flyer('lightning-c10-noche.jpg', '60% 45%', 'Pintura', 'Pintura y pulido', 'Brillo que se ve', 'hasta de noche.',
+        'Pintura, pulido y abrillantado profesional. Tu troca con acabado espejo, de día y de noche.',
+        ['Pintura', 'Pulido', 'Abrillantado']),
+    '17-motor-led': flyer('c10-motor-led.jpg', '65% 40%', 'Luces de motor', 'Iluminación automotriz', 'Hasta el motor', 'tiene estilo.',
+        'Iluminación LED bajo el cofre, en el motor y en la caja. El color que quieras, con instalación limpia y segura.',
+        ['LED de motor', 'Colores', 'Instalación']),
+    '18-halos': flyer('jeep-srt-halos.jpg', '50% 55%', 'Halos', 'Faros y halos', 'Halos que', 'imponen.',
+        'Halos, ojos de ángel, faros LED y neblineros de color para tu troca o SUV. Que te reconozcan de lejos.',
+        ['Halos', 'Faros LED', 'Neblineros']),
+    '19-quemacocos-clasico': flyer('clasica-quemacocos.jpg', '50% 50%', 'Quemacocos', 'Quemacocos', 'Quemacocos', 'hasta en clásicos.',
+        'Adaptamos quemacocos en trocas clásicas y modernas, con sellado profesional para que no se filtre el agua.',
+        ['Adaptación', 'Sellado', 'Clásicos']),
+    '20-4x4': flyer('squarebody-4x4.jpg', '50% 55%', 'Levantamientos', 'Levantamientos 4x4', 'Clásica,', 'alta y 4x4.',
+        'Kits de levantamiento, llantas todo terreno y suspensión reforzada para tu clásica o moderna.',
+        ['Lift kits', '4x4', 'Llantas A/T']),
+})
 for k, v in F.items():
     open(os.path.join(HERE, f'flyer-{k}.html'), 'w').write(v)
 print(len(F))
