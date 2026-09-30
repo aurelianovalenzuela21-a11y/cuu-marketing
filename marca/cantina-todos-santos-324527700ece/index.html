@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Cantina Todos Santos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Archivo:wdth,wght@75..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: manual de marca en bloques, alterna "santo" (claro) y "diablo" (oscuro); el sello manda. */
+:root {
+  /* colores de marca: fijos en ambos temas */
+  --tinta: #1B1411;
+  --nogal: #2E1F17;
+  --hueso: #EFE7DA;
+  --conac: #8A4B22;
+  --laton: #B8893E;
+  --diablo: #8E1C1C;
+  --ambar: #F2A33A;
+  --cantera: #9A8A7C;
+
+  /* tokens de la página */
+  --bg: #F5F0E8;
+  --surface: #FBF8F3;
+  --fg: #231914;
+  --muted: #6E5E52;
+  --line: #E0D5C6;
+  --accent: #8A4B22;
+
+  --display: "DM Serif Display", "Bodoni 72", Didot, Georgia, serif;
+  --sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16100D; --surface: #211813; --fg: #F0E7DA; --muted: #B3A290; --line: #3A2C23; --accent: #E0A04A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #16100D; --surface: #211813; --fg: #F0E7DA; --muted: #B3A290; --line: #3A2C23; --accent: #E0A04A;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; line-height: 1.05; }
+h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+h3 { font-size: 1.5rem; }
+p { margin: 0; max-width: 62ch; }
+.eyebrow { font-family: var(--sans); font-stretch: 85%; font-weight: 600; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.lede { color: var(--muted); font-size: 1.08rem; }
+section { padding-block: 72px; border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: 12px; margin-bottom: 36px; }
+
+/* ---------- HERO ---------- */
+.hero { background: radial-gradient(ellipse at 70% 20%, #4A2E1C 0%, var(--nogal) 55%, var(--tinta) 100%); color: var(--hueso); padding-block: 56px 64px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 48px; align-items: center; }
+.hero .seal { width: 100%; max-width: 420px; justify-self: center; }
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.4rem); }
+.hero h1 em { color: var(--laton); }
+.hero .tag { font-family: var(--sans); font-stretch: 80%; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; font-size: .82rem; color: var(--ambar); }
+.hero-copy { display: grid; gap: 22px; }
+.hero-copy p { color: #D8CBB9; font-size: 1.08rem; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: 8px 24px; font-family: var(--mono); font-size: .78rem; color: var(--cantera); }
+
+/* ---------- CONCEPTO ---------- */
+.mats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-bottom: 28px; }
+.mats div { display: grid; gap: 4px; align-content: start; min-width: 0; }
+.mats span { display: block; height: 72px; border: 1px solid var(--line); }
+.mats b { font-size: .92rem; margin-top: 4px; }
+.mats small { font-size: .8rem; color: var(--muted); line-height: 1.35; }
+.led { margin-top: 24px; display: grid; gap: 10px; }
+.led .screen { aspect-ratio: 16 / 5; max-width: 100%; background: #0B0807; border: 8px solid #1E1A18; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 4%; padding: 0 5%; position: relative; overflow: hidden; }
+.led .screen::after { content: ""; position: absolute; inset: 0; background-image: radial-gradient(rgba(0,0,0,.55) 1px, transparent 1.4px); background-size: 4px 4px; pointer-events: none; }
+.led .screen > div:first-child { width: clamp(56px, 12vw, 130px); }
+.led .l1 { font-family: var(--sans); font-stretch: 80%; letter-spacing: .24em; text-transform: uppercase; font-size: clamp(.6rem, 1.4vw, .9rem); color: #B8893E; }
+.led .l2 { font-family: var(--display); font-size: clamp(1.4rem, 4.4vw, 3.4rem); line-height: 1; color: #F2A33A; }
+.led .l3 { font-family: var(--mono); font-size: clamp(.7rem, 1.6vw, 1.1rem); color: #EFE7DA; text-align: right; }
+.duo { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); }
+.duo > div { padding: 32px; display: grid; gap: 14px; align-content: start; }
+.duo .santo { background: var(--hueso); color: var(--tinta); }
+.duo .diablo { background: var(--tinta); color: var(--hueso); }
+.duo .big { font-family: var(--display); font-size: 2.4rem; line-height: 1; }
+.duo .santo .big { color: #8A4B22; }
+.duo .diablo .big { color: #F2A33A; }
+.duo ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.duo .diablo li::marker { color: #F2A33A; }
+.duo .santo li::marker { color: #8A4B22; }
+
+/* ---------- LOGO ---------- */
+.logo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.logo-tile { display: grid; gap: 10px; }
+.logo-tile .stage { aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; padding: 22px; border: 1px solid var(--line); }
+.logo-tile .stage svg { width: 100%; height: 100%; }
+.logo-tile .cap { font-size: .86rem; color: var(--muted); }
+.logo-tile .cap b { color: var(--fg); font-weight: 600; }
+.note { margin-top: 20px; padding: 14px 16px; border-left: 3px solid var(--laton); background: var(--surface); font-size: .92rem; color: var(--muted); max-width: none; }
+.rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 36px; }
+.rules h4 { margin: 0 0 6px; font-size: .95rem; font-weight: 700; }
+.rules p { font-size: .92rem; color: var(--muted); }
+
+/* ---------- PALETAS ---------- */
+.palette { display: grid; gap: 16px; margin-bottom: 56px; }
+.palette:last-child { margin-bottom: 0; }
+.pal-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; }
+.pal-head p { color: var(--muted); font-size: .95rem; }
+.pal-use { font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+.bar { display: flex; height: 18px; border: 1px solid var(--line); }
+.bar span { display: block; height: 100%; }
+.swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.sw { background: var(--surface); border: 1px solid var(--line); display: grid; grid-template-rows: auto 1fr; }
+.sw .chip { aspect-ratio: 1 / 1; max-width: 100%; display: flex; align-items: flex-end; justify-content: space-between; padding: 12px; font-family: var(--mono); font-size: .72rem; }
+.sw .info { padding: 12px; display: grid; gap: 4px; align-content: start; }
+.sw .name { font-weight: 700; font-size: .95rem; line-height: 1.2; }
+.sw .role { font-size: .82rem; color: var(--muted); }
+.sw .codes { font-family: var(--mono); font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.copy { font: inherit; font-family: var(--mono); font-size: .74rem; background: none; border: 1px solid var(--line); color: var(--fg); padding: 3px 8px; cursor: pointer; justify-self: start; margin-top: 6px; }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+.copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- CONTRASTE ---------- */
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.pair { border: 1px solid var(--line); display: grid; }
+.pair .demo { padding: 18px 16px; display: grid; gap: 2px; }
+.pair .demo .t1 { font-family: var(--display); font-size: 1.6rem; line-height: 1.1; }
+.pair .demo .t2 { font-size: .85rem; }
+.pair .meta { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; background: var(--surface); font-family: var(--mono); font-size: .74rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.badge { padding: 2px 7px; font-weight: 500; border: 1px solid currentColor; }
+.badge.ok { color: #2F7A4B; }
+.badge.mid { color: #A06A12; }
+.badge.no { color: var(--accent); }
+
+/* ---------- TIPOGRAFÍA ---------- */
+.type-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.type-card { background: var(--surface); border: 1px solid var(--line); padding: 24px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.type-card .spec { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
+.type-card .sample { overflow-wrap: anywhere; }
+.s-display { font-family: var(--display); font-size: 3rem; line-height: 1; }
+.s-sans { font-family: var(--sans); font-stretch: 80%; font-weight: 600; font-size: 1.5rem; letter-spacing: .2em; text-transform: uppercase; }
+.s-mono { font-family: var(--mono); font-size: 1.1rem; }
+.scale { margin-top: 24px; display: grid; gap: 10px; border-top: 1px solid var(--line); padding-top: 20px; }
+.scale > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; align-items: baseline; }
+.scale span { font-family: var(--mono); font-size: .74rem; color: var(--muted); }
+
+/* ---------- APLICACIONES ---------- */
+.apps { display: grid; grid-template-columns: 1fr 1.2fr 0.8fr; gap: 20px; align-items: start; }
+.app { display: grid; gap: 10px; min-width: 0; }
+.app .cap { font-size: .86rem; color: var(--muted); }
+.coaster { aspect-ratio: 1 / 1; max-width: 100%; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #A35F31, var(--conac) 60%, #6A3718); display: grid; place-items: center; padding: 8%; box-shadow: inset 0 0 0 6px rgba(0,0,0,.15); }
+.coaster svg { width: 100%; height: 100%; }
+.menu { background: var(--hueso); color: var(--tinta); padding: 28px 26px; border: 1px solid var(--line); display: grid; gap: 16px; }
+.menu .mh { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--tinta); padding-bottom: 12px; gap: 12px; }
+.menu .mh svg { width: 150px; height: auto; }
+.menu .mh small { font-family: var(--mono); font-size: .68rem; color: #6E5E52; text-align: right; }
+.menu h4 { margin: 0; font-family: var(--sans); font-stretch: 80%; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: var(--diablo); }
+.menu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.menu li { display: flex; align-items: baseline; gap: 8px; font-size: .92rem; }
+.menu li i { flex: 1; border-bottom: 1px dotted #BCA98F; transform: translateY(-4px); }
+.menu li b { font-family: var(--mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+.menu li em { font-style: normal; color: #6E5E52; font-size: .8rem; }
+.menu .foot { font-family: var(--display); font-style: italic; text-align: center; font-size: 1.05rem; color: var(--diablo); }
+.story { aspect-ratio: 9 / 16; max-width: 100%; background: radial-gradient(ellipse at 50% 0%, #5A3418 0%, var(--tinta) 65%); color: var(--hueso); display: grid; grid-template-rows: auto 1fr auto; padding: 22px 18px; gap: 10px; text-align: center; }
+.story .k { font-family: var(--sans); font-stretch: 80%; letter-spacing: .24em; text-transform: uppercase; font-size: .68rem; color: var(--ambar); }
+.story .mid { display: grid; align-content: center; gap: 8px; }
+.story .mid .d { font-family: var(--display); font-size: 2.2rem; line-height: .95; }
+.story .mid .d em { color: var(--ambar); }
+.story .mid p { font-size: .8rem; color: #D8CBB9; margin: 0 auto; }
+.story svg { width: 64px; margin: 0 auto; }
+
+/* ---------- VOZ ---------- */
+.voice { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.quote { background: var(--surface); border: 1px solid var(--line); padding: 22px; display: grid; gap: 10px; align-content: start; }
+.quote q { font-family: var(--display); font-size: 1.45rem; line-height: 1.15; quotes: "“" "”"; }
+.quote span { font-size: .84rem; color: var(--muted); }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.dodont div { padding: 18px 20px; border-top: 3px solid; background: var(--surface); }
+.dodont .do { border-color: #2F7A4B; }
+.dodont .dont { border-color: var(--accent); }
+.dodont h4 { margin: 0 0 8px; font-size: .9rem; }
+.dodont ul { margin: 0; padding-left: 18px; font-size: .92rem; color: var(--muted); display: grid; gap: 4px; }
+
+footer { padding-block: 40px; border-top: 1px solid var(--line); font-size: .82rem; color: var(--muted); }
+
+@media (max-width: 860px) {
+  .mats { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .hero-grid, .duo, .apps, .type-grid, .dodont { grid-template-columns: 1fr; }
+  .hero .seal { max-width: 300px; }
+  .logo-grid { grid-template-columns: 1fr 1fr; }
+  .swatches { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .story { max-width: 280px; }
+}
+@media (max-width: 520px) {
+  .logo-grid { grid-template-columns: 1fr; }
+  .swatches { grid-template-columns: 1fr 1fr; }
+  .scale > div { grid-template-columns: 1fr; gap: 2px; }
+  section { padding-block: 52px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero .seal .ring { transform-origin: 200px 200px; animation: spin 90s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="seal" data-logo="seal" data-fg="#D9B36A" data-bg="#2E1F17"></div>
+    <div class="hero-copy">
+      <span class="tag">Manual de marca · v1 · 2026</span>
+      <h1>Cantina <em>Todos Santos</em></h1>
+      <p>Una cantina tradicional con alma de salón: maderas oscuras, sillas de piel, luz cálida, trofeos de cacería en las paredes y un escenario para el regional mexicano. Este manual reúne el logotipo, las paletas de color, la tipografía y el tono de la marca.</p>
+      <div class="hero-meta"><span>Sello · Logotipo · 4 paletas</span><span>Tipografía · Aplicaciones · Voz</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Concepto</span>
+        <h2>Una cantina con dos caras</h2>
+        <p class="lede">El eslogan ya trae la idea: la misma barra recibe al que viene a comer y cerrar un trato, y al que se queda hasta que el conjunto toca la última. La marca es elegante en las dos caras. El color sale del propio lugar: el nogal de la barra, la piel coñac de las sillas, el latón de las lámparas y la luz ámbar sobre el escenario.</p>
+      </div>
+      <div class="mats" aria-label="Materiales del lugar">
+        <div><span style="background:linear-gradient(135deg,#3A2519,#2E1F17 40%,#241710)"></span><b>Nogal</b><small>Barra y lambrín</small></div>
+        <div><span style="background:radial-gradient(circle at 30% 25%,#A6602F,#8A4B22 55%,#5E3016)"></span><b>Piel coñac</b><small>Sillas y periqueras</small></div>
+        <div><span style="background:linear-gradient(135deg,#E0BE72,#B8893E 50%,#8C6425)"></span><b>Latón</b><small>Lámparas, herrajes, placas de los trofeos</small></div>
+        <div><span style="background:radial-gradient(circle at 50% 40%,#FFD08A,#F2A33A 45%,#7A3F10)"></span><b>Luz ámbar</b><small>Focos cálidos y escenario</small></div>
+        <div><span style="background:linear-gradient(135deg,#D9C7A7,#BFA67E 60%,#9C8460)"></span><b>Asta</b><small>El venado de la pared, el oso de la entrada</small></div>
+      </div>
+      <div class="duo">
+        <div class="santo">
+          <span class="eyebrow" style="color:#8A4B22">Lado santo</span>
+          <div class="big">La tarde</div>
+          <p>Comida, cortes, botana, sobremesa de negocios. Luz de ventana sobre la madera, piel clara y papel hueso.</p>
+          <ul><li>Menú y cortes de la casa</li><li>Publicaciones de comida y coctelería</li><li>Reservaciones y eventos privados</li></ul>
+        </div>
+        <div class="diablo">
+          <span class="eyebrow" style="color:#F2A33A">Lado diablo</span>
+          <div class="big">La noche</div>
+          <p>Regional mexicano en vivo, botella en la mesa, pantallas encendidas. Fondo casi negro, luz ámbar de escenario, latón y un rojo profundo.</p>
+          <ul><li>Cartelera de grupos y artistas</li><li>Contenido para pantallas LED</li><li>Stories y flyers nocturnos</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Logotipo</span>
+        <h2>El sello y la firma</h2>
+        <p class="lede">La marca tiene dos versiones. El <b>sello</b> circular con el monograma TS entrelazado sirve para piezas cuadradas o redondas: posavasos, avatar, sellos, grabados. La <b>firma</b> horizontal con el eslogan sirve para fachada, menú y encabezados. En un lugar de maderas y piel, el logo luce mejor como material: grabado a fuego en cuero, en placa de latón, o en vinil dorado sobre vidrio.</p>
+      </div>
+      <div class="logo-grid" id="logoGrid"></div>
+      <p class="note">Los logotipos de esta página son una reconstrucción vectorial para mostrar el uso de color. En producción usa siempre los archivos originales del sello y la firma que ya tiene la cantina.</p>
+      <div class="rules">
+        <div><h4>Espacio libre</h4><p>Deja alrededor del logo un margen igual a la altura de la “T” del monograma. Nada entra en ese espacio.</p></div>
+        <div><h4>Tamaño mínimo</h4><p>Sello: 18 mm impreso o 64 px en pantalla; debajo de eso el texto del anillo se pierde. En tamaños más chicos usa solo el monograma TS.</p></div>
+        <div><h4>Siempre en una tinta</h4><p>El logo va en un solo color: tinta, hueso, latón o ámbar. No se aplica en degradado, con sombra ni con contorno.</p></div>
+        <div><h4>Sobre fotografía</h4><p>Usa la versión hueso o latón sobre fotos oscuras del salón, o coloca el logo sobre una franja de nogal al 85 %.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Color</span>
+        <h2>Cuatro paletas</h2>
+        <p class="lede">Una paleta principal para todo lo institucional y tres de apoyo: la tarde (lado santo), la noche y el escenario (lado diablo) y el pabellón de caza, para señalética y piezas que acompañan los trofeos. La barra de cada paleta indica en qué proporción se usa cada color. Toca un código para copiarlo.</p>
+      </div>
+      <div id="palettes"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Legibilidad</span>
+        <h2>Combinaciones aprobadas</h2>
+        <p class="lede">Contraste calculado con la fórmula WCAG. <b>AA</b> (4.5:1 o más) sirve para cualquier texto. <b>Títulos</b> (3:1 a 4.5:1) solo para texto grande de 24 px o más. Lo que queda por debajo no se usa para texto.</p>
+      </div>
+      <div class="pairs" id="pairs"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Tipografía</span>
+        <h2>Serif de rótulo, sans de cartel</h2>
+        <p class="lede">Las tres familias son gratuitas (Google Fonts) y siguen el carácter del logotipo: el contraste alto de la palabra “Todos Santos” y la sans espaciada de “Cantina” y del anillo del sello.</p>
+      </div>
+      <div class="type-grid">
+        <div class="type-card">
+          <span class="eyebrow">Títulos</span>
+          <div class="sample s-display">Para unos santos</div>
+          <span class="spec">DM Serif Display · Regular e Itálica<br>Títulos, nombres de platillos, frases cortas</span>
+        </div>
+        <div class="type-card">
+          <span class="eyebrow">Etiquetas y texto</span>
+          <div class="sample s-sans">Cantina tradicional</div>
+          <span class="spec">Archivo · ancho 75–100 · 400 a 700<br>Mayúsculas espaciadas (0.2 em) en etiquetas; minúsculas para párrafos</span>
+        </div>
+        <div class="type-card">
+          <span class="eyebrow">Precios y datos</span>
+          <div class="sample s-mono">Mezcal espadín · $95</div>
+          <span class="spec">IBM Plex Mono · 400 y 500<br>Precios, horarios, medidas (1.5 oz, 355 ml)</span>
+        </div>
+      </div>
+      <div class="scale">
+        <div><span>Display 56/60</span><div style="font-family:var(--display);font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.05">Última ronda</div></div>
+        <div><span>Título 32/36</span><div style="font-family:var(--display);font-size:2rem;line-height:1.1">Cortes de la casa</div></div>
+        <div><span>Etiqueta 13 · +0.2em</span><div style="font-stretch:80%;font-weight:600;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase">Jueves de norteño</div></div>
+        <div><span>Texto 16/24</span><div>Rib eye a la leña, tacos de arrachera y chicharrón de queso para acompañar el tequila.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Aplicaciones</span>
+        <h2>Así se ve en la cantina</h2>
+        <p class="lede">Tres ejemplos con las paletas aplicadas. Los platillos y precios del menú son de ejemplo.</p>
+      </div>
+      <div class="apps">
+        <div class="app">
+          <div class="coaster" data-logo="seal" data-fg="#EFE7DA" data-bg="#8A4B22"></div>
+          <span class="cap"><b>Posavasos de piel</b> · coñac con sello grabado · 10 cm</span>
+        </div>
+        <div class="app">
+          <div class="menu">
+            <div class="mh"><div data-logo="word" data-fg="#2E1F17" data-bg="#EFE7DA" data-tag="0" style="width:150px"></div><small>Menú de barra<br>Ejemplo</small></div>
+            <div>
+              <h4>Destilados · caballito 1.5 oz</h4>
+              <ul>
+                <li>Tequila reposado <i></i><b>$120</b></li>
+                <li>Mezcal tobalá <em>Oaxaca</em> <i></i><b>$165</b></li>
+                <li>Sotol <em>Chihuahua</em> <i></i><b>$110</b></li>
+              </ul>
+            </div>
+            <div>
+              <h4>De la cocina</h4>
+              <ul>
+                <li>Rib eye 400 g <i></i><b>$690</b></li>
+                <li>Tacos de arrachera (3) <i></i><b>$240</b></li>
+                <li>Chicharrón de queso <i></i><b>$150</b></li>
+              </ul>
+            </div>
+            <div class="foot">Para unos santos… para otros diablos.</div>
+          </div>
+          <span class="cap"><b>Menú impreso</b> · papel hueso en carpeta de piel</span>
+        </div>
+        <div class="app">
+          <div class="story">
+            <span class="k">Viernes · 22:00 h · En vivo</span>
+            <div class="mid">
+              <div class="d">Noche de <em>regional</em></div>
+              <p>Norteño y sierreño en el escenario. Reserva tu mesa.</p>
+            </div>
+            <div data-logo="seal" data-fg="#B8893E" data-bg="#1B1411" style="width:64px;margin:0 auto"></div>
+          </div>
+          <span class="cap"><b>Story 9:16</b> · paleta Escenario</span>
+        </div>
+      </div>
+      <div class="led">
+        <div class="screen">
+          <div data-logo="seal" data-fg="#B8893E" data-bg="#0B0807"></div>
+          <div><div class="l1">Esta noche en el escenario</div><div class="l2">Conjunto en vivo</div></div>
+          <div class="l3">22:00<br>—<br>02:00</div>
+        </div>
+        <span class="cap" style="font-size:.86rem;color:var(--muted)"><b style="color:var(--fg)">Pantalla LED 16:5</b> · fondo negro puro (en LED el negro no gasta luz ni deslumbra), texto en ámbar y latón. Evita el blanco a pantalla completa: rompe la luz cálida del salón.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Voz</span>
+        <h2>Cómo habla la cantina</h2>
+        <p class="lede">Como el anfitrión de un buen salón: elegante sin ser acartonado, con picardía norteña. Juega con santos y diablos, y nunca se burla de la fe de nadie.</p>
+      </div>
+      <div class="voice">
+        <div class="quote"><q>La comida es de santos. La sobremesa, ya veremos.</q><span>Tarde · cocina</span></div>
+        <div class="quote"><q>A partir de las diez, se aceptan diablos.</q><span>Noche · escenario</span></div>
+        <div class="quote"><q>El oso cuida la puerta. Nosotros, tu mesa.</q><span>Bio de redes · entrada</span></div>
+      </div>
+      <div class="dodont">
+        <div class="do"><h4>Sí</h4><ul><li>Frases cortas y con remate</li><li>Referencias al salón: la barra, la piel, el oso, el venado, el escenario</li><li>Fotografía con luz cálida y fondo oscuro</li></ul></div>
+        <div class="dont"><h4>No</h4><ul><li>Imágenes religiosas reales o de santos específicos</li><li>Colores fríos, neón o fotos con luz blanca</li><li>Mezclar más de dos paletas en una misma pieza</li></ul></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Cantina Todos Santos · Manual de marca v1 · Septiembre 2026</div></footer>
+
+<script>
+(function () {
+  const PALETTES = [
+    { name: "Principal · Salón", desc: "La base de la marca: madera oscura, papel hueso y latón. Elegante y cálida en cualquier pieza.", use: "Logotipo, fachada, menú, papelería",
+      colors: [
+        ["Nogal", "#2E1F17", "Fondos principales, logotipo", 40],
+        ["Hueso", "#EFE7DA", "Fondos claros, papel, logo en negativo", 30],
+        ["Piel Coñac", "#8A4B22", "Acento principal, bloques, posavasos", 14],
+        ["Latón", "#B8893E", "Logo sobre oscuro, filetes, detalles", 8],
+        ["Tinta", "#1B1411", "Texto", 8]
+      ]},
+    { name: "Santos · La tarde", desc: "Clara y cálida, para comida, coctelería y todo lo que pasa antes de que suba el telón.", use: "Menú, comida, reservaciones, eventos privados",
+      colors: [
+        ["Hueso", "#EFE7DA", "Fondo principal", 45],
+        ["Gamuza", "#C9A27A", "Bloques suaves, fondos alternos", 18],
+        ["Piel Coñac", "#8A4B22", "Titulares, acentos", 15],
+        ["Olivo", "#5E6340", "Detalles, etiquetas", 7],
+        ["Nogal", "#2E1F17", "Texto", 15]
+      ]},
+    { name: "Diablos · Escenario", desc: "Oscura y encendida por la luz del escenario. La paleta de las noches de regional y de las pantallas LED.", use: "Cartelera, stories, pantallas LED",
+      colors: [
+        ["Negro Humo", "#110C0A", "Fondo principal, pantallas", 50],
+        ["Ámbar Foco", "#F2A33A", "Titulares, nombres de artistas", 15],
+        ["Latón", "#B8893E", "Logo, filetes", 10],
+        ["Rojo Tinto", "#8E1C1C", "Bloques, fechas destacadas", 10],
+        ["Tabaco", "#4A3528", "Fondos alternos, texto secundario", 15]
+      ]},
+    { name: "Pabellón de caza", desc: "Los tonos de los trofeos y el monte. Para placas, señalética y piezas que acompañan al oso y al venado.", use: "Señalética, placas, mercancía",
+      colors: [
+        ["Verde Monte", "#2C3A2B", "Fondos de placas y señalética", 35],
+        ["Asta", "#D9C7A7", "Texto sobre verde, respiros", 20],
+        ["Pelaje Venado", "#A06A3B", "Acentos, íconos", 15],
+        ["Oso Pardo", "#3B2A20", "Bloques, marcos", 20],
+        ["Latón", "#B8893E", "Letras de placas, logo", 10]
+      ]}
+  ];
+
+  const PAIRS = [
+    ["#EFE7DA", "#2E1F17", "Hueso sobre nogal"],
+    ["#2E1F17", "#EFE7DA", "Nogal sobre hueso"],
+    ["#B8893E", "#2E1F17", "Latón sobre nogal"],
+    ["#EFE7DA", "#8A4B22", "Hueso sobre piel coñac"],
+    ["#8A4B22", "#EFE7DA", "Coñac sobre hueso"],
+    ["#F2A33A", "#110C0A", "Ámbar sobre negro humo"],
+    ["#B8893E", "#110C0A", "Latón sobre negro humo"],
+    ["#D9C7A7", "#2C3A2B", "Asta sobre verde monte"],
+    ["#2E1F17", "#C9A27A", "Nogal sobre gamuza"],
+    ["#EFE7DA", "#8E1C1C", "Hueso sobre rojo tinto"],
+    ["#B8893E", "#EFE7DA", "Latón sobre hueso"],
+    ["#8E1C1C", "#110C0A", "Rojo tinto sobre negro"]
+  ];
+
+  const hexToRgb = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const lum = h => {
+    const [r, g, b] = hexToRgb(h).map(v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  };
+  const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+  const inkOn = h => lum(h) > 0.35 ? "#1B1411" : "#EFE7DA";
+
+  /* ---------- logos (reconstrucción vectorial) ---------- */
+  let uid = 0;
+  function seal(fg, bg) {
+    const id = "ring" + (uid++);
+    return `<svg viewBox="0 0 400 400" role="img" aria-label="Sello Cantina Todos Santos">
+      <g class="ring">
+        <path id="${id}" d="M 38,200 a 162,162 0 1,1 324,0 a 162,162 0 1,1 -324,0" fill="none"/>
+        <text fill="${fg}" font-family="Archivo, Arial, sans-serif" font-size="27" font-weight="500" style="font-stretch:88%">
+          <textPath href="#${id}" textLength="1010" lengthAdjust="spacing">• TODOS SANTOS CANTINA TRADICIONAL • TODOS SANTOS CANTINA TRADICIONAL</textPath>
+        </text>
+      </g>
+      <text x="200" y="322" text-anchor="middle" fill="${fg}" font-family="DM Serif Display, Georgia, serif" font-size="262">S</text>
+      <g fill="${fg}" stroke="${bg}" stroke-width="7" paint-order="stroke">
+        <path d="M122 98 H278 L288 134 H280 C272 120 262 116 246 116 H212 V300 C212 310 216 314 230 314 V322 H170 V314 C184 314 188 310 188 300 V116 H154 C138 116 128 120 120 134 H112 Z"/>
+      </g>
+    </svg>`;
+  }
+  function word(fg, bg, withTag) {
+    const h = withTag ? 270 : 244;
+    return `<svg viewBox="0 0 440 ${h}" role="img" aria-label="Cantina Todos Santos">
+      <text x="72" y="238" text-anchor="middle" fill="${fg}" font-family="DM Serif Display, Georgia, serif" font-size="250">S</text>
+      <g fill="${fg}" stroke="${bg}" stroke-width="6" paint-order="stroke">
+        <path d="M10 14 H136 L144 44 H138 C130 32 122 30 108 30 H84 V224 C84 232 88 236 98 236 V242 H46 V236 C56 236 60 232 60 224 V30 H38 C24 30 16 32 8 44 H2 Z"/>
+      </g>
+      <text x="170" y="40" fill="${fg}" font-family="Archivo, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="9" style="font-stretch:88%">CANTINA</text>
+      <text x="142" y="130" fill="${fg}" font-family="DM Serif Display, Georgia, serif" font-size="98" letter-spacing="-1">ODOS</text>
+      <text x="130" y="232" fill="${fg}" font-family="DM Serif Display, Georgia, serif" font-size="98" letter-spacing="-1">ANTOS</text>
+      ${withTag ? `<text x="220" y="264" text-anchor="middle" fill="${fg}" font-family="Archivo, Arial, sans-serif" font-size="13" letter-spacing="2.4" style="font-stretch:88%">PARA UNOS SANTOS… PARA OTROS DIABLOS.</text>` : ""}
+    </svg>`;
+  }
+  function paintLogos(root) {
+    root.querySelectorAll("[data-logo]").forEach(el => {
+      const fg = el.dataset.fg, bg = el.dataset.bg;
+      el.innerHTML = el.dataset.logo === "seal" ? seal(fg, bg) : word(fg, bg, el.dataset.tag !== "0");
+    });
+  }
+
+  const LOGOS = [
+    ["seal", "#2E1F17", "#EFE7DA", "Sello · nogal sobre hueso", "Versión principal"],
+    ["word", "#EFE7DA", "#2E1F17", "Firma · hueso sobre nogal", "Fachada y menú"],
+    ["seal", "#B8893E", "#1B1411", "Sello · latón sobre tinta", "Placas, grabado, piezas especiales"],
+    ["word", "#2E1F17", "#EFE7DA", "Firma · nogal sobre hueso", "Papelería"],
+    ["seal", "#EFE7DA", "#8A4B22", "Sello · hueso sobre piel coñac", "Posavasos, cuero grabado"],
+    ["word", "#F2A33A", "#110C0A", "Firma · ámbar sobre negro", "Pantallas LED y escenario"]
+  ];
+  document.getElementById("logoGrid").innerHTML = LOGOS.map(([k, fg, bg, t, u]) =>
+    `<div class="logo-tile"><div class="stage" style="background:${bg}" data-logo="${k}" data-fg="${fg}" data-bg="${bg}"></div><div class="cap"><b>${t}</b><br>${u}</div></div>`).join("");
+
+  /* ---------- paletas ---------- */
+  document.getElementById("palettes").innerHTML = PALETTES.map(p => `
+    <div class="palette">
+      <div class="pal-head"><h3>${p.name}</h3><span class="pal-use">${p.use}</span></div>
+      <p class="lede" style="font-size:.95rem">${p.desc}</p>
+      <div class="bar" aria-hidden="true">${p.colors.map(c => `<span style="width:${c[3]}%;background:${c[1]}"></span>`).join("")}</div>
+      <div class="swatches">${p.colors.map(([n, hex, role, pct]) => {
+        const [r, g, b] = hexToRgb(hex);
+        return `<div class="sw">
+          <div class="chip" style="background:${hex};color:${inkOn(hex)}"><span>${pct} %</span><span>${hex}</span></div>
+          <div class="info"><span class="name">${n}</span><span class="role">${role}</span>
+            <span class="codes">RGB ${r} ${g} ${b}</span>
+            <button class="copy" type="button" data-hex="${hex}">Copiar ${hex}</button></div>
+        </div>`; }).join("")}</div>
+    </div>`).join("");
+
+  document.addEventListener("click", e => {
+    const b = e.target.closest(".copy"); if (!b) return;
+    const hex = b.dataset.hex, done = t => { b.textContent = t; setTimeout(() => b.textContent = "Copiar " + hex, 1400); };
+    try { navigator.clipboard.writeText(hex).then(() => done("Copiado"), () => done(hex)); } catch (_) { done(hex); }
+  });
+
+  /* ---------- contraste ---------- */
+  document.getElementById("pairs").innerHTML = PAIRS.map(([fg, bg, label]) => {
+    const r = ratio(fg, bg);
+    const [cls, txt] = r >= 4.5 ? ["ok", "AA"] : r >= 3 ? ["mid", "Títulos"] : ["no", "No usar"];
+    return `<div class="pair"><div class="demo" style="background:${bg};color:${fg}"><span class="t1">Última ronda</span><span class="t2">${label}</span></div>
+      <div class="meta"><span>${r.toFixed(1)} : 1</span><span class="badge ${cls}">${txt}</span></div></div>`;
+  }).join("");
+
+  paintLogos(document);
+})();
+</script>
+</body>
+</html>
