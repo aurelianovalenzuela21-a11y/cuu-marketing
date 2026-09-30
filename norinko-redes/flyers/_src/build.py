@@ -73,6 +73,23 @@ F.update({
         'Bajadas, rines grandes y la postura perfecta, sin sacrificar manejo ni seguridad. Cotiza la tuya.',
         ['Bajadas', 'Rines', 'Alineación']),
 })
+F.update({
+    '11-faros-led': flyer('obs-roja-faro-led.jpg', '50% 42%', 'Faros LED', 'Iluminación automotriz', 'Faros que', 'se notan.',
+        'Faros LED, proyectores, DRL y neblineros con instalación limpia. Más visibilidad de noche y un look de agencia.',
+        ['Faros LED', 'Proyectores', 'Neblineros']),
+    '12-clasicos': flyer('clasico-noche.jpg', '50% 55%', 'Clásicos', 'Restauración de clásicos', 'Clásicos que', 'vuelven a rodar.',
+        'Restauración parcial o total: mecánica, eléctrico, pintura, cromos e interiores. Por etapas y a tu ritmo.',
+        ['Mecánica', 'Pintura', 'Cromos']),
+    '13-interior-rojo': flyer('obs-blanca-interior-rojo.jpg', '45% 50%', 'Tapicería', 'Tapicería y personalización', 'Blanco por fuera,', 'rojo por dentro.',
+        'Tapicería completa, alfombra, paneles y caja pintada a juego. Combina colores y haz tu troca única.',
+        ['Tapicería', 'Alfombra', 'A juego']),
+    '14-panoramico': flyer('ram-panoramico.jpg', '50% 35%', 'Quemacocos', 'Quemacocos panorámicos', 'Cielo abierto,', 'en tu troca.',
+        'Venta, adaptación y reparación de quemacocos panorámicos y corredizos. Sin filtraciones ni ruidos.',
+        ['Panorámicos', 'Adaptación', 'Reparación']),
+    '15-accesorios': flyer('c10-naranja.jpg', '50% 55%', 'Accesorios', 'Accesorios y detalles', 'Los detalles', 'sí importan.',
+        'Parrillas, faros, cromos, rines y accesorios para clásicos y trocas modernas. Instalación incluida.',
+        ['Parrillas', 'Cromos', 'Rines']),
+})
 for k, v in F.items():
     open(os.path.join(HERE, f'flyer-{k}.html'), 'w').write(v)
 print(len(F))
