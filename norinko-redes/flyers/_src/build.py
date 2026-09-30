@@ -36,7 +36,7 @@ def flyer(img, pos, tag, kicker, t1, t2, sub, chips):
 <div class="head"><div class="kicker"><i></i>{kicker}</div><div class="title">{t1}<br><span>{t2}</span></div></div>
 <div class="photo" style="background-image:url(fotos/{img});background-position:{pos}"><span class="tag">{tag}</span><span class="real">Cd. Juárez, Chih.</span></div>
 <div class="sub">{sub}</div>
-<div class="foot"><div class="chips">{ch}</div><span class="pill">{WA_SVG}656 127 8916</span></div>
+<div class="foot"><div class="chips">{ch}</div><span class="pill">{WA_SVG}656 570 2414</span></div>
 <div class="stripe"></div></body></html>"""
 
 F = {

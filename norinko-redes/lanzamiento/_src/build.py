@@ -1,7 +1,7 @@
 # Genera el HTML de cada pieza del lanzamiento (posts 4:5 e historias 9:16).
 import json, os
 HERE = os.path.dirname(os.path.abspath(__file__))
-WA = '656 127 8916'
+WA = '656 570 2414'
 BASE_CSS = """
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:%(w)dpx;height:%(h)dpx;overflow:hidden;position:relative;font-family:'Barlow',sans-serif;color:#fff;background:#141414}

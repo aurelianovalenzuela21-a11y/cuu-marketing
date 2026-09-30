@@ -3,7 +3,7 @@
    ================================================ */
 
 // Número de WhatsApp (formato internacional, sin + ni espacios)
-const WHATSAPP_NUMBER = '526561278916';
+const WHATSAPP_NUMBER = '526565702414';
 
 // ID del Pixel de Meta (Administrador de eventos → Orígenes de datos). Vacío = pixel desactivado.
 const META_PIXEL_ID = '1508068834413584';

@@ -58,7 +58,7 @@ Nombre visible: **Norinko Performance | Taller Automotriz**
 📍 Ciudad Juárez, Chih.
 👇 Cotiza por WhatsApp
 ```
-**Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526561278916`
+**Enlaces:** `https://norinko.cuumarketing.com` y `https://wa.me/526565702414`
 
 **Botones de contacto:** WhatsApp, Llamar y Cómo llegar.
 

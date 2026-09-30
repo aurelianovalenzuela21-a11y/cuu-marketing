@@ -17,12 +17,12 @@ Publica los posts **en el orden 01 → 09**. Así la cuadrícula de Instagram qu
 - [ ] Portada: `portadas/norinko-portada-facebook-1640x924.jpg`.
 - [ ] Nombre: Norinko Performance. Usuario: **@norinko_performance**.
 - [ ] Categorías: Taller de reparación de automóviles · Taller de chapa y pintura · Tienda de repuestos de automóviles.
-- [ ] Botón de acción: **Enviar mensaje de WhatsApp** → 656 127 8916.
+- [ ] Botón de acción: **Enviar mensaje de WhatsApp** → 656 570 2414.
 - [ ] Presentación:
       `Restauración de clásicos, pintura, tapicería, quemacocos y más en Cd. Juárez. Cotiza por WhatsApp.`
 - [ ] Datos de contacto:
   - [ ] Sitio web: https://norinko.cuumarketing.com
-  - [ ] Teléfono: 656 127 8916
+  - [ ] Teléfono: 656 570 2414
   - [ ] Dirección y horario.
   - [ ] Área de servicio: Ciudad Juárez.
 - [ ] Activar **reseñas** (recomendaciones).
@@ -39,7 +39,7 @@ Publica los posts **en el orden 01 → 09**. Así la cuadrícula de Instagram qu
   📍 Ciudad Juárez, Chih.
   👇 Cotiza por WhatsApp
   ```
-- [ ] Enlaces: https://norinko.cuumarketing.com y https://wa.me/526561278916
+- [ ] Enlaces: https://norinko.cuumarketing.com y https://wa.me/526565702414
 - [ ] Botones de contacto: WhatsApp, Llamar y Cómo llegar.
 - [ ] Historias destacadas: sube las 10 portadas de `historias-destacadas/`.
 
@@ -96,7 +96,7 @@ Norinko Performance es tu nuevo taller para restaurar, reparar y personalizar tu
 ☀️ Quemacocos: venta, adaptación y reparación
 🚙 Suspensiones
 
-Cotiza sin compromiso por WhatsApp 👉 656 127 8916
+Cotiza sin compromiso por WhatsApp 👉 656 570 2414
 🌐 norinko.cuumarketing.com
 
 #NorinkoPerformance #CiudadJuarez #Juarez #TallerAutomotriz #AutosClasicos #Restomod #CarrosMX
@@ -106,7 +106,7 @@ Todo para tu carro, en un solo taller. 🚗
 
 Deja de llevar tu carro de un lado a otro. En Norinko coordinamos carrocería, pintura, tapicería, eléctrico y suspensión en un mismo proyecto, con cotización por escrito y avances en tiempo real.
 
-¿Qué le quieres hacer al tuyo? Cuéntanos en los comentarios 👇 o escríbenos al 656 127 8916.
+¿Qué le quieres hacer al tuyo? Cuéntanos en los comentarios 👇 o escríbenos al 656 570 2414.
 
 #NorinkoPerformance #CiudadJuarez #TallerAutomotriz #PinturaAutomotriz #TapiceriaAutomotriz #Refacciones
 
@@ -118,7 +118,7 @@ Somos especialistas en quemacocos:
 ✅ Adaptación: aunque tu carro no lo traiga de fábrica
 ✅ Reparación: motores, guías, sellos, filtraciones y ruidos
 
-Cotiza el tuyo por WhatsApp: 656 127 8916
+Cotiza el tuyo por WhatsApp: 656 570 2414
 
 #Quemacocos #Sunroof #CiudadJuarez #NorinkoPerformance #AccesoriosAutomotrices
 
@@ -127,7 +127,7 @@ Respetamos la historia. Mejoramos todo lo demás. 🏁
 
 Restauración parcial o total de clásicos: mecánica, eléctrico, cromos y detalles originales. Trabajamos por etapas y a tu ritmo, y te mandamos avances en fotos y video.
 
-¿Tienes un clásico esperando? Mándanos fotos por WhatsApp al 656 127 8916.
+¿Tienes un clásico esperando? Mándanos fotos por WhatsApp al 656 570 2414.
 
 #AutosClasicos #RestauracionDeAutos #ClassicCars #Restomod #CiudadJuarez #NorinkoPerformance
 
@@ -136,7 +136,7 @@ Brillo de agencia. ✨
 
 Hojalatería, corrección de óxido y golpes, pintura completa o por pieza, igualación de color y pulido. Todo con acabados que duran.
 
-Cotiza tu pintura: 656 127 8916
+Cotiza tu pintura: 656 570 2414
 
 #PinturaAutomotriz #Hojalateria #Carroceria #CiudadJuarez #NorinkoPerformance
 
@@ -145,7 +145,7 @@ Hecho a mano, a tu medida. 🪡
 
 Asientos, cielos, alfombras, paneles y volantes en piel, vinil o tela. Diseños originales para clásicos o personalizados para tu estilo.
 
-Escríbenos para ver materiales y colores: 656 127 8916
+Escríbenos para ver materiales y colores: 656 570 2414
 
 #TapiceriaAutomotriz #Tapiceria #Interiores #CiudadJuarez #NorinkoPerformance
 
@@ -154,7 +154,7 @@ Que te vean llegar. 💡
 
 Faros LED y proyectores, halos, calaveras, neblineros, barras y luz ambiental interior. Instalación limpia, sin fallas eléctricas.
 
-Cotiza por WhatsApp: 656 127 8916
+Cotiza por WhatsApp: 656 570 2414
 
 #IluminacionLED #FarosLED #Halos #CiudadJuarez #NorinkoPerformance
 
@@ -163,7 +163,7 @@ La postura perfecta. 🚙
 
 Reparación y mejora de suspensión: amortiguadores, bajadas, coilovers, suspensión de aire y levantamientos, con la alineación correcta.
 
-Cuéntanos qué buscas: 656 127 8916
+Cuéntanos qué buscas: 656 570 2414
 
 #Suspension #Coilovers #AirRide #TrocasMX #CiudadJuarez #NorinkoPerformance
 
@@ -174,12 +174,12 @@ De la idea a la calle, en 4 pasos:
 3️⃣ Manos a la obra, con avances por WhatsApp.
 4️⃣ Entrega con prueba en calle y garantía por escrito.
 
-Cotiza gratis hoy: 656 127 8916 📲
+Cotiza gratis hoy: 656 570 2414 📲
 
 #NorinkoPerformance #CiudadJuarez #TallerAutomotriz #Cotiza
 
 ### Historias
-- **H1 (Ya abrimos):** agrega el sticker de **enlace** → https://wa.me/526561278916 con el texto "Cotiza aquí".
+- **H1 (Ya abrimos):** agrega el sticker de **enlace** → https://wa.me/526565702414 con el texto "Cotiza aquí".
 - **H2 (Quemacocos):** agrega el sticker de **encuesta**: "¿Tu carro tiene quemacocos?" con las opciones Sí / Quiero uno.
 
 ---
