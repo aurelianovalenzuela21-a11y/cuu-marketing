@@ -56,6 +56,23 @@ F = {
         'Emblemas iluminados, luces de cabina y detalles LED para que tu troca se robe las miradas de noche.',
         ['Emblemas LED', 'Luces de cabina', 'Accesorios']),
 }
+F.update({
+    '06-pintura': flyer('c10-gmc-z71.jpg', '50% 55%', 'Pintura', 'Pintura y carrocería', 'Colores que', 'no pasan de largo.',
+        'Pintura completa o por pieza, hojalatería, corrección de golpes y pulido. Igualamos el color exacto de tu troca.',
+        ['Pintura', 'Hojalatería', 'Pulido']),
+    '07-levantamientos': flyer('gmc-levantada.jpg', '50% 60%', 'Levantamientos', 'Levantamientos y llantas', 'Más alto,', 'más rudo.',
+        'Kits de levantamiento, rines y llantas todo terreno instalados y alineados para que tu troca se vea y maneje bien.',
+        ['Lift kits', 'Rines', 'Llantas A/T']),
+    '08-emblemas-daytona': flyer('daytona-emblema.jpg', '50% 55%', 'Emblemas LED', 'Emblemas iluminados', 'Que tu nombre', 'brille.',
+        'Emblemas LED personalizados para parrilla, cajuela o interiores. El color y el diseño que tú quieras.',
+        ['Emblemas LED', 'Personalizados', 'Instalación']),
+    '09-refacciones': flyer('motor-naranja.jpg', '50% 45%', 'Refacciones', 'Refacciones y performance', 'Lo de adentro', 'también cuenta.',
+        'Refacciones, admisión de aire, afinaciones y mejoras de motor para que tu troca rinda como se ve.',
+        ['Refacciones', 'Admisión', 'Motor']),
+    '10-bajadas': flyer('silverado-abajo.jpg', '50% 55%', 'Bajadas', 'Suspensiones y rines', 'Abajo y', 'con estilo.',
+        'Bajadas, rines grandes y la postura perfecta, sin sacrificar manejo ni seguridad. Cotiza la tuya.',
+        ['Bajadas', 'Rines', 'Alineación']),
+})
 for k, v in F.items():
     open(os.path.join(HERE, f'flyer-{k}.html'), 'w').write(v)
 print(len(F))
