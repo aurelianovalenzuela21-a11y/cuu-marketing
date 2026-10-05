@@ -1,0 +1,56 @@
+{
+  "updated": "2026-10-05T12:00:00-06:00",
+  "source": "demo",
+  "events": [
+    {
+      "id": "demo-2026-10-08",
+      "date": "2026-10-08",
+      "start": "21:00",
+      "title": "El Destape de las Estrellas",
+      "type": "concurso",
+      "artist": "Grupo Herencia · Travesura · Doble Firma",
+      "description": "Jornada 1. Tres agrupaciones, una sola pasa a la final.",
+      "flyer": ""
+    },
+    {
+      "id": "demo-2026-10-10",
+      "date": "2026-10-10",
+      "start": "22:00",
+      "title": "Música en Vivo",
+      "type": "musica",
+      "artist": "Grupo La Suerte",
+      "description": "Sábado de música en vivo con Grupo La Suerte.",
+      "flyer": ""
+    },
+    {
+      "id": "demo-2026-10-15",
+      "date": "2026-10-15",
+      "start": "21:00",
+      "title": "El Destape de las Estrellas",
+      "type": "concurso",
+      "artist": "La Nueva Legión · Efectivos ST · Generales DLS",
+      "description": "Jornada 2 del concurso.",
+      "flyer": ""
+    },
+    {
+      "id": "demo-2026-10-17",
+      "date": "2026-10-17",
+      "start": "22:00",
+      "title": "Música en Vivo",
+      "type": "musica",
+      "artist": "Cuarta Herencia",
+      "description": "Sábado de música en vivo con Cuarta Herencia.",
+      "flyer": ""
+    },
+    {
+      "id": "demo-2026-10-31",
+      "date": "2026-10-31",
+      "start": "21:00",
+      "title": "Noche de Todos Santos",
+      "type": "especial",
+      "artist": "Gran final del Destape de las Estrellas",
+      "description": "La noche de la casa: concurso de catrinas, altar de muertos y la gran final del Destape.",
+      "flyer": ""
+    }
+  ]
+}

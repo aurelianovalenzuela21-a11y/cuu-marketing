@@ -1,0 +1,9 @@
+<!-- PLACEHOLDER: reemplazar por el isotipo oficial -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 -32 64 64" width="64" height="64">
+  <circle r="30" fill="#F2A30F"/>
+  <g fill="#E4007C">
+    <ellipse rx="7" ry="20"/><ellipse rx="7" ry="20" transform="rotate(45)"/>
+    <ellipse rx="7" ry="20" transform="rotate(90)"/><ellipse rx="7" ry="20" transform="rotate(135)"/>
+  </g>
+  <circle r="9" fill="#0E0A0B"/>
+</svg>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cantina Todos Santos — Música en vivo, concursos y botana en Chihuahua</title>
+  <meta name="description" content="Cantina Todos Santos: El Destape de las Estrellas los jueves, música en vivo los sábados, menú digital y la mejor botana de Chihuahua.">
+  <link rel="canonical" href="https://todossantos.cuumarketing.mx/">
+  <meta name="theme-color" content="#0E0A0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://todossantos.cuumarketing.mx/">
+  <meta property="og:title" content="Cantina Todos Santos">
+  <meta property="og:description" content="Música en vivo, El Destape de las Estrellas y menú digital.">
+  <meta property="og:image" content="https://todossantos.cuumarketing.mx/assets/og-cover.svg">
+  <meta property="og:locale" content="es_MX">
+
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Cantina Todos Santos",
+    "url": "https://todossantos.cuumarketing.mx/",
+    "servesCuisine": "Mexicana",
+    "hasMenu": "https://todossantos.cuumarketing.mx/#menu",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chihuahua", "addressRegion": "Chihuahua", "addressCountry": "MX" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="papel-picado" aria-hidden="true"></div>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="nav__brand" aria-label="Cantina Todos Santos, inicio">
+        <img src="assets/logo.svg" alt="Cantina Todos Santos" class="nav__logo" width="180" height="48">
+      </a>
+      <nav class="nav__links" id="nav-links" aria-label="Navegación principal">
+        <a href="#cartelera">Cartelera</a>
+        <a href="#semana">La semana</a>
+        <a href="#menu">Menú</a>
+        <a href="#destape">El Destape</a>
+        <a href="#visitanos" class="nav__cta">Reservar</a>
+      </nav>
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO / EVENTO DESTACADO (lo alimenta n8n) ========== -->
+    <section class="hero" id="inicio" aria-live="polite">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow" id="hero-when">Esta noche</p>
+          <h1 class="hero__title" id="hero-title">Cantina Todos Santos</h1>
+          <p class="hero__artist" id="hero-artist"></p>
+          <p class="hero__desc" id="hero-desc">Música en vivo, concursos y la botana más brava de Chihuahua.</p>
+          <div class="hero__meta" id="hero-meta"></div>
+          <div class="hero__actions">
+            <a href="#visitanos" class="btn btn--primary">Reservar mesa</a>
+            <a href="#menu" class="btn btn--ghost">Ver menú</a>
+          </div>
+        </div>
+        <figure class="hero__flyer" id="hero-flyer">
+          <!-- flyer inyectado por app.js -->
+        </figure>
+      </div>
+    </section>
+
+    <!-- ========== PRÓXIMOS EVENTOS ========== -->
+    <section class="section" id="cartelera">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Cartelera</p>
+          <h2 class="section__title">Lo que viene</h2>
+          <p class="section__sub">Se actualiza solo desde nuestro calendario. Última actualización: <span id="updated-at">—</span></p>
+        </header>
+        <div class="events" id="events-list">
+          <p class="events__empty">Cargando cartelera…</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROGRAMA SEMANAL ========== -->
+    <section class="section section--alt" id="semana">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Programa fijo</p>
+          <h2 class="section__title">Cada noche tiene lo suyo</h2>
+        </header>
+        <ol class="week" id="week-list"></ol>
+      </div>
+    </section>
+
+    <!-- ========== MENÚ DIGITAL ========== -->
+    <section class="section" id="menu">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Menú digital</p>
+          <h2 class="section__title">Pa’ botanear y brindar</h2>
+          <p class="section__sub">Precios en pesos mexicanos, IVA incluido.</p>
+        </header>
+        <div class="menu-tabs" role="tablist" id="menu-tabs" aria-label="Categorías del menú"></div>
+        <div class="menu-panel" id="menu-panel" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <!-- ========== EL DESTAPE DE LAS ESTRELLAS ========== -->
+    <section class="section section--alt" id="destape">
+      <div class="container destape">
+        <div class="destape__copy">
+          <p class="eyebrow">Todos los jueves</p>
+          <h2 class="section__title">El Destape de las Estrellas</h2>
+          <p>El concurso donde las agrupaciones de Chihuahua se suben al escenario de la cantina. El público vota, el jurado decide y cada semana alguien se destapa.</p>
+          <ul class="destape__rules">
+            <li><strong>Inscripción:</strong> manda tu video por WhatsApp.</li>
+            <li><strong>Formato:</strong> 3 canciones por agrupación.</li>
+            <li><strong>Premio:</strong> fecha pagada en sábado de música en vivo.</li>
+          </ul>
+          <a href="#visitanos" class="btn btn--primary">Quiero participar</a>
+        </div>
+        <div class="destape__roster">
+          <h3>Agrupaciones participantes</h3>
+          <ul class="roster" id="roster"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== VISÍTANOS ========== -->
+    <section class="section" id="visitanos">
+      <div class="container visit">
+        <div>
+          <p class="eyebrow">Visítanos</p>
+          <h2 class="section__title">Aquí te esperamos</h2>
+          <dl class="visit__info">
+            <div><dt>Dirección</dt><dd data-fill="address">Chihuahua, Chih.</dd></div>
+            <div><dt>Horario</dt><dd>Mié–Dom · 6:00 pm – 2:00 am</dd></div>
+            <div><dt>Reservaciones</dt><dd><a data-fill="whatsapp" href="#">WhatsApp</a></dd></div>
+          </dl>
+          <div class="hero__actions">
+            <a class="btn btn--primary" data-fill="whatsapp" href="#">Reservar por WhatsApp</a>
+            <a class="btn btn--ghost" data-fill="maps" href="#" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+        <div class="visit__social">
+          <a data-fill="instagram" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a data-fill="facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+          <a data-fill="tiktok" href="#" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="assets/logo.svg" alt="Cantina Todos Santos" width="150" height="40">
+      <p>Consume con moderación. Prohibida la venta de bebidas alcohólicas a menores de edad.</p>
+      <p class="footer__credit">Sitio por <a href="https://cuumarketing.mx/">CUU Marketing</a></p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

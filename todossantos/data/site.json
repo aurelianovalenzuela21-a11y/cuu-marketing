@@ -1,0 +1,59 @@
+{
+  "name": "Cantina Todos Santos",
+  "address": "Chihuahua, Chih. (dirección por confirmar)",
+  "whatsapp": "",
+  "whatsappMessage": "Hola, quiero reservar una mesa en Cantina Todos Santos",
+  "maps": "https://maps.google.com/?q=Cantina+Todos+Santos+Chihuahua",
+  "instagram": "https://instagram.com/",
+  "facebook": "https://facebook.com/",
+  "tiktok": "https://tiktok.com/",
+  "roster": [
+    "Grupo Herencia",
+    "Cuarta Herencia",
+    "Grupo La Suerte",
+    "Efectivos ST",
+    "Travesura",
+    "Trayecto Inédito",
+    "La Nueva Legión",
+    "Generales DLS",
+    "Doble Firma",
+    "Daniel Gómez"
+  ],
+  "weekly": [
+    {
+      "day": 3,
+      "title": "Miércoles de Karaoke",
+      "type": "especial",
+      "start": "20:00",
+      "description": "Agarra el micro: 2x1 en cerveza nacional toda la noche."
+    },
+    {
+      "day": 4,
+      "title": "El Destape de las Estrellas",
+      "type": "concurso",
+      "start": "21:00",
+      "description": "El concurso de agrupaciones de Chihuahua. Tú votas."
+    },
+    {
+      "day": 5,
+      "title": "Viernes Norteño",
+      "type": "musica",
+      "start": "21:00",
+      "description": "Puro norteño y corridos con DJ residente."
+    },
+    {
+      "day": 6,
+      "title": "Música en Vivo",
+      "type": "musica",
+      "start": "22:00",
+      "description": "La agrupación invitada de la semana en el escenario de la cantina."
+    },
+    {
+      "day": 0,
+      "title": "Domingo de Botana y Fut",
+      "type": "especial",
+      "start": "13:00",
+      "description": "Partidos en pantalla grande y botana de la casa."
+    }
+  ]
+}
