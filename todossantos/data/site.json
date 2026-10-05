@@ -22,38 +22,39 @@
   "weekly": [
     {
       "day": 3,
-      "title": "Miércoles de Karaoke",
+      "title": "Noche de Sotol",
       "type": "especial",
-      "start": "20:00",
-      "description": "Agarra el micro: 2x1 en cerveza nacional toda la noche."
+      "start": "19:00",
+      "description": "Maridaje de sotoles de Chihuahua con la cocina de monte y música de cuerda."
     },
     {
       "day": 4,
       "title": "El Destape de las Estrellas",
       "type": "concurso",
       "start": "21:00",
-      "description": "El concurso de agrupaciones de Chihuahua. Tú votas."
+      "description": "El concurso de agrupaciones de Chihuahua. El público vota."
     },
     {
       "day": 5,
-      "title": "Viernes Norteño",
+      "title": "Viernes de Corridos",
       "type": "musica",
       "start": "21:00",
-      "description": "Puro norteño y corridos con DJ residente."
+      "description": "Corridos y norteño en vivo hasta el cierre."
     },
     {
       "day": 6,
-      "title": "Música en Vivo",
+      "title": "Noche Estelar",
       "type": "musica",
       "start": "22:00",
-      "description": "La agrupación invitada de la semana en el escenario de la cantina."
+      "description": "Los grandes del regional mexicano en el escenario de la casa."
     },
     {
       "day": 0,
-      "title": "Domingo de Botana y Fut",
+      "title": "Sobremesa de Domingo",
       "type": "especial",
-      "start": "13:00",
-      "description": "Partidos en pantalla grande y botana de la casa."
+      "start": "14:00",
+      "description": "Cortes a la leña, tololoche y sobremesa larga."
     }
-  ]
+  ],
+  "hours": "Miércoles a domingo · desde las 7:00 pm"
 }

@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
-  <rect width="1200" height="630" fill="#0E0A0B"/>
-  <circle cx="980" cy="120" r="320" fill="#E4007C" opacity=".25"/>
-  <circle cx="160" cy="600" r="300" fill="#F2A30F" opacity=".2"/>
-  <text x="80" y="250" font-family="Bebas Neue, Impact, sans-serif" font-size="56" letter-spacing="14" fill="#F2A30F">CANTINA</text>
-  <text x="74" y="380" font-family="Bebas Neue, Impact, sans-serif" font-size="150" textLength="1040" lengthAdjust="spacingAndGlyphs" fill="#F3E9DC">TODOS SANTOS</text>
-  <text x="80" y="460" font-family="Georgia, serif" font-style="italic" font-size="38" fill="#BFB3A6">Música en vivo · El Destape de las Estrellas · Menú</text>
-</svg>

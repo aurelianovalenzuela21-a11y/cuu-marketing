@@ -5,29 +5,50 @@ Sitio estático para **todossantos.cuumarketing.mx**. Vive dentro del repo de CU
 ```
 todossantos/
 ├── index.html          # página
-├── styles.css          # branding en las variables de :root
-├── app.js              # cartelera, programa semanal, menú
+├── styles.css          # branding (variables de :root)
+├── app.js              # cartelera, programa semanal, carta, trofeos
+├── motion.js           # animaciones (GSAP + ScrollTrigger desde cdnjs)
 ├── CNAME               # dominio del subdominio (GitHub Pages)
 ├── assets/
-│   ├── logo.svg        # PLACEHOLDER → reemplazar por el logotipo oficial
-│   ├── logo-mark.svg   # PLACEHOLDER → isotipo / favicon
-│   └── og-cover.svg    # imagen para compartir en redes
+│   ├── sprite.svg      # logotipo, sello (monograma + anillo) y fauna, vectorizados
+│   ├── favicon.svg     # monograma TS
+│   ├── og-cover.png    # imagen al compartir en redes (1200×630)
+│   └── logos/          # archivos originales entregados por el cliente
 ├── data/
 │   ├── events.json     # cartelera: lo escribe n8n (no editar a mano)
-│   ├── site.json       # dirección, WhatsApp, redes, programa semanal, agrupaciones
-│   └── menu.json       # menú digital (propuesta)
+│   ├── site.json       # dirección, horario, WhatsApp, redes, programa semanal, agrupaciones
+│   └── menu.json       # carta (propuesta) + Colección Trofeo
 └── n8n/
     ├── cartelera-todossantos.json   # flujo importable en n8n
     └── build-events.js               # código del nodo "Construir events.json"
 ```
 
+## Branding: salón de caza de lujo
+
+| Rol | Color | Uso |
+|---|---|---|
+| Negro bosque | `#0B0D0B` | fondo |
+| Verde monte | `#18221C` | degradados, tarjetas |
+| Piel | `#3A2417` | sección de trofeos, Destape |
+| Oro latón | `#C9A45C` | acentos, monograma, precios |
+| Marfil | `#EFE6D4` | texto y logotipo |
+
+- **Tipografía**: Playfair Display (títulos, eco del logotipo) + Jost (texto y etiquetas espaciadas).
+- **Logotipos**: los PNG/WebP del cliente se vectorizaron (`assets/sprite.svg`) para que se vean nítidos a cualquier tamaño y se puedan colorear; el sello está separado en monograma y anillo para que el anillo gire.
+- **Fauna de caza**: venado, ciervo, oso, jabalí, borrego cimarrón, bisonte, lobo y águila, de [game-icons.net](https://game-icons.net) (CC BY 3.0, crédito en el pie de página). Cada coctel de la **Colección Trofeo** lleva su animal.
+- **Lema**: “Para unos santos… para otros diablos.”
+
+### Motion
+
+Preloader con el sello girando · revelado del logotipo · luz dorada que sigue al cursor · cursor y botones magnéticos · títulos palabra por palabra · parallax del venado y el oso · cartelera con scroll horizontal fijado (escritorio) · trofeos que “se cuelgan” al entrar · marquesina infinita · grano de película.
+Si GSAP no carga o el visitante tiene activado *reducir movimiento*, todo el contenido se muestra estático.
+
 ## Pendientes antes de publicar
 
-1. **Logotipos**: sustituir `assets/logo.svg` y `assets/logo-mark.svg` por los oficiales (mismo nombre; si son PNG, cambiar la extensión en `index.html`).
-2. **Branding**: pegar los colores y tipografías del manual de marca en las variables `--brand-*`, `--font-*` de `styles.css`.
-3. **Datos del local** en `data/site.json`: dirección, WhatsApp (formato `5216141234567`), links de redes.
-4. **Menú**: `data/menu.json` es una *propuesta*; validar platillos y precios con la cantina.
-5. **Cartelera**: `data/events.json` trae datos de ejemplo hasta que n8n escriba los reales.
+1. **Datos del local** en `data/site.json`: dirección, WhatsApp (formato `5216141234567`), links de redes.
+2. **Carta**: `data/menu.json` es una *propuesta*; validar platillos y precios con la cocina.
+3. **Cartelera**: `data/events.json` trae datos de ejemplo hasta que n8n escriba los reales.
+4. **Fotos** (opcional): fotografías del salón, la barra y de Lenin Ramírez elevarían mucho el sitio.
 
 ## Subdominio todossantos.cuumarketing.mx
 

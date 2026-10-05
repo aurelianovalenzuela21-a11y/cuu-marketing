@@ -10,7 +10,11 @@ const WEEK_ORDER = [3, 4, 5, 6, 0, 1, 2]; // la semana de la cantina arranca en 
 const UPCOMING_DAYS = 21;
 const UPCOMING_MAX = 8;
 
+const SPRITE = 'assets/sprite.svg';
+const TYPE_ICON = { concurso: 'eagle', musica: 'stag', especial: 'deer' };
+
 const $ = (sel) => document.querySelector(sel);
+const icon = (id, cls) => `<svg class="${cls}" aria-hidden="true"><use href="${SPRITE}#${id}"/></svg>`;
 
 function esc(value) {
   return String(value ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -89,12 +93,13 @@ function buildUpcoming(data, today) {
 function autoflyer(ev) {
   return `
     <div class="autoflyer" data-type="${esc(ev.type)}">
-      <span class="autoflyer__day">${esc(DAYS[ev._date.getDay()])} ${ev._date.getDate()} ${esc(MONTHS[ev._date.getMonth()].slice(0, 3))}</span>
+      <span class="autoflyer__day">${esc(DAYS[ev._date.getDay()])} ${ev._date.getDate()} ${esc(MONTHS[ev._date.getMonth()])}</span>
+      ${icon(TYPE_ICON[ev.type] || 'stag', 'autoflyer__icon')}
       <div>
         <p class="autoflyer__title">${esc(ev.title)}</p>
         ${ev.artist ? `<p class="autoflyer__artist">${esc(ev.artist)}</p>` : ''}
       </div>
-      <span class="autoflyer__foot">Cantina Todos Santos · ${esc(formatTime(ev.start))}</span>
+      <span class="autoflyer__foot">Todos Santos · ${esc(formatTime(ev.start))}</span>
     </div>`;
 }
 
@@ -122,7 +127,7 @@ function renderHero(ev, today) {
   $('#hero-desc').textContent = ev.description || $('#hero-desc').textContent;
 
   const chips = [];
-  if (when === 'Hoy') chips.push('<span class="chip chip--live">● Hoy</span>');
+  if (when === 'Hoy') chips.push('<span class="chip chip--live">Hoy</span>');
   if (ev.start) chips.push(`<span class="chip">${esc(formatTime(ev.start))}</span>`);
   if (ev.cover) chips.push(`<span class="chip">Cover ${esc(ev.cover)}</span>`);
   $('#hero-meta').innerHTML = chips.join('');
@@ -135,7 +140,7 @@ function renderHero(ev, today) {
 function renderEvents(list, today) {
   const root = $('#events-list');
   if (!list.length) {
-    root.innerHTML = '<p class="events__empty">Pronto anunciamos la cartelera. Síguenos en redes.</p>';
+    root.innerHTML = '<p class="note container">Pronto anunciamos la cartelera. Síguenos en redes.</p>';
     return;
   }
   root.innerHTML = list.map((ev) => `
@@ -146,7 +151,11 @@ function renderEvents(list, today) {
         <h3 class="event__title">${esc(ev.title)}</h3>
         ${ev.artist ? `<p class="event__artist">${esc(ev.artist)}</p>` : ''}
       </div>
-    </article>`).join('');
+    </article>`).join('') + `
+    <div class="events__end">
+      <p>Reserve antes de que <em>se llene el salón</em></p>
+      <a href="#reservar" class="btn btn--line magnetic"><span>Reservar</span></a>
+    </div>`;
   wireFlyerFallbacks(root, list);
 }
 
@@ -158,7 +167,8 @@ function renderWeek(weekly, today) {
       <li class="${cls}">
         <span class="week__name">${DAYS[day]}</span>
         <span class="week__title">${slot ? esc(slot.title) : 'Descanso'}</span>
-        ${slot ? `<span class="week__time">Desde ${esc(formatTime(slot.start))}</span>` : ''}
+        ${slot?.description ? `<span class="week__desc">${esc(slot.description)}</span>` : ''}
+        ${slot ? `<span class="week__time">${esc(formatTime(slot.start))}</span>` : ''}
       </li>`;
   }).join('');
 }
@@ -187,7 +197,10 @@ function renderMenu(menu) {
     tabs.querySelectorAll('.menu-tab').forEach((t) => t.setAttribute('aria-selected', String(t.dataset.id === id)));
     panel.setAttribute('aria-labelledby', `tab-${id}`);
     panel.innerHTML = `
-      ${cat.intro ? `<p class="menu-panel__intro">${esc(cat.intro)}</p>` : ''}
+      <div class="menu-panel__head">
+        ${cat.icon ? icon(cat.icon, 'menu-panel__icon') : ''}
+        ${cat.intro ? `<p class="menu-panel__intro">${esc(cat.intro)}</p>` : ''}
+      </div>
       <ul class="menu-list">
         ${cat.items.map((it) => `
           <li class="dish">
@@ -200,6 +213,7 @@ function renderMenu(menu) {
           </li>`).join('')}
       </ul>`;
     try { sessionStorage.setItem('ts-menu-tab', id); } catch (_) { /* sin storage */ }
+    document.dispatchEvent(new CustomEvent('ts:menu', { detail: id }));
   };
 
   tabs.innerHTML = menu.categories.map((c) =>
@@ -218,6 +232,32 @@ function renderMenu(menu) {
   show(initial);
 }
 
+/* ---------- Salón de los Trofeos (coctelería de la carta) ---------- */
+
+function renderTrophies(menu) {
+  const cat = menu?.categories?.find((c) => c.id === 'trofeo');
+  const root = $('#trophies');
+  if (!cat) { root.closest('section').hidden = true; return; }
+  root.innerHTML = cat.items.map((it) => `
+    <li class="trophy">
+      ${icon(it.icon || 'stag', 'trophy__icon')}
+      <h3 class="trophy__name">${esc(it.name)}</h3>
+      <p class="trophy__desc">${esc(it.desc)}</p>
+      <span class="trophy__price">${money.format(it.price)}</span>
+    </li>`).join('') + `
+    <li class="trophy trophy--cta">
+      <p>Toda la carta, <em>del monte a la mesa</em></p>
+      <a href="#menu" class="btn btn--line magnetic"><span>Ver la carta</span></a>
+    </li>`;
+}
+
+function renderMarquee() {
+  const words = ['Para unos santos', 'stag', 'Para otros diablos', 'boar', 'Cantina tradicional', 'ram', 'Música en vivo', 'bear'];
+  const group = `<div class="marquee__group">${words.map((w) =>
+    /^[a-z]+$/.test(w) ? icon(w, '') : `<span>${w}</span>`).join('')}</div>`;
+  $('#marquee').innerHTML = group + group.replace('class="marquee__group"', 'class="marquee__group" aria-hidden="true"');
+}
+
 /* ---------- Datos del local ---------- */
 
 function renderSite(site) {
@@ -230,11 +270,12 @@ function renderSite(site) {
   document.querySelectorAll('[data-fill]').forEach((el) => {
     const key = el.dataset.fill;
     if (key === 'address') el.textContent = site.address;
+    else if (key === 'hours' && site.hours) el.textContent = site.hours;
     else if (links[key]) el.href = links[key];
   });
 
   $('#roster').innerHTML = (site.roster || [])
-    .map((name, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span>${esc(name)}</li>`).join('');
+    .map((name, i) => `<li data-reveal><span>${String(i + 1).padStart(2, '0')}</span>${esc(name)}</li>`).join('');
 }
 
 /* ---------- Nav ---------- */
@@ -274,5 +315,11 @@ function initNav() {
   renderWeek(data.weekly || [], today);
   renderUpdated(data.updated);
   renderMenu(menu);
+  renderTrophies(menu);
+  renderMarquee();
   renderSite(site);
+
+  // motion.js arranca las animaciones cuando el contenido ya está en el DOM.
+  window.__tsReady = true;
+  document.dispatchEvent(new Event('ts:ready'));
 })();

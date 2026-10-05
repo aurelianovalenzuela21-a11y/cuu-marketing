@@ -3,90 +3,101 @@
   "currency": "MXN",
   "categories": [
     {
-      "id": "botanas",
-      "name": "Botanas",
-      "intro": "Pa’ abrir boca mientras afina el grupo.",
+      "id": "entradas",
+      "name": "Para empezar",
+      "icon": "duck",
+      "intro": "Para abrir la noche mientras afina el escenario.",
       "items": [
-        { "name": "Chicharrón de la casa", "desc": "Chicharrón de cerdo con limón, salsa valentina y cueritos en vinagre.", "price": 120 },
-        { "name": "Papas Todos Santos", "desc": "Papas a la francesa bañadas en queso menonita fundido, chorizo y jalapeño.", "price": 145, "tag": "Favorito" },
-        { "name": "Guacamole molcajeteado", "desc": "Hecho al momento, con totopos y chicharrón de harina.", "price": 150 },
-        { "name": "Queso fundido menonita", "desc": "Con chorizo o champiñones. Tortillas de harina sobaqueras.", "price": 165 },
-        { "name": "Alitas de la catrina", "desc": "10 piezas: búfalo, mango-habanero o chipotle-tamarindo.", "price": 185 },
-        { "name": "Charola cantinera", "desc": "Cacahuates enchilados, pepino, jícama, chamoy, gomitas y totopos. Pa’ la mesa.", "price": 220 }
+        { "name": "Tuétanos a la leña", "desc": "Tres huesos de res asados, chimichurri de chile pasilla y tortillas de harina recién hechas.", "price": 340 },
+        { "name": "Carpaccio de venado", "desc": "Lomo de venado curado, alcaparras fritas, queso añejo menonita y aceite de chiltepín.", "price": 420, "tag": "De caza" },
+        { "name": "Queso menonita fundido", "desc": "Con chorizo de jabalí o hongos silvestres, en cazuela de hierro.", "price": 290 },
+        { "name": "Tártara de res", "desc": "Filete picado a cuchillo, yema curada, chile serrano tatemado y tostadas de maíz azul.", "price": 380 },
+        { "name": "Chicharrón de rib eye", "desc": "Costra de rib eye crujiente, guacamole martajado y salsa macha de la casa.", "price": 360, "tag": "Favorito" },
+        { "name": "Tabla del salón", "desc": "Embutidos de caza, quesos de Cuauhtémoc, nueces de Delicias, ate y pan de la casa. Para compartir.", "price": 690 }
       ]
     },
     {
-      "id": "tacos",
-      "name": "Tacos y antojos",
-      "intro": "Tortilla de harina o de maíz, tú decides.",
+      "id": "monte",
+      "name": "Cocina de monte",
+      "icon": "deer",
+      "intro": "Carnes de caza de ranchos certificados, cocinadas a fuego lento.",
       "items": [
-        { "name": "Burritos de asado rojo", "desc": "Dos burritos de asado de puerco estilo Chihuahua.", "price": 130 },
-        { "name": "Tacos de arrachera", "desc": "Tres tacos con guacamole, cebolla asada y chile toreado.", "price": 165 },
-        { "name": "Gorditas de chile colorado", "desc": "Tres gorditas de maíz rellenas de carne con chile colorado.", "price": 135 },
-        { "name": "Quesadilla gigante", "desc": "Tortilla de harina de 30 cm con queso menonita y carne a elegir.", "price": 155 },
-        { "name": "Tostadas de ceviche", "desc": "Dos tostadas de ceviche de pescado estilo Sinaloa.", "price": 150 }
+        { "name": "Venado en salsa de zarzamora", "desc": "Medallones de lomo, reducción de zarzamora y sotol, puré de camote rostizado.", "price": 890, "tag": "De caza" },
+        { "name": "Jabalí confitado", "desc": "Pierna de jabalí confitada 12 horas, chile colorado y frijoles charros ahumados.", "price": 780 },
+        { "name": "Codornices al carbón", "desc": "Dos codornices marinadas en adobo de chile guajillo, elotes tatemados.", "price": 590 },
+        { "name": "Borrego en penca", "desc": "Borrego cocido en penca de maguey, consomé y tortillas de maíz criollo.", "price": 640 },
+        { "name": "Caldillo de carne seca", "desc": "Receta chihuahuense de la casa, con papa y chile verde del Valle.", "price": 320 }
       ]
     },
     {
-      "id": "fuertes",
-      "name": "Cortes y platos fuertes",
-      "intro": "Carne del norte, como debe ser.",
+      "id": "cortes",
+      "name": "Cortes",
+      "icon": "bison",
+      "intro": "Res de Chihuahua madurada en seco. Guarnición a elegir.",
       "items": [
-        { "name": "Discada norteña", "desc": "Res, cerdo, chorizo y tocino al disco. Para 2 personas, con tortillas y frijoles.", "price": 390, "tag": "Para compartir" },
-        { "name": "Rib eye 400 g", "desc": "A la parrilla, con papa al horno y cebollitas cambray.", "price": 520 },
-        { "name": "Arrachera 300 g", "desc": "Con frijoles charros, guacamole y tortillas de harina.", "price": 340 },
-        { "name": "Caldillo de carne seca", "desc": "Receta tradicional chihuahuense. Ideal para el día siguiente.", "price": 175 },
-        { "name": "Aguachile verde", "desc": "Camarón en salsa de chiltepín, pepino y cebolla morada.", "price": 260 }
+        { "name": "Tomahawk 1.2 kg", "desc": "Para dos. Madurado 28 días, sal de grano y mantequilla de hierbas.", "price": 2400, "tag": "Para compartir" },
+        { "name": "Rib eye 450 g", "desc": "Madurado 21 días, a la parrilla de mezquite.", "price": 1250 },
+        { "name": "New York 400 g", "desc": "Costra de pimienta negra y salsa de sotol.", "price": 1080 },
+        { "name": "Filete 300 g", "desc": "Centro de filete con salsa de hongos silvestres y tuétano.", "price": 1150 },
+        { "name": "Arrachera de la casa 350 g", "desc": "Marinada en cerveza oscura, guacamole y cebollitas.", "price": 690 }
       ]
     },
     {
-      "id": "cervezas",
-      "name": "Cervezas y cubetas",
+      "id": "guarniciones",
+      "name": "Guarniciones y postres",
+      "icon": "rabbit",
+      "intro": "Para acompañar y para cerrar.",
+      "items": [
+        { "name": "Papa al horno trufada", "desc": "Crema ácida, cebollín y queso añejo.", "price": 180 },
+        { "name": "Elotes de la milpa", "desc": "Tatemados, mantequilla de chile ancho y queso cotija.", "price": 160 },
+        { "name": "Espárragos a la leña", "desc": "Con mantequilla avellanada.", "price": 190 },
+        { "name": "Pastel de elote", "desc": "Tibio, helado de cajeta y nuez de Delicias.", "price": 220 },
+        { "name": "Capirotada del diablo", "desc": "Piloncillo, chile ancho, pasas y queso menonita.", "price": 240, "tag": "De la casa" }
+      ]
+    },
+    {
+      "id": "trofeo",
+      "name": "Colección Trofeo",
+      "icon": "stag",
+      "intro": "Coctelería de autor. Cada trago, una pieza del Salón de los Trofeos.",
+      "items": [
+        { "name": "El Venado", "icon": "stag", "desc": "Sotol, zarzamora, romero ahumado y limón. El trago insignia de la casa.", "price": 260, "tag": "Insignia" },
+        { "name": "El Oso", "icon": "bear", "desc": "Whisky bourbon, miel de mezquite, nuez tostada y bitter de naranja.", "price": 280 },
+        { "name": "El Jabalí", "icon": "boar", "desc": "Mezcal, chile ancho, piña asada y sal de gusano.", "price": 250 },
+        { "name": "El Cimarrón", "icon": "ram", "desc": "Tequila reposado, café de olla, piloncillo y canela.", "price": 240 },
+        { "name": "El Bisonte", "icon": "bison", "desc": "Old fashioned de tequila extra añejo, cacao y cereza negra.", "price": 320 },
+        { "name": "El Lobo", "icon": "wolf", "desc": "Gin, pepino, chile serrano y agua tónica de flor de sotol.", "price": 230 },
+        { "name": "El Águila", "icon": "eagle", "desc": "Raicilla, toronja rosa, hibisco y espuma de cítricos.", "price": 240 }
+      ]
+    },
+    {
+      "id": "cava",
+      "name": "Cava",
+      "icon": "eagle",
+      "intro": "Copa de 1.5 oz · botella.",
+      "items": [
+        { "name": "Sotol Hacienda de Chihuahua Añejo", "desc": "El destilado de nuestra tierra. Botella $2,600.", "price": 190 },
+        { "name": "Tequila Clase Azul Reposado", "desc": "Botella $7,900.", "price": 520 },
+        { "name": "Tequila Don Julio 1942", "desc": "Botella $9,200.", "price": 590 },
+        { "name": "Mezcal Montelobos Espadín", "desc": "Botella $2,400.", "price": 180 },
+        { "name": "Whisky Macallan 12 Double Cask", "desc": "Botella $5,800.", "price": 390 },
+        { "name": "Whisky Buchanan’s 18", "desc": "Botella $4,900.", "price": 340 },
+        { "name": "Coñac Hennessy VSOP", "desc": "Botella $4,200.", "price": 300 }
+      ]
+    },
+    {
+      "id": "cerveza",
+      "name": "Cerveza y sin alcohol",
+      "icon": "horn",
       "intro": "Bien heladas, como se debe.",
       "items": [
-        { "name": "Cerveza nacional", "desc": "Media, Indio, Tecate, Carta Blanca, XX Lager.", "price": 55 },
-        { "name": "Cerveza premium", "desc": "Heineken, Bohemia, Dos Equis Ámbar, Modelo.", "price": 65 },
-        { "name": "Cubetazo nacional", "desc": "6 cervezas nacionales.", "price": 290, "tag": "Promo" },
-        { "name": "Cerveza artesanal chihuahuense", "desc": "Pregunta por la de temporada.", "price": 95 },
-        { "name": "Michelada de la casa", "desc": "Clamato, salsas secretas, chamoy y escarchado de chile.", "price": 95 },
-        { "name": "Caguama michelada", "desc": "La caguama, preparada pa’ la mesa.", "price": 160 }
-      ]
-    },
-    {
-      "id": "cocteles",
-      "name": "Coctelería de la casa",
-      "intro": "Recetas de autor inspiradas en la ofrenda.",
-      "items": [
-        { "name": "Cempasúchil", "desc": "Sotol, maracuyá, naranja y tajín. El trago insignia.", "price": 150, "tag": "De la casa" },
-        { "name": "La Catrina", "desc": "Mezcal, jamaica, limón y jarabe de piloncillo.", "price": 145 },
-        { "name": "Pan de muerto", "desc": "Licor de café, horchata, canela y azahar. De temporada.", "price": 140 },
-        { "name": "Ánima", "desc": "Tequila blanco, pepino, chile serrano y limón.", "price": 140 },
-        { "name": "Carajillo", "desc": "Licor 43 y espresso.", "price": 140 },
-        { "name": "Paloma / Cantarito", "desc": "Tequila, toronja, naranja, limón y sal de gusano.", "price": 125 }
-      ]
-    },
-    {
-      "id": "destilados",
-      "name": "Destilados",
-      "intro": "Copa (1.5 oz) / botella.",
-      "items": [
-        { "name": "Sotol Hacienda de Chihuahua", "desc": "El destilado de nuestra tierra. Copa / botella.", "price": 95 },
-        { "name": "Tequila Don Julio 70", "desc": "Copa. Botella $2,100.", "price": 160 },
-        { "name": "Tequila Cazadores Reposado", "desc": "Copa. Botella $1,250.", "price": 95 },
-        { "name": "Mezcal 400 Conejos", "desc": "Copa. Botella $1,300.", "price": 110 },
-        { "name": "Whisky Buchanan’s 12", "desc": "Copa. Botella $1,900.", "price": 140 },
-        { "name": "Brandy Torres 10", "desc": "Copa. Botella $1,150.", "price": 95 }
-      ]
-    },
-    {
-      "id": "sin-alcohol",
-      "name": "Sin alcohol",
-      "intro": "Para el conductor designado.",
-      "items": [
-        { "name": "Refresco", "desc": "Coca-Cola, Sprite, Fresca, Sidral.", "price": 40 },
-        { "name": "Agua fresca del día", "desc": "Jamaica, horchata o limón con chía.", "price": 45 },
-        { "name": "Limonada / Naranjada", "desc": "Natural o mineral.", "price": 55 },
-        { "name": "Clamato preparado", "desc": "Sin alcohol, con todo lo demás.", "price": 70 }
+        { "name": "Cerveza nacional", "desc": "Indio, Tecate, Carta Blanca, XX Lager.", "price": 85 },
+        { "name": "Cerveza premium", "desc": "Heineken, Bohemia, Modelo Especial, Negra Modelo.", "price": 95 },
+        { "name": "Cerveza artesanal de Chihuahua", "desc": "Pregunte por la de temporada.", "price": 140 },
+        { "name": "Michelada Todos Santos", "desc": "Clamato, salsas de la casa, chamoy y escarchado de chiltepín.", "price": 150 },
+        { "name": "Cubeta de la casa", "desc": "Seis cervezas nacionales.", "price": 460 },
+        { "name": "Aguas frescas y limonadas", "desc": "Jamaica, horchata, limón con chía.", "price": 80 },
+        { "name": "Mocktail del Diablo", "desc": "Tamarindo, chile ancho, cítricos y soda. Sin alcohol.", "price": 140 }
       ]
     }
   ]

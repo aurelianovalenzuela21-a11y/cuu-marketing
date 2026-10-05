@@ -16,10 +16,10 @@
       "id": "demo-2026-10-10",
       "date": "2026-10-10",
       "start": "22:00",
-      "title": "Música en Vivo",
+      "title": "Noche Estelar",
       "type": "musica",
       "artist": "Grupo La Suerte",
-      "description": "Sábado de música en vivo con Grupo La Suerte.",
+      "description": "Noche Estelar con Grupo La Suerte en el escenario de la casa.",
       "flyer": ""
     },
     {
@@ -36,10 +36,10 @@
       "id": "demo-2026-10-17",
       "date": "2026-10-17",
       "start": "22:00",
-      "title": "Música en Vivo",
+      "title": "Noche Estelar",
       "type": "musica",
       "artist": "Cuarta Herencia",
-      "description": "Sábado de música en vivo con Cuarta Herencia.",
+      "description": "Noche Estelar con Cuarta Herencia en el escenario de la casa.",
       "flyer": ""
     },
     {
@@ -49,7 +49,7 @@
       "title": "Noche de Todos Santos",
       "type": "especial",
       "artist": "Gran final del Destape de las Estrellas",
-      "description": "La noche de la casa: concurso de catrinas, altar de muertos y la gran final del Destape.",
+      "description": "La noche de la casa: gran final del Destape, altar de muertos y Noche Estelar hasta el amanecer.",
       "flyer": ""
     }
   ]
