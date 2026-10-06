@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos Agrupaciones — Cantina Todos Santos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================
+       PLANTILLA HORIZONTAL 1920x1080 — VIDEOS DE AGRUPACIONES
+       Cantina Todos Santos (principal, arriba)
+       Patrocinadores (abajo): El Destape de las Estrellas · CUU Studio · Dayvasos
+       ================================================ */
+
+    /* ---- COLORES CANTINA TODOS SANTOS ----
+       Cambia estos valores por los colores oficiales de la cantina. */
+    :root {
+      --cts-fondo:      #0E0A10;   /* fondo principal */
+      --cts-fondo-2:    #1C1220;   /* fondo de bandas */
+      --cts-primario:   #D4A23C;   /* dorado */
+      --cts-secundario: #C2185B;   /* rosa mexicano */
+      --cts-acento:     #6A1B9A;   /* morado */
+      --cts-texto:      #FFF6E6;   /* texto claro */
+      --cts-texto-2:    #CBB89A;   /* texto secundario */
+
+      --font-head: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+
+      --w: 1920px;
+      --h: 1080px;
+      --top-h: 200px;
+      --bottom-h: 170px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; }
+    body {
+      background: #000;
+      color: var(--cts-texto);
+      font-family: var(--font-body);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- LIENZO 16:9 (se escala a la ventana) ---- */
+    .stage {
+      position: relative;
+      width: var(--w);
+      height: var(--h);
+      flex-shrink: 0;
+      transform-origin: center center;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 0%, rgba(194, 24, 91, 0.28), transparent 70%),
+        radial-gradient(ellipse 60% 50% at 85% 100%, rgba(106, 27, 154, 0.30), transparent 70%),
+        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(212, 162, 60, 0.10), transparent 70%),
+        var(--cts-fondo);
+      display: grid;
+      grid-template-rows: var(--top-h) 1fr var(--bottom-h);
+      overflow: hidden;
+    }
+
+    /* Papel picado decorativo */
+    .papel-picado {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 26px;
+      display: flex;
+      pointer-events: none;
+    }
+    .papel-picado span {
+      flex: 1;
+      height: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+    }
+    .papel-picado span:nth-child(3n+1) { background: var(--cts-secundario); }
+    .papel-picado span:nth-child(3n+2) { background: var(--cts-primario); }
+    .papel-picado span:nth-child(3n)   { background: var(--cts-acento); }
+
+    /* ---- ARRIBA: CANTINA TODOS SANTOS ---- */
+    .top {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 30px 80px 0;
+      gap: 40px;
+    }
+    .top__side {
+      font-family: var(--font-head);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 22px;
+      color: var(--cts-texto-2);
+    }
+    .top__side--right { text-align: right; }
+    .top__side strong {
+      display: block;
+      font-size: 34px;
+      letter-spacing: 0.04em;
+      color: var(--cts-texto);
+      margin-top: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 560px;
+    }
+    .top__side--right strong { margin-left: auto; }
+
+    .main-logo {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .main-logo img {
+      max-height: 150px;
+      max-width: 520px;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 24px rgba(212, 162, 60, 0.35));
+    }
+
+    /* ---- CENTRO: VIDEO ---- */
+    .middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    .video-frame {
+      position: relative;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 18px;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--cts-primario), var(--cts-secundario) 50%, var(--cts-acento));
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 60px rgba(194, 24, 91, 0.25);
+    }
+    .video-frame__inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 13px;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background: #000;
+    }
+    .video-empty {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+      font-family: var(--font-head);
+      color: var(--cts-texto-2);
+      cursor: pointer;
+    }
+    .video-empty b { font-size: 34px; color: var(--cts-texto); }
+    .video-empty span { font-size: 20px; }
+    .has-video .video-empty { display: none; }
+
+    .badge-live {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: 99px;
+      background: rgba(14, 10, 16, 0.75);
+      border: 1px solid rgba(212, 162, 60, 0.5);
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(6px);
+    }
+    .badge-live i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--cts-secundario);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { opacity: 0.25; } }
+
+    /* ---- ABAJO: PATROCINADORES ---- */
+    .bottom {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 0 80px 18px;
+    }
+    .bottom::before {
+      content: "";
+      position: absolute;
+      left: 80px; right: 80px; top: 18px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cts-primario), transparent);
+      opacity: 0.6;
+    }
+    .sponsors__label {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cts-primario);
+      white-space: nowrap;
+    }
+    .sponsor {
+      height: 100px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .sponsor img {
+      max-height: 100px;
+      max-width: 300px;
+      object-fit: contain;
+    }
+    .sponsor-sep {
+      width: 1px;
+      height: 70px;
+      background: rgba(203, 184, 154, 0.3);
+    }
+
+    /* Texto de respaldo si falta el archivo del logo */
+    .logo-fallback {
+      font-family: var(--font-head);
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+    }
+    .main-logo .logo-fallback {
+      font-size: 58px;
+      letter-spacing: 0.06em;
+      color: var(--cts-primario);
+    }
+    .main-logo .logo-fallback small {
+      display: block;
+      font-size: 22px;
+      letter-spacing: 0.5em;
+      color: var(--cts-texto);
+      margin-bottom: 8px;
+    }
+    .sponsor .logo-fallback {
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      color: var(--cts-texto);
+    }
+
+    /* ---- PANEL DE CONTROL (no aparece en pantalla completa ni al exportar) ---- */
+    .controls {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      max-width: calc(100vw - 32px);
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(20, 20, 20, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 13px;
+      transition: opacity 0.3s;
+    }
+    .controls button, .controls label.btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #2A2A2A;
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+    }
+    .controls button:hover, .controls label.btn:hover { background: #3A3A3A; }
+    .controls input[type="text"] {
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #111;
+      color: #fff;
+      font: inherit;
+      width: 200px;
+    }
+    .controls input[type="file"] { display: none; }
+    body.idle .controls, body.overlay .controls, :fullscreen .controls { opacity: 0; pointer-events: none; }
+    body.idle { cursor: none; }
+
+    /* Modo overlay (?overlay=1): hueco transparente para usar como PNG en CapCut/Premiere */
+    body.overlay { background: transparent; }
+    body.overlay .video-frame__inner,
+    body.overlay .video-frame__inner video { background: transparent; }
+    body.overlay .video-empty,
+    body.overlay video { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="stage" id="stage">
+    <div class="papel-picado" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- ARRIBA: logo principal -->
+    <header class="top">
+      <div class="top__side">
+        En lo que instalamos el sonido…
+        <strong id="evento">¡Ya casi empezamos!</strong>
+      </div>
+
+      <div class="main-logo">
+        <img src="logos/cantina-todos-santos.png" alt="Cantina Todos Santos"
+             data-fallback="<div class='logo-fallback'><small>Cantina</small>Todos Santos</div>">
+      </div>
+
+      <div class="top__side top__side--right">
+        Ahora en pantalla
+        <strong id="agrupacion">Agrupación invitada</strong>
+      </div>
+    </header>
+
+    <!-- CENTRO: video -->
+    <main class="middle">
+      <div class="video-frame">
+        <div class="video-frame__inner" id="videoBox">
+          <video id="video" playsinline autoplay muted></video>
+          <label class="video-empty" for="fileInput">
+            <b>Arrastra aquí los videos de las agrupaciones</b>
+            <span>o haz clic para elegirlos · se reproducen en orden y en bucle</span>
+          </label>
+          <div class="badge-live"><i></i> Música en vivo</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ABAJO: patrocinadores -->
+    <footer class="bottom">
+      <div class="sponsors__label">Patrocinan</div>
+      <div class="sponsor">
+        <img src="logos/el-destape-de-las-estrellas.png" alt="El Destape de las Estrellas"
+             data-fallback="<div class='logo-fallback'>El Destape<br>de las Estrellas</div>">
+      </div>
+      <div class="sponsor-sep"></div>
+      <div class="sponsor">
+        <img src="logos/cuu-studio.png" alt="CUU Studio"
+             data-fallback="<div class='logo-fallback'>CUU Studio</div>">
+      </div>
+      <div class="sponsor-sep"></div>
+      <div class="sponsor">
+        <img src="logos/dayvasos.png" alt="Dayvasos"
+             data-fallback="<div class='logo-fallback'>Dayvasos</div>">
+      </div>
+    </footer>
+  </div>
+
+  <!-- Controles -->
+  <div class="controls">
+    <label class="btn" for="fileInput">🎬 Elegir videos</label>
+    <input type="file" id="fileInput" accept="video/*" multiple>
+    <input type="text" id="inputAgrupacion" placeholder="Nombre de la agrupación">
+    <button id="btnSonido">🔇 Activar sonido</button>
+    <button id="btnSiguiente">⏭ Siguiente</button>
+    <button id="btnFull">⛶ Pantalla completa</button>
+  </div>
+
+  <script>
+    const stage = document.getElementById('stage');
+    const video = document.getElementById('video');
+    const videoBox = document.getElementById('videoBox');
+    const fileInput = document.getElementById('fileInput');
+    const agrupacionEl = document.getElementById('agrupacion');
+    const inputAgrupacion = document.getElementById('inputAgrupacion');
+    const btnSonido = document.getElementById('btnSonido');
+    const params = new URLSearchParams(location.search);
+
+    // Modo overlay para exportar PNG transparente
+    if (params.get('overlay') === '1') document.body.classList.add('overlay');
+    if (params.get('agrupacion')) agrupacionEl.textContent = params.get('agrupacion');
+    if (params.get('evento')) document.getElementById('evento').textContent = params.get('evento');
+
+    // Logos: si falta el archivo, se muestra el nombre en texto
+    document.querySelectorAll('img[data-fallback]').forEach(img => {
+      const fallback = () => { img.outerHTML = img.dataset.fallback; };
+      if (img.complete && img.naturalWidth === 0) fallback();
+      else img.addEventListener('error', fallback);
+    });
+
+    // Escalar el lienzo 1920x1080 a la ventana
+    function fit() {
+      const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+      stage.style.transform = `scale(${s})`;
+    }
+    addEventListener('resize', fit);
+    fit();
+
+    // Lista de reproducción
+    let playlist = [];
+    let current = 0;
+    let manualName = false;
+
+    function nameFromFile(file) {
+      return file.name.replace(/\.[^.]+$/, '').replace(/[_-]+/g, ' ').trim();
+    }
+
+    function playIndex(i) {
+      if (!playlist.length) return;
+      current = (i + playlist.length) % playlist.length;
+      const item = playlist[current];
+      video.src = item.url;
+      if (!manualName) agrupacionEl.textContent = item.name;
+      video.play().catch(() => {});
+    }
+
+    function loadFiles(files) {
+      const vids = [...files].filter(f => f.type.startsWith('video/'));
+      if (!vids.length) return;
+      playlist.forEach(p => URL.revokeObjectURL(p.url));
+      playlist = vids.map(f => ({ url: URL.createObjectURL(f), name: nameFromFile(f) }));
+      videoBox.classList.add('has-video');
+      playIndex(0);
+    }
+
+    fileInput.addEventListener('change', e => loadFiles(e.target.files));
+    video.addEventListener('ended', () => playIndex(current + 1));
+    document.getElementById('btnSiguiente').addEventListener('click', () => playIndex(current + 1));
+
+    // Arrastrar y soltar en cualquier parte
+    addEventListener('dragover', e => e.preventDefault());
+    addEventListener('drop', e => { e.preventDefault(); loadFiles(e.dataTransfer.files); });
+
+    // Nombre manual de la agrupación
+    inputAgrupacion.addEventListener('input', () => {
+      manualName = inputAgrupacion.value.trim() !== '';
+      agrupacionEl.textContent = manualName
+        ? inputAgrupacion.value
+        : (playlist[current]?.name || 'Agrupación invitada');
+    });
+
+    // Sonido
+    btnSonido.addEventListener('click', () => {
+      video.muted = !video.muted;
+      btnSonido.textContent = video.muted ? '🔇 Activar sonido' : '🔊 Silenciar';
+    });
+
+    // Pantalla completa
+    document.getElementById('btnFull').addEventListener('click', () => {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen();
+    });
+
+    // Atajos: F pantalla completa, M sonido, flecha derecha siguiente
+    addEventListener('keydown', e => {
+      if (e.target.tagName === 'INPUT') return;
+      if (e.key === 'f' || e.key === 'F') document.getElementById('btnFull').click();
+      if (e.key === 'm' || e.key === 'M') btnSonido.click();
+      if (e.key === 'ArrowRight') playIndex(current + 1);
+      if (e.key === 'ArrowLeft') playIndex(current - 1);
+    });
+
+    // Ocultar controles y cursor tras 3 s sin mover el mouse
+    let idleTimer;
+    function wake() {
+      document.body.classList.remove('idle');
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(() => document.body.classList.add('idle'), 3000);
+    }
+    addEventListener('mousemove', wake);
+    wake();
+  </script>
+</body>
+</html>
