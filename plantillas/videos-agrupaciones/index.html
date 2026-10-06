@@ -403,6 +403,9 @@
       white-space: nowrap;
     }
 
+    /* Modo sin recuadro (?sinrecuadro=1): centro libre para escribir los nombres de los artistas */
+    body.sinrecuadro .video-frame { visibility: hidden; }
+
     /* En los videos exportados el recuadro va limpio, sin etiqueta */
     body.export .badge { display: none; }
 
@@ -520,6 +523,7 @@
     if (params.get('overlay') === '1') document.body.classList.add('overlay');
     if (params.get('export') === '1') document.body.classList.add('export');
     if (params.get('chroma') === '1') document.body.classList.add('chroma');
+    if (params.get('sinrecuadro') === '1') document.body.classList.add('sinrecuadro');
     if (params.get('placa') === '1' || params.get('nombre')) document.body.classList.add('placa');
     if (params.get('nombre')) document.getElementById('nombre').textContent = params.get('nombre');
 

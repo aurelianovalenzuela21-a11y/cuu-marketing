@@ -8,6 +8,7 @@
 ## Videos (carpeta `video/`)
 | Archivo | Para qué |
 |---|---|
+| `plantilla-loop-sin-recuadro.mp4` | **Sin recuadro**: centro libre para escribir los nombres de los artistas que se presentan. |
 | `plantilla-loop-fondo-verde.mp4` | **Recuadro en verde puro (#00FF00)** para quitarlo con chroma key. |
 | `plantilla-loop-transparente-con-placa.mov` | Recuadro transparente (sin pantalla verde) + **placa vacía "Ahora en el escenario"** para escribir a mano el nombre del grupo. |
 | `plantilla-loop-transparente.mov` | ProRes 4444 con el recuadro ya transparente (sin chroma key), sin placa. |
@@ -21,6 +22,9 @@ Los videos duran 6 s y se repiten sin salto: cópialos las veces que dure el vid
 
 **Placa del nombre del grupo** (versión con placa): escribe el texto en el editor sobre la placa,
 alineado a la izquierda en x ≈ 430, con la línea base en y ≈ 840; tipografía sugerida DM Serif Display, 46 px, color crema `#EFE7DA`.
+
+**Sin recuadro:** el área libre para los nombres va de y ≈ 240 a y ≈ 890 (entre los anfitriones y la línea de patrocinadores),
+centrada en x = 960.
 
 ## En vivo desde la computadora
 Abre `index.html` en Chrome y arrastra los videos (varios a la vez): se reproducen en orden y en bucle.
