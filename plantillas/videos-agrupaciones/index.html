@@ -286,7 +286,7 @@
     }
     #logo-dayvasos { justify-self: end; }
     #logo-botas { justify-self: start; }
-    .sponsor--main { height: 150px; }
+    .sponsor--main { height: 118px; }
     .wig {
       height: 100%;
       animation: wiggle 3s ease-in-out infinite;
@@ -294,7 +294,7 @@
       transform-origin: 50% 60%;
     }
     .wig img, .wig svg { height: 100%; width: auto; display: block; }
-    .sponsor--main .wig svg { width: 150px; }
+    .sponsor--main .wig svg { width: 113px; }
     @keyframes wiggle {
       0%, 100% { transform: rotate(0deg) translateY(0); }
       25%      { transform: rotate(2.5deg) translateY(-3px); }
@@ -306,7 +306,7 @@
       15%, 35%      { filter: drop-shadow(0 0 22px rgba(242, 163, 58, 0.45)); }
     }
     .cuu-flow { animation: cuu-flow 6s linear infinite; animation-delay: var(--d0, 0s); }
-    @keyframes cuu-flow { to { transform: translateX(732px); } }
+    @keyframes cuu-flow { to { transform: translateX(660px); } }
     .sponsor-sep { width: 1px; height: 80px; background: var(--cts-linea); }
 
     /* ---- PANEL DE CONTROL (se oculta solo) ---- */
@@ -352,6 +352,56 @@
     body.chroma .video-frame__inner { background: #00FF00; }
     body.chroma .video-empty,
     body.chroma video { display: none; }
+
+    /* Placa del nombre del grupo: queda vacía para escribir el nombre en el editor */
+    .nameplate {
+      display: none;
+      position: absolute;
+      left: 34px;
+      bottom: 34px;
+      z-index: 4;
+      width: 640px;
+      height: 112px;
+      padding: 16px 30px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #1A1009, #2A1A10);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+    body.placa .nameplate { display: block; }
+    .nameplate::before {            /* borde dorado */
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #F7C948, #B98A3C 60%, rgba(185, 138, 60, 0.3));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    }
+    .nameplate::after {             /* destello que recorre la placa */
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      left: -220px;
+      width: 160px;
+      background: linear-gradient(100deg, transparent, rgba(255, 226, 168, 0.18), transparent);
+      animation: plate-shine 6s ease-in-out infinite;
+    }
+    @keyframes plate-shine {
+      0%, 55% { transform: translateX(0); }
+      100%    { transform: translateX(1100px); }
+    }
+    .nameplate__label { font-size: 15px; color: var(--cts-naranja); }
+    .nameplate__name {
+      margin-top: 8px;
+      font-family: var(--font-serif);
+      font-size: 46px;
+      line-height: 1.1;
+      color: var(--cts-crema);
+      white-space: nowrap;
+    }
 
     /* En los videos exportados el recuadro va limpio, sin etiqueta */
     body.export .badge { display: none; }
@@ -401,6 +451,11 @@
           </label>
           <div class="badge caps"><i></i>En lo que instalamos el sonido…</div>
         </div>
+        <!-- Placa para el nombre del grupo (?placa=1, opcional &nombre=...) -->
+        <div class="nameplate" id="nameplate">
+          <div class="nameplate__label caps">Ahora en el escenario</div>
+          <div class="nameplate__name" id="nombre"></div>
+        </div>
       </div>
     </main>
 
@@ -413,13 +468,13 @@
       </div>
       <div class="sponsor-sep"></div>
 
-      <!-- CUU Studio: silueta original rellena con morado/azul en movimiento -->
+      <!-- CUU Studio: silueta del texto rellena con morado/azul en movimiento -->
       <div class="sponsor sponsor--main" id="logo-cuu" style="--d0:-2s">
         <div class="wig" style="--d0:-1s">
-          <svg viewBox="0 0 732 732" role="img" aria-label="CUU Studio">
+          <svg viewBox="0 0 660 690" role="img" aria-label="CUU Studio">
             <defs>
-              <mask id="cuuMask" maskUnits="userSpaceOnUse" x="0" y="0" width="732" height="732">
-                <image href="logos/cuu-studio-silueta.png" x="0" y="0" width="732" height="732"/>
+              <mask id="cuuMask" maskUnits="userSpaceOnUse" x="0" y="0" width="660" height="690">
+                <image href="logos/cuu-studio-silueta.png" x="0" y="0" width="660" height="690"/>
               </mask>
               <linearGradient id="cuuFlow" x1="0" y1="0" x2="1" y2="0.25">
                 <stop offset="0"     stop-color="#5B7CFA"/>
@@ -432,7 +487,7 @@
               </linearGradient>
             </defs>
             <g mask="url(#cuuMask)">
-              <rect class="cuu-flow" x="-1464" y="-200" width="2196" height="1132" fill="url(#cuuFlow)"/>
+              <rect class="cuu-flow" x="-1320" y="-100" width="1980" height="890" fill="url(#cuuFlow)"/>
             </g>
           </svg>
         </div>
@@ -465,6 +520,8 @@
     if (params.get('overlay') === '1') document.body.classList.add('overlay');
     if (params.get('export') === '1') document.body.classList.add('export');
     if (params.get('chroma') === '1') document.body.classList.add('chroma');
+    if (params.get('placa') === '1' || params.get('nombre')) document.body.classList.add('placa');
+    if (params.get('nombre')) document.getElementById('nombre').textContent = params.get('nombre');
 
     // Chispas: posiciones fijas (semilla), duración 6 s → bucle perfecto
     (function makeEmbers() {
