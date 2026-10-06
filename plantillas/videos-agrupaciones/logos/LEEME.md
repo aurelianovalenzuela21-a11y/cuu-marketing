@@ -1,12 +1,10 @@
-# Logos
+# Logos (PNG con fondo transparente)
 
-| Archivo                           | Qué es                                                                 |
-|-----------------------------------|------------------------------------------------------------------------|
-| `cantina-todos-santos.png`        | Logotipo oficial de Cantina Todos Santos convertido a textura dorada   |
-| `sello-anillo-oro.png`            | Anillo de texto del sello oficial (silueta que gira en el fondo)       |
-
-Origen: `todossantos/assets/logos/` de la rama del sitio web de la cantina.
-
-El Destape de las Estrellas, CUU Studio y Dayvasos están dibujados en vector dentro de `index.html`.
-Si guardas aquí `el-destape-de-las-estrellas.png`, `cuu-studio.png` o `dayvasos.png`
-(PNG con fondo transparente), la plantilla los usa automáticamente en su lugar.
+| Archivo                           | Qué es                                                                   |
+|-----------------------------------|--------------------------------------------------------------------------|
+| `el-destape-de-las-estrellas.png` | Logo original de El Destape de las Estrellas                             |
+| `cantina-todos-santos.png`        | Logotipo oficial de Cantina Todos Santos en dorado con efecto 3D         |
+| `sello-anillo-oro.png`            | Anillo de texto del sello oficial (silueta que gira en el fondo)         |
+| `dayvasos.png`                    | Dayvasos JN sin fondo, con borde blanco y sombra                         |
+| `cuu-studio-silueta.png`          | Silueta de CUU Studio (texto + aro); la plantilla la rellena con color   |
+| `botas-el-jefee.png`              | Botas El Jefee en línea color crema                                      |

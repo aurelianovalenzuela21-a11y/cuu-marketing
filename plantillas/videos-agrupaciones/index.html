@@ -56,7 +56,7 @@
       height: 1080px;
       flex-shrink: 0;
       display: grid;
-      grid-template-rows: 225px 1fr 165px;
+      grid-template-rows: 222px 1fr 178px;
     }
 
     /* ---- FONDO: café sólido + silueta giratoria gigante ---- */
@@ -142,13 +142,12 @@
       padding-top: 10px;
     }
     .host {
-      width: 420px;
-      height: 210px;
+      height: 200px;
       animation: shine 3s ease-in-out infinite;
       animation-delay: var(--d0, 0s);
     }
-    #logo-cantina { --d0: -1.5s; }
-    .host svg, .host img { width: 100%; height: 100%; object-fit: contain; display: block; overflow: visible; }
+    #logo-cantina { --d0: -1.5s; height: 180px; }
+    .host img { height: 100%; width: auto; display: block; }
     @keyframes shine {
       0%, 100% { filter: drop-shadow(0 4px 14px rgba(247, 201, 72, 0.18)) brightness(1); }
       50%      { filter: drop-shadow(0 4px 28px rgba(247, 201, 72, 0.45)) brightness(1.1); }
@@ -252,40 +251,63 @@
     }
     @keyframes blink { 50% { opacity: 0.2; } }
 
-    /* ---- ABAJO: PATROCINADORES (CUU Studio al centro) ---- */
+    /* ---- ABAJO: PATROCINADORES (CUU Studio al centro, movimiento suave) ---- */
     .bottom {
       position: relative;
       display: grid;
       grid-template-columns: 1fr auto auto auto 1fr;
       align-items: center;
-      gap: 48px;
-      padding: 12px 90px 10px;
+      gap: 56px;
+      padding: 14px 90px 8px;
     }
     .bottom::before {
       content: "";
       position: absolute;
-      left: 280px; right: 280px; top: 14px;
+      left: 280px; right: 280px; top: 12px;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--cts-linea), transparent);
     }
-    .sponsors__label { font-size: 15px; color: var(--cts-gris); white-space: nowrap; justify-self: end; }
+    .sponsors__label {
+      position: absolute;
+      left: 90px;
+      top: 50%;
+      font-size: 14px;
+      color: var(--cts-gris);
+      white-space: nowrap;
+      transform: translateY(-50%);
+    }
     .sponsor {
-      height: 96px;
-      width: 330px;
+      height: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
       animation: spotlight 6s ease-in-out infinite;
       animation-delay: var(--d0, 0s);
     }
-    .sponsor--main { width: 400px; }
-    #logo-dayvasos { --d0: -3s; justify-self: start; }
-    .sponsor svg, .sponsor img { height: 100%; width: 100%; object-fit: contain; overflow: visible; display: block; }
-    @keyframes spotlight {
-      0%, 50%, 100% { opacity: 0.8; transform: scale(1); filter: none; }
-      15%, 35%      { opacity: 1;   transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(242, 163, 58, 0.35)); }
+    #logo-dayvasos { justify-self: end; }
+    #logo-botas { justify-self: start; }
+    .sponsor--main { height: 150px; }
+    .wig {
+      height: 100%;
+      animation: wiggle 3s ease-in-out infinite;
+      animation-delay: var(--d0, 0s);
+      transform-origin: 50% 60%;
     }
-    .sponsor-sep { width: 1px; height: 64px; background: var(--cts-linea); }
+    .wig img, .wig svg { height: 100%; width: auto; display: block; }
+    .sponsor--main .wig svg { width: 150px; }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      25%      { transform: rotate(2.5deg) translateY(-3px); }
+      50%      { transform: rotate(0deg) translateY(0); }
+      75%      { transform: rotate(-2.5deg) translateY(-3px); }
+    }
+    @keyframes spotlight {
+      0%, 50%, 100% { filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35)); }
+      15%, 35%      { filter: drop-shadow(0 0 22px rgba(242, 163, 58, 0.45)); }
+    }
+    .cuu-flow { animation: cuu-flow 6s linear infinite; animation-delay: var(--d0, 0s); }
+    @keyframes cuu-flow { to { transform: translateX(732px); } }
+    .sponsor-sep { width: 1px; height: 80px; background: var(--cts-linea); }
 
     /* ---- PANEL DE CONTROL (se oculta solo) ---- */
     .controls {
@@ -326,6 +348,14 @@
     body.overlay .video-empty,
     body.overlay video { display: none; }
 
+    /* Modo chroma (?chroma=1): el recuadro del video es verde puro para quitarlo con chroma key */
+    body.chroma .video-frame__inner { background: #00FF00; }
+    body.chroma .video-empty,
+    body.chroma video { display: none; }
+
+    /* En los videos exportados el recuadro va limpio, sin etiqueta */
+    body.export .badge { display: none; }
+
     /* Modo exportar (?export=1): animaciones congeladas y movidas cuadro a cuadro con --t */
     body.export *, body.export *::before, body.export *::after {
       animation-play-state: paused !important;
@@ -334,28 +364,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Degradados compartidos por los logos -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <linearGradient id="oro" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0" stop-color="#FFF4C2"/>
-        <stop offset="0.35" stop-color="#F7C948"/>
-        <stop offset="0.62" stop-color="#C98A12"/>
-        <stop offset="0.8" stop-color="#F2BE3A"/>
-        <stop offset="1" stop-color="#FFE38A"/>
-      </linearGradient>
-      <linearGradient id="oroMic" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#FFF1B0"/>
-        <stop offset="0.5" stop-color="#E9AE2A"/>
-        <stop offset="1" stop-color="#9C6508"/>
-      </linearGradient>
-      <linearGradient id="cuuDot" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#5B7CFA"/>
-        <stop offset="1" stop-color="#E879F9"/>
-      </linearGradient>
-    </defs>
-  </svg>
 
   <div class="stage" id="stage">
     <div class="bg" id="bg">
@@ -377,51 +385,9 @@
 
     <!-- ARRIBA: anfitriones -->
     <header class="hosts">
-      <!-- El Destape de las Estrellas -->
-      <div class="host" id="logo-destape" data-png="logos/el-destape-de-las-estrellas.png">
-        <svg viewBox="0 0 1000 500" role="img" aria-label="El Destape de las Estrellas">
-          <defs>
-            <path id="arcDestape" d="M50,420 Q500,370 950,420"/>
-            <path id="arcEstrellas" d="M200,488 Q500,452 800,488"/>
-          </defs>
-          <path d="M480,20 L527,150 L665,150 L553,232 L407,232 L295,150 L433,150 Z"
-                fill="none" stroke="#3A2400" stroke-width="40" stroke-linejoin="miter"/>
-          <path d="M480,20 L527,150 L665,150 L553,232 L407,232 L295,150 L433,150 Z"
-                fill="none" stroke="url(#oro)" stroke-width="26" stroke-linejoin="miter"/>
-          <g transform="translate(600 120) rotate(22)">
-            <rect x="-14" y="62" width="28" height="70" rx="6" fill="url(#oroMic)" stroke="#3A2400" stroke-width="6"/>
-            <rect x="-50" y="-80" width="100" height="150" rx="50" fill="url(#oroMic)" stroke="#3A2400" stroke-width="7"/>
-            <g stroke="#5A3A00" stroke-width="7" stroke-linecap="round">
-              <line x1="-30" y1="-50" x2="30" y2="-50"/><line x1="-36" y1="-32" x2="36" y2="-32"/>
-              <line x1="-38" y1="-14" x2="38" y2="-14"/><line x1="-38" y1="4" x2="38" y2="4"/>
-              <line x1="-38" y1="22" x2="38" y2="22"/><line x1="-34" y1="40" x2="34" y2="40"/>
-            </g>
-            <circle cx="22" cy="100" r="9" fill="url(#oroMic)" stroke="#3A2400" stroke-width="4"/>
-          </g>
-          <g font-family="DM Serif Display, serif" stroke="#3A2400" stroke-width="14" paint-order="stroke" stroke-linejoin="round" fill="url(#oro)">
-            <text x="118" y="262" font-size="92">EL</text>
-            <text font-size="215"><textPath href="#arcDestape" textLength="900" lengthAdjust="spacingAndGlyphs">DESTAPE</textPath></text>
-          </g>
-          <text font-family="Archivo, sans-serif" font-weight="800" font-size="54" letter-spacing="3" stroke="#3A2400" stroke-width="10" paint-order="stroke" stroke-linejoin="round" fill="url(#oro)"><textPath href="#arcEstrellas" textLength="600" lengthAdjust="spacingAndGlyphs">DE LAS ESTRELLAS</textPath></text>
-        </svg>
-      </div>
-
+      <div class="host" id="logo-destape"><img src="logos/el-destape-de-las-estrellas.png" alt="El Destape de las Estrellas"></div>
       <div class="hosts__sep"></div>
-
-      <!-- Cantina Todos Santos (misma textura dorada) -->
-      <div class="host" id="logo-cantina" data-png="logos/cantina-todos-santos.png">
-        <svg viewBox="0 0 1000 500" role="img" aria-label="Cantina Todos Santos">
-          <g stroke="#3A2400" stroke-linejoin="round" paint-order="stroke" fill="url(#oro)">
-            <text x="500" y="150" text-anchor="middle" font-family="Archivo, sans-serif" font-weight="800" font-size="74" letter-spacing="34" stroke-width="10">CANTINA</text>
-            <text x="500" y="318" text-anchor="middle" font-family="DM Serif Display, serif" font-size="196" stroke-width="14" textLength="920" lengthAdjust="spacingAndGlyphs">TODOS</text>
-            <text x="500" y="470" text-anchor="middle" font-family="DM Serif Display, serif" font-size="196" stroke-width="14" textLength="920" lengthAdjust="spacingAndGlyphs">SANTOS</text>
-          </g>
-          <g fill="url(#oro)" stroke="#3A2400" stroke-width="5">
-            <path d="M70,128 h120 v10 h-120 z"/>
-            <path d="M810,128 h120 v10 h-120 z"/>
-          </g>
-        </svg>
-      </div>
+      <div class="host" id="logo-cantina"><img src="logos/cantina-todos-santos.png" alt="Cantina Todos Santos"></div>
     </header>
 
     <!-- CENTRO: video -->
@@ -441,32 +407,40 @@
     <!-- ABAJO: patrocinadores -->
     <footer class="bottom">
       <div class="sponsors__label caps">Patrocinan</div>
-      <div class="sponsor-sep"></div>
 
-      <!-- CUU Studio (marca: punto degradado azul→morado + Bricolage Grotesque) -->
-      <div class="sponsor sponsor--main" id="logo-cuu" data-png="logos/cuu-studio.png">
-        <svg viewBox="0 0 330 96" role="img" aria-label="CUU Studio">
-          <circle cx="36" cy="48" r="13" fill="url(#cuuDot)"/>
-          <text x="64" y="63" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="44" letter-spacing="1" fill="#FFFFFF">CUU STUDIO</text>
-        </svg>
+      <div class="sponsor" id="logo-dayvasos" style="--d0:0s">
+        <div class="wig" style="--d0:0s"><img src="logos/dayvasos.png" alt="Dayvasos JN"></div>
       </div>
-
       <div class="sponsor-sep"></div>
 
-      <!-- Dayvasos -->
-      <div class="sponsor" id="logo-dayvasos" data-png="logos/dayvasos.png">
-        <svg viewBox="0 0 330 96" role="img" aria-label="Dayvasos">
-          <g transform="translate(14 14)">
-            <path d="M38,40 L52,-12" stroke="#EFE7DA" stroke-width="4" stroke-linecap="round"/>
-            <path d="M4,12 L56,12 L49,66 Q48,70 44,70 L16,70 Q12,70 11,66 Z" fill="none" stroke="#F2A33A" stroke-width="4" stroke-linejoin="round"/>
-            <path d="M4,12 L56,12 L55,20 Q48,26 42,19 Q36,27 30,19 Q24,27 18,19 Q12,26 5,20 Z" fill="#F2A33A"/>
-            <path d="M13,36 L47,36" stroke="#B98A3C" stroke-width="2" opacity="0.8"/>
-            <circle cx="22" cy="50" r="3" fill="#B98A3C"/>
-            <circle cx="36" cy="56" r="2.2" fill="#B98A3C"/>
-            <circle cx="40" cy="44" r="2.6" fill="#B98A3C"/>
-          </g>
-          <text x="96" y="64" font-family="DM Serif Display, serif" font-size="50" fill="#EFE7DA">Day<tspan font-style="italic" fill="#F2A33A">vasos</tspan></text>
-        </svg>
+      <!-- CUU Studio: silueta original rellena con morado/azul en movimiento -->
+      <div class="sponsor sponsor--main" id="logo-cuu" style="--d0:-2s">
+        <div class="wig" style="--d0:-1s">
+          <svg viewBox="0 0 732 732" role="img" aria-label="CUU Studio">
+            <defs>
+              <mask id="cuuMask" maskUnits="userSpaceOnUse" x="0" y="0" width="732" height="732">
+                <image href="logos/cuu-studio-silueta.png" x="0" y="0" width="732" height="732"/>
+              </mask>
+              <linearGradient id="cuuFlow" x1="0" y1="0" x2="1" y2="0.25">
+                <stop offset="0"     stop-color="#5B7CFA"/>
+                <stop offset="0.167" stop-color="#E879F9"/>
+                <stop offset="0.333" stop-color="#5B7CFA"/>
+                <stop offset="0.5"   stop-color="#A78BFA"/>
+                <stop offset="0.667" stop-color="#5B7CFA"/>
+                <stop offset="0.833" stop-color="#E879F9"/>
+                <stop offset="1"     stop-color="#5B7CFA"/>
+              </linearGradient>
+            </defs>
+            <g mask="url(#cuuMask)">
+              <rect class="cuu-flow" x="-1464" y="-200" width="2196" height="1132" fill="url(#cuuFlow)"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="sponsor-sep"></div>
+
+      <div class="sponsor" id="logo-botas" style="--d0:-4s">
+        <div class="wig" style="--d0:-2s"><img src="logos/botas-el-jefee.png" alt="Botas El Jefee"></div>
       </div>
     </footer>
   </div>
@@ -490,6 +464,7 @@
 
     if (params.get('overlay') === '1') document.body.classList.add('overlay');
     if (params.get('export') === '1') document.body.classList.add('export');
+    if (params.get('chroma') === '1') document.body.classList.add('chroma');
 
     // Chispas: posiciones fijas (semilla), duración 6 s → bucle perfecto
     (function makeEmbers() {
@@ -508,16 +483,6 @@
         box.appendChild(e);
       }
     })();
-
-    // Si existe el logo original en logos/ (PNG), se usa en lugar de la versión vectorial
-    document.querySelectorAll('[data-png]').forEach(slot => {
-      const img = new Image();
-      img.onload = () => {
-        img.alt = slot.querySelector('svg')?.getAttribute('aria-label') || '';
-        slot.querySelector('svg').replaceWith(img);
-      };
-      img.src = slot.dataset.png;
-    });
 
     // Escalar el lienzo 1920x1080 a la ventana
     function fit() {
