@@ -7,41 +7,44 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Archivo:wght@500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap" rel="stylesheet">
 
   <style>
     /* ================================================
        PLANTILLA HORIZONTAL 1920x1080 — VIDEOS DE AGRUPACIONES
        Cantina Todos Santos (principal, arriba)
        Patrocinadores (abajo): El Destape de las Estrellas · CUU Studio · Dayvasos
+       Todas las animaciones duran 12 s o un divisor de 12 s → bucle perfecto.
        ================================================ */
 
-    /* ---- COLORES CANTINA TODOS SANTOS ----
-       Cambia estos valores por los colores oficiales de la cantina. */
+    /* ---- COLORES CANTINA TODOS SANTOS ---- */
     :root {
-      --cts-fondo:      #0E0A10;   /* fondo principal */
-      --cts-fondo-2:    #1C1220;   /* fondo de bandas */
-      --cts-primario:   #D4A23C;   /* dorado */
-      --cts-secundario: #C2185B;   /* rosa mexicano */
-      --cts-acento:     #6A1B9A;   /* morado */
-      --cts-texto:      #FFF6E6;   /* texto claro */
-      --cts-texto-2:    #CBB89A;   /* texto secundario */
+      --cts-fondo:    #1A120D;   /* café casi negro */
+      --cts-fondo-2:  #110B08;
+      --cts-brillo:   #6B3E1C;   /* resplandor café */
+      --cts-dorado:   #B98A3C;   /* dorado del sello */
+      --cts-naranja:  #F2A33A;   /* naranja de acento */
+      --cts-crema:    #EFE7DA;   /* texto principal */
+      --cts-gris:     #A8998A;   /* texto secundario */
+      --cts-oscuro:   #3A2615;   /* contorno del monograma */
+      --cts-linea:    rgba(185, 138, 60, 0.35);
 
-      --font-head: 'Space Grotesk', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --font-serif: 'DM Serif Display', Georgia, serif;
+      --font-caps:  'Archivo', 'Helvetica Neue', sans-serif;
+    }
 
-      --w: 1920px;
-      --h: 1080px;
-      --top-h: 200px;
-      --bottom-h: 170px;
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; height: 100%; }
     body {
       background: #000;
-      color: var(--cts-texto);
-      font-family: var(--font-body);
+      color: var(--cts-crema);
+      font-family: var(--font-caps);
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -52,102 +55,187 @@
     /* ---- LIENZO 16:9 (se escala a la ventana) ---- */
     .stage {
       position: relative;
-      width: var(--w);
-      height: var(--h);
+      width: 1920px;
+      height: 1080px;
       flex-shrink: 0;
-      transform-origin: center center;
-      background:
-        radial-gradient(ellipse 60% 50% at 15% 0%, rgba(194, 24, 91, 0.28), transparent 70%),
-        radial-gradient(ellipse 60% 50% at 85% 100%, rgba(106, 27, 154, 0.30), transparent 70%),
-        radial-gradient(ellipse 40% 30% at 50% 50%, rgba(212, 162, 60, 0.10), transparent 70%),
-        var(--cts-fondo);
       display: grid;
-      grid-template-rows: var(--top-h) 1fr var(--bottom-h);
-      overflow: hidden;
+      grid-template-rows: 220px 1fr 170px;
     }
 
-    /* Papel picado decorativo */
-    .papel-picado {
+    /* Fondo (en modo overlay se le recorta el hueco del video) */
+    .bg {
       position: absolute;
-      inset: 0 0 auto 0;
-      height: 26px;
-      display: flex;
-      pointer-events: none;
+      inset: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 110%, rgba(60, 34, 18, 0.55), transparent 70%),
+        linear-gradient(180deg, var(--cts-fondo), var(--cts-fondo-2));
     }
-    .papel-picado span {
-      flex: 1;
-      height: 100%;
-      clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%);
+    .bg__glow {
+      position: absolute;
+      left: 50%;
+      top: -330px;
+      width: 1100px;
+      height: 760px;
+      margin-left: -550px;
+      background: radial-gradient(ellipse at center, rgba(107, 62, 28, 0.95), rgba(107, 62, 28, 0.35) 45%, transparent 70%);
+      animation: breathe 6s ease-in-out infinite;
     }
-    .papel-picado span:nth-child(3n+1) { background: var(--cts-secundario); }
-    .papel-picado span:nth-child(3n+2) { background: var(--cts-primario); }
-    .papel-picado span:nth-child(3n)   { background: var(--cts-acento); }
+    .bg__vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 75% 75% at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.45));
+    }
+    @keyframes breathe {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50%      { opacity: 1;   transform: scale(1.08); }
+    }
+
+    /* Chispas doradas que suben */
+    .ember {
+      position: absolute;
+      bottom: -10px;
+      border-radius: 50%;
+      background: var(--cts-naranja);
+      box-shadow: 0 0 8px 2px rgba(242, 163, 58, 0.6);
+      opacity: 0;
+      animation: rise linear infinite;
+    }
+    @keyframes rise {
+      0%   { transform: translate(0, 0); opacity: 0; }
+      10%  { opacity: var(--o); }
+      50%  { transform: translate(var(--dx), -560px); }
+      85%  { opacity: var(--o); }
+      100% { transform: translate(0, -1120px); opacity: 0; }
+    }
+
+    .caps {
+      font-family: var(--font-caps);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+    }
 
     /* ---- ARRIBA: CANTINA TODOS SANTOS ---- */
     .top {
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
-      padding: 30px 80px 0;
-      gap: 40px;
+      padding: 14px 90px 0;
+      gap: 50px;
     }
-    .top__side {
-      font-family: var(--font-head);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 22px;
-      color: var(--cts-texto-2);
+    .top__logo {
+      justify-self: start;
+      width: 420px;
+      height: 210px;
+      animation: shine 4s ease-in-out infinite;
     }
-    .top__side--right { text-align: right; }
-    .top__side strong {
-      display: block;
-      font-size: 34px;
-      letter-spacing: 0.04em;
-      color: var(--cts-texto);
-      margin-top: 6px;
+    .top__logo svg { width: 100%; height: 100%; overflow: visible; }
+    .top__logo img, .seal img, .sponsor img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    @keyframes shine {
+      0%, 100% { filter: drop-shadow(0 4px 14px rgba(247, 201, 72, 0.18)) brightness(1); }
+      50%      { filter: drop-shadow(0 4px 26px rgba(247, 201, 72, 0.45)) brightness(1.1); }
+    }
+    .top__side .caps { font-size: 17px; color: var(--cts-naranja); }
+    .top__side h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 1.05;
+      margin-top: 12px;
+      color: var(--cts-crema);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 560px;
+      max-width: 640px;
     }
-    .top__side--right strong { margin-left: auto; }
+    .top__side--right h2 em { font-style: italic; color: var(--cts-naranja); }
+    .top__side--right { text-align: right; }
+    .top__side--right h2 { margin-left: auto; color: var(--cts-dorado); }
+    .top__side--right .caps::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 14px;
+      border-radius: 50%;
+      background: var(--cts-naranja);
+      vertical-align: 2px;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 50% { opacity: 0.2; } }
 
-    .main-logo {
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* Sello Todos Santos */
+    .seal {
+      width: 214px;
+      height: 214px;
+      filter: drop-shadow(0 8px 30px rgba(242, 163, 58, 0.25));
+      animation: seal-glow 4s ease-in-out infinite;
     }
-    .main-logo img {
-      max-height: 150px;
-      max-width: 520px;
-      object-fit: contain;
-      filter: drop-shadow(0 6px 24px rgba(212, 162, 60, 0.35));
+    .seal svg { width: 100%; height: 100%; overflow: visible; }
+    .seal__ring { transform-origin: 200px 200px; animation: spin 12s linear infinite; }
+    .seal__ring text {
+      font-family: var(--font-caps);
+      font-weight: 700;
+      font-size: 23px;
+      letter-spacing: 0.04em;
+      fill: var(--cts-dorado);
+    }
+    .seal__mono text { font-family: var(--font-serif); fill: var(--cts-dorado); }
+    .seal__mono .t { stroke: var(--cts-oscuro); stroke-width: 5px; paint-order: stroke; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes seal-glow {
+      0%, 100% { filter: drop-shadow(0 8px 30px rgba(242, 163, 58, 0.18)); }
+      50%      { filter: drop-shadow(0 8px 40px rgba(242, 163, 58, 0.45)); }
     }
 
     /* ---- CENTRO: VIDEO ---- */
     .middle {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 0;
+      padding: 8px 0 4px;
     }
     .video-frame {
       position: relative;
       height: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 18px;
-      padding: 6px;
-      background: linear-gradient(135deg, var(--cts-primario), var(--cts-secundario) 50%, var(--cts-acento));
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 60px rgba(194, 24, 91, 0.25);
+      padding: 4px;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), 0 0 90px rgba(242, 163, 58, 0.12);
     }
+    /* Borde dorado con brillo que recorre el marco (solo el borde, el centro queda libre) */
+    .video-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 4px;
+      border-radius: 12px;
+      background: conic-gradient(from var(--angle),
+        rgba(185, 138, 60, 0.45) 0deg,
+        var(--cts-naranja) 30deg,
+        #FFE2A8 45deg,
+        var(--cts-naranja) 60deg,
+        rgba(185, 138, 60, 0.45) 100deg,
+        rgba(185, 138, 60, 0.45) 360deg);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+      animation: sweep 6s linear infinite;
+      z-index: 2;
+      pointer-events: none;
+    }
+    @keyframes sweep { to { --angle: 360deg; } }
+
     .video-frame__inner {
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 13px;
+      border-radius: 8px;
       overflow: hidden;
-      background: #000;
+      background: #0B0806;
     }
     .video-frame video {
       width: 100%;
@@ -163,114 +251,74 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 14px;
+      gap: 16px;
       text-align: center;
-      font-family: var(--font-head);
-      color: var(--cts-texto-2);
       cursor: pointer;
     }
-    .video-empty b { font-size: 34px; color: var(--cts-texto); }
-    .video-empty span { font-size: 20px; }
+    .video-empty b { font-family: var(--font-serif); font-weight: 400; font-size: 46px; color: var(--cts-crema); }
+    .video-empty span { font-size: 15px; color: var(--cts-gris); }
     .has-video .video-empty { display: none; }
 
-    .badge-live {
+    .badge {
       position: absolute;
       top: 22px;
       left: 22px;
+      z-index: 3;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       padding: 10px 18px;
       border-radius: 99px;
-      background: rgba(14, 10, 16, 0.75);
-      border: 1px solid rgba(212, 162, 60, 0.5);
-      font-family: var(--font-head);
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      backdrop-filter: blur(6px);
+      background: rgba(17, 11, 8, 0.8);
+      border: 1px solid var(--cts-linea);
+      font-size: 14px;
+      color: var(--cts-dorado);
     }
-    .badge-live i {
-      width: 10px;
-      height: 10px;
+    .badge i {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
-      background: var(--cts-secundario);
-      animation: pulse 1.4s ease-in-out infinite;
+      background: var(--cts-naranja);
+      animation: blink 2s ease-in-out infinite;
     }
-    @keyframes pulse { 50% { opacity: 0.25; } }
 
     /* ---- ABAJO: PATROCINADORES ---- */
     .bottom {
       position: relative;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto auto auto 1fr;
       align-items: center;
-      justify-content: center;
-      gap: 40px;
-      padding: 0 80px 18px;
+      gap: 48px;
+      padding: 14px 90px 10px;
     }
+    .bottom .sponsors__label { justify-self: end; }
+    .bottom #logo-dayvasos { justify-self: start; }
     .bottom::before {
       content: "";
       position: absolute;
-      left: 80px; right: 80px; top: 18px;
+      left: 280px; right: 280px; top: 16px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--cts-primario), transparent);
-      opacity: 0.6;
+      background: linear-gradient(90deg, transparent, var(--cts-linea), transparent);
     }
-    .sponsors__label {
-      font-family: var(--font-head);
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--cts-primario);
-      white-space: nowrap;
-    }
+    .sponsors__label { font-size: 15px; color: var(--cts-gris); white-space: nowrap; }
     .sponsor {
-      height: 100px;
-      width: 300px;
+      height: 96px;
+      width: 330px;
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: spotlight 12s ease-in-out infinite;
     }
-    .sponsor img {
-      max-height: 100px;
-      max-width: 300px;
-      object-fit: contain;
+    .sponsor--main { width: 400px; }
+    #logo-dayvasos { animation-delay: -6s; }
+    .sponsor svg { height: 100%; width: 100%; overflow: visible; }
+    @keyframes spotlight {
+      0%, 40%, 100% { opacity: 0.78; transform: scale(1); filter: none; }
+      12%, 28%      { opacity: 1;    transform: scale(1.06); filter: drop-shadow(0 0 18px rgba(242, 163, 58, 0.35)); }
     }
-    .sponsor-sep {
-      width: 1px;
-      height: 70px;
-      background: rgba(203, 184, 154, 0.3);
-    }
+    .sponsor-sep { width: 1px; height: 64px; background: var(--cts-linea); }
 
-    /* Texto de respaldo si falta el archivo del logo */
-    .logo-fallback {
-      font-family: var(--font-head);
-      font-weight: 700;
-      text-transform: uppercase;
-      text-align: center;
-      line-height: 1;
-    }
-    .main-logo .logo-fallback {
-      font-size: 58px;
-      letter-spacing: 0.06em;
-      color: var(--cts-primario);
-    }
-    .main-logo .logo-fallback small {
-      display: block;
-      font-size: 22px;
-      letter-spacing: 0.5em;
-      color: var(--cts-texto);
-      margin-bottom: 8px;
-    }
-    .sponsor .logo-fallback {
-      font-size: 28px;
-      letter-spacing: 0.04em;
-      color: var(--cts-texto);
-    }
-
-    /* ---- PANEL DE CONTROL (no aparece en pantalla completa ni al exportar) ---- */
+    /* ---- PANEL DE CONTROL (se oculta solo) ---- */
     .controls {
       position: fixed;
       right: 16px;
@@ -283,8 +331,9 @@
       max-width: calc(100vw - 32px);
       padding: 10px;
       border-radius: 12px;
-      background: rgba(20, 20, 20, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(20, 14, 10, 0.94);
+      border: 1px solid var(--cts-linea);
+      font-family: system-ui, sans-serif;
       font-size: 13px;
       transition: opacity 0.3s;
     }
@@ -292,90 +341,161 @@
       padding: 8px 12px;
       border-radius: 8px;
       border: none;
-      background: #2A2A2A;
-      color: #fff;
+      background: #2C2017;
+      color: var(--cts-crema);
       font: inherit;
       cursor: pointer;
     }
-    .controls button:hover, .controls label.btn:hover { background: #3A3A3A; }
+    .controls button:hover, .controls label.btn:hover { background: #3B2B1E; }
     .controls input[type="text"] {
       padding: 8px 10px;
       border-radius: 8px;
-      border: 1px solid #333;
-      background: #111;
-      color: #fff;
+      border: 1px solid #3B2B1E;
+      background: #110B08;
+      color: var(--cts-crema);
       font: inherit;
       width: 200px;
     }
     .controls input[type="file"] { display: none; }
-    body.idle .controls, body.overlay .controls, :fullscreen .controls { opacity: 0; pointer-events: none; }
+    body.idle .controls, body.overlay .controls, body.export .controls { opacity: 0; pointer-events: none; }
     body.idle { cursor: none; }
 
-    /* Modo overlay (?overlay=1): hueco transparente para usar como PNG en CapCut/Premiere */
+    /* Modo overlay (?overlay=1): el hueco del video queda transparente */
     body.overlay { background: transparent; }
-    body.overlay .video-frame__inner,
-    body.overlay .video-frame__inner video { background: transparent; }
+    body.overlay .video-frame__inner { background: transparent; }
     body.overlay .video-empty,
     body.overlay video { display: none; }
+
+    /* Modo logo (?logo=...): muestra solo un logotipo para exportarlo */
+    body.logo-only .stage { display: none; }
+    body.logo-only { background: transparent; }
+    body.logo-only .controls { display: none; }
   </style>
 </head>
 <body>
 
   <div class="stage" id="stage">
-    <div class="papel-picado" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <div class="bg" id="bg">
+      <div class="bg__glow"></div>
+      <div id="embers"></div>
+      <div class="bg__vignette"></div>
     </div>
 
     <!-- ARRIBA: logo principal -->
     <header class="top">
-      <div class="top__side">
-        En lo que instalamos el sonido…
-        <strong id="evento">¡Ya casi empezamos!</strong>
+      <div class="top__logo" id="logo-destape" data-png="logos/el-destape-de-las-estrellas.png">
+        <svg viewBox="0 0 1000 500" role="img" aria-label="El Destape de las Estrellas">
+          <defs>
+            <linearGradient id="oro" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFF4C2"/>
+              <stop offset="0.35" stop-color="#F7C948"/>
+              <stop offset="0.62" stop-color="#C98A12"/>
+              <stop offset="0.8" stop-color="#F2BE3A"/>
+              <stop offset="1" stop-color="#FFE38A"/>
+            </linearGradient>
+            <linearGradient id="oroMic" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFF1B0"/>
+              <stop offset="0.5" stop-color="#E9AE2A"/>
+              <stop offset="1" stop-color="#9C6508"/>
+            </linearGradient>
+            <path id="arcDestape" d="M50,420 Q500,370 950,420"/>
+            <path id="arcEstrellas" d="M200,488 Q500,452 800,488"/>
+          </defs>
+          <g class="destape__shine">
+            <!-- estrella hueca -->
+            <path d="M480,20 L527,150 L665,150 L553,232 L407,232 L295,150 L433,150 Z"
+                  fill="none" stroke="#3A2400" stroke-width="40" stroke-linejoin="miter"/>
+            <path d="M480,20 L527,150 L665,150 L553,232 L407,232 L295,150 L433,150 Z"
+                  fill="none" stroke="url(#oro)" stroke-width="26" stroke-linejoin="miter"/>
+            <!-- micrófono vintage -->
+            <g transform="translate(600 120) rotate(22)">
+              <rect x="-14" y="62" width="28" height="70" rx="6" fill="url(#oroMic)" stroke="#3A2400" stroke-width="6"/>
+              <rect x="-50" y="-80" width="100" height="150" rx="50" fill="url(#oroMic)" stroke="#3A2400" stroke-width="7"/>
+              <g stroke="#5A3A00" stroke-width="7" stroke-linecap="round">
+                <line x1="-30" y1="-50" x2="30" y2="-50"/><line x1="-36" y1="-32" x2="36" y2="-32"/>
+                <line x1="-38" y1="-14" x2="38" y2="-14"/><line x1="-38" y1="4" x2="38" y2="4"/>
+                <line x1="-38" y1="22" x2="38" y2="22"/><line x1="-34" y1="40" x2="34" y2="40"/>
+              </g>
+              <circle cx="22" cy="100" r="9" fill="url(#oroMic)" stroke="#3A2400" stroke-width="4"/>
+            </g>
+            <!-- textos -->
+            <g font-family="DM Serif Display, serif" stroke="#3A2400" stroke-width="14" paint-order="stroke" stroke-linejoin="round" fill="url(#oro)">
+              <text x="118" y="262" font-size="92">EL</text>
+              <text font-size="215"><textPath href="#arcDestape" textLength="900" lengthAdjust="spacingAndGlyphs">DESTAPE</textPath></text>
+            </g>
+            <text font-family="Archivo, sans-serif" font-weight="800" font-size="54" letter-spacing="3" stroke="#3A2400" stroke-width="10" paint-order="stroke" stroke-linejoin="round" fill="url(#oro)"><textPath href="#arcEstrellas" textLength="600" lengthAdjust="spacingAndGlyphs">DE LAS ESTRELLAS</textPath></text>
+          </g>
+        </svg>
       </div>
 
-      <div class="main-logo">
-        <img src="logos/cantina-todos-santos.png" alt="Cantina Todos Santos"
-             data-fallback="<div class='logo-fallback'><small>Cantina</small>Todos Santos</div>">
+      <div class="seal" id="logo-cantina" data-png="logos/cantina-todos-santos.png">
+        <svg viewBox="0 0 400 400" role="img" aria-label="Todos Santos Cantina Tradicional">
+          <defs>
+            <path id="ring" d="M200,200 m-165,0 a165,165 0 1,1 330,0 a165,165 0 1,1 -330,0"/>
+          </defs>
+          <g class="seal__ring">
+            <text><textPath href="#ring" textLength="1030" lengthAdjust="spacingAndGlyphs">TODOS SANTOS CANTINA TRADICIONAL • TODOS SANTOS CANTINA TRADICIONAL •</textPath></text>
+          </g>
+          <g class="seal__mono">
+            <text class="s" x="206" y="292" font-size="250" text-anchor="middle">S</text>
+            <text class="t" x="198" y="296" font-size="300" text-anchor="middle">T</text>
+          </g>
+        </svg>
       </div>
 
       <div class="top__side top__side--right">
-        Ahora en pantalla
-        <strong id="agrupacion">Agrupación invitada</strong>
+        <div class="caps">Ahora en pantalla</div>
+        <h2 id="agrupacion">Agrupación invitada</h2>
       </div>
     </header>
 
     <!-- CENTRO: video -->
     <main class="middle">
-      <div class="video-frame">
+      <div class="video-frame" id="videoFrame">
         <div class="video-frame__inner" id="videoBox">
           <video id="video" playsinline autoplay muted></video>
           <label class="video-empty" for="fileInput">
             <b>Arrastra aquí los videos de las agrupaciones</b>
-            <span>o haz clic para elegirlos · se reproducen en orden y en bucle</span>
+            <span class="caps">o haz clic para elegirlos · se reproducen en orden y en bucle</span>
           </label>
-          <div class="badge-live"><i></i> Música en vivo</div>
+          <div class="badge caps"><i></i>En lo que instalamos el sonido…</div>
         </div>
       </div>
     </main>
 
     <!-- ABAJO: patrocinadores -->
     <footer class="bottom">
-      <div class="sponsors__label">Patrocinan</div>
-      <div class="sponsor">
-        <img src="logos/el-destape-de-las-estrellas.png" alt="El Destape de las Estrellas"
-             data-fallback="<div class='logo-fallback'>El Destape<br>de las Estrellas</div>">
+      <div class="sponsors__label caps">Patrocinan</div>
+      <div class="sponsor-sep"></div>
+      <!-- CUU Studio (marca: punto degradado azul→morado + Bricolage Grotesque) -->
+      <div class="sponsor sponsor--main" id="logo-cuu" data-png="logos/cuu-studio.png">
+        <svg viewBox="0 0 330 96" role="img" aria-label="CUU Studio">
+          <defs>
+            <linearGradient id="cuuDot" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#5B7CFA"/>
+              <stop offset="1" stop-color="#E879F9"/>
+            </linearGradient>
+          </defs>
+          <circle cx="36" cy="48" r="13" fill="url(#cuuDot)"/>
+          <text x="64" y="63" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="44" letter-spacing="1" fill="#FFFFFF">CUU STUDIO</text>
+        </svg>
       </div>
       <div class="sponsor-sep"></div>
-      <div class="sponsor">
-        <img src="logos/cuu-studio.png" alt="CUU Studio"
-             data-fallback="<div class='logo-fallback'>CUU Studio</div>">
-      </div>
-      <div class="sponsor-sep"></div>
-      <div class="sponsor">
-        <img src="logos/dayvasos.png" alt="Dayvasos"
-             data-fallback="<div class='logo-fallback'>Dayvasos</div>">
+      <!-- Dayvasos -->
+      <div class="sponsor" id="logo-dayvasos" data-png="logos/dayvasos.png">
+        <svg viewBox="0 0 330 96" role="img" aria-label="Dayvasos">
+          <g transform="translate(14 14)">
+            <!-- vaso escarchado con popote -->
+            <path d="M38,40 L52,-12" stroke="#EFE7DA" stroke-width="4" stroke-linecap="round"/>
+            <path d="M4,12 L56,12 L49,66 Q48,70 44,70 L16,70 Q12,70 11,66 Z" fill="none" stroke="#F2A33A" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M4,12 L56,12 L55,20 Q48,26 42,19 Q36,27 30,19 Q24,27 18,19 Q12,26 5,20 Z" fill="#F2A33A"/>
+            <path d="M13,36 L47,36" stroke="#B98A3C" stroke-width="2" opacity="0.8"/>
+            <circle cx="22" cy="50" r="3" fill="#B98A3C"/>
+            <circle cx="36" cy="56" r="2.2" fill="#B98A3C"/>
+            <circle cx="40" cy="44" r="2.6" fill="#B98A3C"/>
+          </g>
+          <text x="96" y="64" font-family="DM Serif Display, serif" font-size="50" fill="#EFE7DA">Day<tspan font-style="italic" fill="#F2A33A">vasos</tspan></text>
+        </svg>
       </div>
     </footer>
   </div>
@@ -400,16 +520,39 @@
     const btnSonido = document.getElementById('btnSonido');
     const params = new URLSearchParams(location.search);
 
-    // Modo overlay para exportar PNG transparente
     if (params.get('overlay') === '1') document.body.classList.add('overlay');
+    if (params.get('export') === '1') document.body.classList.add('export');
     if (params.get('agrupacion')) agrupacionEl.textContent = params.get('agrupacion');
     if (params.get('evento')) document.getElementById('evento').textContent = params.get('evento');
 
-    // Logos: si falta el archivo, se muestra el nombre en texto
-    document.querySelectorAll('img[data-fallback]').forEach(img => {
-      const fallback = () => { img.outerHTML = img.dataset.fallback; };
-      if (img.complete && img.naturalWidth === 0) fallback();
-      else img.addEventListener('error', fallback);
+    // Chispas: posiciones fijas (semilla) y duraciones que dividen 12 s → bucle perfecto
+    (function makeEmbers() {
+      let seed = 7;
+      const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+      const box = document.getElementById('embers');
+      for (let i = 0; i < 34; i++) {
+        const e = document.createElement('span');
+        const size = 2 + rnd() * 3.5;
+        const dur = [6, 12][i % 2];
+        e.className = 'ember';
+        e.style.left = (rnd() * 100) + '%';
+        e.style.width = e.style.height = size + 'px';
+        e.style.animationDuration = dur + 's';
+        e.style.animationDelay = (-rnd() * dur) + 's';
+        e.style.setProperty('--dx', ((rnd() - 0.5) * 120) + 'px');
+        e.style.setProperty('--o', (0.35 + rnd() * 0.5).toFixed(2));
+        box.appendChild(e);
+      }
+    })();
+
+    // Si existe el logo original en logos/ (PNG), se usa en lugar de la versión vectorial
+    document.querySelectorAll('[data-png]').forEach(slot => {
+      const img = new Image();
+      img.onload = () => {
+        img.alt = slot.querySelector('svg')?.getAttribute('aria-label') || '';
+        slot.querySelector('svg').replaceWith(img);
+      };
+      img.src = slot.dataset.png;
     });
 
     // Escalar el lienzo 1920x1080 a la ventana
@@ -419,6 +562,30 @@
     }
     addEventListener('resize', fit);
     fit();
+
+    // Overlay: recorta el fondo para que el hueco del video sea transparente
+    function cutHole() {
+      if (!document.body.classList.contains('overlay')) return;
+      const s = stage.getBoundingClientRect().width / 1920;
+      const st = stage.getBoundingClientRect();
+      const r = document.getElementById('videoFrame').getBoundingClientRect();
+      const x = (r.left - st.left) / s + 4, y = (r.top - st.top) / s + 4;
+      const w = r.width / s - 8, h = r.height / s - 8, k = 8;
+      const hole = `M${x + k},${y} H${x + w - k} Q${x + w},${y} ${x + w},${y + k} V${y + h - k} Q${x + w},${y + h} ${x + w - k},${y + h} H${x + k} Q${x},${y + h} ${x},${y + h - k} V${y + k} Q${x},${y} ${x + k},${y} Z`;
+      document.getElementById('bg').style.clipPath = `path(evenodd, "M0,0 H1920 V1080 H0 Z ${hole}")`;
+    }
+    document.fonts.ready.then(cutHole);
+    addEventListener('resize', cutHole);
+
+    // Exportar un solo logo (?logo=logo-cantina|logo-destape|logo-cuu|logo-dayvasos)
+    if (params.get('logo')) {
+      const el = document.getElementById(params.get('logo'));
+      document.body.classList.add('logo-only');
+      el.style.cssText = 'animation:none;opacity:1;transform:none;filter:none;width:' + (params.get('w') || 1200) + 'px;height:auto';
+      el.querySelector('svg').style.cssText = 'width:100%;height:auto;display:block';
+      el.querySelectorAll('.seal__ring').forEach(g => g.style.animation = 'none');
+      document.body.appendChild(el);
+    }
 
     // Lista de reproducción
     let playlist = [];
@@ -451,11 +618,9 @@
     video.addEventListener('ended', () => playIndex(current + 1));
     document.getElementById('btnSiguiente').addEventListener('click', () => playIndex(current + 1));
 
-    // Arrastrar y soltar en cualquier parte
     addEventListener('dragover', e => e.preventDefault());
     addEventListener('drop', e => { e.preventDefault(); loadFiles(e.dataTransfer.files); });
 
-    // Nombre manual de la agrupación
     inputAgrupacion.addEventListener('input', () => {
       manualName = inputAgrupacion.value.trim() !== '';
       agrupacionEl.textContent = manualName
@@ -463,19 +628,17 @@
         : (playlist[current]?.name || 'Agrupación invitada');
     });
 
-    // Sonido
     btnSonido.addEventListener('click', () => {
       video.muted = !video.muted;
       btnSonido.textContent = video.muted ? '🔇 Activar sonido' : '🔊 Silenciar';
     });
 
-    // Pantalla completa
     document.getElementById('btnFull').addEventListener('click', () => {
       if (document.fullscreenElement) document.exitFullscreen();
       else document.documentElement.requestFullscreen();
     });
 
-    // Atajos: F pantalla completa, M sonido, flecha derecha siguiente
+    // Atajos: F pantalla completa, M sonido, flechas siguiente/anterior
     addEventListener('keydown', e => {
       if (e.target.tagName === 'INPUT') return;
       if (e.key === 'f' || e.key === 'F') document.getElementById('btnFull').click();

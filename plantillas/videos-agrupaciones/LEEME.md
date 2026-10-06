@@ -1,27 +1,26 @@
-# Plantilla — Videos de agrupaciones (horizontal 1920×1080)
+# Plantilla — Videos de agrupaciones (horizontal 1920×1080, animada en bucle)
 
-Pantalla para proyectar los videos de las agrupaciones mientras se instala el sonido.
+- **Arriba:** El Destape de las Estrellas (izq.) · Cantina Todos Santos (centro, sello girando) · "Ahora en pantalla".
+- **Centro:** espacio para el video (transparente en el overlay).
+- **Abajo, patrocinadores:** CUU Studio (al centro) · Dayvasos.
+- Colores de Cantina Todos Santos: café oscuro, dorado `#B98A3C`, naranja `#F2A33A`, crema `#EFE7DA`.
 
-- **Arriba:** Cantina Todos Santos (logo principal).
-- **Centro:** video de la agrupación (16:9) con su nombre arriba a la derecha.
-- **Abajo, como patrocinadores:** El Destape de las Estrellas · CUU Studio · Dayvasos.
+## Opción A — Video para editar (CapCut / Premiere / Final Cut / DaVinci)
+Carpeta `video/`:
+- `plantilla-loop-transparente.mov` — ProRes 4444 **con transparencia**, 12 s en bucle perfecto.
+  Ponlo en la capa de **arriba** y repítelo las veces que quieras.
+- `plantilla-loop-transparente.webm` — misma animación, archivo ligero (VP9 con transparencia).
+- `ejemplo-con-video-de-prueba.mp4` — muestra de cómo se ve con un video debajo.
 
-## Cómo usarla en el evento
-1. Pon los logos en `logos/` (ver `logos/LEEME.md`).
-2. Abre `index.html` en Chrome.
-3. Arrastra los videos (puedes soltar varios). Se reproducen en orden y en bucle.
-   El nombre del archivo se usa como nombre de la agrupación (ej. `Los Tucanes de Chihuahua.mp4`),
-   o escríbelo a mano en el panel.
-4. `F` pantalla completa · `M` sonido · `→` / `←` siguiente / anterior.
-   Los controles y el cursor se ocultan solos a los 3 segundos.
+**Dónde va el video de la agrupación (capa de abajo):**
+- Hueco: 1196 × 670 px, esquina superior izquierda en x = 362, y = 232.
+- En el editor: escala el video al **62.3 %** y bájalo **27 px** (posición centro: 960, 567).
 
-Parámetros de URL opcionales: `?agrupacion=Nombre&evento=Texto`.
+## Opción B — En vivo desde la computadora
+Abre `index.html` en Chrome y arrastra los videos (varios a la vez). Se reproducen en orden y en bucle,
+con las mismas animaciones. El nombre del archivo se usa como nombre de la agrupación.
+`F` pantalla completa · `M` sonido · `→`/`←` siguiente/anterior.
 
-## Para editar en CapCut / Premiere
-`overlay-1920x1080.png` es la misma plantilla con el hueco del video transparente:
-ponla en una capa encima del video. Para regenerarla después de cambiar logos o colores,
-abre `index.html?overlay=1` y haz captura a 1920×1080.
-
-## Colores
-Están al inicio del `<style>` en `index.html` (`--cts-primario`, `--cts-secundario`, etc.).
-Reemplázalos por los colores oficiales de Cantina Todos Santos.
+## Logos
+Los logos están dibujados en vector dentro de `index.html`. Si pones el archivo original en `logos/`
+con el nombre indicado en `logos/LEEME.md`, la plantilla usa ese archivo automáticamente.

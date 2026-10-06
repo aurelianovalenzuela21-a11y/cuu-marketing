@@ -1,12 +1,10 @@
-# Logos
+# Logos originales (opcional)
 
-Guarda aquí los logotipos con estos nombres exactos (PNG con fondo transparente):
+Si guardas aquí el PNG original (fondo transparente), la plantilla lo usa en lugar de la versión vectorial:
 
-| Archivo                          | Marca                        | Posición            |
-|----------------------------------|------------------------------|---------------------|
-| `cantina-todos-santos.png`       | Cantina Todos Santos         | Arriba (principal)  |
-| `el-destape-de-las-estrellas.png`| El Destape de las Estrellas  | Abajo (patrocinador)|
-| `cuu-studio.png`                 | CUU Studio                   | Abajo (patrocinador)|
-| `dayvasos.png`                   | Dayvasos                     | Abajo (patrocinador)|
-
-Si falta un archivo, la plantilla muestra el nombre de la marca en texto.
+| Archivo                           | Marca                        | Posición              |
+|-----------------------------------|------------------------------|-----------------------|
+| `el-destape-de-las-estrellas.png` | El Destape de las Estrellas  | Arriba izquierda      |
+| `cantina-todos-santos.png`        | Cantina Todos Santos         | Arriba centro         |
+| `cuu-studio.png`                  | CUU Studio                   | Abajo centro          |
+| `dayvasos.png`                    | Dayvasos                     | Abajo derecha         |
