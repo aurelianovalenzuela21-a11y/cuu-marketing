@@ -17,9 +17,11 @@ const METAL = P.get('metal') || 'plata';
 const FONT = P.get('fuente') || 'Rye';
 const W = 1920, H = 1080, LOOP = 6;
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+const TRANSP = P.get('fondo') === 'transparente';
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true, alpha: true, premultipliedAlpha: false });
+if (TRANSP) { document.documentElement.style.background = 'transparent'; document.body.style.background = 'transparent'; }
 renderer.setSize(W, H); renderer.setPixelRatio(1);
-renderer.setClearColor(0x00ff00, 1);
+renderer.setClearColor(0x00ff00, TRANSP ? 0 : 1);
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 document.body.appendChild(renderer.domElement);
@@ -74,13 +76,34 @@ function bend(geo, R, c) {
   }
   pos.needsUpdate = true; geo.computeVertexNormals();
 }
-function makeLine(font, str, size, R, opts) {
-  let g = new TextGeometry(str, { font, size, depth: opts.depth, curveSegments: 14,
-    bevelEnabled: true, bevelThickness: opts.bt, bevelSize: opts.bs, bevelSegments: opts.seg });
+// Geometría de un renglón con espaciado extra entre letras (para el renglón "extendido")
+function lineGeometry(font, str, size, spacing, opts) {
+  const scale = size / font.data.resolution, parts = [];
+  let cursor = 0;
+  for (const ch of str) {
+    const glyph = font.data.glyphs[ch] || font.data.glyphs['?'];
+    if (ch !== ' ') {
+      const g = new TextGeometry(ch, { font, size, depth: opts.depth, curveSegments: 14,
+        bevelEnabled: true, bevelThickness: opts.bt, bevelSize: opts.bs, bevelSegments: opts.seg });
+      g.translate(cursor, 0, 0);
+      parts.push(g.index ? g.toNonIndexed() : g);
+    }
+    cursor += glyph.ha * scale + spacing;
+  }
+  parts.forEach(g => { g.clearGroups(); for (const k of Object.keys(g.attributes)) if (k !== 'position' && k !== 'normal' && k !== 'uv') g.deleteAttribute(k); });
+  return BGU.mergeGeometries(parts, false);
+}
+function naturalWidth(font, str, size) {
+  const scale = size / font.data.resolution;
+  return [...str].reduce((w, ch) => w + (font.data.glyphs[ch] || font.data.glyphs['?']).ha * scale, 0);
+}
+function makeLine(font, str, size, spacing, R, opts) {
+  let g = lineGeometry(font, str, size, spacing, opts);
   g.computeBoundingBox(); const bb = g.boundingBox;
   g.translate(-(bb.max.x + bb.min.x) / 2, -(bb.max.y + bb.min.y) / 2, 0);
   g = new TessellateModifier(0.04, 8).modify(g.index ? g.toNonIndexed() : g);
   bend(g, R, 0.55 / size);
+  g.computeBoundingBox();
   return g;
 }
 
@@ -88,22 +111,42 @@ let group;
 new TTFLoader().load('fonts/' + FONT + '.ttf', json => {
   const font = new Font(json);
   const words = TEXT.split(/\s+/);
-  const lines = TEXT.includes('|') ? TEXT.split('|') : (words.length > 1 ? [words.slice(0, Math.ceil(words.length/2)).join(' '), words.slice(Math.ceil(words.length/2)).join(' ')] : [TEXT]);
+  const lines = TEXT.includes('|') ? TEXT.split('|').map(s => s.trim()) : (words.length > 1 && P.get('lineas') !== '1' ? [words.slice(0, Math.ceil(words.length/2)).join(' '), words.slice(Math.ceil(words.length/2)).join(' ')] : [TEXT]);
   group = new THREE.Group(); scene.add(group);
-  const targetW = [4.3, 4.0];
-  lines.forEach((ln, i) => {
-    // medir ancho para ajustar el tamaño
-    const probe = new TextGeometry(ln, { font, size: 1, depth: 0.01, curveSegments: 2 }); probe.computeBoundingBox();
-    const w = probe.boundingBox.max.x - probe.boundingBox.min.x;
-    const size = Math.min(1.45, targetW[Math.min(i, 1)] / w);
-    const R = 5.2 + i * 0.6;
-    const y = lines.length === 1 ? 0 : (i === 0 ? 0.66 : -0.72);
-    const face = new THREE.Mesh(makeLine(font, ln, size, R, { depth: 0.32 * size, bt: 0.07 * size, bs: 0.045 * size, seg: 6 }), faceMat);
-    const back = new THREE.Mesh(makeLine(font, ln, size, R, { depth: 0.2 * size, bt: 0.02, bs: 0.095 * size, seg: 3 }), backMat);
-    face.position.y = back.position.y = y;
-    back.position.z = -0.14 * size;
-    group.add(back, face);
+  const content = new THREE.Group(); group.add(content);
+  const R = 5.4;
+
+  // Renglón principal (abajo, o el único): grande
+  const main = lines[lines.length - 1];
+  const sMain = Math.min(lines.length === 1 ? 1.45 : 1.35, 4.3 / naturalWidth(font, main, 1));
+  const specs = [];
+  if (lines.length === 2) {
+    // Renglón de arriba: más chico y extendido, casi del ancho del de abajo
+    const top = lines[0], n = [...top].length;
+    const mainW = naturalWidth(font, main, sMain);
+    let sTop = Math.min(sMain * 0.5, (mainW * 0.95) / naturalWidth(font, top, 1));
+    const natTop = naturalWidth(font, top, sTop);
+    const spacing = n > 1 ? Math.max(0.06 * sTop, Math.min(0.55 * sTop, (mainW * 0.92 - natTop) / (n - 1))) : 0;
+    specs.push({ str: top, size: sTop, spacing });
+  }
+  specs.push({ str: main, size: sMain, spacing: 0.02 * sMain });
+
+  const meshes = specs.map(sp => {
+    const face = new THREE.Mesh(makeLine(font, sp.str, sp.size, sp.spacing, R, { depth: 0.32 * sp.size, bt: 0.07 * sp.size, bs: 0.045 * sp.size, seg: 6 }), faceMat);
+    const back = new THREE.Mesh(makeLine(font, sp.str, sp.size, sp.spacing, R, { depth: 0.2 * sp.size, bt: 0.02, bs: 0.095 * sp.size, seg: 3 }), backMat);
+    back.position.z = -0.14 * sp.size;
+    content.add(back, face);
+    return { face, back, bb: back.geometry.boundingBox };
   });
+  // Apilar: el de arriba casi tocando al de abajo
+  if (meshes.length === 2) {
+    const [t, b] = meshes;
+    const y = (b.bb.max.y) - (t.bb.min.y) - 0.02 * specs[1].size;
+    t.face.position.y = t.back.position.y = y;
+  }
+  // Centrar el bloque completo en el área libre de la plantilla
+  const box = new THREE.Box3().setFromObject(content);
+  content.position.y = -((box.max.y + box.min.y) / 2) - 0.08;
   window.renderAt(0);
   document.body.dataset.ready = '1';
 });
