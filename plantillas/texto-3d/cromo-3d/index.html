@@ -97,13 +97,18 @@ function naturalWidth(font, str, size) {
   const scale = size / font.data.resolution;
   return [...str].reduce((w, ch) => w + (font.data.glyphs[ch] || font.data.glyphs['?']).ha * scale, 0);
 }
+// Las tildes y la Ñ no cuentan para centrar ni para apilar los renglones
+const sinAcentos = str => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 function makeLine(font, str, size, spacing, R, opts) {
   let g = lineGeometry(font, str, size, spacing, opts);
-  g.computeBoundingBox(); const bb = g.boundingBox;
-  g.translate(-(bb.max.x + bb.min.x) / 2, -(bb.max.y + bb.min.y) / 2, 0);
+  const ref = lineGeometry(font, sinAcentos(str), size, spacing, opts);
+  ref.computeBoundingBox(); const bb = ref.boundingBox;
+  const dx = -(bb.max.x + bb.min.x) / 2, dy = -(bb.max.y + bb.min.y) / 2;
+  g.translate(dx, dy, 0); ref.translate(dx, dy, 0);
   g = new TessellateModifier(0.04, 8).modify(g.index ? g.toNonIndexed() : g);
-  bend(g, R, 0.55 / size);
-  g.computeBoundingBox();
+  bend(g, R, 0.55 / size); bend(ref, R, 0.55 / size);
+  g.computeBoundingBox(); ref.computeBoundingBox();
+  g.userData.refBB = ref.boundingBox.clone();
   return g;
 }
 
@@ -136,7 +141,7 @@ new TTFLoader().load('fonts/' + FONT + '.ttf', json => {
     const back = new THREE.Mesh(makeLine(font, sp.str, sp.size, sp.spacing, R, { depth: 0.2 * sp.size, bt: 0.02, bs: 0.095 * sp.size, seg: 3 }), backMat);
     back.position.z = -0.14 * sp.size;
     content.add(back, face);
-    return { face, back, bb: back.geometry.boundingBox };
+    return { face, back, bb: back.geometry.userData.refBB };
   });
   // Apilar: el de arriba casi tocando al de abajo
   if (meshes.length === 2) {
