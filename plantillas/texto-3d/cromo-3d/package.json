@@ -1,0 +1,6 @@
+{
+  "name": "texto-cromo-3d",
+  "private": true,
+  "description": "Texto 3D cromado en arco (estilo flyer grupero) con fondo verde, renderizado con three.js",
+  "dependencies": { "three": "0.169.0" }
+}
