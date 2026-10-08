@@ -410,6 +410,11 @@
     body.export .badge { display: none; }
 
     /* Modo exportar (?export=1): animaciones congeladas y movidas cuadro a cuadro con --t */
+    /* Modo café (?cafe=1): el recuadro conserva el marco pero por dentro se ve el fondo café */
+    body.cafe .video-frame__inner { background: transparent; }
+    body.cafe .video-empty, body.cafe video { display: none; }
+    body.cafe .video-frame { box-shadow: none; }
+
     /* ---- MODO VERTICAL (?vertical=1): video 9:16 al centro, pantalla horizontal ----
        Anfitriones a la izquierda, patrocinadores a la derecha */
     body.vertical .stage { display: block; }
@@ -571,6 +576,7 @@
     if (params.get('chroma') === '1') document.body.classList.add('chroma');
     if (params.get('sinrecuadro') === '1') document.body.classList.add('sinrecuadro');
     if (params.get('vertical') === '1') document.body.classList.add('vertical');
+    if (params.get('cafe') === '1') document.body.classList.add('cafe');
     if (params.get('placa') === '1' || params.get('nombre')) document.body.classList.add('placa');
     if (params.get('nombre')) document.getElementById('nombre').textContent = params.get('nombre');
 

@@ -39,6 +39,7 @@ Lienzo 1920×1080 con el recuadro del video en formato vertical 9:16 al centro;
 anfitriones a la izquierda y patrocinadores a la derecha.
 - `plantilla-vertical-fondo-verde.mp4` — recuadro verde puro para chroma key.
 - `plantilla-vertical-transparente.mov` — recuadro ya transparente (ProRes 4444).
+- `plantilla-vertical-fondo-cafe.mp4` — recuadro con marco dorado y fondo café por dentro (sin verde).
 
 **Recuadro:** 558 × 1000 px, esquina superior izquierda en x = 681, y = 40.
 Para un video vertical de 1080×1920: escálalo al **52.1 %** y déjalo centrado (960, 540).
