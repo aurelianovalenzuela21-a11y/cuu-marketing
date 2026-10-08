@@ -410,6 +410,52 @@
     body.export .badge { display: none; }
 
     /* Modo exportar (?export=1): animaciones congeladas y movidas cuadro a cuadro con --t */
+    /* ---- MODO VERTICAL (?vertical=1): video 9:16 al centro, pantalla horizontal ----
+       Anfitriones a la izquierda, patrocinadores a la derecha */
+    body.vertical .stage { display: block; }
+    body.vertical .hosts {
+      position: absolute;
+      left: 40px; top: 0; bottom: 0;
+      width: 600px;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      padding: 0;
+    }
+    body.vertical .host { height: 230px; }
+    body.vertical #logo-cantina { height: 205px; }
+    body.vertical .hosts__sep {
+      width: 320px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cts-dorado), transparent);
+    }
+    body.vertical .middle {
+      position: absolute;
+      left: 50%; top: 36px; bottom: 36px;
+      transform: translateX(-50%);
+      padding: 0;
+    }
+    body.vertical .video-frame { aspect-ratio: 9 / 16; height: 100%; }
+    body.vertical .video-empty b { font-size: 34px; padding: 0 30px; }
+    body.vertical .video-empty span { font-size: 12px; padding: 0 30px; }
+    body.vertical .bottom {
+      position: absolute;
+      right: 40px; top: 0; bottom: 0;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      padding: 0;
+    }
+    body.vertical .bottom::before { display: none; }
+    body.vertical .sponsors__label { position: static; transform: none; font-size: 16px; }
+    body.vertical .sponsor-sep { width: 240px; height: 1px; background: linear-gradient(90deg, transparent, var(--cts-linea), transparent); }
+    body.vertical #logo-dayvasos { height: 200px; }
+    body.vertical .sponsor--main { height: 150px; }
+    body.vertical .sponsor--main .wig svg { width: 144px; }
+    body.vertical #logo-botas { height: 190px; }
+
     body.export *, body.export *::before, body.export *::after {
       animation-play-state: paused !important;
       animation-delay: calc(var(--d0, 0s) - var(--t, 0s)) !important;
@@ -524,6 +570,7 @@
     if (params.get('export') === '1') document.body.classList.add('export');
     if (params.get('chroma') === '1') document.body.classList.add('chroma');
     if (params.get('sinrecuadro') === '1') document.body.classList.add('sinrecuadro');
+    if (params.get('vertical') === '1') document.body.classList.add('vertical');
     if (params.get('placa') === '1' || params.get('nombre')) document.body.classList.add('placa');
     if (params.get('nombre')) document.getElementById('nombre').textContent = params.get('nombre');
 
