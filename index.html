@@ -740,6 +740,40 @@
     </div>
   </section>
 
+  <!-- ========== RESEÑAS GOOGLE ========== -->
+  <section class="reviews" id="resenas">
+    <div class="container">
+      <div class="reviews__card" id="reviews-card">
+        <div class="reviews__content">
+          <span class="section-tag">Tu opinión cuenta</span>
+          <h2 class="section-title">¿Ya trabajaste con nosotros?<br><span class="gradient-text">Déjanos tu reseña en Google</span></h2>
+          <p class="reviews__text">Tu experiencia ayuda a otros negocios de Chihuahua a decidir con confianza. Te toma menos de 1 minuto.</p>
+
+          <div class="reviews__actions">
+            <a href="#" class="btn btn--primary" id="review-google-btn" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" d="M21.35 11.1H12v2.98h5.35c-.23 1.4-1.64 4.1-5.35 4.1-3.22 0-5.85-2.67-5.85-5.96S8.78 6.26 12 6.26c1.83 0 3.06.78 3.76 1.45l2.56-2.47C16.68 3.7 14.55 2.75 12 2.75 6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25c5.34 0 8.88-3.75 8.88-9.04 0-.6-.07-1.06-.15-1.51z"/></svg>
+              Dejar mi reseña en Google
+            </a>
+          </div>
+
+          <div class="reviews__share" id="reviews-share">
+            <span class="reviews__share-label">Comparte el enlace:</span>
+            <div class="reviews__link">
+              <input type="text" id="review-smartlink" readonly aria-label="Enlace para dejar reseña">
+              <button type="button" class="btn btn--ghost" id="review-copy-btn">Copiar</button>
+            </div>
+            <a href="#" class="reviews__wa" id="review-wa-btn" target="_blank" rel="noopener">Enviar por WhatsApp →</a>
+          </div>
+        </div>
+
+        <div class="reviews__qr">
+          <div class="reviews__qr-box" id="review-qr" aria-label="Código QR para dejar reseña"></div>
+          <span>Escanea y califícanos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CTA FINAL ========== -->
   <section class="cta-final" id="contacto">
     <div class="cta-final__bg">
@@ -866,6 +900,7 @@
             <li><a href="#proceso">Nuestro proceso</a></li>
             <li><a href="#precios">Precios</a></li>
             <li><a href="#testimonios">Casos de éxito</a></li>
+            <li><a href="#resenas">Déjanos tu reseña</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </div>
@@ -914,6 +949,8 @@
     <span class="whatsapp-float__tooltip">¡Escríbenos!</span>
   </a>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="review-config.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

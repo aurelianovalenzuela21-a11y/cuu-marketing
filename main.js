@@ -49,6 +49,43 @@ document.addEventListener('click', e => {
 });
 
 
+// ---- Reseñas Google (smart link + QR) ----
+(function initReviews() {
+  const cfg = window.CUU_REVIEWS;
+  if (!cfg || !$('#resenas')) return;
+
+  $('#review-google-btn').href = cfg.reviewUrl;
+  $('#review-smartlink').value = cfg.smartLink;
+
+  const waText = `¡Hola! Gracias por confiar en CUU Marketing 🙌 ¿Nos ayudas con una reseña en Google? Te toma 1 minuto: ${cfg.smartLink}`;
+  $('#review-wa-btn').href = `https://wa.me/?text=${encodeURIComponent(waText)}`;
+
+  const copyBtn = $('#review-copy-btn');
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(cfg.smartLink);
+    } catch {
+      $('#review-smartlink').select();
+      document.execCommand('copy');
+    }
+    copyBtn.textContent = '¡Copiado!';
+    setTimeout(() => { copyBtn.textContent = 'Copiar'; }, 2000);
+  });
+
+  if (window.QRCode) {
+    new QRCode($('#review-qr'), {
+      text: cfg.smartLink,
+      width: 160,
+      height: 160,
+      colorDark: '#0A0A0A',
+      colorLight: '#FFFFFF',
+    });
+  } else {
+    $('.reviews__qr').classList.add('hidden');
+  }
+})();
+
+
 // ---- Reveal on scroll (Intersection Observer) ----
 (function initReveal() {
   $$('.service-card, .price-card, .pillar, .process__step, .testimonial-card, .stat-card, .compare-row').forEach((el, i) => {

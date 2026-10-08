@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Déjanos tu reseña — CUU Marketing</title>
+  <meta name="description" content="Cuéntanos cómo fue tu experiencia con CUU Marketing y déjanos tu reseña en Google.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- OG Tags (vista previa al compartir por WhatsApp / redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cuumarketing.mx/resena/">
+  <meta property="og:title" content="¿Cómo te fue con CUU Marketing? ⭐⭐⭐⭐⭐">
+  <meta property="og:description" content="Tu opinión nos ayuda a crecer. Déjanos tu reseña en Google en menos de 1 minuto.">
+  <meta property="og:locale" content="es_MX">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="smartlink">
+  <main class="smartlink__card">
+    <div class="logo-mark">
+      <span class="logo-c">C</span><span class="logo-uu">UU</span>
+    </div>
+    <div class="smartlink__stars" aria-hidden="true">★★★★★</div>
+    <h1>¡Gracias por confiar en <span class="gradient-text">CUU Marketing</span>!</h1>
+    <p>Te estamos llevando a Google para que nos dejes tu reseña…</p>
+    <a href="#" class="btn btn--primary btn--full" id="smartlink-btn">Dejar mi reseña en Google →</a>
+    <a href="../" class="smartlink__back">Volver a cuumarketing.mx</a>
+  </main>
+
+  <script src="../review-config.js"></script>
+  <script>
+    (function () {
+      var url = window.CUU_REVIEWS.reviewUrl;
+      document.getElementById('smartlink-btn').href = url;
+      setTimeout(function () { window.location.replace(url); }, 1200);
+    })();
+  </script>
+</body>
+</html>
