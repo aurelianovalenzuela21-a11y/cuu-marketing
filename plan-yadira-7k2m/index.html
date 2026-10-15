@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="Documento privado de trabajo entre CUU Marketing y Yadira.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>Plan de Trabajo CUU × Yadira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Sistema de diseño de cuumarketing.com: modo oscuro, acento naranja, Space Grotesk + Inter.
+   Responsables: CUU = píldora naranja sólida · Yadira = píldora blanca · Juntos = contorno naranja. */
+:root {
+  --orange: #FF4D00;
+  --orange-soft: #FF6B35;
+  --orange-glow: rgba(255, 77, 0, 0.15);
+  --orange-faint: rgba(255, 77, 0, 0.06);
+  --black: #0A0A0A;
+  --black-2: #111111;
+  --black-3: #161616;
+  --card-bg: #1A1A1A;
+  --card-border: rgba(255, 255, 255, 0.07);
+  --white: #FAFAFA;
+  --gray-1: #EBEBEB;
+  --gray-2: #B0B0B0;
+  --gray-3: #8A8A8A;
+  --gray-4: #2A2A2A;
+  --green: #00C896;
+  --font-head: "Space Grotesk", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --container: 1200px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; font-size: 16px; }
+h1, h2, h3, h4, p, ul { margin: 0; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--orange-soft); outline-offset: 3px; border-radius: 4px; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--black-2); }
+::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 99px; }
+.container { max-width: var(--container); margin: 0 auto; padding-inline: 24px; }
+.gradient-text { background: linear-gradient(135deg, var(--orange) 0%, var(--orange-soft) 50%, #FFB347 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* ---- Logo (igual al sitio) ---- */
+.brandlink { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.logo-mark { display: flex; align-items: center; background: var(--orange); border-radius: 8px; padding: 5px 9px; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.02em; line-height: 1; }
+.logo-mark--sm { font-size: 0.9rem; padding: 4px 7px; }
+.logo-c { color: #fff; }
+.logo-uu { color: rgba(255, 255, 255, 0.75); }
+.logo-text { font-family: var(--font-head); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; color: var(--gray-2); }
+
+/* ---- Navegación ---- */
+.topnav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; background: rgba(10, 10, 10, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--card-border); }
+.topnav .container { display: flex; align-items: center; gap: 24px; padding-block: 12px; }
+.topnav__links { display: flex; align-items: center; gap: 4px; overflow-x: auto; scrollbar-width: none; min-width: 0; flex: 1; justify-content: flex-end; }
+.topnav__links::-webkit-scrollbar { display: none; }
+.topnav__links a { font-size: 0.875rem; font-weight: 500; color: var(--gray-2); padding: 8px 12px; border-radius: var(--radius-sm); transition: var(--transition); white-space: nowrap; }
+.topnav__links a:hover { color: var(--white); background: rgba(255, 255, 255, 0.06); }
+.topnav__links a.is-active { color: var(--orange); }
+
+/* ---- Hero ---- */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--card-border); }
+.hero__bg { position: absolute; inset: 0; pointer-events: none; }
+.hero__orb { position: absolute; border-radius: 50%; filter: blur(90px); }
+.hero__orb--1 { width: 520px; height: 520px; background: rgba(255, 77, 0, 0.18); top: -220px; right: -120px; }
+.hero__orb--2 { width: 360px; height: 360px; background: rgba(255, 107, 53, 0.08); bottom: -200px; left: -120px; }
+.hero__grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse at 70% 20%, #000 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at 70% 20%, #000 20%, transparent 70%); }
+.hero .container { position: relative; padding-block: 72px 56px; display: grid; gap: 40px; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: end; }
+.hero__badge { display: inline-flex; align-items: center; gap: 8px; width: fit-content; background: rgba(255, 77, 0, 0.1); border: 1px solid rgba(255, 77, 0, 0.25); color: var(--orange-soft); font-size: 0.8rem; font-weight: 600; padding: 8px 16px; border-radius: 99px; margin-bottom: 24px; }
+.hero__badge svg { width: 14px; height: 14px; }
+.hero__title { font-family: var(--font-head); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance; margin-bottom: 20px; }
+.hero__sub { font-size: 1.1rem; color: var(--gray-2); max-width: 56ch; }
+.hero__sub strong { color: var(--white); font-weight: 600; }
+.hero__meta { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 28px; font-size: 0.85rem; color: var(--gray-3); }
+.hero__meta span { display: inline-flex; align-items: center; gap: 8px; }
+
+.progress-card { background: rgba(26, 26, 26, 0.8); border: 1px solid var(--card-border); border-radius: var(--radius-lg); padding: 28px; display: grid; gap: 20px; backdrop-filter: blur(12px); }
+.progress-card h2 { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-2); }
+.big { display: flex; align-items: baseline; gap: 12px; }
+.big b { font-family: var(--font-head); font-size: 3.4rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.big span { color: var(--gray-2); font-size: 0.9rem; }
+.bar { height: 8px; background: var(--gray-4); border-radius: 99px; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--orange), var(--orange-soft)); border-radius: 99px; transition: width 0.6s ease; }
+.mini { display: grid; gap: 12px; }
+.mini > div { display: grid; grid-template-columns: 76px 1fr auto; gap: 12px; align-items: center; font-size: 0.85rem; }
+.mini .bar { height: 6px; }
+.mini .num { font-family: var(--font-head); color: var(--gray-2); font-variant-numeric: tabular-nums; }
+.sync { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--gray-3); border-top: 1px solid var(--card-border); padding-top: 16px; }
+.sync i { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-3); flex-shrink: 0; }
+.sync.on i { background: var(--green); box-shadow: 0 0 10px rgba(0, 200, 150, 0.6); }
+
+/* ---- Responsables ---- */
+.who { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-head); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; padding: 3px 10px; border-radius: 99px; white-space: nowrap; line-height: 1.5; border: 1px solid transparent; }
+.who.c { background: var(--orange); color: #fff; }
+.who.y { background: var(--white); color: var(--black); }
+.who.j { background: transparent; color: var(--orange-soft); border-color: rgba(255, 77, 0, 0.55); }
+.who.t { background: var(--gray-4); color: var(--gray-2); }
+
+/* ---- Secciones ---- */
+section.block { padding-block: 88px; border-bottom: 1px solid var(--card-border); scroll-margin-top: 64px; }
+section.block:nth-of-type(even) { background: var(--black-2); }
+.section-tag { display: inline-block; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); background: var(--orange-faint); border: 1px solid rgba(255, 77, 0, 0.2); padding: 6px 14px; border-radius: 99px; margin-bottom: 18px; }
+.section-header { margin-bottom: 48px; max-width: 720px; }
+.section-title { font-family: var(--font-head); font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; margin-bottom: 14px; }
+.section-sub { font-size: 1.05rem; color: var(--gray-2); }
+.card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); }
+.note { margin-top: 24px; font-size: 0.95rem; color: var(--gray-2); display: flex; gap: 12px; align-items: flex-start; background: var(--orange-faint); border: 1px solid rgba(255, 77, 0, 0.18); border-radius: var(--radius-md); padding: 16px 20px; }
+.note svg { color: var(--orange); flex-shrink: 0; margin-top: 3px; }
+.note strong { color: var(--white); }
+
+/* Objetivo */
+.goal { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.goal .card { padding: 28px; display: grid; gap: 12px; align-content: start; }
+.goal .card h3 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 600; }
+.goal .card p { color: var(--gray-2); font-size: 0.95rem; }
+.goal .card.hl { background: linear-gradient(160deg, rgba(255, 77, 0, 0.16), rgba(255, 77, 0, 0.03)); border-color: rgba(255, 77, 0, 0.3); }
+.goal .card.hl p { color: var(--gray-1); }
+.ico { width: 44px; height: 44px; border-radius: 12px; background: var(--orange-glow); color: var(--orange); display: grid; place-items: center; }
+.ico svg { width: 22px; height: 22px; }
+
+/* Quién hace qué */
+.roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.role { padding: 28px; display: grid; gap: 18px; align-content: start; }
+.role header { display: grid; gap: 10px; }
+.role h3 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 600; }
+.role ul { list-style: none; padding: 0; display: grid; gap: 12px; }
+.role li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 0.95rem; color: var(--gray-1); }
+.role li svg { color: var(--orange); margin-top: 3px; }
+.role.y li svg { color: var(--white); }
+
+/* Plan 90 días */
+.timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; position: relative; }
+.phase { padding: 28px; display: grid; gap: 20px; grid-template-rows: auto 1fr auto; position: relative; }
+.phase.key { border-color: rgba(255, 77, 0, 0.45); box-shadow: 0 0 40px rgba(255, 77, 0, 0.12); }
+.phase__top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.phase__num { width: 40px; height: 40px; border-radius: 12px; background: var(--gray-4); display: grid; place-items: center; font-family: var(--font-head); font-weight: 700; }
+.phase.key .phase__num { background: var(--orange); }
+.phase__when { font-family: var(--font-head); font-size: 0.8rem; color: var(--gray-2); letter-spacing: 0.06em; font-variant-numeric: tabular-nums; }
+.phase h3 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; margin-top: 12px; }
+.ptasks { list-style: none; padding: 0; display: grid; gap: 12px; }
+.ptasks li { display: grid; grid-template-columns: 68px 1fr; gap: 12px; align-items: start; font-size: 0.92rem; color: var(--gray-1); }
+.ptasks .who { width: 100%; }
+.phase__goal { border-top: 1px solid var(--card-border); padding-top: 16px; font-size: 0.9rem; display: flex; gap: 10px; align-items: center; }
+.phase__goal svg { color: var(--orange); flex-shrink: 0; }
+.phase__goal b { font-weight: 600; }
+
+/* Servicios */
+.packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+.pack { padding: 28px; display: grid; gap: 16px; align-content: start; }
+.pack.star { border-color: rgba(255, 77, 0, 0.45); }
+.pack .row { display: flex; gap: 6px; flex-wrap: wrap; }
+.pack h3 { font-family: var(--font-head); font-size: 1.3rem; font-weight: 600; }
+.pack ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+.pack li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 0.93rem; color: var(--gray-1); }
+.pack li svg { color: var(--green); margin-top: 3px; }
+.pack .for { font-size: 0.88rem; color: var(--gray-2); border-top: 1px solid var(--card-border); padding-top: 14px; }
+.extras { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.extras > div { padding: 22px 24px; display: grid; gap: 6px; font-size: 0.95rem; color: var(--gray-2); }
+.extras b { font-family: var(--font-head); font-size: 1.05rem; color: var(--white); font-weight: 600; }
+.extras .offer { background: linear-gradient(135deg, rgba(255, 77, 0, 0.18), rgba(255, 77, 0, 0.04)); border-color: rgba(255, 77, 0, 0.35); }
+.extras .offer span { color: var(--gray-1); }
+
+/* Guion */
+.spec { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.spec span { font-size: 0.82rem; color: var(--gray-2); background: var(--card-bg); border: 1px solid var(--card-border); padding: 6px 14px; border-radius: 99px; }
+.spec span b { color: var(--white); font-weight: 600; }
+.script { overflow: hidden; }
+.shot { display: grid; grid-template-columns: 100px 1fr; border-bottom: 1px solid var(--card-border); }
+.shot:last-child { border-bottom: 0; }
+.tc { font-family: var(--font-head); font-size: 0.9rem; font-weight: 600; color: var(--orange); padding: 22px 0 22px 24px; font-variant-numeric: tabular-nums; }
+.shot .body { padding: 20px 24px 20px 8px; display: grid; gap: 8px; min-width: 0; }
+.shot .meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 0.82rem; color: var(--gray-3); }
+.line { font-family: var(--font-head); font-size: 1.2rem; font-weight: 500; line-height: 1.4; color: var(--white); }
+.copy-box { margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.copy-box > div { padding: 24px; display: grid; gap: 14px; align-content: start; }
+.copy-box h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; }
+.copy-box p { font-size: 0.95rem; color: var(--gray-1); }
+.copy-box ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+.copy-box li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font-size: 0.93rem; color: var(--gray-1); }
+.copy-box li svg { color: var(--orange); margin-top: 3px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: var(--radius-md); font-family: var(--font-head); font-size: 0.92rem; font-weight: 600; transition: var(--transition); cursor: pointer; border: 0; width: fit-content; }
+.btn--primary { background: var(--orange); color: #fff; box-shadow: 0 4px 24px rgba(255, 77, 0, 0.35); }
+.btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255, 77, 0, 0.5); }
+
+/* Checklists */
+.lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 20px; }
+.list { padding: 26px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.list-head { display: grid; gap: 12px; margin-bottom: 4px; }
+.list-head .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.list-head h3 { font-family: var(--font-head); font-size: 1.25rem; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.count { font-family: var(--font-head); font-size: 0.85rem; color: var(--gray-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.group-title { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-3); margin-top: 8px; }
+.task { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; padding: 8px 10px; margin-inline: -10px; border-radius: 10px; cursor: pointer; font-size: 0.93rem; color: var(--gray-1); transition: background var(--transition); }
+.task:hover { background: rgba(255, 255, 255, 0.04); }
+.task input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; margin: 1px 0 0; border: 1.5px solid var(--gray-3); border-radius: 6px; display: grid; place-items: center; cursor: pointer; background: transparent; transition: var(--transition); }
+.task input:hover { border-color: var(--orange); }
+.task input:checked { background: var(--orange); border-color: var(--orange); }
+.task input:checked::after { content: ""; width: 10px; height: 6px; border: 2px solid #fff; border-top: 0; border-right: 0; transform: rotate(-45deg) translate(1px, -1px); }
+.task input:disabled { cursor: not-allowed; opacity: 0.5; }
+.task input:checked + span { color: var(--gray-3); text-decoration: line-through; text-decoration-color: var(--gray-4); }
+
+/* Tabla */
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 640px; }
+th, td { text-align: left; padding: 16px 20px; border-bottom: 1px solid var(--card-border); vertical-align: top; }
+th { font-family: var(--font-head); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-2); background: var(--black-3); }
+th .who { margin-left: 8px; vertical-align: 1px; }
+td { color: var(--gray-1); }
+tr:last-child td { border-bottom: 0; }
+td.day { font-family: var(--font-head); font-weight: 600; white-space: nowrap; color: var(--gray-2); font-variant-numeric: tabular-nums; }
+tr.launch td { background: rgba(255, 77, 0, 0.08); }
+tr.launch td.day { color: var(--orange); }
+
+/* Rutina y metas */
+.split2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; }
+.stack { display: grid; gap: 16px; }
+.stack > h3 { font-family: var(--font-head); font-size: 1.15rem; font-weight: 600; }
+.routine { padding: 4px 24px; }
+.rrow { display: grid; grid-template-columns: 132px 1fr; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--card-border); }
+.rrow:last-child { border-bottom: 0; }
+.rrow .when { font-family: var(--font-head); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; color: var(--orange); padding-top: 3px; }
+.rrow b { display: block; font-size: 0.98rem; font-weight: 600; margin-bottom: 2px; }
+.rrow span { font-size: 0.88rem; color: var(--gray-2); }
+.kpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.kpi { padding: 20px; display: grid; gap: 4px; }
+.kpi b { font-family: var(--font-head); font-size: 2.2rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.kpi span { font-size: 0.85rem; color: var(--gray-2); }
+
+/* Footer (igual al sitio) */
+.footer { background: var(--black-2); padding-top: 64px; }
+.footer__grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer__logo { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.footer__brand p { font-size: 0.85rem; color: var(--gray-2); max-width: 36ch; }
+.footer__col h4 { font-family: var(--font-head); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 18px; }
+.footer__col ul { list-style: none; padding: 0; display: grid; gap: 10px; }
+.footer__col li, .footer__col a { font-size: 0.85rem; color: var(--gray-2); transition: var(--transition); }
+.footer__col a:hover { color: var(--orange); }
+.footer__bottom { padding-block: 24px; border-top: 1px solid var(--card-border); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: var(--gray-3); }
+
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; padding-block: 48px 40px; }
+  .timeline { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .container { padding-inline: 16px; }
+  section.block { padding-block: 64px; }
+  .logo-text { display: none; }
+  .shot { grid-template-columns: 1fr; }
+  .tc { padding: 18px 20px 0; }
+  .shot .body { padding: 6px 20px 18px; }
+  .rrow { grid-template-columns: 1fr; gap: 4px; }
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .list, .role, .phase, .pack { padding: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a1 1 0 0 1 1-1h12l-2 4 2 4H5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+</svg>
+
+<header class="topnav" id="top">
+  <div class="container">
+    <a href="https://cuumarketing.com/" class="brandlink" aria-label="CUU Marketing, ir al sitio">
+      <span class="logo-mark"><span class="logo-c">C</span><span class="logo-uu">UU</span></span>
+      <span class="logo-text">MARKETING</span>
+    </a>
+    <nav class="topnav__links" aria-label="Secciones del plan">
+      <a href="#objetivo">Objetivo</a>
+      <a href="#quien">Quién hace qué</a>
+      <a href="#plan">Plan 90 días</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#guion">Guion</a>
+      <a href="#materiales">Materiales</a>
+      <a href="#calendario">Calendario</a>
+      <a href="#rutina">Rutina y metas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"><div class="hero__orb hero__orb--1"></div><div class="hero__orb hero__orb--2"></div><div class="hero__grid"></div></div>
+    <div class="container">
+      <div>
+        <span class="hero__badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg>Documento privado · Plan de trabajo</span>
+        <h1 class="hero__title">CUU Marketing <span class="gradient-text">× Yadira</span></h1>
+        <p class="hero__sub">Nuestro plan para trabajar juntos los próximos <strong>90 días</strong>: qué vamos a hacer, en qué orden y qué le toca a cada quien.</p>
+        <div class="hero__meta">
+          <span><span class="who c">CUU</span> CUU Marketing</span>
+          <span><span class="who y">Yadira</span> Yadira</span>
+          <span><span class="who j">Juntos</span> Los dos</span>
+        </div>
+      </div>
+      <aside class="progress-card" aria-label="Avance de tareas">
+        <h2>Avance del plan</h2>
+        <div class="big"><b id="pct-all">0%</b><span id="txt-all">0 de 0 tareas listas</span></div>
+        <div class="bar"><i id="bar-all"></i></div>
+        <div class="mini">
+          <div><span class="who c">CUU</span><div class="bar"><i data-prog="agencia"></i></div><span class="num" data-count="agencia">0/0</span></div>
+          <div><span class="who y">Yadira</span><div class="bar"><i data-prog="yadira"></i></div><span class="num" data-count="yadira">0/0</span></div>
+          <div><span class="who j">Juntos</span><div class="bar"><i data-prog="pasos"></i></div><span class="num" data-count="pasos">0/0</span></div>
+        </div>
+        <div class="sync" id="sync"><i></i><span>Cargando avance…</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="objetivo">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Objetivo</span>
+        <h2 class="section-title">Que los negocios de Chihuahua <span class="gradient-text">se vean, conecten y vendan</span></h2>
+        <p class="section-sub">CUU Marketing pone la estrategia, la producción y la operación. Yadira pone su comunidad, su personaje “la de recursos humanos” y su estilo frente a cámara.</p>
+      </div>
+      <div class="goal">
+        <div class="card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span>
+          <h3>Lo que aporta CUU Marketing</h3>
+          <p>Estrategia, diseño, producción de video, publicación, pauta, atención a marcas y reportes de resultados.</p>
+        </div>
+        <div class="card">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></span>
+          <h3>Lo que aporta Yadira</h3>
+          <p>Una comunidad fiel en Chihuahua, un personaje que la gente ya reconoce y oficio para crear contenido que se comparte.</p>
+        </div>
+        <div class="card hl">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-flag"/></svg></span>
+          <h3>Meta a 90 días</h3>
+          <p>Lanzar CUU Marketing con Yadira, hacer crecer las cuentas de la agencia y cerrar las primeras 4 marcas con campañas y redes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="quien">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Quién hace qué</span>
+        <h2 class="section-title">Lo que le toca a cada quien</h2>
+        <p class="section-sub">Cada uno lleva lo que mejor sabe hacer. La tercera columna es lo que hacemos juntos.</p>
+      </div>
+      <div class="roles">
+        <article class="card role c">
+          <header><span class="who c">CUU</span><h3>Estrategia y producción</h3></header>
+          <ul>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Estrategia de contenido y calendario</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Identidad, cuentas, plantillas y diseño</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Guiones, grabación técnica y edición</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Publicar, responder mensajes y manejar la pauta</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Propuestas, reuniones y seguimiento con marcas</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Reporte de resultados cada mes</li>
+          </ul>
+        </article>
+        <article class="card role y">
+          <header><span class="who y">Yadira</span><h3>Creadora de contenido</h3></header>
+          <ul>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Aparecer y conducir en los videos</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Compartir en sus redes: reels en colaboración e historias</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Aportar ideas y su estilo a los guiones</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Presentar la agencia a marcas y negocios de su red</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Hacer las campañas para marcas con su comunidad</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Aprobar las piezas donde ella aparece</li>
+          </ul>
+        </article>
+        <article class="card role j">
+          <header><span class="who j">Juntos</span><h3>Lo que hacemos los dos</h3></header>
+          <ul>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Planeación semanal de los lunes</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Jornadas de grabación</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>En vivos y contenido en colaboración</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Reuniones importantes con marcas</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Revisión de resultados cada mes</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="plan">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Plan de 90 días</span>
+        <h2 class="section-title">Tres fases, <span class="gradient-text">cada una con una meta</span></h2>
+        <p class="section-sub">No lanzamos sin cuentas, video y oferta listos. Cada tarea dice a quién le toca.</p>
+      </div>
+      <div class="timeline">
+        <article class="card phase">
+          <div><div class="phase__top"><span class="phase__num">1</span><span class="phase__when">DÍAS 1 – 30</span></div><h3>Preparar</h3></div>
+          <ul class="ptasks">
+            <li><span class="who c">CUU</span>Identidad, cuentas y plantillas</li>
+            <li><span class="who c">CUU</span>Guion, lista de tomas y equipo</li>
+            <li><span class="who y">Yadira</span>Biografía, fotos y estadísticas de sus redes</li>
+            <li><span class="who y">Yadira</span>Lista de marcas de su red</li>
+            <li><span class="who j">Juntos</span>Grabación del video inicial y sesión de fotos</li>
+            <li><span class="who c">CUU</span>Edición y 9 publicaciones base</li>
+          </ul>
+          <p class="phase__goal"><svg width="18" height="18"><use href="#i-flag"/></svg><span><b>Meta:</b> todo listo para el Día 1</span></p>
+        </article>
+        <article class="card phase key">
+          <div><div class="phase__top"><span class="phase__num">2</span><span class="phase__when">DÍAS 31 – 60</span></div><h3>Lanzar</h3></div>
+          <ul class="ptasks">
+            <li><span class="who j">Juntos</span>Publicar el reel en colaboración</li>
+            <li><span class="who c">CUU</span>Calendario de 2 semanas y respuestas a “QUIERO”</li>
+            <li><span class="who y">Yadira</span>Historias y video contando el proyecto</li>
+            <li><span class="who j">Juntos</span>En vivo juntos</li>
+            <li><span class="who y">Yadira</span>Presentar la agencia a marcas de su red</li>
+            <li><span class="who c">CUU</span>Reuniones y propuestas con marcas</li>
+          </ul>
+          <p class="phase__goal"><svg width="18" height="18"><use href="#i-flag"/></svg><span><b>Meta:</b> 10 reuniones con marcas</span></p>
+        </article>
+        <article class="card phase">
+          <div><div class="phase__top"><span class="phase__num">3</span><span class="phase__when">DÍAS 61 – 90</span></div><h3>Crecer</h3></div>
+          <ul class="ptasks">
+            <li><span class="who y">Yadira</span>2 videos al mes para la cuenta de la agencia</li>
+            <li><span class="who y">Yadira</span>1 en vivo al mes con su comunidad</li>
+            <li><span class="who c">CUU</span>Producir las campañas de las marcas</li>
+            <li><span class="who j">Juntos</span>Publicar el primer caso de éxito</li>
+            <li><span class="who c">CUU</span>Reporte de resultados del mes</li>
+          </ul>
+          <p class="phase__goal"><svg width="18" height="18"><use href="#i-flag"/></svg><span><b>Meta:</b> 4 marcas trabajando con nosotros</span></p>
+        </article>
+      </div>
+      <p class="note"><svg width="18" height="18"><use href="#i-info"/></svg><span><strong>La fase 2 es la más importante:</strong> ahí la comunidad de Yadira convierte el anuncio en conversaciones con negocios.</span></p>
+    </div>
+  </section>
+
+  <section class="block" id="servicios">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Servicios</span>
+        <h2 class="section-title">Lo que vamos a ofrecer a las marcas</h2>
+        <p class="section-sub">Tres formas de trabajar con nosotros, y quién participa en cada una.</p>
+      </div>
+      <div class="packs">
+        <article class="card pack star">
+          <div class="row"><span class="who y">Yadira</span><span class="who c">CUU</span></div>
+          <h3>Campaña con Yadira</h3>
+          <ul>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Reel en colaboración en sus redes</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>3 historias mencionando la marca</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Versión del video para las redes de la marca</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Reporte de alcance</li>
+          </ul>
+          <p class="for">Para negocios que quieren darse a conocer rápido: restaurantes, tiendas, eventos y servicios.</p>
+        </article>
+        <article class="card pack">
+          <div class="row"><span class="who c">CUU</span></div>
+          <h3>Redes para negocios</h3>
+          <ul>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Estrategia mensual</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>12 publicaciones y 4 reels</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Respuesta a mensajes y comentarios</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Reporte mensual</li>
+          </ul>
+          <p class="for">Para negocios locales que quieren vender más.</p>
+        </article>
+        <article class="card pack">
+          <div class="row"><span class="who j">Juntos</span></div>
+          <h3>Redes + Campaña</h3>
+          <ul>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Redes para negocios</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>1 campaña con Yadira al mes</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Pauta básica</li>
+          </ul>
+          <p class="for">Para negocios en crecimiento que quieren estrategia y alcance.</p>
+        </article>
+      </div>
+      <div class="extras">
+        <div class="card"><b>Por proyecto</b><span>Cobertura de inauguraciones y eventos, video institucional, difusión de vacantes con el estilo de “la de recursos humanos” y talleres de contenido para emprendedores.</span></div>
+        <div class="card offer"><b>Oferta de lanzamiento</b><span>Las primeras 5 marcas que trabajen 3 meses con nosotros reciben un reel en colaboración con Yadira de regalo.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="guion">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Video inicial</span>
+        <h2 class="section-title">Guion del reel de lanzamiento</h2>
+        <p class="section-sub">Lo grabamos juntos y se publica como colaboración en Instagram y TikTok, desde las dos cuentas al mismo tiempo.</p>
+      </div>
+      <div class="spec">
+        <span><b>Formato</b> vertical 9:16</span>
+        <span><b>Duración</b> 60 – 65 s</span>
+        <span><b>Subtítulos</b> siempre visibles</span>
+        <span><b>Tono</b> cercano, chihuahuense, sin leer</span>
+        <span><b>Locación</b> oficina o café con luz natural + una toma exterior de la ciudad</span>
+      </div>
+      <div class="card script">
+        <div class="shot"><div class="tc">00:00</div><div class="body"><div class="meta"><span class="who y">Yadira</span>Plano cerrado, a cámara</div><p class="line">“Muchos me conocen como la de recursos humanos… y hoy les tengo noticia: cambié de puesto.”</p></div></div>
+        <div class="shot"><div class="tc">00:03</div><div class="body"><div class="meta"><span class="who c">CUU</span>Entra a cuadro, los dos sonríen</div><p class="line">“Ahora trabaja con nosotros. Bienvenida a CUU Marketing.”</p></div></div>
+        <div class="shot"><div class="tc">00:08</div><div class="body"><div class="meta"><span class="who y">Yadira</span>Plano medio, alternando</div><p class="line">“Llevo tiempo haciendo contenido para Chihuahua y los negocios siempre me preguntan lo mismo: ¿cómo le hago para que la gente me vea?”</p></div></div>
+        <div class="shot"><div class="tc">00:20</div><div class="body"><div class="meta"><span class="who c">CUU</span>Tomas de apoyo: oficina, negocios locales, celular con redes</div><p class="line">“Muchos negocios publican y publican, pero no venden ni conectan. Ahí entramos nosotros.”</p></div></div>
+        <div class="shot"><div class="tc">00:32</div><div class="body"><div class="meta"><span class="who j">Juntos</span>A cámara, los dos</div><p class="line">“Les presentamos CUU Marketing: estrategia, contenido y creadores que Chihuahua sí ve. Hecho en Chihuahua, para Chihuahua.”</p></div></div>
+        <div class="shot"><div class="tc">00:48</div><div class="body"><div class="meta"><span class="who y">Yadira</span>A cámara, llamado a la acción</div><p class="line">“Si tienes un negocio y quieres que lo conozcan, escríbenos ‘QUIERO’ por mensaje y platicamos.”</p></div></div>
+        <div class="shot"><div class="tc">01:00</div><div class="body"><div class="meta"><span class="who t">En pantalla</span>Logo animado y cuentas</div><p class="line">Síguenos @cuumarketing · Primeras 5 marcas: reel con Yadira de regalo</p></div></div>
+      </div>
+      <div class="copy-box">
+        <div class="card">
+          <h3>Texto de la publicación</h3>
+          <p id="copy-text">La de recursos humanos tiene nuevo puesto: ahora trabaja con CUU Marketing. Juntos vamos a ayudar a los negocios de Chihuahua a que la gente los vea, los siga y les compre. ¿Tienes un negocio? Escríbenos QUIERO. #Chihuahua #MarketingDigital #CreadoresDeContenido #HechoEnChihuahua</p>
+          <button class="btn btn--primary" id="copy-btn" type="button">Copiar texto</button>
+        </div>
+        <div class="card">
+          <h3>Del mismo rodaje salen</h3>
+          <ul>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Clip de 15 s con el gancho, para historias</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Carrusel con 5 frases del video</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>Foto de los dos para Facebook</li>
+            <li><svg width="16" height="16"><use href="#i-check"/></svg>4 videos extra con consejos para negocios</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="materiales">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Materiales para redes</span>
+        <h2 class="section-title">Lo que prepara cada quien</h2>
+        <p class="section-sub">CUU Marketing deja lista toda la identidad y las cuentas. A Yadira le pedimos poco y concreto: su contenido, sus datos y su comunidad. Marca cada tarea al terminarla.</p>
+      </div>
+      <div class="lists" id="lists-materiales"></div>
+    </div>
+  </section>
+
+  <section class="block" id="calendario">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Calendario de lanzamiento</span>
+        <h2 class="section-title">Dos semanas de lanzamiento, cuenta por cuenta</h2>
+        <p class="section-sub">Después mantenemos 4 publicaciones por semana. D-3 son tres días antes del lanzamiento.</p>
+      </div>
+      <div class="card tbl">
+        <table>
+          <thead><tr><th>Día</th><th>Cuenta CUU Marketing <span class="who c">CUU</span></th><th>Cuenta de Yadira <span class="who y">Yadira</span></th></tr></thead>
+          <tbody>
+            <tr><td class="day">D-3</td><td>Post de intriga: “Algo nuevo llega a Chihuahua”</td><td>Historia: “Les tengo noticias el jueves”</td></tr>
+            <tr><td class="day">D-1</td><td>Historia con cuenta regresiva</td><td>Detrás de cámaras de la grabación</td></tr>
+            <tr class="launch"><td class="day">Día 1</td><td>Reel inicial en colaboración y foto juntos</td><td>Mismo reel en colaboración y 3 historias</td></tr>
+            <tr><td class="day">Día 2</td><td>Carrusel: “5 señales de que tu negocio necesita mejores redes”</td><td>Comparte el carrusel en historias</td></tr>
+            <tr><td class="day">Día 3</td><td>Historias con encuesta: “¿Tienes negocio en Chihuahua?”</td><td>Video: por qué se une a CUU Marketing</td></tr>
+            <tr><td class="day">Día 5</td><td>Reel: Yadira visita un negocio local y lo cuenta a su estilo</td><td>Comparte el reel</td></tr>
+            <tr><td class="day">Día 7</td><td>Carrusel de servicios y oferta de lanzamiento</td><td>Historia invitando a escribir QUIERO</td></tr>
+            <tr><td class="day">Día 9</td><td>Reel: 3 errores que hacen que tu negocio no se vea en redes</td><td>Comparte el reel</td></tr>
+            <tr><td class="day">Día 11</td><td>En vivo juntos: preguntas sobre redes y emprendimiento</td><td>Promueve el en vivo</td></tr>
+            <tr><td class="day">Día 14</td><td>Post “Quiénes somos” con fotos</td><td>Historia de agradecimiento a su comunidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="rutina">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Rutina y metas</span>
+        <h2 class="section-title">Cómo nos organizamos y <span class="gradient-text">a dónde queremos llegar</span></h2>
+      </div>
+      <div class="split2">
+        <div class="stack">
+          <h3>Rutina de trabajo</h3>
+          <div class="card routine">
+            <div class="rrow"><span class="when">CADA LUNES</span><div><b>Planeación semanal · 1 hora</b><span>Qué se publica, qué se graba y qué marcas seguimos.</span></div></div>
+            <div class="rrow"><span class="when">CADA 2 SEMANAS</span><div><b>Jornada de grabación · 3 horas</b><span>Varios videos en una sola sesión para aprovechar el tiempo de Yadira.</span></div></div>
+            <div class="rrow"><span class="when">DIARIO</span><div><b>Mensajes y comentarios</b><span>CUU responde en las cuentas de la agencia; Yadira pasa a CUU los mensajes de marcas que le lleguen.</span></div></div>
+            <div class="rrow"><span class="when">ÚLTIMO VIERNES</span><div><b>Revisión del mes</b><span>Resultados, qué funcionó y qué cambiamos.</span></div></div>
+          </div>
+        </div>
+        <div class="stack">
+          <h3>Metas a 90 días</h3>
+          <div class="kpis">
+            <div class="card kpi"><b>1,500</b><span>seguidores en las cuentas de la agencia</span></div>
+            <div class="card kpi"><b>40</b><span>mensajes “QUIERO”</span></div>
+            <div class="card kpi"><b>10</b><span>reuniones con marcas</span></div>
+            <div class="card kpi"><b class="gradient-text">4</b><span>marcas trabajando con nosotros</span></div>
+          </div>
+          <div class="card list" id="list-pasos"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo"><span class="logo-mark logo-mark--sm"><span class="logo-c">C</span><span class="logo-uu">UU</span></span><span class="logo-text">MARKETING</span></div>
+        <p>Agencia de marketing digital en Chihuahua. Este es un documento privado de trabajo entre CUU Marketing y Yadira.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Este plan</h4>
+        <ul>
+          <li><a href="#quien">Quién hace qué</a></li>
+          <li><a href="#plan">Plan de 90 días</a></li>
+          <li><a href="#guion">Guion del video</a></li>
+          <li><a href="#materiales">Materiales</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>WhatsApp: +52 614 514 8056</li>
+          <li><a href="https://cuumarketing.com/">cuumarketing.com</a></li>
+          <li>Chihuahua, Chih.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 CUU Marketing · Documento privado, no compartir.</p>
+      <p>Actualizado el 14 de octubre de 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const LISTS = [
+    { id: "agencia", who: "c", label: "CUU", title: "Le toca a CUU Marketing", target: "lists-materiales", groups: [
+      { name: "Identidad y cuentas", items: [
+        ["a-logo", "Logo final: horizontal, vertical, ícono y blanco y negro"],
+        ["a-manual", "Manual de marca básico: colores, tipografías y tono de voz"],
+        ["a-cuentas", "Cuentas creadas: Instagram, Facebook, TikTok y WhatsApp Business"],
+        ["a-perfiles", "Foto de perfil, portadas y biografía con llamado a la acción"],
+        ["a-landing", "Link en bio o landing con servicios y formulario de contacto"],
+        ["a-destacados", "Destacados de Instagram: Servicios, Nosotros, Clientes, Campañas"]
+      ]},
+      { name: "Plantillas y contenido base", items: [
+        ["a-canva", "Plantillas en Canva: carrusel, post, historia y portada de reel"],
+        ["a-intro", "Intro y cierre animados de 2 s con el logo"],
+        ["a-9posts", "9 publicaciones iniciales para que el perfil no se vea vacío"],
+        ["a-deck", "Presentación para marcas de 8 a 10 diapositivas"],
+        ["a-respuestas", "Respuestas listas para “QUIERO” en WhatsApp e Instagram"],
+        ["a-mediakit", "Kit de medios de Yadira con su audiencia y alcance"]
+      ]},
+      { name: "Producción", items: [
+        ["a-guion", "Guion final, lista de tomas y fecha de grabación"],
+        ["a-equipo", "Equipo: cámara, 2 micrófonos de solapa, aro de luz y tripié"],
+        ["a-edicion", "Edición del video con subtítulos y música libre de derechos"],
+        ["a-fotos", "Sesión de fotos de los dos (10 a 15 fotos aprobadas)"],
+        ["a-pauta", "Pauta del primer mes: $3,000 a $5,000 MXN"]
+      ]}
+    ]},
+    { id: "yadira", who: "y", label: "Yadira", title: "Le toca a Yadira", target: "lists-materiales", groups: [
+      { name: "Antes del lanzamiento", items: [
+        ["y-bio", "Biografía corta (3 líneas) y larga (1 párrafo) como creadora de contenido"],
+        ["y-fotos", "Fotos profesionales o fecha para la sesión juntos"],
+        ["y-stats", "Capturas de estadísticas de sus redes para el kit de medios"],
+        ["y-temas", "10 ideas de contenido que mejor le funcionan con su comunidad"],
+        ["y-contactos", "15 a 20 marcas o negocios de Chihuahua de su red"],
+        ["y-perfil", "Mencionar @cuumarketing en la biografía de sus redes"],
+        ["y-acceso", "Aceptar el acceso como colaboradora a las cuentas de la agencia"]
+      ]},
+      { name: "Grabación y publicación", items: [
+        ["y-grabacion", "Jornada de grabación de 3 a 4 horas: video inicial y 4 extra"],
+        ["y-colab", "Aceptar la colaboración del reel en Instagram y TikTok"],
+        ["y-historias", "3 a 5 historias en la semana del lanzamiento"],
+        ["y-linkedin", "Video en sus redes contando por qué se une al proyecto"]
+      ]},
+      { name: "Contenido recurrente, desde el mes 2", items: [
+        ["y-videos", "2 videos al mes para la cuenta de la agencia"],
+        ["y-envivo", "1 en vivo al mes con su comunidad"],
+        ["y-casos", "Compartir las campañas y resultados de las marcas"]
+      ]}
+    ]},
+    { id: "pasos", who: "j", label: "Juntos", title: "Próximos pasos", target: "list-pasos", inline: true, groups: [
+      { name: "", items: [
+        ["p-reunion", "Reunión para revisar este plan juntos"],
+        ["p-grabacion", "Definir la fecha de grabación del video inicial"],
+        ["p-dia1", "Elegir la fecha del Día 1 de lanzamiento"],
+        ["p-convenio", "Compartir accesos y herramientas de trabajo"]
+      ]}
+    ]}
+  ];
+
+  const state = {};
+  let mode = "local";
+  let db = null;
+  const LS_KEY = "cuu-plan-yadira-tareas";
+
+  function loadLocal() { try { Object.assign(state, JSON.parse(localStorage.getItem(LS_KEY) || "{}")); } catch (e) {} }
+  function saveLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function build() {
+    LISTS.forEach(list => {
+      const host = document.getElementById(list.target);
+      const box = list.inline ? host : el("div", "card list");
+      const head = el("div", "list-head");
+      const row = el("div", "row");
+      const h = el("h3");
+      h.append(el("span", "who " + list.who, list.label), document.createTextNode(list.title));
+      const count = el("span", "count"); count.dataset.count = list.id;
+      row.append(h, count);
+      const bar = el("div", "bar"); const fill = el("i"); fill.dataset.prog = list.id; bar.append(fill);
+      head.append(row, bar);
+      box.append(head);
+      list.groups.forEach(g => {
+        if (g.name) box.append(el("div", "group-title", g.name));
+        g.items.forEach(([id, label]) => {
+          const lab = el("label", "task");
+          const cb = document.createElement("input");
+          cb.type = "checkbox"; cb.id = "t-" + id; cb.dataset.task = id;
+          cb.addEventListener("change", () => toggle(id, cb.checked));
+          lab.append(cb, el("span", null, label));
+          box.append(lab);
+        });
+      });
+      if (!list.inline) host.append(box);
+    });
+  }
+
+  function render() {
+    document.querySelectorAll("[data-task]").forEach(cb => {
+      cb.checked = !!state[cb.dataset.task];
+      cb.disabled = mode === "readonly";
+    });
+    let total = 0, doneAll = 0;
+    LISTS.forEach(list => {
+      const ids = list.groups.flatMap(g => g.items.map(i => i[0]));
+      const done = ids.filter(id => state[id]).length;
+      total += ids.length; doneAll += done;
+      const pct = ids.length ? done / ids.length * 100 : 0;
+      document.querySelectorAll(`[data-count="${list.id}"]`).forEach(n => n.textContent = `${done}/${ids.length}`);
+      document.querySelectorAll(`[data-prog="${list.id}"]`).forEach(n => n.style.width = pct + "%");
+    });
+    const pctAll = total ? Math.round(doneAll / total * 100) : 0;
+    document.getElementById("pct-all").textContent = pctAll + "%";
+    document.getElementById("txt-all").textContent = `${doneAll} de ${total} tareas listas`;
+    document.getElementById("bar-all").style.width = pctAll + "%";
+  }
+
+  function setSync(text, on) {
+    const s = document.getElementById("sync");
+    s.classList.toggle("on", !!on);
+    s.querySelector("span").textContent = text;
+  }
+
+  async function toggle(id, value) {
+    state[id] = value;
+    render();
+    if (mode === "shared" && db) {
+      try {
+        await db.collection("tareas").doc(id).set({ done: value, at: new Date().toISOString() });
+      } catch (e) {
+        if (e && e.code === "invalid_argument") {
+          mode = "readonly";
+          setSync("Solo lectura: pide acceso de edición para marcar tareas.", false);
+          render();
+        }
+      }
+    } else if (mode === "local") {
+      saveLocal();
+    }
+  }
+
+  build();
+  loadLocal();
+  render();
+  setSync("El avance se guarda en este dispositivo.", false);
+
+  (async () => {
+    if (!window.claude || !window.claude.use) return;
+    try { db = await window.claude.use("db"); } catch (e) { db = null; }
+    if (!db) return;
+    mode = "shared";
+    for (const k in state) delete state[k];
+    render();
+    setSync("Avance compartido en vivo entre CUU y Yadira.", true);
+    db.collection("tareas").onSnapshot(snap => {
+      for (const k in state) delete state[k];
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.done) state[d.id] = true; });
+      render();
+    }, () => setSync("No se pudo cargar el avance compartido.", false));
+  })();
+
+  // Resalta la sección visible en el menú
+  const links = [...document.querySelectorAll('.topnav__links a')];
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) links.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + en.target.id));
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("section.block").forEach(s => io.observe(s));
+  }
+
+  document.getElementById("copy-btn").addEventListener("click", async (ev) => {
+    const btn = ev.currentTarget;
+    const text = document.getElementById("copy-text").textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.textContent = "Copiado";
+    } catch (e) {
+      const r = document.createRange(); r.selectNodeContents(document.getElementById("copy-text"));
+      const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      btn.textContent = "Texto seleccionado";
+    }
+    setTimeout(() => { btn.textContent = "Copiar texto"; }, 2000);
+  });
+})();
+</script>
+
+</body>
+</html>
