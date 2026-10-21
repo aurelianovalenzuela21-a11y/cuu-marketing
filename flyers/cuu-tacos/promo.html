@@ -54,17 +54,18 @@
   .logo .t { display: inline-block; font-family: 'Pacifico', cursive; color: var(--accent); transform: rotate(-5deg); }
 
   /* ---- 1080 x 1920 ---- */
-  .story .logo { top: 90px; } .story .logo .cuu { font-size: 120px; } .story .logo .t { font-size: 70px; margin-top: -26px; }
-  .story .title { top: 360px; }
+  .story .logo { top: 110px; } .story .logo .cuu { font-size: 170px; } .story .logo .t { font-size: 96px; margin-top: -36px; }
+  .story .title .pre b { display: none; }
+  .story .title { top: 395px; }
   .story .title .pre { font-size: 38px; margin-bottom: 14px; } .story .title .pre b { font-size: 46px; }
-  .story .title .big { font-size: 330px; }
+  .story .title .big { font-size: 300px; }
   .story .title .side { font-size: 40px; padding-bottom: 18px; }
-  .story .title .band { font-size: 196px; padding: 8px 34px 14px; margin-top: 12px; }
+  .story .title .band { font-size: 176px; padding: 8px 34px 14px; margin-top: 12px; }
   .story .vert { font-size: 30px; }
-  .story .tacos { top: 1040px; width: 860px; }
-  .story .floor { top: 1640px; }
-  .story .cuts { top: 1730px; font-size: 54px; letter-spacing: 10px; }
-  .story .bottom.last { top: 1825px; font-size: 34px; }
+  .story .tacos { top: 1150px; width: 770px; }
+  .story .floor { top: 1660px; }
+  .story .cuts { top: 1748px; font-size: 54px; letter-spacing: 10px; }
+  .story .bottom.last { top: 1838px; font-size: 34px; }
 
   /* ---- 1080 x 1080 ---- */
   .square .title { top: 60px; }
@@ -88,7 +89,7 @@
   <div class="abs logo"><div class="cuu">CUU</div><span class="t">Tacos</span></div>
 
   <div class="abs title">
-    <div class="pre"><b>CUU Tacos</b> presenta</div>
+    <div class="pre"><b>CUU Tacos</b> <span class="pre-txt">presenta</span></div>
     <div class="big">Tacos</div>
     <div class="side">Jueves a domingo<br>6 PM – 12 AM</div>
     <div class="band">De asada</div>
@@ -108,6 +109,7 @@
   const f = document.getElementById('f');
   f.classList.add(sq ? 'square' : 'story');
   if (sq) document.querySelector('.logo').remove();
+  else document.querySelector('.pre-txt').textContent = '¡Nuevo horario!';
   // líneas onduladas tipo topográfico
   const W = 1080, H = sq ? 1080 : 1920, svg = document.getElementById('waves');
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
