@@ -4,107 +4,183 @@
 <meta charset="UTF-8">
 <title>CUU Tacos — Flyer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Bebas+Neue&family=Yellowtail&family=DM+Sans:wght@500;700&display=swap" rel="stylesheet">
 <style>
   /* Paleta CUU Studio */
   :root {
     --bg: #0D0A11;
-    --haze: #592A4C;
     --pink: #FA6ABE;
     --lilac: #C88DF0;
     --sky: #36C5F4;
+    --deep: #6A2D8F;
     --white: #FFFFFF;
-    --muted: #9A8FA6;
+    --muted: #A99BB8;
     --grad: linear-gradient(90deg, var(--pink) 0%, var(--lilac) 55%, var(--sky) 100%);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: #222; }
   .flyer {
     width: 1080px; height: 1350px; position: relative; overflow: hidden;
+    background: var(--bg); color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .wall { position: absolute; inset: 0; }
+  .vignette { position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 70% 45% at 8% 4%, rgba(89,42,76,.95), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 100% 100%, rgba(54,197,244,.22), transparent 70%),
-      radial-gradient(ellipse 50% 35% at 85% 55%, rgba(200,141,240,.14), transparent 70%),
-      var(--bg);
-    color: var(--white);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    padding: 70px 90px 0;
-  }
-  .mono { font-family: 'Space Mono', monospace; }
-  .label { color: var(--pink); font-size: 26px; letter-spacing: 6px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 18px; }
-  .label::before { content: ""; width: 16px; height: 16px; border-radius: 50%; background: var(--pink); }
+      radial-gradient(ellipse 55% 30% at 50% 26%, rgba(250,106,190,.30), transparent 70%),
+      radial-gradient(ellipse 45% 30% at 80% 62%, rgba(54,197,244,.14), transparent 70%),
+      radial-gradient(ellipse 120% 90% at 50% 45%, transparent 40%, rgba(13,10,17,.92) 100%); }
+  .content { position: relative; height: 100%; }
 
-  .brand { margin-top: 50px; text-align: center; line-height: .85; }
-  .brand .cuu { font-family: 'Anton', sans-serif; font-size: 230px; letter-spacing: 4px; color: var(--white);
-    text-shadow: 0 0 40px rgba(250,106,190,.45), 8px 8px 0 var(--pink); }
-  .brand .tacos { font-family: 'Pacifico', cursive; font-size: 130px; display: inline-block;
-    margin-top: -40px; padding: 0 24px 10px; transform: rotate(-4deg);
+  /* Toldo */
+  .awning { position: absolute; top: 0; left: 0; width: 100%; height: 150px; filter: drop-shadow(0 14px 18px rgba(0,0,0,.6)); }
+
+  /* Logo */
+  .brand { position: absolute; top: 170px; left: 0; right: 0; text-align: center; line-height: .85; }
+  .brand .cuu { font-family: 'Anton', sans-serif; font-size: 250px; letter-spacing: 4px; color: var(--white);
+    text-shadow: 0 0 40px rgba(250,106,190,.55), 8px 8px 0 var(--pink); }
+  .brand .tacos { font-family: 'Pacifico', cursive; font-size: 140px; display: inline-block;
+    margin-top: -44px; padding: 0 24px 10px; transform: rotate(-4deg);
     background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(5px 5px 0 #6A2D8F); }
+    filter: drop-shadow(5px 5px 0 var(--deep)); }
 
-  .chips { margin-top: 36px; justify-content: center; display: flex; flex-wrap: wrap; gap: 14px; }
-  .chip { font-family: 'Space Mono', monospace; font-size: 26px; padding: 10px 24px;
-    border: 2px solid rgba(255,255,255,.45); border-radius: 999px; }
+  .tagline { position: absolute; top: 540px; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 22px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 38px; letter-spacing: 8px; color: var(--muted); }
+  .tagline::before, .tagline::after { content: ""; width: 120px; height: 2px; background: var(--grad); }
+  .tagline::after { transform: scaleX(-1); }
 
-  .card {
-    margin-top: 54px; text-align: center; position: relative; border-radius: 32px; padding: 34px 46px 36px;
-    background: rgba(255,255,255,.04);
-  }
-  .card::before { /* borde degradado */
-    content: ""; position: absolute; inset: 0; border-radius: 32px; padding: 3px;
-    background: var(--grad);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor; mask-composite: exclude;
-  }
-  .card .tag { font-size: 24px; letter-spacing: 5px; color: var(--sky); text-transform: uppercase; }
-  .card h2 { margin-top: 14px; font-weight: 800; font-size: 66px; line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
-  .card h2 em { font-style: italic; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 8px; }
-  .days { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
-  .day { width: 90px; height: 90px; border-radius: 50%; display: grid; place-items: center;
-    font-family: 'Space Mono', monospace; font-weight: 700; font-size: 38px;
-    border: 2px dashed rgba(255,255,255,.22); color: rgba(255,255,255,.3); }
-  .day.on { border: none; background: var(--grad); background-size: 360px 100%; color: var(--bg); }
-  .day.on:nth-child(4){background-position:0 0}
-  .day.on:nth-child(5){background-position:-90px 0}
-  .day.on:nth-child(6){background-position:-180px 0}
-  .day.on:nth-child(7){background-position:-270px 0}
-  .hours { margin-top: 26px; display: flex; justify-content: center; align-items: baseline; gap: 18px; font-weight: 800; font-size: 60px; letter-spacing: -1px; }
-  .hours small { font-family: 'Space Mono', monospace; font-weight: 400; font-size: 26px; color: var(--muted); letter-spacing: 2px; }
+  /* Menú (pizarra) */
+  .menu { position: absolute; top: 610px; left: 70px; width: 540px; padding: 30px 36px 30px;
+    background: rgba(13,10,17,.82); border-radius: 18px;
+    border: 3px solid var(--pink); box-shadow: 0 0 22px rgba(250,106,190,.45), inset 0 0 22px rgba(250,106,190,.15); }
+  .menu h3 { font-family: 'Yellowtail', cursive; font-weight: 400; font-size: 64px; line-height: 1; color: var(--pink);
+    text-shadow: 0 0 10px rgba(250,106,190,.9), 0 0 30px rgba(250,106,190,.6); text-align: center; }
+  .menu h3 small { display: block; margin-top: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 6px; color: var(--muted); text-shadow: none; }
+  .menu ul { list-style: none; margin-top: 16px; }
+  .menu li { display: flex; align-items: baseline; gap: 12px; padding: 7px 0; }
+  .menu li b { font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 50px; letter-spacing: 2px; line-height: 1; }
+  .menu li i { flex: 1; border-bottom: 3px dotted rgba(200,141,240,.55); transform: translateY(-8px); }
+  .menu li span { width: 16px; height: 16px; transform: rotate(45deg) translateY(-6px); background: var(--grad); flex: none; }
 
-  .loc { margin-top: 56px; display: flex; align-items: center; justify-content: center; gap: 24px; }
-  .loc .pin { width: 76px; height: 76px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; flex: none; }
-  .loc .pin svg { width: 40px; height: 40px; }
-  .loc small { display: block; font-family: 'Space Mono', monospace; font-size: 22px; letter-spacing: 5px; color: var(--pink); text-transform: uppercase; }
-  .loc b { font-weight: 800; font-size: 56px; letter-spacing: -1px; }
-  .loc .cta { margin-left: auto; text-align: right; font-family: 'Space Mono', monospace; font-size: 22px; color: var(--muted); letter-spacing: 2px; line-height: 1.5; text-transform: uppercase; }
+  /* Asador neón */
+  .grill { position: absolute; top: 600px; right: 60px; width: 380px; height: 342px; }
+  .neon-open { position: absolute; top: 950px; right: 60px; width: 380px; white-space: nowrap; text-align: center;
+    font-family: 'Yellowtail', cursive; font-size: 76px; line-height: 1; color: #E8FAFF; transform: rotate(-5deg);
+    text-shadow: 0 0 6px var(--sky), 0 0 18px var(--sky), 0 0 40px var(--sky), 0 0 70px rgba(54,197,244,.7); }
+
+  /* Letrero de horario */
+  .hours { position: absolute; top: 1075px; left: 70px; right: 70px; height: 150px;
+    display: flex; align-items: center; justify-content: space-between; padding: 0 44px;
+    background: var(--grad); border-radius: 18px; color: var(--bg); }
+  .hours .days { font-family: 'Anton', sans-serif; font-size: 62px; line-height: .95; text-transform: uppercase; }
+  .hours .days small { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 6px; }
+  .hours .time { text-align: right; font-family: 'Anton', sans-serif; font-size: 58px; line-height: 1; }
+  .hours .time small { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 6px; }
+
+  /* Dirección */
+  .addr { position: absolute; bottom: 44px; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 16px;
+    font-family: 'Bebas Neue', sans-serif; font-size: 46px; letter-spacing: 4px; }
+  .addr svg { width: 40px; height: 40px; }
+  .addr em { font-style: normal; color: var(--muted); }
 </style>
 </head>
 <body>
 <div class="flyer">
-  <div class="label mono">CUU Tacos · Chihuahua, MX</div>
+  <!-- Pared de ladrillo -->
+  <svg class="wall" width="1080" height="1350">
+    <defs>
+      <pattern id="brick" width="120" height="60" patternUnits="userSpaceOnUse">
+        <rect width="120" height="60" fill="#0D0A11"/>
+        <rect x="3" y="3" width="114" height="24" rx="3" fill="#17111D"/>
+        <rect x="-57" y="33" width="114" height="24" rx="3" fill="#150F1A"/>
+        <rect x="63" y="33" width="114" height="24" rx="3" fill="#150F1A"/>
+      </pattern>
+    </defs>
+    <rect width="1080" height="1350" fill="url(#brick)"/>
+  </svg>
+  <div class="vignette"></div>
 
-  <div class="brand">
-    <div class="cuu">CUU</div>
-    <span class="tacos">Tacos</span>
-  </div>
+  <div class="content">
+    <!-- Toldo -->
+    <svg class="awning" viewBox="0 0 1080 150" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#FA6ABE"/><stop offset=".55" stop-color="#C88DF0"/><stop offset="1" stop-color="#36C5F4"/></linearGradient>
+        <pattern id="stripes" width="135" height="150" patternUnits="userSpaceOnUse">
+          <rect width="67.5" height="150" fill="url(#g)"/>
+          <rect x="67.5" width="67.5" height="150" fill="#1C1424"/>
+        </pattern>
+        <mask id="scallop">
+          <rect width="1080" height="110" fill="#fff"/>
+          <g fill="#fff">
+            <circle cx="33.75" cy="110" r="33.75"/><circle cx="101.25" cy="110" r="33.75"/><circle cx="168.75" cy="110" r="33.75"/><circle cx="236.25" cy="110" r="33.75"/>
+            <circle cx="303.75" cy="110" r="33.75"/><circle cx="371.25" cy="110" r="33.75"/><circle cx="438.75" cy="110" r="33.75"/><circle cx="506.25" cy="110" r="33.75"/>
+            <circle cx="573.75" cy="110" r="33.75"/><circle cx="641.25" cy="110" r="33.75"/><circle cx="708.75" cy="110" r="33.75"/><circle cx="776.25" cy="110" r="33.75"/>
+            <circle cx="843.75" cy="110" r="33.75"/><circle cx="911.25" cy="110" r="33.75"/><circle cx="978.75" cy="110" r="33.75"/><circle cx="1046.25" cy="110" r="33.75"/>
+          </g>
+        </mask>
+      </defs>
+      <rect width="1080" height="150" fill="url(#stripes)" mask="url(#scallop)"/>
+      <rect width="1080" height="16" fill="#0D0A11" opacity=".55"/>
+    </svg>
 
-  <div class="chips">
-    <span class="chip">Carne asada</span><span class="chip">Bistek</span><span class="chip">Sirloin</span><span class="chip">Arrachera</span>
-  </div>
-
-  <div class="card">
-    <div class="tag mono">¡Nuevo horario!</div>
-    <h2>Ya estamos abiertos<br><em>de jueves a domingo</em></h2>
-    <div class="days">
-      <div class="day">L</div><div class="day">M</div><div class="day">M</div>
-      <div class="day on">J</div><div class="day on">V</div><div class="day on">S</div><div class="day on">D</div>
+    <div class="brand">
+      <div class="cuu">CUU</div>
+      <span class="tacos">Tacos</span>
     </div>
-    <div class="hours">6:00 PM – 12:00 AM</div>
-  </div>
 
-  <div class="loc">
-    <div class="pin"><svg viewBox="0 0 24 24" fill="#0D0A11"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></div>
-    <div><small>Encuéntranos en</small><b>Av. Zaragoza #12</b></div>
+    <div class="tagline">Taquería · Chihuahua</div>
+
+    <div class="menu">
+      <h3>Nuestras carnes<small>Tacos asados al momento</small></h3>
+      <ul>
+        <li><b>Carne asada</b><i></i><span></span></li>
+        <li><b>Bistek</b><i></i><span></span></li>
+        <li><b>Sirloin</b><i></i><span></span></li>
+        <li><b>Arrachera</b><i></i><span></span></li>
+      </ul>
+    </div>
+
+    <!-- Asador en neón -->
+    <svg class="grill" viewBox="0 0 400 360" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <defs>
+        <filter id="glowP" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <!-- humo -->
+      <g stroke="#C88DF0" stroke-width="5" filter="url(#glowP)" opacity=".9">
+        <path d="M150 120 C135 95 165 80 150 55 C140 38 158 25 152 10"/>
+        <path d="M210 112 C195 88 225 72 210 46 C200 28 218 16 212 2"/>
+        <path d="M268 120 C255 98 282 84 268 62"/>
+      </g>
+      <!-- carnes -->
+      <g stroke="#FA6ABE" stroke-width="7" filter="url(#glowP)">
+        <path d="M92 170 C88 140 140 128 180 138 C210 146 220 160 212 175 C200 192 120 196 92 170 Z"/>
+        <path d="M118 162 L150 150 M138 172 L176 156 M162 178 L196 164" stroke-width="5"/>
+        <path d="M228 160 C230 140 280 130 310 145 C335 158 325 182 296 186 C262 190 226 182 228 160 Z"/>
+        <path d="M248 168 L280 152 M270 178 L306 160" stroke-width="5"/>
+      </g>
+      <!-- parrilla y asador -->
+      <g stroke="#36C5F4" stroke-width="7" filter="url(#glowP)">
+        <path d="M50 190 H350"/>
+        <path d="M60 190 C60 270 120 300 200 300 C280 300 340 270 340 190"/>
+        <path d="M120 290 L95 350 M280 290 L305 350 M200 300 V350"/>
+        <path d="M30 190 H50 M350 190 H370"/>
+      </g>
+      <!-- brasas -->
+      <g fill="#FA6ABE" filter="url(#glowP)">
+        <circle cx="140" cy="232" r="6"/><circle cx="180" cy="246" r="5"/><circle cx="222" cy="236" r="6"/><circle cx="262" cy="248" r="5"/><circle cx="200" cy="222" r="4"/>
+      </g>
+    </svg>
+    <div class="neon-open">¡Ya abrimos!</div>
+
+    <div class="hours">
+      <div class="days"><small>Abierto</small>Jueves a domingo</div>
+      <div class="time"><small>Horario</small>6 PM – 12 AM</div>
+    </div>
+
+    <div class="addr">
+      <svg viewBox="0 0 24 24" fill="#FA6ABE"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+      Av. Zaragoza #12 <em>· Chihuahua</em>
+    </div>
   </div>
 </div>
 </body>
