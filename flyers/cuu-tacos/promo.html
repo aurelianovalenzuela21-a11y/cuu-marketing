@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<title>CUU Tacos — Promo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Acento: cambia --accent por el color de CUU Beauty */
+  :root {
+    --accent: #FA6ABE;
+    --accent-2: #C88DF0;
+    --ink: #1A0820;
+    --white: #FFFFFF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; }
+  .flyer { position: relative; overflow: hidden; color: var(--white); font-family: 'Oswald', sans-serif;
+    background:
+      radial-gradient(ellipse 70% 45% at 50% 38%, rgba(250,106,190,.35), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 50% 85%, rgba(200,141,240,.28), transparent 70%),
+      linear-gradient(160deg, #2A0B33 0%, #1A0820 50%, #12061A 100%); }
+  .story { width: 1080px; height: 1920px; }
+  .square { width: 1080px; height: 1080px; }
+  .abs { position: absolute; }
+  .waves { inset: 0; width: 100%; height: 100%; opacity: .5; }
+
+  /* Bloque del título, inclinado como la referencia */
+  .title { left: 50%; transform: translateX(-50%) rotate(-7deg); display: grid; grid-template-columns: auto auto; column-gap: 26px; align-items: end; }
+  .title .pre { grid-column: 1 / 3; font-weight: 500; letter-spacing: 6px; text-transform: uppercase; }
+  .title .pre b { font-family: 'Pacifico', cursive; font-weight: 400; letter-spacing: 0; color: var(--accent); text-transform: none; }
+  .title .big { font-family: 'Anton', sans-serif; line-height: .9; text-transform: uppercase; }
+  .title .side { writing-mode: vertical-rl; transform: rotate(180deg); font-weight: 600; letter-spacing: 4px; line-height: 1.15; text-transform: uppercase; }
+  .title .band { grid-column: 1 / 3; background: var(--accent); color: var(--ink); font-family: 'Anton', sans-serif; line-height: 1; text-transform: uppercase; text-align: center;
+    box-shadow: 0 0 60px rgba(250,106,190,.45); }
+
+  .vert { top: 50%; font-weight: 500; letter-spacing: 9px; text-transform: uppercase; white-space: nowrap; color: rgba(255,255,255,.85); }
+  .vert.l { left: 0; transform: translate(-50%, -50%) rotate(-90deg) translateY(40px); }
+  .vert.r { right: 0; transform: translate(50%, -50%) rotate(90deg) translateY(40px); }
+  .vert b { color: var(--accent); font-weight: 600; }
+
+  .tacos { left: 50%; transform: translateX(-50%); filter: drop-shadow(0 40px 40px rgba(0,0,0,.7));
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 90%, transparent 100%), linear-gradient(to bottom, #000 82%, transparent 100%);
+    -webkit-mask-composite: source-in;
+            mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 90%, transparent 100%), linear-gradient(to bottom, #000 82%, transparent 100%);
+            mask-composite: intersect; }
+  .floor { left: 50%; transform: translateX(-50%); width: 900px; height: 120px; border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 70%); }
+
+  .bottom { left: 0; right: 0; text-align: center; font-weight: 400; letter-spacing: 6px; text-transform: uppercase; }
+  .bottom b { color: var(--accent); font-weight: 600; }
+  .logo { left: 0; right: 0; text-align: center; line-height: .85; }
+  .logo .cuu { font-family: 'Anton', sans-serif; color: var(--white); letter-spacing: 3px; text-shadow: 5px 5px 0 var(--accent); }
+  .logo .t { display: inline-block; font-family: 'Pacifico', cursive; color: var(--accent); transform: rotate(-5deg); }
+
+  /* ---- 1080 x 1920 ---- */
+  .story .logo { top: 90px; } .story .logo .cuu { font-size: 120px; } .story .logo .t { font-size: 70px; margin-top: -26px; }
+  .story .title { top: 360px; }
+  .story .title .pre { font-size: 38px; margin-bottom: 14px; } .story .title .pre b { font-size: 46px; }
+  .story .title .big { font-size: 330px; }
+  .story .title .side { font-size: 40px; padding-bottom: 18px; }
+  .story .title .band { font-size: 196px; padding: 8px 34px 14px; margin-top: 12px; }
+  .story .vert { font-size: 30px; }
+  .story .tacos { top: 1040px; width: 860px; }
+  .story .floor { top: 1640px; }
+  .story .cuts { top: 1730px; font-size: 54px; letter-spacing: 10px; }
+  .story .bottom.last { top: 1825px; font-size: 34px; }
+
+  /* ---- 1080 x 1080 ---- */
+  .square .title { top: 60px; }
+  .square .title .pre { font-size: 30px; margin-bottom: 8px; } .square .title .pre b { font-size: 38px; }
+  .square .title .big { font-size: 170px; }
+  .square .title .side { font-size: 28px; padding-bottom: 10px; }
+  .square .title .band { font-size: 104px; padding: 4px 26px 8px; margin-top: 8px; }
+  .square .vert { font-size: 22px; letter-spacing: 7px; }
+  .square .vert.l { transform: translate(-50%, -50%) rotate(-90deg) translateY(50px); }
+  .square .vert.r { transform: translate(50%, -50%) rotate(90deg) translateY(50px); }
+  .square .tacos { top: 520px; width: 590px; }
+  .square .floor { top: 930px; width: 700px; height: 80px; }
+  .square .cuts { display: none; }
+  .square .bottom.last { top: 1012px; font-size: 26px; }
+</style>
+</head>
+<body>
+<div class="flyer" id="f">
+  <svg class="abs waves" id="waves" preserveAspectRatio="none"></svg>
+
+  <div class="abs logo"><div class="cuu">CUU</div><span class="t">Tacos</span></div>
+
+  <div class="abs title">
+    <div class="pre"><b>CUU Tacos</b> presenta</div>
+    <div class="big">Tacos</div>
+    <div class="side">Jueves a domingo<br>6 PM – 12 AM</div>
+    <div class="band">De asada</div>
+  </div>
+
+  <div class="abs vert l">Av. Zaragoza <b>#12</b> · Chihuahua</div>
+  <div class="abs vert r">¡Ya <b>abrimos</b>!</div>
+
+  <div class="abs floor"></div>
+  <img class="abs tacos" src="tacos-row.png" alt="Tacos de carne asada">
+
+  <div class="abs bottom cuts">Bistec · <b>Sirloin</b> · Arrachera</div>
+  <div class="abs bottom last">¡Pura <b>carne selecta</b>! · Jueves a domingo</div>
+</div>
+<script>
+  const sq = location.hash === '#square';
+  const f = document.getElementById('f');
+  f.classList.add(sq ? 'square' : 'story');
+  if (sq) document.querySelector('.logo').remove();
+  // líneas onduladas tipo topográfico
+  const W = 1080, H = sq ? 1080 : 1920, svg = document.getElementById('waves');
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  let d = '';
+  for (let i = -4; i < H / 34 + 4; i++) {
+    const y0 = i * 34;
+    let p = `M -20 ${y0}`;
+    for (let x = -20; x <= W + 20; x += 20) {
+      const y = y0 + 22 * Math.sin(x / 140 + i * .35) + 14 * Math.sin(x / 57 - i * .8);
+      p += ` L ${x} ${y.toFixed(1)}`;
+    }
+    d += `<path d="${p}" fill="none" stroke="rgba(250,106,190,.22)" stroke-width="1.4"/>`;
+  }
+  svg.innerHTML = d;
+</script>
+</body>
+</html>
