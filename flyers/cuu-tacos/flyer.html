@@ -36,7 +36,7 @@
   .picado span:nth-child(4n+4){background:#1FA37A}
 
   .badge {
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: 'Anton', sans-serif; letter-spacing: 6px; font-size: 30px;
     background: var(--ember); color: var(--char);
     padding: 10px 28px; transform: rotate(-3deg);
@@ -46,21 +46,24 @@
     margin-top: 22px; text-align: center; line-height: .85;
     font-family: 'Anton', sans-serif; text-transform: uppercase;
   }
-  .brand .cuu { font-size: 250px; color: var(--cream); letter-spacing: 4px;
+  .brand .cuu { font-size: 230px; color: var(--cream); letter-spacing: 4px;
     text-shadow: 0 0 40px rgba(255,77,0,.45), 8px 8px 0 var(--fire); }
   .brand .tacos { font-family: 'Pacifico', cursive; text-transform: none;
     font-size: 130px; color: var(--ember); margin-top: -30px; display: block;
     transform: rotate(-4deg); text-shadow: 5px 5px 0 var(--chili); }
   .sub {
-    margin-top: 34px; font-weight: 800; font-size: 34px; letter-spacing: 5px;
+    margin-top: 26px; font-weight: 800; font-size: 34px; letter-spacing: 5px;
     text-transform: uppercase; color: var(--cream);
   }
   .sub b { color: var(--fire); }
+  .meats { margin-top: 34px; display: flex; gap: 14px; }
+  .meats span { font-family: 'Anton', sans-serif; font-size: 34px; letter-spacing: 2px; text-transform: uppercase;
+    padding: 8px 22px; border: 3px solid var(--ember); border-radius: 999px; color: var(--ember); }
 
   .announce {
-    margin-top: 40px; width: 100%;
+    margin-top: 34px; width: 100%;
     background: var(--cream); color: var(--char);
-    border-radius: 28px; padding: 36px 40px 40px; text-align: center;
+    border-radius: 28px; padding: 32px 40px 34px; text-align: center;
     box-shadow: 0 20px 60px rgba(0,0,0,.5);
     position: relative;
   }
@@ -81,7 +84,7 @@
   .range { margin-top: 18px; font-weight: 800; font-size: 32px; letter-spacing: 3px; text-transform: uppercase; }
 
   .loc {
-    margin-top: 40px; display: flex; align-items: center; gap: 22px;
+    margin-top: 30px; display: flex; align-items: center; gap: 22px;
     font-family: 'Anton', sans-serif; font-size: 58px; text-transform: uppercase; letter-spacing: 2px;
   }
   .loc svg { width: 64px; height: 64px; flex: none; }
@@ -102,7 +105,7 @@
     <span class="tacos">Tacos</span>
   </div>
 
-  <div class="sub">Carne asada <b>al carbón</b></div>
+  <div class="meats"><span>Carne asada</span><span>Bistek</span><span>Sirloin</span><span>Arrachera</span></div>
 
   <div class="announce">
     <h2>Ya estamos abiertos<br><em>de jueves a domingo</em></h2>
@@ -111,7 +114,7 @@
       <div class="day on">J</div><div class="day on">V</div><div class="day on">S</div><div class="day on">D</div>
     </div>
     <div class="hours">De <span>6:00 PM</span> a <span>12:00 AM</span></div>
-    <div class="range">¡Te esperamos con el carbón prendido!</div>
+    <div class="range">¡Ven por tus tacos, te esperamos!</div>
   </div>
 
   <div class="loc">
