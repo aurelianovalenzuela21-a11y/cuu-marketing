@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>CUU Tacos — Flyer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* Paleta CUU Studio */
   :root {
@@ -31,20 +31,23 @@
     padding: 70px 90px 0;
   }
   .mono { font-family: 'Space Mono', monospace; }
-  .label { color: var(--pink); font-size: 26px; letter-spacing: 6px; text-transform: uppercase; display: flex; align-items: center; gap: 18px; }
+  .label { color: var(--pink); font-size: 26px; letter-spacing: 6px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 18px; }
   .label::before { content: ""; width: 16px; height: 16px; border-radius: 50%; background: var(--pink); }
 
-  .brand { margin-top: 26px; line-height: .9; font-weight: 800; letter-spacing: -5px; }
-  .brand .cuu { font-size: 175px; }
-  .brand .tacos { font-size: 175px; font-style: italic; display: inline-block; padding-right: 20px;
-    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .brand { margin-top: 50px; text-align: center; line-height: .85; }
+  .brand .cuu { font-family: 'Anton', sans-serif; font-size: 230px; letter-spacing: 4px; color: var(--white);
+    text-shadow: 0 0 40px rgba(250,106,190,.45), 8px 8px 0 var(--pink); }
+  .brand .tacos { font-family: 'Pacifico', cursive; font-size: 130px; display: inline-block;
+    margin-top: -40px; padding: 0 24px 10px; transform: rotate(-4deg);
+    background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(5px 5px 0 #6A2D8F); }
 
-  .chips { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .chips { margin-top: 36px; justify-content: center; display: flex; flex-wrap: wrap; gap: 14px; }
   .chip { font-family: 'Space Mono', monospace; font-size: 26px; padding: 10px 24px;
     border: 2px solid rgba(255,255,255,.45); border-radius: 999px; }
 
   .card {
-    margin-top: 42px; position: relative; border-radius: 32px; padding: 34px 46px 36px;
+    margin-top: 54px; text-align: center; position: relative; border-radius: 32px; padding: 34px 46px 36px;
     background: rgba(255,255,255,.04);
   }
   .card::before { /* borde degradado */
@@ -56,7 +59,7 @@
   .card .tag { font-size: 24px; letter-spacing: 5px; color: var(--sky); text-transform: uppercase; }
   .card h2 { margin-top: 14px; font-weight: 800; font-size: 66px; line-height: 1; letter-spacing: -2px; text-transform: uppercase; }
   .card h2 em { font-style: italic; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: 8px; }
-  .days { display: flex; gap: 14px; margin-top: 30px; }
+  .days { display: flex; justify-content: center; gap: 14px; margin-top: 30px; }
   .day { width: 90px; height: 90px; border-radius: 50%; display: grid; place-items: center;
     font-family: 'Space Mono', monospace; font-weight: 700; font-size: 38px;
     border: 2px dashed rgba(255,255,255,.22); color: rgba(255,255,255,.3); }
@@ -65,10 +68,10 @@
   .day.on:nth-child(5){background-position:-90px 0}
   .day.on:nth-child(6){background-position:-180px 0}
   .day.on:nth-child(7){background-position:-270px 0}
-  .hours { margin-top: 26px; display: flex; align-items: baseline; gap: 18px; font-weight: 800; font-size: 60px; letter-spacing: -1px; }
+  .hours { margin-top: 26px; display: flex; justify-content: center; align-items: baseline; gap: 18px; font-weight: 800; font-size: 60px; letter-spacing: -1px; }
   .hours small { font-family: 'Space Mono', monospace; font-weight: 400; font-size: 26px; color: var(--muted); letter-spacing: 2px; }
 
-  .loc { margin-top: 44px; display: flex; align-items: center; gap: 24px; }
+  .loc { margin-top: 56px; display: flex; align-items: center; justify-content: center; gap: 24px; }
   .loc .pin { width: 76px; height: 76px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; flex: none; }
   .loc .pin svg { width: 40px; height: 40px; }
   .loc small { display: block; font-family: 'Space Mono', monospace; font-size: 22px; letter-spacing: 5px; color: var(--pink); text-transform: uppercase; }
@@ -82,7 +85,7 @@
 
   <div class="brand">
     <div class="cuu">CUU</div>
-    <span class="tacos">TACOS</span>
+    <span class="tacos">Tacos</span>
   </div>
 
   <div class="chips">
@@ -102,7 +105,6 @@
   <div class="loc">
     <div class="pin"><svg viewBox="0 0 24 24" fill="#0D0A11"><path d="M12 2C7.6 2 4 5.6 4 10c0 6 8 12 8 12s8-6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></div>
     <div><small>Encuéntranos en</small><b>Av. Zaragoza #12</b></div>
-    <div class="cta">¡Ven por<br>tus tacos!</div>
   </div>
 </div>
 </body>
