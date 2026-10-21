@@ -62,9 +62,14 @@
   .menu li i { flex: 1; border-bottom: 3px dotted rgba(200,141,240,.55); transform: translateY(-8px); }
   .menu li span { width: 16px; height: 16px; transform: rotate(45deg) translateY(-6px); background: var(--grad); flex: none; }
 
-  /* Asador neón */
-  .grill { position: absolute; top: 600px; right: 60px; width: 380px; height: 342px; }
-  .neon-open { position: absolute; top: 950px; right: 60px; width: 380px; white-space: nowrap; text-align: center;
+  /* Foto */
+  .photo { position: absolute; top: 612px; right: 66px; width: 340px; height: 425px; border-radius: 22px; padding: 5px;
+    background: var(--grad); transform: rotate(3deg);
+    box-shadow: 0 0 26px rgba(200,141,240,.55), 0 24px 50px rgba(0,0,0,.6); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; display: block; }
+  .photo::after { content: ""; position: absolute; inset: 5px; border-radius: 18px;
+    background: linear-gradient(to top, rgba(13,10,17,.85) 0%, rgba(13,10,17,0) 38%); }
+  .neon-open { position: absolute; top: 955px; right: 40px; width: 400px; white-space: nowrap; z-index: 2; text-align: center;
     font-family: 'Yellowtail', cursive; font-size: 76px; line-height: 1; color: #E8FAFF; transform: rotate(-5deg);
     text-shadow: 0 0 6px var(--sky), 0 0 18px var(--sky), 0 0 40px var(--sky), 0 0 70px rgba(54,197,244,.7); }
 
@@ -139,36 +144,8 @@
       </ul>
     </div>
 
-    <!-- Asador en neón -->
-    <svg class="grill" viewBox="0 0 400 360" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <defs>
-        <filter id="glowP" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-      </defs>
-      <!-- humo -->
-      <g stroke="#C88DF0" stroke-width="5" filter="url(#glowP)" opacity=".9">
-        <path d="M150 120 C135 95 165 80 150 55 C140 38 158 25 152 10"/>
-        <path d="M210 112 C195 88 225 72 210 46 C200 28 218 16 212 2"/>
-        <path d="M268 120 C255 98 282 84 268 62"/>
-      </g>
-      <!-- carnes -->
-      <g stroke="#FA6ABE" stroke-width="7" filter="url(#glowP)">
-        <path d="M92 170 C88 140 140 128 180 138 C210 146 220 160 212 175 C200 192 120 196 92 170 Z"/>
-        <path d="M118 162 L150 150 M138 172 L176 156 M162 178 L196 164" stroke-width="5"/>
-        <path d="M228 160 C230 140 280 130 310 145 C335 158 325 182 296 186 C262 190 226 182 228 160 Z"/>
-        <path d="M248 168 L280 152 M270 178 L306 160" stroke-width="5"/>
-      </g>
-      <!-- parrilla y asador -->
-      <g stroke="#36C5F4" stroke-width="7" filter="url(#glowP)">
-        <path d="M50 190 H350"/>
-        <path d="M60 190 C60 270 120 300 200 300 C280 300 340 270 340 190"/>
-        <path d="M120 290 L95 350 M280 290 L305 350 M200 300 V350"/>
-        <path d="M30 190 H50 M350 190 H370"/>
-      </g>
-      <!-- brasas -->
-      <g fill="#FA6ABE" filter="url(#glowP)">
-        <circle cx="140" cy="232" r="6"/><circle cx="180" cy="246" r="5"/><circle cx="222" cy="236" r="6"/><circle cx="262" cy="248" r="5"/><circle cx="200" cy="222" r="4"/>
-      </g>
-    </svg>
+    <!-- Foto -->
+    <div class="photo"><img src="tacos.jpg" alt="Tacos de carne asada"></div>
     <div class="neon-open">¡Ya abrimos!</div>
 
     <div class="hours">
