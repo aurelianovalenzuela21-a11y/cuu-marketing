@@ -7,6 +7,7 @@
 <meta name="googlebot" content="noindex, nofollow">
 <meta name="theme-color" content="#0E0D0B">
 <meta name="description" content="Propuesta privada de CUU Marketing para Grupo Funerario Vida Plena.">
+<script>document.documentElement.className="js";setTimeout(function(){document.querySelectorAll(".rv").forEach(function(e){e.classList.add("in")})},2500);</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>Propuesta CUU × Vida Plena</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -336,9 +337,10 @@ footer { border-top: 1px solid var(--line); padding-block: 28px; font-size: .8re
 footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 /* ---------- Animación de entrada ---------- */
-.rv { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+/* Sólo se oculta si el JS está corriendo; si algo falla, el contenido se ve igual */
+.js .rv { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.js .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1020px) {
