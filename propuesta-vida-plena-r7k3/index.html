@@ -95,7 +95,7 @@ section.s.dark { background: var(--navy); color: #fff; }
 .kicker.dk { color: var(--gold); }
 .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--r); }
 
-/* ---------- Diagnóstico ---------- */
+/* ---------- Tarjetas de cifras ---------- */
 .diag { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .d { padding: 22px; display: grid; gap: 8px; align-content: start; }
 .d .big { font-family: var(--head); font-weight: 800; font-size: 2.6rem; line-height: 1; color: var(--navy); }
@@ -274,7 +274,7 @@ section.s.dark { background: var(--navy); color: #fff; }
 .lvl .it { padding: 14px 22px; display: grid; gap: 3px; border-bottom: 1px solid var(--line); }
 .lvl .it:nth-child(odd) { border-right: 1px solid var(--line); }
 .lvl .it b { font-size: .92rem; font-weight: 600; }
-.lvl .it span { font-size: .82rem; color: var(--red); }
+.lvl .it span { font-size: .82rem; color: var(--muted, #6B7280); }
 
 /* ---------- Inversión ---------- */
 .invest { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px; align-items: start; }
@@ -358,9 +358,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 
 <header class="top">
   <div class="wrap">
-    <a class="sign" href="#inicio" aria-label="Inicio de la propuesta"><span class="cuu">C<i>UU</i></span><span class="x">×</span><img src="img/logo-oro.png" alt="Grupo Funerario Vida Plena" width="50" height="30"></a>
+    <a class="sign" href="https://cuumarketing.com/" aria-label="Ir a CUU Marketing"><span class="cuu">C<i>UU</i></span><span class="x">×</span><img src="img/logo-oro.png" alt="Grupo Funerario Vida Plena" width="50" height="30"></a>
     <nav aria-label="Secciones">
-      <a href="#diagnostico">Diagnóstico</a>
       <a href="#comparativa">Comparativa</a>
       <a href="#referencias">Referencias</a>
       <a href="#campanas">Campañas</a>
@@ -393,24 +392,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   </div>
 </section>
 
-<!-- DIAGNÓSTICO -->
-<section class="s" id="diagnostico">
-  <div class="wrap">
-    <div class="head"><span class="kicker dk">01 · Diagnóstico</span><h2>Lo que hoy frena su sitio</h2><p>Revisado el 28 de octubre en grupovidaplena.com.</p></div>
-    <div class="diag">
-      <article class="card d crit"><div class="big">10</div><h3>enlaces ocultos a un casino</h3><p>El sitio fue intervenido. Google los ve y castiga la marca.</p></article>
-      <article class="card d crit"><div class="big">92 <small>MB</small></div><h3>pesa el video de portada</h3><p>En celular tarda o no carga.</p></article>
-      <article class="card d"><div class="big">3</div><h3>teléfonos distintos</h3><p>La familia duda y no se puede medir.</p></article>
-      <article class="card d"><div class="big">0</div><h3>medición de Google</h3><p>Sin Analytics ni conversiones: Google Ads a ciegas.</p></article>
-    </div>
-    <div class="fix"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><span>En la primera semana limpiamos el sitio y cerramos el acceso, sin costo extra.</span></div>
-  </div>
-</section>
 
 <!-- COMPARATIVA -->
 <section class="s white" id="comparativa">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">02 · Comparativa</span><h2>Más por menos, y todo por escrito</h2></div>
+    <div class="head"><span class="kicker dk">01 · Comparativa</span><h2>Más por menos, y todo por escrito</h2></div>
     <div class="card cmp" role="table" aria-label="Comparativa de propuestas">
       <div class="cmp-row h" role="row"><div role="columnheader">Concepto</div><div role="columnheader">Propuesta actual</div><div role="columnheader">CUU Marketing</div></div>
       <div class="cmp-row" role="row"><div role="cell">Mensualidad</div><div role="cell">$16,000</div><div role="cell">$15,500</div></div>
@@ -429,7 +415,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- REFERENCIAS VISUALES -->
 <section class="s dark" id="referencias">
   <div class="wrap">
-    <div class="head"><span class="kicker">03 · Referencias visuales</span><h2>Así se verá su contenido</h2><p>Cálido, limpio y con gente real. Ejemplos con frases de su propio sitio.</p></div>
+    <div class="head"><span class="kicker">02 · Referencias visuales</span><h2>Así se verá su contenido</h2><p>Cálido, limpio y con gente real. Ejemplos con frases de su propio sitio.</p></div>
     <div class="formats">
       <div class="fmt">
         <div class="frame v" style="background-image:url(img/ref-pareja.jpg)">
@@ -477,7 +463,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- ESTRATEGIA -->
 <section class="s" id="estrategia">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">04 · Estrategia</span><h2>Un mensaje para cada público</h2></div>
+    <div class="head"><span class="kicker dk">03 · Estrategia</span><h2>Un mensaje para cada público</h2></div>
     <div class="lines">
       <article class="card line"><div class="ph" style="background-image:url(img/ref-manos.jpg)"></div><div class="tx"><h3>Emergencia 24/7</h3><p>Quien necesita ayuda ahora.</p><div class="chips"><span class="chip">Google Search</span><span class="chip">Llamadas</span></div></div></article>
       <article class="card line"><div class="ph" style="background-image:url(img/ref-pareja.jpg); background-position:center 30%"></div><div class="tx"><h3>Previsión</h3><p>Quien quiere dejar todo en orden.</p><div class="chips"><span class="chip">Meta Ads</span><span class="chip">WhatsApp</span></div></div></article>
@@ -490,7 +476,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- CAMPAÑAS Y PAUTA -->
 <section class="s white" id="campanas">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">05 · Campañas</span><h2>Optimizadas cada semana para vender más</h2></div>
+    <div class="head"><span class="kicker dk">04 · Campañas</span><h2>Optimizadas cada semana para vender más</h2></div>
     <div class="cadence">
       <article class="card cad"><span class="when">Cada semana</span><h3>Optimización de anuncios</h3><ul>
         <li><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Pausamos lo que no funciona</li>
@@ -523,7 +509,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- WEB -->
 <section class="s" id="web">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">06 · La web nueva</span><h2>Así se vería grupovidaplena.com</h2><p>Dos caminos claros: ayuda ahora o planear con calma.</p></div>
+    <div class="head"><span class="kicker dk">05 · La web nueva</span><h2>Así se vería grupovidaplena.com</h2><p>Dos caminos claros: ayuda ahora o planear con calma.</p></div>
     <div class="mock-stage">
       <div>
         <div class="browser" aria-label="Boceto de la página de inicio en computadora">
@@ -585,7 +571,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <div class="web-mgmt">
       <article class="card wm"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>Reestructuración</h3><p>Nueva arquitectura, diseño y textos.</p></article>
       <article class="card wm"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></span><h3>Actualización mensual</h3><p>Promociones, obituarios, fotos y precios al día.</p></article>
-      <article class="card wm"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></span><h3>Seguridad y respaldos</h3><p>Limpieza, protección y copias diarias.</p></article>
+      <article class="card wm"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg></span><h3>Seguridad y respaldos</h3><p>Protección, actualizaciones y copias diarias.</p></article>
       <article class="card wm"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></span><h3>Velocidad y SEO</h3><p>Rápida en celular y visible en Google.</p></article>
     </div>
   </div>
@@ -594,44 +580,44 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- MEJORAS -->
 <section class="s white" id="mejoras">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">07 · Mejoras a detalle</span><h2>De lo más complejo a lo más básico</h2><p>Toquen cada nivel para ver la lista.</p></div>
+    <div class="head"><span class="kicker dk">06 · Mejoras a detalle</span><h2>De lo más complejo a lo más básico</h2><p>Toquen cada nivel para ver la lista.</p></div>
     <div class="levels">
       <details class="card lvl">
         <summary><span class="ln">1</span><div><h3>Arquitectura y conversión</h3><p>Cómo el sitio convierte visitas en llamadas.</p></div><span class="cnt">6 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></summary>
         <div class="items">
-          <div class="it"><b>Dos caminos en la portada</b><span>Hoy: dos botones que piden lo mismo</span></div>
-          <div class="it"><b>Cotizador de previsión en 3 pasos</b><span>Hoy: sin formulario</span></div>
-          <div class="it"><b>Obituarios con condolencias y flores</b><span>Hoy: en páginas separadas</span></div>
-          <div class="it"><b>Medición de Google y Meta</b><span>Hoy: sólo píxel de Facebook</span></div>
-          <div class="it"><b>Un solo número rastreable</b><span>Hoy: tres teléfonos</span></div>
-          <div class="it"><b>Sitio ligero y seguro</b><span>Hoy: 80 archivos por visita y hackeo</span></div>
+          <div class="it"><b>Dos caminos en la portada</b><span>«Necesito ayuda ahora» o «Quiero planear»</span></div>
+          <div class="it"><b>Cotizador de previsión en 3 pasos</b><span>La cotización llega por WhatsApp</span></div>
+          <div class="it"><b>Obituarios con condolencias y flores</b><span>Todo en una sola página por persona</span></div>
+          <div class="it"><b>Medición de Google y Meta</b><span>Analytics, conversiones y píxel</span></div>
+          <div class="it"><b>Un solo número rastreable</b><span>Cada llamada medida por campaña</span></div>
+          <div class="it"><b>Sitio ligero y seguro</b><span>Carga rápida en celular, protegido y respaldado</span></div>
         </div>
       </details>
       <details class="card lvl">
         <summary><span class="ln">2</span><div><h3>Contenido y confianza</h3><p>Lo que hace sentir a la familia en buenas manos.</p></div><span class="cnt">4 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></summary>
         <div class="items">
-          <div class="it"><b>Fotos y video reales</b><span>Hoy: video de archivo de otra ciudad</span></div>
-          <div class="it"><b>Precios «desde» en previsión</b><span>Hoy: no hay referencia de precio</span></div>
-          <div class="it"><b>Preguntas frecuentes reales</b><span>Hoy: genéricas</span></div>
-          <div class="it"><b>Promociones vigentes</b><span>Hoy: «Octubre y Septiembre 2026»</span></div>
+          <div class="it"><b>Fotos y video reales</b><span>Su equipo y sus capillas, grabados por CUU</span></div>
+          <div class="it"><b>Precios «desde» en previsión</b><span>Una referencia clara para decidir</span></div>
+          <div class="it"><b>Preguntas frecuentes reales</b><span>Las dudas que de verdad llegan por WhatsApp</span></div>
+          <div class="it"><b>Promociones vigentes</b><span>Actualizadas cada mes</span></div>
         </div>
       </details>
       <details class="card lvl">
         <summary><span class="ln">3</span><div><h3>Diseño visual</h3><p>Moderno, sereno y uniforme.</p></div><span class="cnt">4 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></summary>
         <div class="items">
-          <div class="it"><b>Paleta azul noche + dorado</b><span>Hoy: colores sueltos</span></div>
-          <div class="it"><b>Tipografía legible y grande</b><span>Hoy: textos chicos sobre video</span></div>
-          <div class="it"><b>Espacios y retícula consistentes</b><span>Hoy: cada sección distinta</span></div>
-          <div class="it"><b>Un botón principal por pantalla</b><span>Hoy: «Más Información!» repetido</span></div>
+          <div class="it"><b>Paleta azul noche + dorado</b><span>Del dorado de su logo</span></div>
+          <div class="it"><b>Tipografía legible y grande</b><span>Fácil de leer a cualquier edad</span></div>
+          <div class="it"><b>Espacios y retícula consistentes</b><span>Todas las secciones con el mismo orden</span></div>
+          <div class="it"><b>Un botón principal por pantalla</b><span>Siempre claro qué hacer</span></div>
         </div>
       </details>
       <details class="card lvl">
-        <summary><span class="ln">4</span><div><h3>Lo básico</h3><p>Detalles que restan confianza.</p></div><span class="cnt">4 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <summary><span class="ln">4</span><div><h3>Lo básico</h3><p>Detalles que suman confianza.</p></div><span class="cnt">4 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></span></summary>
         <div class="items">
-          <div class="it"><b>Ocultar «Log in / Sign up»</b><span>Hoy: visible en cada página</span></div>
-          <div class="it"><b>Títulos de página correctos</b><span>Hoy: «Vida Plena -»</span></div>
-          <div class="it"><b>Ortografía y acentos</b><span>Hoy: «Envíar», «Telefono», «Contactanos»</span></div>
-          <div class="it"><b>Frase de portada completa</b><span>Hoy: «Hoy, mañana y ..»</span></div>
+          <div class="it"><b>Ocultar «Log in / Sign up»</b><span>Un sitio limpio para las familias</span></div>
+          <div class="it"><b>Títulos de página correctos</b><span>Para aparecer bien en Google</span></div>
+          <div class="it"><b>Ortografía y acentos</b><span>Todo el texto revisado</span></div>
+          <div class="it"><b>Frase de portada completa</b><span>«Hoy, mañana y siempre»</span></div>
         </div>
       </details>
     </div>
@@ -641,7 +627,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- INVERSIÓN -->
 <section class="s" id="inversion">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">08 · Inversión</span><h2>Una mensualidad, todo claro</h2></div>
+    <div class="head"><span class="kicker dk">07 · Inversión</span><h2>Una mensualidad, todo claro</h2></div>
     <div class="invest">
       <article class="card plan">
         <span class="kicker">Plan Vida Plena 360</span>
@@ -661,7 +647,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <div class="side">
         <div class="card"><h4>Web nueva</h4><div class="row"><span>Valor del proyecto</span><span class="strike">$28,000</span></div><div class="row"><span>Con el plan</span><b>Incluida</b></div><p>Si terminan antes de 6 meses, se cubre la parte proporcional.</p></div>
         <div class="card"><h4>Pauta (aparte)</h4><div class="row"><span>Recomendada</span><b>$15,000 / mes</b></div><p>Desde $8,000. Pagada por Vida Plena a Meta y Google.</p></div>
-        <div class="card"><h4>Sin costo extra</h4><div class="gifts"><span>Limpieza del hackeo</span><span>Sesión de foto y video</span><span>Video institucional</span><span>Google Maps</span><span>Guía de WhatsApp</span></div></div>
+        <div class="card"><h4>Sin costo extra</h4><div class="gifts"><span>Respaldo y protección del sitio</span><span>Sesión de foto y video</span><span>Video institucional</span><span>Google Maps</span><span>Guía de WhatsApp</span></div></div>
         <p class="fine">Precios en MXN antes de IVA. Pago mensual anticipado. Sin plazo forzoso.</p>
       </div>
     </div>
@@ -671,9 +657,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 <!-- 90 DÍAS -->
 <section class="s white" id="arranque">
   <div class="wrap">
-    <div class="head"><span class="kicker dk">09 · Primeros 90 días</span><h2>Qué pasa y cuándo</h2></div>
+    <div class="head"><span class="kicker dk">08 · Primeros 90 días</span><h2>Qué pasa y cuándo</h2></div>
     <div class="steps">
-      <article class="card step"><span class="when">Semana 1</span><h3>Casa en orden</h3><p>Limpieza, accesos, medición y un solo número.</p></article>
+      <article class="card step"><span class="when">Semana 1</span><h3>Casa en orden</h3><p>Accesos, medición y un solo número.</p></article>
       <article class="card step"><span class="when">Semanas 2 a 4</span><h3>Campañas al aire</h3><p>Sesión de producción, Google y Meta activos.</p></article>
       <article class="card step"><span class="when">Mes 2</span><h3>Web nueva en línea</h3><p>Cotizador, obituarios y primer episodio.</p></article>
       <article class="card step"><span class="when">Mes 3</span><h3>Escalar</h3><p>Video institucional y más pauta a lo que vende.</p></article>
@@ -686,7 +672,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   <div class="wrap">
     <img src="img/logo-blanco.png" alt="Grupo Funerario Vida Plena" width="170" height="103">
     <h2>Siempre a tu lado, también en lo digital.</h2>
-    <p>Empezamos por lo urgente: limpiar el sitio y medir cada peso.</p>
+    <p>Desde la primera semana, cada peso medido.</p>
     <div class="btns">
       <a class="btn p" href="https://wa.me/526145148056?text=Hola%20Aure%2C%20revisamos%20la%20propuesta%20para%20Vida%20Plena%20y%20queremos%20platicar." target="_blank" rel="noopener">Platicar por WhatsApp</a>
       <a class="btn g" href="#inversion">Ver la inversión</a>
