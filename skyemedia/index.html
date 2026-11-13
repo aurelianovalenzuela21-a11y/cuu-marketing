@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Skye Media — Lo que pasa arriba del escenario</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Skye Media: fotografía y cobertura de conciertos, palenques y eventos en Chihuahua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Space+Grotesk:wght@400;500;700&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noche:#05070d; --noche2:#0b1120; --cielo:#8fb3dc; --cielo2:#c9dcf2; --hielo:#eef4fb;
+  --oro:#ffcf6a; --magenta:#d24bd8; --verde:#3dff8e; --tinta:#e9eef6; --gris:#8b97ab;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Space Grotesk',system-ui,sans-serif; --led:'DotGothic16',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--noche);color:var(--tinta);font-family:var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--cielo);color:var(--noche)}
+
+/* ---------- cursor reflector ---------- */
+.foco{position:fixed;inset:0;pointer-events:none;z-index:50;mix-blend-mode:screen;
+  background:radial-gradient(260px circle at var(--x,50%) var(--y,40%),rgba(143,179,220,.16),transparent 70%)}
+
+/* ---------- barra ---------- */
+.barra{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(16px,4vw,48px);mix-blend-mode:difference}
+.marca{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.marca b{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1;color:#fff}
+.marca span{font-size:11px;letter-spacing:.5em;color:#fff}
+.barra nav{display:flex;gap:clamp(12px,2.5vw,32px);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.barra nav a{text-decoration:none;color:#fff;opacity:.8}
+.barra nav a:hover{opacity:1}
+@media(max-width:640px){.barra nav a:not(.vip){display:none}}
+
+/* ---------- 1. escenario (hero con reflector) ---------- */
+.escenario{position:relative;height:100svh;min-height:620px;overflow:hidden;cursor:none}
+.escenario .oscuro,.escenario .luz{position:absolute;inset:0;background:url(fotos-ig/01.jpg) center 30%/cover}
+.escenario .oscuro{filter:grayscale(1) brightness(.18) contrast(1.1)}
+.escenario .luz{-webkit-mask:radial-gradient(var(--r,230px) circle at var(--hx,62%) var(--hy,42%),#000 35%,transparent 72%);
+  mask:radial-gradient(var(--r,230px) circle at var(--hx,62%) var(--hy,42%),#000 35%,transparent 72%);transition:--r .4s}
+.escenario::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--noche) 98%);pointer-events:none}
+.haz{position:absolute;top:-10%;width:22vw;height:120%;background:linear-gradient(180deg,rgba(143,179,220,.22),transparent 75%);
+  filter:blur(18px);transform-origin:top center;mix-blend-mode:screen;pointer-events:none;animation:barrido 9s ease-in-out infinite}
+.haz.h1{left:8%;--a:-18deg} .haz.h2{right:6%;--a:16deg;animation-delay:-4.5s;background:linear-gradient(180deg,rgba(210,75,216,.18),transparent 70%)}
+@keyframes barrido{0%,100%{transform:rotate(var(--a))}50%{transform:rotate(calc(var(--a) * -1))}}
+.titulo{position:absolute;left:clamp(16px,5vw,64px);bottom:clamp(64px,12vh,120px);z-index:3;max-width:min(92vw,1100px);pointer-events:none}
+.titulo .pre{font-family:var(--led);color:var(--cielo);font-size:clamp(12px,1.4vw,15px);letter-spacing:.3em;margin-bottom:18px;display:flex;gap:10px;align-items:center}
+.titulo .pre i{width:8px;height:8px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 12px #ff3b3b;animation:rec 1.2s steps(2) infinite}
+@keyframes rec{50%{opacity:.15}}
+.titulo h1{font-family:var(--serif);font-weight:400;font-size:clamp(54px,10.5vw,168px);line-height:.86;letter-spacing:-.02em}
+.titulo h1 em{color:var(--cielo);font-style:italic}
+.titulo p{margin-top:22px;max-width:520px;color:var(--cielo2);font-size:clamp(15px,1.4vw,18px);line-height:1.5}
+.pista{position:absolute;right:clamp(16px,4vw,48px);bottom:28px;z-index:3;font-size:12px;letter-spacing:.25em;color:var(--gris);text-transform:uppercase;writing-mode:vertical-rl}
+.mira{position:absolute;z-index:4;width:64px;height:64px;margin:-32px 0 0 -32px;left:var(--hx,62%);top:var(--hy,42%);pointer-events:none;
+  border:1px solid rgba(255,255,255,.6);border-radius:50%;display:grid;place-items:center;font-size:9px;letter-spacing:.2em;color:#fff}
+@media (hover:none){.mira{display:none}.escenario{cursor:auto}}
+
+/* ---------- 2. pantalla LED ---------- */
+.led{background:#000;border-block:1px solid #1a2333;overflow:hidden;position:relative}
+.led::before{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 55%,#000 56%) 0 0/4px 4px;pointer-events:none;z-index:2;opacity:.55}
+.led .cinta{display:flex;gap:56px;white-space:nowrap;padding:16px 0;font-family:var(--led);font-size:clamp(20px,3vw,34px);color:var(--oro);
+  text-shadow:0 0 10px rgba(255,207,106,.8);animation:led 38s linear infinite;width:max-content}
+.led .cinta span:nth-child(3n){color:var(--cielo);text-shadow:0 0 10px rgba(143,179,220,.8)}
+.led .cinta span:nth-child(4n){color:var(--verde);text-shadow:0 0 10px rgba(61,255,142,.7)}
+@keyframes led{to{transform:translateX(-50%)}}
+
+/* ---------- secciones ---------- */
+section{position:relative}
+.bloque{padding:clamp(80px,12vw,160px) clamp(16px,5vw,64px)}
+.eti{font-family:var(--led);color:var(--cielo);letter-spacing:.3em;font-size:13px;margin-bottom:22px;display:block}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(42px,6.5vw,104px);line-height:.92;letter-spacing:-.015em}
+h2 em{color:var(--cielo);font-style:italic}
+
+/* manifiesto con S gigante */
+.manifiesto{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,5vw,80px);align-items:center;overflow:hidden}
+.s-gigante{font-family:var(--serif);font-size:clamp(280px,46vw,720px);line-height:.75;color:transparent;
+  -webkit-text-stroke:1px rgba(143,179,220,.55);background:url(fotos-ig/03.jpg) center/cover;-webkit-background-clip:text;background-clip:text;
+  text-align:center;user-select:none;transition:color .6s}
+.s-gigante:hover{-webkit-text-stroke-color:transparent}
+.manifiesto p.grande{font-family:var(--serif);font-size:clamp(26px,3vw,44px);line-height:1.15;margin-top:28px}
+.manifiesto p.grande b{font-weight:500;color:var(--cielo)}
+.manifiesto p.chico{color:var(--gris);margin-top:22px;line-height:1.6;max-width:520px}
+@media(max-width:860px){.manifiesto{grid-template-columns:1fr}.s-gigante{order:-1;font-size:62vw}}
+
+/* servicios = setlist */
+.setlist{background:var(--hielo);color:var(--noche);border-radius:28px 28px 0 0}
+.setlist h2 em{color:#3d6ea8}
+.setlist .eti{color:#3d6ea8}
+.hoja{margin-top:56px;border-top:2px solid var(--noche)}
+.cancion{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(5,7,13,.18);
+  position:relative;cursor:default}
+.cancion .n{font-family:var(--led);font-size:18px;color:#3d6ea8}
+.cancion h3{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4vw,58px);line-height:1;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.cancion p{color:#4a5568;max-width:340px;font-size:15px;line-height:1.5;text-align:right}
+.cancion .vista{position:absolute;right:30%;top:50%;width:240px;aspect-ratio:4/3;object-fit:cover;border-radius:10px;opacity:0;
+  transform:translateY(-50%) rotate(-6deg) scale(.8);transition:.45s cubic-bezier(.2,.8,.2,1);pointer-events:none;box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.cancion:hover h3{transform:translateX(18px);font-style:italic}
+.cancion:hover .vista{opacity:1;transform:translateY(-50%) rotate(3deg) scale(1)}
+@media(max-width:760px){.cancion{grid-template-columns:44px 1fr}.cancion p{grid-column:2;text-align:left}.cancion .vista{display:none}}
+
+/* galería = hoja de contactos que se mueve con el scroll */
+.contactos{background:var(--noche);padding-bottom:clamp(60px,8vw,120px)}
+.rollo{position:relative;height:300vh}
+.rollo .fijo{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding-top:70px}
+.rollo .cabeza{padding:0 clamp(16px,5vw,64px);margin-bottom:40px;display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.cinta-foto{display:flex;gap:22px;padding:28px 22px;background:#111823;width:max-content;will-change:transform;
+  border-block:14px solid #111823;position:relative}
+.cinta-foto::before,.cinta-foto::after{content:"";position:absolute;left:0;right:0;height:10px;
+  background:repeating-linear-gradient(90deg,transparent 0 14px,var(--noche) 14px 26px);}
+.cinta-foto::before{top:-12px}.cinta-foto::after{bottom:-12px}
+.cuadro{position:relative;height:min(52svh,440px);flex:none}
+.cuadro img{height:100%;width:auto;filter:saturate(1.08)}
+.cuadro small{position:absolute;left:0;bottom:-24px;font-family:var(--led);font-size:11px;color:var(--oro);letter-spacing:.15em}
+.cuadro::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.contador{font-family:var(--led);color:var(--oro);font-size:14px;letter-spacing:.2em}
+
+/* escenarios + artistas: mapa de luces */
+.recintos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2px;margin-top:56px;background:#1a2333;border:1px solid #1a2333}
+.recinto{background:var(--noche2);padding:34px 28px;min-height:200px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.recinto::before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(143,179,220,.28),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.recinto:hover::before{opacity:1}
+.recinto .ciudad{font-family:var(--led);font-size:12px;letter-spacing:.2em;color:var(--gris)}
+.recinto h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,40px);line-height:1.02;position:relative}
+.artistas{margin-top:72px;font-family:var(--serif);font-size:clamp(30px,4.6vw,72px);line-height:1.12;color:#2a3548}
+.artistas span{transition:color .3s;cursor:default}
+.artistas span:hover{color:var(--hielo);font-style:italic}
+.artistas i{color:var(--cielo);font-style:normal;font-size:.5em;vertical-align:middle;margin:0 .35em}
+
+/* pase backstage */
+.backstage{background:radial-gradient(ellipse at 50% 0%,#14203a 0%,var(--noche) 60%);text-align:center;overflow:hidden}
+.backstage h2{max-width:900px;margin:0 auto}
+.colgante{position:relative;width:min(340px,82vw);margin:230px auto 0;transform-origin:50% -220px;animation:mecer 5s ease-in-out infinite}
+@keyframes mecer{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+.cordon{position:absolute;left:50%;top:-220px;width:46px;height:236px;transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent 0 6px,var(--cielo) 6px 18px,transparent 18px 28px,var(--cielo) 28px 40px,transparent 40px);
+  clip-path:polygon(0 0,100% 0,62% 100%,38% 100%)}
+.pase{position:relative;background:linear-gradient(160deg,#f7fbff,#dbe8f6);color:var(--noche);border-radius:22px;padding:30px 26px 26px;
+  box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.6);text-align:left;overflow:hidden}
+.pase::before{content:"";position:absolute;top:14px;left:50%;width:62px;height:12px;border-radius:8px;background:var(--noche);transform:translateX(-50%)}
+.pase::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.75) 45%,transparent 60%);
+  transform:translateX(-100%);animation:brillo 4.5s ease-in-out infinite}
+@keyframes brillo{60%,100%{transform:translateX(100%)}}
+.pase .top{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.pase .top img{width:74px;height:74px;border-radius:50%;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--cielo)}
+.pase .acc{font-family:var(--led);background:var(--noche);color:var(--oro);padding:6px 12px;border-radius:6px;font-size:14px;letter-spacing:.2em}
+.pase h3{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1;margin-top:22px}
+.pase .rol{color:#3d6ea8;font-size:13px;letter-spacing:.25em;text-transform:uppercase;margin-top:6px}
+.pase .codigo{height:46px;margin-top:22px;background:repeating-linear-gradient(90deg,var(--noche) 0 2px,transparent 2px 4px,var(--noche) 4px 7px,transparent 7px 9px,var(--noche) 9px 10px,transparent 10px 14px)}
+.pase a.btn{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:22px;padding:16px;border-radius:14px;background:var(--noche);color:#fff;
+  text-decoration:none;font-weight:700;letter-spacing:.04em;position:relative;z-index:2;transition:transform .2s}
+.pase a.btn:hover{transform:translateY(-2px)}
+.pie{padding:40px clamp(16px,5vw,64px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--gris);font-size:13px;border-top:1px solid #1a2333}
+
+/* apariciones */
+.aparece{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.aparece.ya{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.aparece{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="foco" id="foco"></div>
+
+<header class="barra">
+  <a class="marca" href="#inicio"><b>S</b><span>MEDIA</span></a>
+  <nav><a href="#hacemos">Qué hacemos</a><a href="#galeria">Galería</a><a href="#escenarios">Escenarios</a><a class="vip" href="#backstage">Backstage</a></nav>
+</header>
+
+<!-- 1. Escenario -->
+<section class="escenario" id="inicio">
+  <div class="oscuro"></div>
+  <div class="luz" id="luz"></div>
+  <div class="haz h1"></div><div class="haz h2"></div>
+  <div class="mira" id="mira">FOCO</div>
+  <div class="titulo">
+    <div class="pre"><i></i>EN VIVO · CHIHUAHUA</div>
+    <h1>Lo que pasa<br>arriba del <em>escenario</em></h1>
+    <p>Fotografía, cobertura y promoción de conciertos, palenques y eventos. Mueve el reflector: así vemos cada noche.</p>
+  </div>
+  <div class="pista">Desliza ↓</div>
+</section>
+
+<!-- 2. LED -->
+<div class="led" aria-hidden="true"><div class="cinta" id="cinta">
+  <span>PALENQUE SANTA RITA</span><span>★ EXPOGAN 90 ANIVERSARIO</span><span>ESTADIO MANUEL L. ALMANZA</span><span>★ RUEDAS DE PRENSA</span><span>CANTINA TODOS SANTOS</span><span>★ FERIA SANTA RITA</span><span>ÁVALOS · CHIHUAHUA</span><span>★ CIUDAD JUÁREZ</span>
+</div></div>
+
+<!-- 3. Manifiesto -->
+<section class="bloque manifiesto">
+  <div class="aparece">
+    <span class="eti">// SKYE MEDIA</span>
+    <h2>Medio de <em>comunicación</em> para la música en vivo.</h2>
+    <p class="grande">Estamos donde se prenden las luces: <b>el primer acordeonazo, la entrada al palenque, la rueda de prensa</b> y la última canción.</p>
+    <p class="chico">Cubrimos la escena regional de Chihuahua y contamos cada evento con fotos y videos que se sienten como estar ahí.</p>
+  </div>
+  <div class="s-gigante aparece" aria-hidden="true">S</div>
+</section>
+
+<!-- 4. Setlist de servicios -->
+<section class="bloque setlist" id="hacemos">
+  <span class="eti aparece">// SETLIST</span>
+  <h2 class="aparece">Lo que <em>tocamos</em></h2>
+  <div class="hoja">
+    <div class="cancion aparece"><span class="n">01</span><h3>Fotografía de conciertos</h3><p>Luces, humo y movimiento: la foto que el artista quiere publicar.</p><img class="vista" src="fotos-ig/04.jpg" alt=""></div>
+    <div class="cancion aparece"><span class="n">02</span><h3>Cobertura de eventos</h3><p>Palenques, ferias y estadios contados en reels y publicaciones.</p><img class="vista" src="fotos-ig/05.jpg" alt=""></div>
+    <div class="cancion aparece"><span class="n">03</span><h3>Ruedas de prensa</h3><p>Presencia de medio en las conferencias de los conciertos.</p><img class="vista" src="fotos-ig/06.jpg" alt=""></div>
+    <div class="cancion aparece"><span class="n">04</span><h3>Promoción de fechas</h3><p>Anuncios de conciertos, preventas y cuenta regresiva para la noche.</p><img class="vista" src="fotos-ig/02.jpg" alt=""></div>
+    <div class="cancion aparece"><span class="n">05</span><h3>Entrevistas y backstage</h3><p>Lo que no se ve desde las gradas: la entrada, los nervios, la fiesta.</p><img class="vista" src="fotos-ig/09.jpg" alt=""></div>
+  </div>
+</section>
+
+<!-- 5. Hoja de contactos -->
+<section class="contactos" id="galeria">
+  <div class="rollo" id="rollo">
+    <div class="fijo">
+      <div class="cabeza">
+        <div><span class="eti">// HOJA DE CONTACTOS</span><h2>Una noche,<br><em>cien</em> momentos.</h2></div>
+        <div class="contador" id="contador">CUADRO 01 / 11</div>
+      </div>
+      <div class="cinta-foto" id="cintaFoto">
+        <div class="cuadro"><img src="fotos-ig/01.jpg" alt="Los Vendavales de Adán Meléndez en el escenario"><small>SKYE 01A</small></div>
+        <div class="cuadro"><img src="fotos-ig/03.jpg" alt="Acordeonista con chispas en el escenario"><small>SKYE 02A</small></div>
+        <div class="cuadro"><img src="fotos-ig/07.jpg" alt="Espalda del músico con la banda de Los Vendavales"><small>SKYE 03A</small></div>
+        <div class="cuadro"><img src="fotos-ig/02.jpg" alt="Bajista con luces verdes"><small>SKYE 04A</small></div>
+        <div class="cuadro"><img src="fotos-ig/06.jpg" alt="Músicos con guitarra roja"><small>SKYE 05A</small></div>
+        <div class="cuadro"><img src="fotos-ig/04.jpg" alt="Saxofonista con luces moradas"><small>SKYE 06A</small></div>
+        <div class="cuadro"><img src="fotos-ig/05.jpg" alt="Vista desde el escenario hacia el público"><small>SKYE 07A</small></div>
+        <div class="cuadro"><img src="fotos-ig/08.jpg" alt="Músico de espaldas con sombrero blanco"><small>SKYE 08A</small></div>
+        <div class="cuadro"><img src="fotos-ig/10.jpg" alt="Bajista con luces amarillas"><small>SKYE 09A</small></div>
+        <div class="cuadro"><img src="fotos-ig/09.jpg" alt="Saxofonista con luz amarilla"><small>SKYE 10A</small></div>
+        <div class="cuadro"><img src="fotos-ig/11.jpg" alt="Baterista con chispas de fondo"><small>SKYE 11A</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Escenarios y artistas -->
+<section class="bloque" id="escenarios">
+  <span class="eti aparece">// MAPA DE LUCES</span>
+  <h2 class="aparece">Los <em>escenarios</em><br>donde nos encuentras</h2>
+  <div class="recintos">
+    <div class="recinto aparece"><span class="ciudad">CHIHUAHUA</span><h3>Palenque<br>Santa Rita</h3></div>
+    <div class="recinto aparece"><span class="ciudad">CHIHUAHUA</span><h3>Expogan · Explanada de la Unión Ganadera</h3></div>
+    <div class="recinto aparece"><span class="ciudad">CHIHUAHUA</span><h3>Estadio Manuel L. Almanza</h3></div>
+    <div class="recinto aparece"><span class="ciudad">CHIHUAHUA</span><h3>Cantina<br>Todos Santos</h3></div>
+    <div class="recinto aparece"><span class="ciudad">CHIHUAHUA</span><h3>Feria<br>Santa Rita</h3></div>
+    <div class="recinto aparece"><span class="ciudad">CIUDAD JUÁREZ</span><h3>Gimnasio Municipal Josué Neri Santos</h3></div>
+  </div>
+  <div class="artistas aparece">
+    <span>Los Vendavales de Adán Meléndez</span><i>✦</i><span>Crecer Germán</span><i>✦</i><span>Cornelio Vega &amp; Su Dinastía</span><i>✦</i><span>Javier Rosas</span><i>✦</i><span>Alta Consigna</span><i>✦</i><span>Moy Bobadilla</span><i>✦</i><span>Alfredo Olivas</span><i>✦</i><span>Hijos de Barrón</span><i>✦</i><span>Lupe Borbón</span>
+  </div>
+</section>
+
+<!-- 7. Backstage -->
+<section class="bloque backstage" id="backstage">
+  <span class="eti aparece">// ACCESO</span>
+  <h2 class="aparece">¿Tu evento merece <em>quedarse</em> para siempre?</h2>
+  <div class="colgante">
+    <div class="cordon"></div>
+    <div class="pase">
+      <div class="top"><img src="fotos-ig/logo.jpg" alt="Logo Skye Media"><span class="acc">ALL ACCESS</span></div>
+      <h3>Skye Media</h3>
+      <div class="rol">Medio · Fotografía · Cobertura</div>
+      <div class="codigo" aria-hidden="true"></div>
+      <a class="btn" href="https://ig.me/m/skyemedia__" target="_blank" rel="noopener">Escríbenos por Instagram →</a>
+      <a class="btn" style="background:transparent;color:var(--noche);box-shadow:inset 0 0 0 2px var(--noche);margin-top:10px" href="https://www.instagram.com/skyemedia__/" target="_blank" rel="noopener">@skyemedia__</a>
+    </div>
+  </div>
+</section>
+
+<footer class="pie"><span>© Skye Media · Chihuahua, México</span><span>Fotografía: Skye Media</span></footer>
+
+<script>
+const root=document.documentElement, foco=document.getElementById('foco');
+const esc=document.querySelector('.escenario'), luz=document.getElementById('luz'), mira=document.getElementById('mira');
+let manual=false, t0=performance.now();
+addEventListener('pointermove',e=>{foco.style.setProperty('--x',e.clientX+'px');foco.style.setProperty('--y',e.clientY+'px')});
+esc.addEventListener('pointermove',e=>{manual=true;const r=esc.getBoundingClientRect();
+  const x=((e.clientX-r.left)/r.width*100)+'%', y=((e.clientY-r.top)/r.height*100)+'%';
+  esc.style.setProperty('--hx',x);esc.style.setProperty('--hy',y)});
+esc.addEventListener('pointerleave',()=>manual=false);
+esc.addEventListener('pointerdown',()=>esc.style.setProperty('--r','420px'));
+esc.addEventListener('pointerup',()=>esc.style.setProperty('--r','230px'));
+(function vagar(t){ if(!manual){const s=(t-t0)/1000;
+  esc.style.setProperty('--hx',(55+22*Math.sin(s*.5))+'%');esc.style.setProperty('--hy',(40+14*Math.sin(s*.8+1))+'%');}
+  requestAnimationFrame(vagar)})(t0);
+// LED duplicado para loop infinito
+const cinta=document.getElementById('cinta'); cinta.innerHTML+=cinta.innerHTML;
+// hoja de contactos horizontal con el scroll
+const rollo=document.getElementById('rollo'), cf=document.getElementById('cintaFoto'), cont=document.getElementById('contador');
+function mover(){const r=rollo.getBoundingClientRect(), total=rollo.offsetHeight-innerHeight;
+  const p=Math.min(1,Math.max(0,-r.top/total)), dist=cf.scrollWidth-innerWidth+40;
+  cf.style.transform=`translateX(${-p*dist}px)`;cont.textContent='CUADRO '+String(Math.min(11,1+Math.floor(p*11))).padStart(2,'0')+' / 11'}
+addEventListener('scroll',mover,{passive:true});addEventListener('resize',mover);mover();
+// reflector en recintos
+document.querySelectorAll('.recinto').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();
+  c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}));
+// apariciones
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('ya');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.aparece').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
